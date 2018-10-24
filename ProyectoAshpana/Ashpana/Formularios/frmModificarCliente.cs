@@ -15,9 +15,11 @@ namespace Formularios
     public partial class frmModificarCliente : Form
     {
         private ClienteBL clienteBL;
+        private CondicionMedicaBL condicionMedicaBL; 
         public frmModificarCliente(Cliente t)
         {
             InitializeComponent();
+            condicionMedicaBL = new CondicionMedicaBL();
             txtNombre.Text = t.Nombres;
             txtApPaterno.Text = t.ApPaterno;
             txtApMaterno.Text = t.ApMaterno;
@@ -35,16 +37,32 @@ namespace Formularios
                 rbFemenino.Checked = true;
             }
 
+            if (t.Estado == 0)
+            {
+                cboEstado.Text = "Inactivo"; 
+            }
             if (t.Estado == 1)
             {
                 cboEstado.Text = "Activo";
             }
 
-            if (t.Estado == 0)
+            BindingList<CondicionMedica> condicionesMedicasGenerales = condicionMedicaBL.listarCondicionesMedicas();
+            foreach (CondicionMedica cm in condicionesMedicasGenerales)
             {
-                cboEstado.Text = "Inactivo";
+                clbCondicionesMedicas.Items.Add(cm);
             }
 
+
+            BindingList<CondicionMedica> condicionMedicasCliente = condicionMedicaBL.listarCondicionesMedicas_X_Cliente(t.IdCliente);
+            
+            
+
+
+            foreach (CondicionMedica cm in condicionMedicasCliente)
+            {
+                int indice = clbCondicionesMedicas.Items.IndexOf(cm);
+                clbCondicionesMedicas.SetItemChecked(indice, true);
+            }
         }
 
         public frmModificarCliente(object sender, EventArgs e)
@@ -54,11 +72,7 @@ namespace Formularios
 
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-          
-            this.DialogResult = DialogResult.OK;
-        }
+     
 
         private void lblDireccion_Click(object sender, EventArgs e)
         {
@@ -99,18 +113,17 @@ namespace Formularios
             {
                 s.Sexo = 'M';
             }
-           
 
+            if (cboEstado.Equals("Activo"))
+            {
+                s.Estado = 0;
+            }
 
-            if (cboEstado.Text.Equals("Activo"))
+            if (cboEstado.Equals("Inactivo"))
             {
                 s.Estado = 1;
             }
 
-            if (cboEstado.Text.Equals("Inactivo"))
-            {
-                s.Estado = 0;
-            }
 
 
             clienteBL = new ClienteBL();
@@ -118,5 +131,17 @@ namespace Formularios
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha modifcado satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void rbActivo_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+       
     }
 }

@@ -21,5 +21,11 @@ namespace LogicaNegocio
         {
             return condicionMedicaDA.listarCondicionMedica(); 
         }
+
+        public BindingList<CondicionMedica> listarCondicionesMedicas_X_Cliente(int id_Cliente)
+        {
+            return condicionMedicaDA.listarCondicionesMedicas_X_Cliente(id_Cliente); 
+        }
     }
+
 }

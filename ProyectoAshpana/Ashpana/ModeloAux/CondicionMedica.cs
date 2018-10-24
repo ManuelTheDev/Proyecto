@@ -14,6 +14,29 @@ namespace Modelo
 
         public CondicionMedica() { }
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is CondicionMedica))
+                return false;
+
+            var other = obj as CondicionMedica;
+
+            if (_idCondMed != other.IdCondMed || _nombre != other.Nombre || _descripcion!=other.Descripcion)
+                return false;
+
+            return true;
+        }
+
+        public static bool operator ==(CondicionMedica cm1,CondicionMedica cm2)
+        {
+            return cm1.Equals(cm2);
+        }
+
+        public static bool operator !=(CondicionMedica cm1, CondicionMedica cm2)
+        {
+            return !(cm1 == cm2);
+        }
+
         public CondicionMedica(int idCondMed, string nombre, string descripcion)
         {
             _idCondMed = idCondMed;
