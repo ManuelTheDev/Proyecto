@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0129FCB-C054-41C0-8292-F75A583B31B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Formularios</RootNamespace>
+    <AssemblyName>Formularios</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarPaquete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarPaquete.Designer.cs">
+      <DependentUpon>frmListarPaquete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarTratamiento.Designer.cs">
+      <DependentUpon>frmListarTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionCitas.Designer.cs">
+      <DependentUpon>frmGestionCitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionFichaMedidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionFichaMedidas.Designer.cs">
+      <DependentUpon>frmGestionFichaMedidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionPacientes.Designer.cs">
+      <DependentUpon>frmGestionPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionPaquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionPaquetes.Designer.cs">
+      <DependentUpon>frmGestionPaquetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionTerapistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionTerapistas.Designer.cs">
+      <DependentUpon>frmGestionTerapistas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionTratamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionTratamientos.Designer.cs">
+      <DependentUpon>frmGestionTratamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionUsuarios.Designer.cs">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarCita.Designer.cs">
+      <DependentUpon>frmModificarCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarCliente.Designer.cs">
+      <DependentUpon>frmModificarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarFichaMedidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarFichaMedidas.Designer.cs">
+      <DependentUpon>frmModificarFichaMedidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarTerapista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarTerapista.Designer.cs">
+      <DependentUpon>frmModificarTerapista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarTratamiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarTratamiento.Designer.cs">
+      <DependentUpon>frmModificarTratamiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarUsuario.Designer.cs">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevaCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaCita.Designer.cs">
+      <DependentUpon>frmNuevaCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevaFichaMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevaFichaMedida.Designer.cs">
+      <DependentUpon>frmNuevaFichaMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoCliente.Designer.cs">
+      <DependentUpon>frmNuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoTerapista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoTerapista.Designer.cs">
+      <DependentUpon>frmNuevoTerapista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoUsuario.Designer.cs">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoPaquete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoPaquete.Designer.cs">
+      <DependentUpon>frmNuevoPaquete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModificarPaquetes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificarPaquetes.Designer.cs">
+      <DependentUpon>frmModificarPaquetes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmNuevoTratamientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNuevoTratamientos.Designer.cs">
+      <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerPadecimientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerPadecimientos.Designer.cs">
+      <DependentUpon>frmVerPadecimientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarPaquete.resx">
+      <DependentUpon>frmListarPaquete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionCitas.resx">
+      <DependentUpon>frmGestionCitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionFichaMedidas.resx">
+      <DependentUpon>frmGestionFichaMedidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionPacientes.resx">
+      <DependentUpon>frmGestionPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionPaquetes.resx">
+      <DependentUpon>frmGestionPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionTerapistas.resx">
+      <DependentUpon>frmGestionTerapistas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionTratamientos.resx">
+      <DependentUpon>frmGestionTratamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionUsuarios.resx">
+      <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarTratamiento.resx">
+      <DependentUpon>frmListarTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarCita.resx">
+      <DependentUpon>frmModificarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarCliente.resx">
+      <DependentUpon>frmModificarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarFichaMedidas.resx">
+      <DependentUpon>frmModificarFichaMedidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarTerapista.resx">
+      <DependentUpon>frmModificarTerapista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarTratamiento.resx">
+      <DependentUpon>frmModificarTratamiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarUsuario.resx">
+      <DependentUpon>frmModificarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaCita.resx">
+      <DependentUpon>frmNuevaCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevaFichaMedida.resx">
+      <DependentUpon>frmNuevaFichaMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoCliente.resx">
+      <DependentUpon>frmNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoTerapista.resx">
+      <DependentUpon>frmNuevoTerapista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoUsuario.resx">
+      <DependentUpon>frmNuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoPaquete.resx">
+      <DependentUpon>frmNuevoPaquete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModificarPaquetes.resx">
+      <DependentUpon>frmModificarPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNuevoTratamientos.resx">
+      <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerPadecimientos.resx">
+      <DependentUpon>frmVerPadecimientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LogicaNegocio\LogicaNegocio.csproj">
+      <Project>{AAB541D6-E5DF-4C6F-AA78-63DB08760CF4}</Project>
+      <Name>LogicaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ModeloAux\Modelo.csproj">
+      <Project>{11591442-6529-4415-8c0b-ad1e1aad7602}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
