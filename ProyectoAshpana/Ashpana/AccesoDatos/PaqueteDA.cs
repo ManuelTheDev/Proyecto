@@ -28,7 +28,7 @@ namespace AccesoDatos
                 conexion.Open(); 
                 MySqlCommand comando = new MySqlCommand();
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
-                comando.CommandText = "ListarPaquetes";
+                comando.CommandText = "LISTAR_PAQUETES";
                 comando.Connection = conexion; 
 
                 MySqlDataReader lector = comando.ExecuteReader();
