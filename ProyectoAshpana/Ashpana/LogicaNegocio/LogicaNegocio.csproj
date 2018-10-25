@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CondicionMedicaBL.cs" />
+    <Compile Include="FichaMedidaBL.cs" />
     <Compile Include="PaqueteBL.cs" />
     <Compile Include="TerapistaBL.cs" />
     <Compile Include="TratamientoBL.cs" />

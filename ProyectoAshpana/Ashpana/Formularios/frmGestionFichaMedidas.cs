@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
+using Modelo;
 
 namespace Formularios
 {
@@ -15,6 +17,10 @@ namespace Formularios
         public frmGestionFichaMedidas()
         {
             InitializeComponent();
+            FichaMedidaBL fichaMedidaBL = new FichaMedidaBL();
+            columnasCitas.AutoGenerateColumns = false;
+            columnasCitas.DataSource = fichaMedidaBL.listarFichaMedidas();
+
         }
 
         private void columnasCitas_CellContentClick(object sender, DataGridViewCellEventArgs e)

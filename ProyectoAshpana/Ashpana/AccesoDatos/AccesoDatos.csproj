@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="ClienteDA.cs" />
     <Compile Include="CondicionMedicaDA.cs" />
+    <Compile Include="FichaMedidaDA.cs" />
     <Compile Include="PaqueteDA.cs" />
     <Compile Include="TerapistaDA.cs" />
     <Compile Include="TratamientoDA.cs" />

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevaFicha = new System.Windows.Forms.Button();
             this.lblFicha = new System.Windows.Forms.Label();
@@ -35,21 +36,26 @@
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.columnasCitas = new System.Windows.Forms.DataGridView();
-            this.colServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTerapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AbdomenAlto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AbdomenBajo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cintura = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrazoIzquierdo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BrazoDerecho = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gluteos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PiernaIzq = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PiernaDer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fichaMedidaBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fichaMedidaBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.fichaMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.espaldaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abdomenAltoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.abdomenBajoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cinturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brazoDerechoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brazoIzquierdoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gluteosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piernaIzqDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.piernaDerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnasCitas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBLBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBLBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnModificar
@@ -128,108 +134,111 @@
             // 
             // columnasCitas
             // 
+            this.columnasCitas.AutoGenerateColumns = false;
             this.columnasCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.columnasCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colServicio,
-            this.colFecha,
-            this.colHora,
-            this.colTerapista,
-            this.colSesion,
-            this.AbdomenAlto,
-            this.AbdomenBajo,
-            this.Cintura,
-            this.BrazoIzquierdo,
-            this.BrazoDerecho,
-            this.Gluteos,
-            this.PiernaIzq,
-            this.PiernaDer});
+            this.fechaDataGridViewTextBoxColumn,
+            this.tipoDataGridViewTextBoxColumn,
+            this.pesoDataGridViewTextBoxColumn,
+            this.espaldaDataGridViewTextBoxColumn,
+            this.abdomenAltoDataGridViewTextBoxColumn,
+            this.abdomenBajoDataGridViewTextBoxColumn,
+            this.cinturaDataGridViewTextBoxColumn,
+            this.brazoDerechoDataGridViewTextBoxColumn,
+            this.brazoIzquierdoDataGridViewTextBoxColumn,
+            this.gluteosDataGridViewTextBoxColumn,
+            this.piernaIzqDataGridViewTextBoxColumn,
+            this.piernaDerDataGridViewTextBoxColumn});
+            this.columnasCitas.DataSource = this.fichaMedidaBindingSource;
             this.columnasCitas.Location = new System.Drawing.Point(129, 227);
             this.columnasCitas.Name = "columnasCitas";
             this.columnasCitas.Size = new System.Drawing.Size(811, 251);
             this.columnasCitas.TabIndex = 17;
             this.columnasCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.columnasCitas_CellContentClick);
             // 
-            // colServicio
+            // fichaMedidaBLBindingSource
             // 
-            this.colServicio.FillWeight = 80F;
-            this.colServicio.HeaderText = "Servicio";
-            this.colServicio.Name = "colServicio";
-            this.colServicio.Width = 80;
+            this.fichaMedidaBLBindingSource.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
             // 
-            // colFecha
+            // fichaMedidaBLBindingSource1
             // 
-            this.colFecha.FillWeight = 30F;
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.Width = 50;
+            this.fichaMedidaBLBindingSource1.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
             // 
-            // colHora
+            // fichaMedidaBindingSource
             // 
-            this.colHora.FillWeight = 30F;
-            this.colHora.HeaderText = "Tipo Somatico";
-            this.colHora.Name = "colHora";
-            this.colHora.Width = 50;
+            this.fichaMedidaBindingSource.DataSource = typeof(Modelo.FichaMedida);
             // 
-            // colTerapista
+            // fechaDataGridViewTextBoxColumn
             // 
-            this.colTerapista.FillWeight = 15F;
-            this.colTerapista.HeaderText = "Peso";
-            this.colTerapista.Name = "colTerapista";
-            this.colTerapista.Width = 50;
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
             // 
-            // colSesion
+            // tipoDataGridViewTextBoxColumn
             // 
-            this.colSesion.HeaderText = "Espalda";
-            this.colSesion.Name = "colSesion";
-            this.colSesion.Width = 50;
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
             // 
-            // AbdomenAlto
+            // pesoDataGridViewTextBoxColumn
             // 
-            this.AbdomenAlto.HeaderText = "Abdomen Alto";
-            this.AbdomenAlto.Name = "AbdomenAlto";
-            this.AbdomenAlto.Width = 70;
+            this.pesoDataGridViewTextBoxColumn.DataPropertyName = "Peso";
+            this.pesoDataGridViewTextBoxColumn.HeaderText = "Peso";
+            this.pesoDataGridViewTextBoxColumn.Name = "pesoDataGridViewTextBoxColumn";
             // 
-            // AbdomenBajo
+            // espaldaDataGridViewTextBoxColumn
             // 
-            this.AbdomenBajo.HeaderText = "Abdomen Bajto";
-            this.AbdomenBajo.Name = "AbdomenBajo";
-            this.AbdomenBajo.Width = 70;
+            this.espaldaDataGridViewTextBoxColumn.DataPropertyName = "Espalda";
+            this.espaldaDataGridViewTextBoxColumn.HeaderText = "Espalda";
+            this.espaldaDataGridViewTextBoxColumn.Name = "espaldaDataGridViewTextBoxColumn";
             // 
-            // Cintura
+            // abdomenAltoDataGridViewTextBoxColumn
             // 
-            this.Cintura.HeaderText = "Cintura";
-            this.Cintura.Name = "Cintura";
-            this.Cintura.Width = 50;
+            this.abdomenAltoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenAlto";
+            this.abdomenAltoDataGridViewTextBoxColumn.HeaderText = "AbdomenAlto";
+            this.abdomenAltoDataGridViewTextBoxColumn.Name = "abdomenAltoDataGridViewTextBoxColumn";
             // 
-            // BrazoIzquierdo
+            // abdomenBajoDataGridViewTextBoxColumn
             // 
-            this.BrazoIzquierdo.HeaderText = "Brazo Izquierdo";
-            this.BrazoIzquierdo.Name = "BrazoIzquierdo";
-            this.BrazoIzquierdo.Width = 60;
+            this.abdomenBajoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenBajo";
+            this.abdomenBajoDataGridViewTextBoxColumn.HeaderText = "AbdomenBajo";
+            this.abdomenBajoDataGridViewTextBoxColumn.Name = "abdomenBajoDataGridViewTextBoxColumn";
             // 
-            // BrazoDerecho
+            // cinturaDataGridViewTextBoxColumn
             // 
-            this.BrazoDerecho.HeaderText = "Brazo Derecho";
-            this.BrazoDerecho.Name = "BrazoDerecho";
-            this.BrazoDerecho.Width = 60;
+            this.cinturaDataGridViewTextBoxColumn.DataPropertyName = "Cintura";
+            this.cinturaDataGridViewTextBoxColumn.HeaderText = "Cintura";
+            this.cinturaDataGridViewTextBoxColumn.Name = "cinturaDataGridViewTextBoxColumn";
             // 
-            // Gluteos
+            // brazoDerechoDataGridViewTextBoxColumn
             // 
-            this.Gluteos.HeaderText = "Gluteos";
-            this.Gluteos.Name = "Gluteos";
-            this.Gluteos.Width = 55;
+            this.brazoDerechoDataGridViewTextBoxColumn.DataPropertyName = "BrazoDerecho";
+            this.brazoDerechoDataGridViewTextBoxColumn.HeaderText = "BrazoDerecho";
+            this.brazoDerechoDataGridViewTextBoxColumn.Name = "brazoDerechoDataGridViewTextBoxColumn";
             // 
-            // PiernaIzq
+            // brazoIzquierdoDataGridViewTextBoxColumn
             // 
-            this.PiernaIzq.HeaderText = "Pierna Izquierda";
-            this.PiernaIzq.Name = "PiernaIzq";
-            this.PiernaIzq.Width = 60;
+            this.brazoIzquierdoDataGridViewTextBoxColumn.DataPropertyName = "BrazoIzquierdo";
+            this.brazoIzquierdoDataGridViewTextBoxColumn.HeaderText = "BrazoIzquierdo";
+            this.brazoIzquierdoDataGridViewTextBoxColumn.Name = "brazoIzquierdoDataGridViewTextBoxColumn";
             // 
-            // PiernaDer
+            // gluteosDataGridViewTextBoxColumn
             // 
-            this.PiernaDer.HeaderText = "Pierna Derecha";
-            this.PiernaDer.Name = "PiernaDer";
-            this.PiernaDer.Width = 60;
+            this.gluteosDataGridViewTextBoxColumn.DataPropertyName = "Gluteos";
+            this.gluteosDataGridViewTextBoxColumn.HeaderText = "Gluteos";
+            this.gluteosDataGridViewTextBoxColumn.Name = "gluteosDataGridViewTextBoxColumn";
+            // 
+            // piernaIzqDataGridViewTextBoxColumn
+            // 
+            this.piernaIzqDataGridViewTextBoxColumn.DataPropertyName = "PiernaIzq";
+            this.piernaIzqDataGridViewTextBoxColumn.HeaderText = "PiernaIzq";
+            this.piernaIzqDataGridViewTextBoxColumn.Name = "piernaIzqDataGridViewTextBoxColumn";
+            // 
+            // piernaDerDataGridViewTextBoxColumn
+            // 
+            this.piernaDerDataGridViewTextBoxColumn.DataPropertyName = "PiernaDer";
+            this.piernaDerDataGridViewTextBoxColumn.HeaderText = "PiernaDer";
+            this.piernaDerDataGridViewTextBoxColumn.Name = "piernaDerDataGridViewTextBoxColumn";
             // 
             // frmGestionFichaMedidas
             // 
@@ -247,6 +256,9 @@
             this.CITAS.ResumeLayout(false);
             this.CITAS.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnasCitas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBLBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBLBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,18 +273,20 @@
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridView columnasCitas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colServicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTerapista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSesion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AbdomenAlto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AbdomenBajo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cintura;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BrazoIzquierdo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BrazoDerecho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gluteos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PiernaIzq;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PiernaDer;
+        private System.Windows.Forms.BindingSource fichaMedidaBLBindingSource;
+        private System.Windows.Forms.BindingSource fichaMedidaBLBindingSource1;
+        private System.Windows.Forms.BindingSource fichaMedidaBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pesoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn espaldaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abdomenAltoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn abdomenBajoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cinturaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brazoDerechoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brazoIzquierdoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gluteosDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn piernaIzqDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn piernaDerDataGridViewTextBoxColumn;
     }
 }
