@@ -63,5 +63,16 @@ namespace Formularios
         {
 
         }
+
+        private void btnVerTratamientosHabilitados_Click(object sender, EventArgs e)
+        {
+            terapistaSeleccionada = (Terapista)dgvTerapistas.CurrentRow.DataBoundItem;
+            frmVerTratamientosPorTerapistas frmTratXTerapista = new frmVerTratamientosPorTerapistas(terapistaSeleccionada);
+            frmTratXTerapista.ShowDialog(); 
+            if (frmTratXTerapista.DialogResult== DialogResult.OK)
+            {
+               
+            }
+        }
     }
 }

@@ -36,7 +36,7 @@ namespace Modelo
 
         public Terapista()
         {
-
+            Tratamientos = new BindingList<Tratamiento>(); 
         }
     }
 }

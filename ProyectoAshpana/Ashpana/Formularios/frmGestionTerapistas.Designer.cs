@@ -41,7 +41,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).BeginInit();
             this.CITAS.SuspendLayout();
             this.SuspendLayout();
@@ -139,7 +139,7 @@
             this.CITAS.Controls.Add(this.label1);
             this.CITAS.Location = new System.Drawing.Point(-8, -1);
             this.CITAS.Name = "CITAS";
-            this.CITAS.Size = new System.Drawing.Size(1281, 87);
+            this.CITAS.Size = new System.Drawing.Size(983, 87);
             this.CITAS.TabIndex = 20;
             // 
             // label1
@@ -173,29 +173,30 @@
             this.lblBuscar.Text = "Buscar:";
             this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
             // 
-            // button1
+            // btnVerTratamientosHabilitados
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(380, 459);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(300, 45);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Ver Tratamientos Habilitados";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVerTratamientosHabilitados.BackColor = System.Drawing.Color.Black;
+            this.btnVerTratamientosHabilitados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerTratamientosHabilitados.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVerTratamientosHabilitados.FlatAppearance.BorderSize = 0;
+            this.btnVerTratamientosHabilitados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTratamientosHabilitados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTratamientosHabilitados.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVerTratamientosHabilitados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerTratamientosHabilitados.Location = new System.Drawing.Point(380, 459);
+            this.btnVerTratamientosHabilitados.Name = "btnVerTratamientosHabilitados";
+            this.btnVerTratamientosHabilitados.Size = new System.Drawing.Size(300, 45);
+            this.btnVerTratamientosHabilitados.TabIndex = 23;
+            this.btnVerTratamientosHabilitados.Text = "Ver Tratamientos Habilitados";
+            this.btnVerTratamientosHabilitados.UseVisualStyleBackColor = false;
+            this.btnVerTratamientosHabilitados.Click += new System.EventHandler(this.btnVerTratamientosHabilitados_Click);
             // 
             // frmGestionTerapistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 709);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnVerTratamientosHabilitados);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.CITAS);
@@ -228,6 +229,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerTratamientosHabilitados;
     }
 }
