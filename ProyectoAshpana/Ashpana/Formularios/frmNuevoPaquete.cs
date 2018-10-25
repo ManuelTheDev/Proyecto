@@ -22,7 +22,7 @@ namespace Formularios
             InitializeComponent();
             paquetesBL = new PaqueteBL();
             paquete = new Paquete();
-            
+
             dgvTratamientos.AutoGenerateColumns = false;
             dgvTratamientos.DataSource = paquete.Tratamientos;
         }
@@ -52,17 +52,18 @@ namespace Formularios
                 double precio = Double.Parse(txtPrecio.Text);
                 int numSesiones = Int32.Parse(txtNumSesiones.Text);
 
-
-                Paquete paquete = new Paquete(0, nombre, precio, numSesiones);
+                paquete.Nombre = nombre;
+                paquete.Precio = precio;
+                paquete.CantSesion = numSesiones;
 
                 if (paquete.Precio <= 0 || paquete.CantSesion <= 0)
                 {
                     MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                
 
                 paquetesBL.RegistrarPaquete(paquete); //,tratamientos);
+
 
                 MessageBox.Show("Se ha registrado el paquete correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -101,7 +102,7 @@ namespace Formularios
 
             int encontrado = 0;
             int indice = 0;
-            foreach(Tratamiento tAux in paquete.Tratamientos)
+            foreach (Tratamiento tAux in paquete.Tratamientos)
             {
                 if (tAux.IdTrat == t.IdTrat)
                 {

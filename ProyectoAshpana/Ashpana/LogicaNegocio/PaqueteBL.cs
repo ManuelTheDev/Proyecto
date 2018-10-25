@@ -20,7 +20,14 @@ namespace LogicaNegocio
 
         public int RegistrarPaquete(Paquete paquete)//, BindingList<Tratamiento> tratamientos)
         {
-            return paquetesDA.RegistrarPaquetes(paquete);//, tratamientos);
+            int idPaqu = paquetesDA.RegistrarPaquetes(paquete);
+
+            foreach (Tratamiento trat in paquete.Tratamientos)
+            {
+                paquetesDA.RegistrarPaqueteXTratamiento(idPaqu, trat);
+            }
+
+            return idPaqu;
         }
 
         public BindingList<Paquete> listarPaquetes()
