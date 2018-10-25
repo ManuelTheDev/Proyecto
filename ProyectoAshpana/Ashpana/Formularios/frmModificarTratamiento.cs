@@ -15,38 +15,71 @@ namespace Formularios
     public partial class frmModificarTratamiento : Form
     {
         private TratamientoBL tratamientoBL;
-        private Tratamiento tratamiento;
+        private Tratamiento tratamiento1;
+        private CondicionMedicaBL condMedBL;
+        private ZonaBL zonaBL;
 
         public TratamientoBL TratamientoBL { get => tratamientoBL; set => tratamientoBL = value; }
-        public Tratamiento Tratamiento { get => tratamiento; set => tratamiento = value; }
+        public Tratamiento Tratamiento1 { get => tratamiento1; set => tratamiento1 = value; }
 
-        public frmModificarTratamiento()
+
+        /*public frmModificarTratamiento()
         {
             InitializeComponent();
             tratamientoBL = new TratamientoBL();
             tratamiento = new Tratamiento();
-        }
+        }*/
 
         public frmModificarTratamiento(Tratamiento trat)
         {
             InitializeComponent();
             tratamientoBL = new TratamientoBL();
-            tratamiento = new Tratamiento();
-            Tratamiento = trat;
+            condMedBL = new CondicionMedicaBL();
+            zonaBL = new ZonaBL();
+            tratamiento1 = new Tratamiento();
+            Tratamiento1 = trat;
+            txtNombreTrat.Text = tratamiento1.NombreTrat;
+            txtDuracion.Text = tratamiento1.DuracionTrat.ToString();
+            txtPrecio.Text = tratamiento1.PrecioTrat.ToString();
 
-            txtNombreTrat.Text = tratamiento.NombreTrat;
-            txtDuracion.Text = tratamiento.DuracionTrat.ToString();
-            txtPrecio.Text = tratamiento.PrecioTrat.ToString();
-
-            if (tratamiento.TipoTrat == 0)
+            if (tratamiento1.TipoTrat == 0)
             {
                 rbtnCorporal.Checked = true;
             }
             else rbtnCorporal.Checked = false;
 
-            if (tratamiento.TipoTrat == 1)
+            if (tratamiento1.TipoTrat == 1)
                 rbtnFacial.Checked = true;
             else rbtnFacial.Checked = false;
+
+            BindingList<CondicionMedica> condicionesMedicas = condMedBL.listarCondicionesMedicas();
+            foreach (CondicionMedica cm in condicionesMedicas)
+            {
+                chlCondMedicas.Items.Add(cm);
+            }
+
+            BindingList<CondicionMedica> condicionMedicasTratamiento = condMedBL.listarCondicionesMedicas_X_Tratamiento(tratamiento1.IdTrat);
+            foreach (CondicionMedica c in condicionMedicasTratamiento)
+            {
+                int indice = chlCondMedicas.Items.IndexOf(c);
+                chlCondMedicas.SetItemChecked(indice, true);
+            }
+
+            BindingList<Zona> zonas = zonaBL.listarZonas();
+            foreach (Zona z in zonas)
+            {
+                chlZonas.Items.Add(z);
+            }
+
+            BindingList<Zona> zonasTratamiento = zonaBL.listarZonas_X_Tratamiento(tratamiento1.IdTrat);
+            foreach(Zona a in zonasTratamiento)
+            {
+                int indice = chlZonas.Items.IndexOf(a);
+
+                chlZonas.SetItemChecked(indice, true);
+            }
+
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -56,17 +89,30 @@ namespace Formularios
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            Tratamiento trat = new Tratamiento();
-            trat.NombreTrat = txtNombreTrat.Text;
-            trat.DuracionTrat = Int32.Parse(txtDuracion.Text);
-            trat.PrecioTrat = double.Parse(txtPrecio.Text);
+            Tratamiento trat1 = new Tratamiento();
+            trat1 = tratamiento1;
+            trat1.NombreTrat = txtNombreTrat.Text;
+            trat1.DuracionTrat = Int32.Parse(txtDuracion.Text);
+            trat1.PrecioTrat = double.Parse(txtPrecio.Text);
 
             if (rbtnCorporal.Checked == true)
-                trat.TipoTrat = 0;
+                trat1.TipoTrat = 0;
             else
-                trat.TipoTrat = 1;
+                trat1.TipoTrat = 1;
 
-            tratamientoBL.modificarTratamiento(trat);
+            /*for (int i = 0; i < chlCondMedicas.CheckedIndices.Count; i++)
+            {
+                trat1.CondicionesMedicas.Add((CondicionMedica)chlCondMedicas.CheckedItems[i]);
+
+            }
+
+            for (int i = 0; i < chlZonas.CheckedIndices.Count; i++)
+            {
+                trat1.ZonasTratar.Add((Zona)chlZonas.CheckedItems[i]);
+
+            }*/
+
+            tratamientoBL.modificarTratamiento(trat1);
             this.DialogResult = DialogResult.OK;
 
 

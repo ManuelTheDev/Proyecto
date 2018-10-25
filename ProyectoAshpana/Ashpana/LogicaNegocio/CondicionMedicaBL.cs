@@ -14,17 +14,22 @@ namespace LogicaNegocio
         private CondicionMedicaDA condicionMedicaDA;
         public CondicionMedicaBL()
         {
-            condicionMedicaDA = new CondicionMedicaDA(); 
+            condicionMedicaDA = new CondicionMedicaDA();
         }
 
         public BindingList<CondicionMedica> listarCondicionesMedicas()
         {
-            return condicionMedicaDA.listarCondicionMedica(); 
+            return condicionMedicaDA.listarCondicionMedica();
         }
 
         public BindingList<CondicionMedica> listarCondicionesMedicas_X_Cliente(int id_Cliente)
         {
-            return condicionMedicaDA.listarCondicionesMedicas_X_Cliente(id_Cliente); 
+            return condicionMedicaDA.listarCondicionesMedicas_X_Cliente(id_Cliente);
+        }
+
+        public BindingList<CondicionMedica> listarCondicionesMedicas_X_Tratamiento(int id_Tratamiento)
+        {
+            return condicionMedicaDA.listarCondicionesMedicas_X_Tratamiento(id_Tratamiento);
         }
     }
 

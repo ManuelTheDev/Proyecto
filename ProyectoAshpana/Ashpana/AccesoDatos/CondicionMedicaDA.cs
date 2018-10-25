@@ -114,5 +114,38 @@ namespace AccesoDatos
             conexion.Close();
             return condicionesMedicas;
         }
+
+        public BindingList<CondicionMedica> listarCondicionesMedicas_X_Tratamiento(int id_Tratamiento)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+
+            BindingList<CondicionMedica> condicionesMedicas = new BindingList<CondicionMedica>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "LISTAR_CONDICIONES_MEDICAS_X_TRATAMIENTO";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_Tratamiento;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                CondicionMedica c = new CondicionMedica();
+                c.IdCondMed = reader.GetInt32(0);
+                c.Nombre = reader.GetString(1);
+                c.Descripcion = reader.GetString(2);
+                condicionesMedicas.Add(c);
+            }
+            conexion.Close();
+            return condicionesMedicas;
+        }
+
+
     }
 }

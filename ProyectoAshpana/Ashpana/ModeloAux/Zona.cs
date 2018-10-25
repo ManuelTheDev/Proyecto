@@ -17,6 +17,27 @@ namespace Modelo
 
         }
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Zona))
+                return false;
+
+            var other = obj as Zona;
+
+            if (_idZona != other.IdZona || _nombreZona != other.NombreZona || _descripicionZona != other.DescripicionZona)
+                return false;
+
+            return true;
+        }
+
+        public static bool operator !=(Zona cm1, Zona cm2)
+        {
+            return !(cm1 == cm2);
+        }
+        public static bool operator ==(Zona cm1, Zona cm2)
+        {
+            return cm1.Equals(cm2);
+        }
         public Zona(int idZona, string nombreZona, string descripicionZona)
         {
             _idZona = idZona;
@@ -31,5 +52,11 @@ namespace Modelo
         {
             return NombreZona;
         }
+
+
+       
+
+        
+
     }
 }

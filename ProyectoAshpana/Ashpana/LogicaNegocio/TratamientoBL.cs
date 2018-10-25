@@ -44,9 +44,9 @@ namespace LogicaNegocio
             return idTrat;
         }
 
-        public void modificarTratamiento(Tratamiento tratamiento)
+        public void modificarTratamiento(Tratamiento tratamiento1)
         {
-            tratamientoDA.modificarTratamiento(tratamiento);
+            tratamientoDA.modificarTratamiento(tratamiento1);
         }
     }
 }

@@ -139,9 +139,9 @@ namespace AccesoDatos
             }
         }
 
-        public void modificarTratamiento(Tratamiento tratamiento)
+        public void modificarTratamiento(Tratamiento tratamiento1)
         {
-            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g4;" + "password=GvZf6p;" + "database=inf282g4;" + "port=3306;" + "SslMode=none;";
+            /*String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g4;" + "password=GvZf6p;" + "database=inf282g4;" + "port=3306;" + "SslMode=none;";
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
 
@@ -166,7 +166,27 @@ namespace AccesoDatos
 
 
             comando.ExecuteNonQuery();
+            con.Close();*/
+
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g4;" + "password=GvZf6p;" + "database=inf282g4;" + "port=3306;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "MODIFICAR_TRATAMIENTO";
+            comando.Connection = con;
+
+            comando.Parameters.Add("_ID", MySqlDbType.Int32).Value = tratamiento1.IdTrat;
+            comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = tratamiento1.NombreTrat;
+            comando.Parameters.Add("_DURACION", MySqlDbType.Double).Value = tratamiento1.DuracionTrat;
+            comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento1.PrecioTrat;
+            comando.Parameters.Add("_TIPO", MySqlDbType.Int32).Value = tratamiento1.TipoTrat;
+
+            comando.ExecuteNonQuery();
             con.Close();
+
+
 
 
         }

@@ -174,10 +174,6 @@
             // 
             this.chlZonas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chlZonas.FormattingEnabled = true;
-            this.chlZonas.Items.AddRange(new object[] {
-            "Abdomen",
-            "Cintura",
-            "Espalda"});
             this.chlZonas.Location = new System.Drawing.Point(271, 268);
             this.chlZonas.Name = "chlZonas";
             this.chlZonas.Size = new System.Drawing.Size(281, 67);
@@ -187,11 +183,6 @@
             // 
             this.chlCondMedicas.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chlCondMedicas.FormattingEnabled = true;
-            this.chlCondMedicas.Items.AddRange(new object[] {
-            "Gastritis",
-            "Rosácea",
-            "Obesidad",
-            "Embarazo"});
             this.chlCondMedicas.Location = new System.Drawing.Point(271, 370);
             this.chlCondMedicas.Name = "chlCondMedicas";
             this.chlCondMedicas.Size = new System.Drawing.Size(281, 67);

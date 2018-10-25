@@ -61,5 +61,38 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
             con.Close();
         }
+
+        public BindingList<Zona> listarZonas_X_Tratamiento(int id_Tratamiento)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                    "user=inf282g4;" +
+                    "password=GvZf6p;" +
+                    "database=inf282g4;" +
+                     "port=3306;" +
+                     "SslMode=none;";
+
+            BindingList<Zona> zonasTratamiento = new BindingList<Zona>();
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+
+            comando.CommandText = "LISTAR_ZONAS_X_TRATAMIENTO";
+            comando.Connection = con;
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_Tratamiento;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Zona c = new Zona();
+                c.IdZona = reader.GetInt32(0);
+                c.NombreZona = reader.GetString(1);
+                c.DescripicionZona = reader.GetString(2);
+                zonasTratamiento.Add(c);
+            }
+            con.Close();
+            return zonasTratamiento;
+        }
     }
 }

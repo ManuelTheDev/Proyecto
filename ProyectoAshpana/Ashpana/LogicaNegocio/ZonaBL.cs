@@ -21,5 +21,10 @@ namespace LogicaNegocio
         {
             return zonaDA.listarZonas();
         }
+
+        public BindingList<Zona> listarZonas_X_Tratamiento(int id_Tratamiento)
+        {
+            return zonaDA.listarZonas_X_Tratamiento(id_Tratamiento);
+        }
     }
 }
