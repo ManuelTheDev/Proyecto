@@ -78,5 +78,21 @@ namespace Formularios
 
             }
         }
+
+        private void btnVerCondMed_Click(object sender, EventArgs e)
+        {
+            Tratamiento tratamiento = new Tratamiento();
+            tratamiento = (Tratamiento)dgvTratamientos.CurrentRow.DataBoundItem;
+            frmVerCondicionesMedicasPorTratamiento formCondMed = new frmVerCondicionesMedicasPorTratamiento(tratamiento.IdTrat);
+            formCondMed.ShowDialog();
+        }
+
+        private void btnVerZonas_Click(object sender, EventArgs e)
+        {
+            Tratamiento tratamiento = new Tratamiento();
+            tratamiento = (Tratamiento)dgvTratamientos.CurrentRow.DataBoundItem;
+            frmVerZonasATratarPorTratamiento formZonas = new frmVerZonasATratarPorTratamiento(tratamiento.IdTrat);
+            formZonas.ShowDialog();
+        }
     }
 }

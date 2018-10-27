@@ -34,12 +34,12 @@
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
+            this.btnVerCondMed = new System.Windows.Forms.Button();
+            this.btnVerZonas = new System.Windows.Forms.Button();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ZONAS_A_TRATAR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CONDICIONES_MEDICAS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(805, 449);
+            this.button1.Location = new System.Drawing.Point(805, 505);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 36);
             this.button1.TabIndex = 4;
@@ -110,19 +110,46 @@
             this.NOMBRE,
             this.DURACION,
             this.PRECIO,
-            this.TIPO,
-            this.ZONAS_A_TRATAR,
-            this.CONDICIONES_MEDICAS});
+            this.TIPO});
             this.dgvTratamientos.Location = new System.Drawing.Point(319, 247);
             this.dgvTratamientos.Name = "dgvTratamientos";
             this.dgvTratamientos.Size = new System.Drawing.Size(634, 150);
             this.dgvTratamientos.TabIndex = 9;
+            // 
+            // btnVerCondMed
+            // 
+            this.btnVerCondMed.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerCondMed.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerCondMed.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCondMed.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerCondMed.Location = new System.Drawing.Point(319, 431);
+            this.btnVerCondMed.Name = "btnVerCondMed";
+            this.btnVerCondMed.Size = new System.Drawing.Size(187, 35);
+            this.btnVerCondMed.TabIndex = 10;
+            this.btnVerCondMed.Text = "Ver Condiciones Médicas";
+            this.btnVerCondMed.UseVisualStyleBackColor = false;
+            this.btnVerCondMed.Click += new System.EventHandler(this.btnVerCondMed_Click);
+            // 
+            // btnVerZonas
+            // 
+            this.btnVerZonas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerZonas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVerZonas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerZonas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerZonas.Location = new System.Drawing.Point(530, 430);
+            this.btnVerZonas.Name = "btnVerZonas";
+            this.btnVerZonas.Size = new System.Drawing.Size(148, 36);
+            this.btnVerZonas.TabIndex = 11;
+            this.btnVerZonas.Text = "Ver Zonas a Tratar";
+            this.btnVerZonas.UseVisualStyleBackColor = false;
+            this.btnVerZonas.Click += new System.EventHandler(this.btnVerZonas_Click);
             // 
             // NOMBRE
             // 
             this.NOMBRE.DataPropertyName = "NombreTrat";
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.Width = 300;
             // 
             // DURACION
             // 
@@ -142,23 +169,13 @@
             this.TIPO.HeaderText = "TIPO";
             this.TIPO.Name = "TIPO";
             // 
-            // ZONAS_A_TRATAR
-            // 
-            this.ZONAS_A_TRATAR.DataPropertyName = "ZonasTratarString";
-            this.ZONAS_A_TRATAR.HeaderText = "ZONAS A TRATAR";
-            this.ZONAS_A_TRATAR.Name = "ZONAS_A_TRATAR";
-            // 
-            // CONDICIONES_MEDICAS
-            // 
-            this.CONDICIONES_MEDICAS.DataPropertyName = "CondicionesMedicasString";
-            this.CONDICIONES_MEDICAS.HeaderText = "CONDICIONES MEDICAS";
-            this.CONDICIONES_MEDICAS.Name = "CONDICIONES_MEDICAS";
-            // 
             // frmGestionTratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 587);
+            this.Controls.Add(this.btnVerZonas);
+            this.Controls.Add(this.btnVerCondMed);
             this.Controls.Add(this.dgvTratamientos);
             this.Controls.Add(this.txtboxBuscarPaquetes);
             this.Controls.Add(this.label2);
@@ -185,11 +202,11 @@
         private System.Windows.Forms.TextBox txtboxBuscarPaquetes;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvTratamientos;
+        private System.Windows.Forms.Button btnVerCondMed;
+        private System.Windows.Forms.Button btnVerZonas;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ZONAS_A_TRATAR;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CONDICIONES_MEDICAS;
     }
 }
