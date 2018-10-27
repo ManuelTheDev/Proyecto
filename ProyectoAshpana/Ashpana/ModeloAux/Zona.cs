@@ -11,11 +11,27 @@ namespace Modelo
         private int _idZona;
         private String _nombreZona;
         private String _descripicionZona;
+        private int _estadoZona;
 
         public Zona()
         {
 
         }
+
+        public Zona(int idZona, string nombreZona, string descripicionZona, int estadoZona)
+        {
+            _idZona = idZona;
+            _nombreZona = nombreZona;
+            _descripicionZona = descripicionZona;
+            _estadoZona = estadoZona;
+        }
+
+        public int IdZona { get => _idZona; set => _idZona = value; }
+        public string NombreZona { get => _nombreZona; set => _nombreZona = value; }
+        public string DescripicionZona { get => _descripicionZona; set => _descripicionZona = value; }
+        public int EstadoZona { get => _estadoZona; set => _estadoZona = value; }
+
+        
 
         public override bool Equals(object obj)
         {
@@ -24,7 +40,7 @@ namespace Modelo
 
             var other = obj as Zona;
 
-            if (_idZona != other.IdZona || _nombreZona != other.NombreZona || _descripicionZona != other.DescripicionZona)
+            if (_idZona != other.IdZona || _nombreZona != other.NombreZona || _descripicionZona != other.DescripicionZona || _estadoZona != other.EstadoZona)
                 return false;
 
             return true;
@@ -38,16 +54,7 @@ namespace Modelo
         {
             return cm1.Equals(cm2);
         }
-        public Zona(int idZona, string nombreZona, string descripicionZona)
-        {
-            _idZona = idZona;
-            _nombreZona = nombreZona;
-            _descripicionZona = descripicionZona;
-        }
-
-        public int IdZona { get => _idZona; set => _idZona = value; }
-        public string NombreZona { get => _nombreZona; set => _nombreZona = value; }
-        public string DescripicionZona { get => _descripicionZona; set => _descripicionZona = value; }
+       
         public override string ToString()
         {
             return NombreZona;

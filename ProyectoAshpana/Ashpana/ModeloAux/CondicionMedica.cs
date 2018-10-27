@@ -11,8 +11,24 @@ namespace Modelo
         private int _idCondMed;
         private string _nombre;
         private string _descripcion;
+        private int _estadoCondMed;
+
+        
 
         public CondicionMedica() { }
+
+        public CondicionMedica(int idCondMed, string nombre, string descripcion, int estadoCondMed)
+        {
+            _idCondMed = idCondMed;
+            _nombre = nombre;
+            _descripcion = descripcion;
+            _estadoCondMed = estadoCondMed;
+        }
+
+        public int IdCondMed { get => _idCondMed; set => _idCondMed = value; }
+        public string Nombre { get => _nombre; set => _nombre = value; }
+        public string Descripcion { get => _descripcion; set => _descripcion = value; }
+        public int EstadoCondMed { get => _estadoCondMed; set => _estadoCondMed = value; }
 
         public override bool Equals(object obj)
         {
@@ -21,7 +37,7 @@ namespace Modelo
 
             var other = obj as CondicionMedica;
 
-            if (_idCondMed != other.IdCondMed || _nombre != other.Nombre || _descripcion!=other.Descripcion)
+            if (_idCondMed != other.IdCondMed || _nombre != other.Nombre || _descripcion!=other.Descripcion || _estadoCondMed != other.EstadoCondMed)
                 return false;
 
             return true;
@@ -37,16 +53,9 @@ namespace Modelo
             return !(cm1 == cm2);
         }
 
-        public CondicionMedica(int idCondMed, string nombre, string descripcion)
-        {
-            _idCondMed = idCondMed;
-            _nombre = nombre;
-            _descripcion = descripcion;
-        }
+       
 
-        public int IdCondMed { get => _idCondMed; set => _idCondMed = value; }
-        public string Nombre { get => _nombre; set => _nombre = value; }
-        public string Descripcion { get => _descripcion; set => _descripcion = value; }
+        
         public override string ToString()
         {
             return Nombre;
