@@ -76,7 +76,7 @@
             // 
             // DescripcionZonaPorTratamiento
             // 
-            this.DescripcionZonaPorTratamiento.DataPropertyName = "DescripcionZona";
+            this.DescripcionZonaPorTratamiento.DataPropertyName = "DescripicionZona";
             this.DescripcionZonaPorTratamiento.HeaderText = "Descripcion";
             this.DescripcionZonaPorTratamiento.Name = "DescripcionZonaPorTratamiento";
             this.DescripcionZonaPorTratamiento.Width = 220;
