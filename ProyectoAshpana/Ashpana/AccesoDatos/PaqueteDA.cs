@@ -174,9 +174,7 @@ namespace AccesoDatos
                     "SslMode=none;";
 
                 MySqlConnection conexion = new MySqlConnection(cadena);
-                //Se conecta con la BD
                 conexion.Open();
-                //Se prepara el query
 
                 MySqlCommand comando = new MySqlCommand();
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
@@ -184,6 +182,7 @@ namespace AccesoDatos
                 comando.Connection = conexion;
                 comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = idPaqu;
                 comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = trat.IdTrat;
+                comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
                 comando.ExecuteNonQuery();
                 conexion.Close();
 

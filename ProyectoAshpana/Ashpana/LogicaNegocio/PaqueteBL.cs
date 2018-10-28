@@ -18,7 +18,7 @@ namespace LogicaNegocio
             paquetesDA = new PaqueteDA();
         }
 
-        public int RegistrarPaquete(Paquete paquete)//, BindingList<Tratamiento> tratamientos)
+        public int RegistrarPaquete(Paquete paquete)
         {
             int idPaqu = paquetesDA.RegistrarPaquetes(paquete);
 
