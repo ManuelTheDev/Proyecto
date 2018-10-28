@@ -39,9 +39,6 @@
             this.txtNombrePaquete = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.btnListarTratamientos = new System.Windows.Forms.Button();
             this.txtNomTratamiento = new System.Windows.Forms.TextBox();
@@ -51,6 +48,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarTratamiento = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -168,24 +168,6 @@
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 15;
             // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NombreTrat";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "PrecioTrat";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -293,6 +275,24 @@
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "Nombre";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "Precio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            // 
             // frmNuevoPaquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,9 +338,6 @@
         private System.Windows.Forms.TextBox txtNombrePaquete;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvTratamientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnListarTratamientos;
         private System.Windows.Forms.TextBox txtNomTratamiento;
@@ -350,5 +347,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAgregarTratamiento;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
     }
 }

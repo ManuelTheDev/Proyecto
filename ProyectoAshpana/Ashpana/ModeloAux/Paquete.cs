@@ -33,7 +33,8 @@ namespace Modelo
         public int IdPaquete { get => idPaquete; set => idPaquete = value; }
         public int CantSesion { get => cantSesion; set => cantSesion = value; }
         public BindingList<Tratamiento> Tratamientos { get => tratamientos; set => tratamientos = value; }
-
+        public string Nombre { get => NombreServicio; }
+        public double Precio { get => PrecioServicio; }
         public void addTratamiento(Tratamiento t)
         {
             Tratamientos.Add(t);
