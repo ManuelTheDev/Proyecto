@@ -56,7 +56,7 @@ namespace Formularios
                 MessageBox.Show("Por favor ingrese un nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            trat.NombreTrat = txtNombreTrat.Text.Trim();
+            trat.NombreServicio = txtNombreTrat.Text.Trim();
 
             if (rbtnFacial.Checked == true)
                 trat.TipoTrat = 1;
@@ -74,7 +74,7 @@ namespace Formularios
             }
             try
             {
-                trat.PrecioTrat = double.Parse(txtPrecio.Text.Trim());
+                trat.PrecioServicio = double.Parse(txtPrecio.Text.Trim());
             }
             catch (Exception ex)
             {
