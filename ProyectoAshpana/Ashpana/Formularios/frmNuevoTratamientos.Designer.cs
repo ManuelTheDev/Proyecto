@@ -189,6 +189,7 @@
             // 
             // clbCondMedicas
             // 
+            this.clbCondMedicas.CheckOnClick = true;
             this.clbCondMedicas.FormattingEnabled = true;
             this.clbCondMedicas.Location = new System.Drawing.Point(286, 373);
             this.clbCondMedicas.Name = "clbCondMedicas";
@@ -197,6 +198,7 @@
             // 
             // clblZonas
             // 
+            this.clblZonas.CheckOnClick = true;
             this.clblZonas.FormattingEnabled = true;
             this.clblZonas.Location = new System.Drawing.Point(286, 287);
             this.clblZonas.Name = "clblZonas";

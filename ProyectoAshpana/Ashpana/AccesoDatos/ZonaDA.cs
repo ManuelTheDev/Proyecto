@@ -58,6 +58,7 @@ namespace AccesoDatos
             comando.Connection = con;
             comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.VarChar).Value = id_tratamiento;
             comando.Parameters.Add("_ID_ZONA", MySqlDbType.VarChar).Value = z.IdZona;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();
         }
