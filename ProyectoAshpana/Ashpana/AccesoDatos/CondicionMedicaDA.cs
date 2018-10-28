@@ -60,6 +60,7 @@ namespace AccesoDatos
             comando.Parameters.Add("_ID_CLIENTE", MySqlDbType.VarChar).Value =id_cliente;
             comando.Parameters.Add("_ID_PERSONA", MySqlDbType.VarChar).Value = idPersona;
             comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.VarChar).Value = cm.IdCondMed;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();
         }
@@ -79,8 +80,10 @@ namespace AccesoDatos
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "REGISTRAR_CONDICION_MEDICA_X_TRATAMIENTO";
             comando.Connection = con;
-            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_tratamiento;
-            comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.Int32).Value = cm.IdCondMed;
+
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.VarChar).Value = id_tratamiento;
+            comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.VarChar).Value = cm.IdCondMed;
+
             comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();

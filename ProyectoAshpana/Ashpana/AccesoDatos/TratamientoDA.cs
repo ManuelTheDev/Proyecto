@@ -148,13 +148,13 @@ namespace AccesoDatos
                 comando.Parameters.Add("_DURACION", MySqlDbType.Double).Value = tratamiento.DuracionTrat;
                 comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento.PrecioServicio;
                 comando.Parameters.Add("_TIPO_TRATAMIENTO", MySqlDbType.Int32).Value = tratamiento.TipoTrat;
-
-                comando.Parameters.Add("_ID", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
-
+                comando.Parameters.Add("_ID_SERVICIO", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+                comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+         
                 comando.ExecuteNonQuery();
                 con.Close();
 
-                return Int32.Parse(comando.Parameters["_ID"].Value.ToString());
+                return Int32.Parse(comando.Parameters["_ID_TRATAMIENTO"].Value.ToString());
 
             }
             catch
