@@ -40,7 +40,7 @@ namespace Modelo
 
             var other = obj as Zona;
 
-            if (_idZona != other.IdZona || _nombreZona != other.NombreZona || _descripicionZona != other.DescripicionZona || _estadoZona != other.EstadoZona)
+            if (_idZona != other.IdZona || _nombreZona != other.NombreZona || _descripicionZona != other.DescripicionZona)
                 return false;
 
             return true;

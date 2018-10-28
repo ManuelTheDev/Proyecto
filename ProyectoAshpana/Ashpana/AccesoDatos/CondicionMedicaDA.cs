@@ -79,8 +79,9 @@ namespace AccesoDatos
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "REGISTRAR_CONDICION_MEDICA_X_TRATAMIENTO";
             comando.Connection = con;
-            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.VarChar).Value = id_tratamiento;
-            comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.VarChar).Value = cm.IdCondMed;
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_tratamiento;
+            comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.Int32).Value = cm.IdCondMed;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();
         }
@@ -141,6 +142,7 @@ namespace AccesoDatos
                 c.IdCondMed = reader.GetInt32(0);
                 c.Nombre = reader.GetString(1);
                 c.Descripcion = reader.GetString(2);
+                c.EstadoCondMed = reader.GetInt32(3);
                 condicionesMedicas.Add(c);
             }
             conexion.Close();

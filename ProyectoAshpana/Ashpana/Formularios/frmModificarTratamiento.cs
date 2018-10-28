@@ -52,7 +52,7 @@ namespace Formularios
                 rbtnFacial.Checked = true;
             else rbtnFacial.Checked = false;
 
-           /* BindingList<CondicionMedica> condicionesMedicas = condMedBL.listarCondicionesMedicas();
+            BindingList<CondicionMedica> condicionesMedicas = condMedBL.listarCondicionesMedicas();
             foreach (CondicionMedica cm in condicionesMedicas)
             {
                 chlCondMedicas.Items.Add(cm);
@@ -77,7 +77,7 @@ namespace Formularios
                 int indice = chlZonas.Items.IndexOf(a);
 
                 chlZonas.SetItemChecked(indice, true);
-            }*/
+            }
 
             
         }

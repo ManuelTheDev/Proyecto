@@ -56,8 +56,9 @@ namespace AccesoDatos
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "REGISTRAR_ZONA_X_TRATAMIENTO";
             comando.Connection = con;
-            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.VarChar).Value = id_tratamiento;
-            comando.Parameters.Add("_ID_ZONA", MySqlDbType.VarChar).Value = z.IdZona;
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_tratamiento;
+            comando.Parameters.Add("_ID_ZONA", MySqlDbType.Int32).Value = z.IdZona;
+            comando.Parameters.Add("_ESTADOS", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();
         }
@@ -89,6 +90,7 @@ namespace AccesoDatos
                 c.IdZona = reader.GetInt32(0);
                 c.NombreZona = reader.GetString(1);
                 c.DescripicionZona = reader.GetString(2);
+                //c.EstadoZona = reader.GetInt32(3);
                 zonasTratamiento.Add(c);
             }
             con.Close();
