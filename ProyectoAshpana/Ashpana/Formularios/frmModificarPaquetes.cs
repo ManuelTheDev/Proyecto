@@ -29,9 +29,9 @@ namespace Formularios
             InitializeComponent();
             paquete = p;
             paqueteBL = new PaqueteBL();
-            txtNombre.Text = p.Nombre;
+            txtNombre.Text = p.NombreServicio;
             txtNumSes.Text = p.CantSesion.ToString();
-            txtPrecio.Text = p.Precio.ToString();
+            txtPrecio.Text = p.PrecioServicio.ToString();
         }
         private void frmPaquetesModificar_Load(object sender, EventArgs e)
         {
@@ -49,10 +49,10 @@ namespace Formularios
             try
             {
                 Paquete p = paquete;
-                p.Nombre = txtNombre.Text;
-                p.Precio = Double.Parse(txtPrecio.Text);
+                p.NombreServicio = txtNombre.Text;
+                p.PrecioServicio = Double.Parse(txtPrecio.Text);
                 p.CantSesion = Int32.Parse(txtNumSes.Text);
-                if (p.Precio <= 0 || p.CantSesion <= 0)
+                if (p.PrecioServicio <= 0 || p.CantSesion <= 0)
                 {
                     MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

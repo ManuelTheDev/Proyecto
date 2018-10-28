@@ -41,8 +41,8 @@ namespace AccesoDatos
                     int id = lector.GetInt32("ID_PAQUETE");
                     Paquete paquete = new Paquete();
                     paquete.IdPaquete = id;
-                    paquete.Nombre = nombre;
-                    paquete.Precio = precio;
+                    paquete.NombreServicio = nombre;
+                    paquete.PrecioServicio = precio;
                     paquete.CantSesion = cantSesiones;
                     paquetes.Add(paquete);
                 }
@@ -113,8 +113,8 @@ namespace AccesoDatos
                     int id = lector.GetInt32("ID_PAQUETE");
                     Paquete paquete = new Paquete();
                     paquete.IdPaquete = id;
-                    paquete.Nombre = nombre;
-                    paquete.Precio = precio;
+                    paquete.NombreServicio = nombre;
+                    paquete.PrecioServicio = precio;
                     paquete.CantSesion = cantSesiones;
                     paquetes.Add(paquete);
                 }
@@ -128,7 +128,7 @@ namespace AccesoDatos
             }
         }
 
-        public int RegistrarPaquetes(Paquete p) //, BindingList<Tratamiento> tratamientos)
+        public int RegistrarPaquetes(Paquete p)
         {
             try
             {
@@ -146,15 +146,15 @@ namespace AccesoDatos
                 comando.CommandType = System.Data.CommandType.StoredProcedure;
                 comando.CommandText = "REGISTRAR_PAQUETE";
                 comando.Connection = conexion;
-                comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.Nombre;
-                comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.Precio;
+                comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
+                comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
                 comando.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.CantSesion;
-                comando.Parameters.Add("_ID", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
-
+                comando.Parameters.Add("_ID_SERVICIO", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
+                comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
                 comando.ExecuteNonQuery();
                 conexion.Close();
 
-                return Int32.Parse(comando.Parameters["_ID"].Value.ToString());
+                return Int32.Parse(comando.Parameters["_ID_PAQUETE"].Value.ToString());
             }
             catch (Exception e)
             {
@@ -214,8 +214,8 @@ namespace AccesoDatos
                 //Se prepara el query
                 MySqlCommand comPaquete = new MySqlCommand("call ActualizarPaquete(@id,@Nombre,@Precio,@CantSesion);", conexion);
                 comPaquete.Parameters.AddWithValue("@id", p.IdPaquete);
-                comPaquete.Parameters.AddWithValue("@Nombre", p.Nombre);
-                comPaquete.Parameters.AddWithValue("@Precio", p.Precio);
+                comPaquete.Parameters.AddWithValue("@Nombre", p.NombreServicio);
+                comPaquete.Parameters.AddWithValue("@Precio", p.PrecioServicio);
                 comPaquete.Parameters.AddWithValue("@CantSesion", p.CantSesion);
                 comPaquete.Prepare();
 

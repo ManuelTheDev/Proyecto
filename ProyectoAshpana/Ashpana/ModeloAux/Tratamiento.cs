@@ -45,5 +45,7 @@ namespace Modelo
         public BindingList<Zona> ZonasTratar { get => _zonasTratar; set => _zonasTratar = value; }
         public string ZonasTratarString { get => _zonasTratarString; set => _zonasTratarString = value; }
         public string TipoString { get => _tipoString; set => _tipoString = value; }
+        public string Nombre { get => NombreServicio; }
+        public double Precio { get => PrecioServicio; }
     }
 }
