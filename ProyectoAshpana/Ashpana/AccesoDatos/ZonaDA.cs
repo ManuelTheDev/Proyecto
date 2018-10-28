@@ -35,6 +35,7 @@ namespace AccesoDatos
                 z.IdZona= reader.GetInt32(0);
                 z.NombreZona = reader.GetString(1);
                 z.DescripicionZona = reader.GetString(2);
+                z.EstadoZona = reader.GetInt32(3);
                 zonas.Add(z);
             }
             conexion.Close();
@@ -94,7 +95,7 @@ namespace AccesoDatos
                 c.IdZona = reader.GetInt32(0);
                 c.NombreZona = reader.GetString(1);
                 c.DescripicionZona = reader.GetString(2);
-                //c.EstadoZona = reader.GetInt32(3);
+                c.EstadoZona = reader.GetInt32(3);
                 zonasTratamiento.Add(c);
             }
             con.Close();
