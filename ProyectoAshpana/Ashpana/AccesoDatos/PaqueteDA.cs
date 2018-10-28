@@ -99,7 +99,7 @@ namespace AccesoDatos
                 // Se conecta con la BD
                 conexion.Open();
                 //Se prepara el query
-                MySqlCommand comPaquete = new MySqlCommand("call BuscarPaquetes(@busqueda);", conexion);
+                MySqlCommand comPaquete = new MySqlCommand("call BUSCAR_PAQUETES(@busqueda);", conexion);
                 comPaquete.Parameters.AddWithValue("@busqueda", busqueda);
                 comPaquete.Prepare();
 
