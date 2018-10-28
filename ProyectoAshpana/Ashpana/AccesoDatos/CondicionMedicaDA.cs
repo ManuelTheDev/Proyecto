@@ -114,7 +114,7 @@ namespace AccesoDatos
                 c.IdCondMed = reader.GetInt32(0);
                 c.Nombre = reader.GetString(1);
                 c.Descripcion = reader.GetString(2);
-                c.EstadoCondMed = 1;
+                c.EstadoCondMed = reader.GetInt32(3);
                 condicionesMedicas.Add(c);
             }
             conexion.Close();
