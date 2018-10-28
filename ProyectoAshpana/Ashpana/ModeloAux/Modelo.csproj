@@ -49,6 +49,7 @@
     <Compile Include="Paquete.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicio.cs" />
     <Compile Include="Sesion.cs" />
     <Compile Include="Superusuario.cs" />
     <Compile Include="Terapista.cs" />

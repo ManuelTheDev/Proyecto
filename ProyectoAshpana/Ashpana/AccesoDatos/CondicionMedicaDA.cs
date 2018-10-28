@@ -59,6 +59,7 @@ namespace AccesoDatos
             comando.Parameters.Add("_ID_CLIENTE", MySqlDbType.VarChar).Value =id_cliente;
             comando.Parameters.Add("_ID_PERSONA", MySqlDbType.VarChar).Value = idPersona;
             comando.Parameters.Add("_ID_CONDICION_MEDICA", MySqlDbType.VarChar).Value = cm.IdCondMed;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.ExecuteNonQuery();
             con.Close();
         }
