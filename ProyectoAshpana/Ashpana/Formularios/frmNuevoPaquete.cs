@@ -52,18 +52,17 @@ namespace Formularios
                 double precio = Double.Parse(txtPrecio.Text);
                 int numSesiones = Int32.Parse(txtNumSesiones.Text);
 
-                paquete.Nombre = nombre;
-                paquete.Precio = precio;
+                paquete.NombreServicio = nombre;
+                paquete.PrecioServicio = precio;
                 paquete.CantSesion = numSesiones;
 
-                if (paquete.Precio <= 0 || paquete.CantSesion <= 0)
+                if (paquete.PrecioServicio <= 0 || paquete.CantSesion <= 0)
                 {
                     MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                paquetesBL.RegistrarPaquete(paquete); //,tratamientos);
-
+                paquetesBL.RegistrarPaquete(paquete);
 
                 MessageBox.Show("Se ha registrado el paquete correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
