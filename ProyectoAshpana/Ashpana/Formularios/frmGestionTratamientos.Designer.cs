@@ -146,7 +146,7 @@
             // 
             // NOMBRE
             // 
-            this.NOMBRE.DataPropertyName = "NombreTrat";
+            this.NOMBRE.DataPropertyName = "NombreServicio";
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
             this.NOMBRE.Width = 300;
@@ -159,7 +159,7 @@
             // 
             // PRECIO
             // 
-            this.PRECIO.DataPropertyName = "PrecioTrat";
+            this.PRECIO.DataPropertyName = "PrecioServicio";
             this.PRECIO.HeaderText = "PRECIO";
             this.PRECIO.Name = "PRECIO";
             // 

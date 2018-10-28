@@ -36,11 +36,11 @@ namespace AccesoDatos
             {
                 Tratamiento trat = new Tratamiento();
                 trat.IdTrat = lector.GetInt32("ID_TRATAMIENTO");
-                trat.NombreTrat = lector.GetString("NOMBRE");
+                trat.NombreServicio = lector.GetString("NOMBRE");
                 trat.DuracionTrat = lector.GetDouble("DURACION");
-                trat.PrecioTrat = lector.GetDouble("PRECIO");
+                trat.PrecioServicio = lector.GetDouble("PRECIO");
                 trat.TipoTrat = lector.GetInt32("TIPO_TRATAMIENTO");
-                trat.EstadoTrat = lector.GetInt32("ESTADO");
+                trat.EstadoServicio = lector.GetInt32("ESTADO");
                 if (trat.TipoTrat == 1)
                     trat.TipoString = "Facial";
                 else
@@ -144,9 +144,9 @@ namespace AccesoDatos
                 comando.CommandText = "REGISTRAR_TRATAMIENTO";
                 comando.Connection = con;
 
-                comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = tratamiento.NombreTrat;
+                comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = tratamiento.NombreServicio;
                 comando.Parameters.Add("_DURACION", MySqlDbType.Double).Value = tratamiento.DuracionTrat;
-                comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento.PrecioTrat;
+                comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento.PrecioServicio;
                 comando.Parameters.Add("_TIPO_TRATAMIENTO", MySqlDbType.Int32).Value = tratamiento.TipoTrat;
 
                 comando.Parameters.Add("_ID", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
@@ -202,9 +202,9 @@ namespace AccesoDatos
             comando.Connection = con;
 
             comando.Parameters.Add("_ID", MySqlDbType.Int32).Value = tratamiento1.IdTrat;
-            comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = tratamiento1.NombreTrat;
+            comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = tratamiento1.NombreServicio;
             comando.Parameters.Add("_DURACION", MySqlDbType.Double).Value = tratamiento1.DuracionTrat;
-            comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento1.PrecioTrat;
+            comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = tratamiento1.PrecioServicio;
             comando.Parameters.Add("_TIPO", MySqlDbType.Int32).Value = tratamiento1.TipoTrat;
 
             comando.ExecuteNonQuery();

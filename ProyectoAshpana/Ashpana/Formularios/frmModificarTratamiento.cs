@@ -38,9 +38,9 @@ namespace Formularios
             zonaBL = new ZonaBL();
             tratamiento1 = new Tratamiento();
             Tratamiento1 = trat;
-            txtNombreTrat.Text = tratamiento1.NombreTrat;
+            txtNombreTrat.Text = tratamiento1.NombreServicio;
             txtDuracion.Text = tratamiento1.DuracionTrat.ToString();
-            txtPrecio.Text = tratamiento1.PrecioTrat.ToString();
+            txtPrecio.Text = tratamiento1.PrecioServicio.ToString();
 
             if (tratamiento1.TipoTrat == 0)
             {
@@ -52,7 +52,7 @@ namespace Formularios
                 rbtnFacial.Checked = true;
             else rbtnFacial.Checked = false;
 
-            BindingList<CondicionMedica> condicionesMedicas = condMedBL.listarCondicionesMedicas();
+           /* BindingList<CondicionMedica> condicionesMedicas = condMedBL.listarCondicionesMedicas();
             foreach (CondicionMedica cm in condicionesMedicas)
             {
                 chlCondMedicas.Items.Add(cm);
@@ -77,7 +77,7 @@ namespace Formularios
                 int indice = chlZonas.Items.IndexOf(a);
 
                 chlZonas.SetItemChecked(indice, true);
-            }
+            }*/
 
             
         }
@@ -91,9 +91,9 @@ namespace Formularios
         {
             Tratamiento trat1 = new Tratamiento();
             trat1 = tratamiento1;
-            trat1.NombreTrat = txtNombreTrat.Text;
+            trat1.NombreServicio = txtNombreTrat.Text;
             trat1.DuracionTrat = Int32.Parse(txtDuracion.Text);
-            trat1.PrecioTrat = double.Parse(txtPrecio.Text);
+            trat1.PrecioServicio = double.Parse(txtPrecio.Text);
 
             if (rbtnCorporal.Checked == true)
                 trat1.TipoTrat = 0;

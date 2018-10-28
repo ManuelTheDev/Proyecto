@@ -91,7 +91,7 @@ namespace Formularios
             {
                 tratamientoSeleccionado = frmListarTrat.Tratamiento;
                 txtIdTratamiento.Text = tratamientoSeleccionado.IdTrat.ToString();
-                txtNomTratamiento.Text = tratamientoSeleccionado.NombreTrat;
+                txtNomTratamiento.Text = tratamientoSeleccionado.NombreServicio;
             }
         }
 
