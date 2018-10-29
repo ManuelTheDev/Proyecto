@@ -25,6 +25,29 @@ namespace Modelo
 
         }
 
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Tratamiento))
+                return false;
+
+            var other = obj as Tratamiento;
+
+            if (_idTrat != other.IdTrat)
+                return false;
+
+            return true;
+        }
+
+        public static bool operator ==(Tratamiento cm1, Tratamiento cm2)
+        {
+            return cm1.Equals(cm2);
+        }
+
+        public static bool operator !=(Tratamiento cm1, Tratamiento cm2)
+        {
+            return !(cm1 == cm2);
+        }
+
         public Tratamiento(int idServicio, string nombreServicio, double precioServicio, int estadoServicio,int idTrat, double duracionTrat, int tipoTrat, BindingList<CondicionMedica> condicionesMedicas, string condicionesMedicasString, BindingList<Zona> zonasTratar, string zonasTratarString, string tipoString): base(idServicio, nombreServicio, precioServicio, estadoServicio)
         {
             _idTrat = idTrat;

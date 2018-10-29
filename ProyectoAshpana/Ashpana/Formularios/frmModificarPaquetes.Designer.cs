@@ -46,11 +46,11 @@
             this.txtIdTratamiento = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNomTratamiento = new System.Windows.Forms.TextBox();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNomTratamiento = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -179,6 +179,7 @@
             this.btnEliminar.TabIndex = 61;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnAgregarTratamiento
             // 
@@ -196,6 +197,7 @@
             this.btnAgregarTratamiento.TabIndex = 60;
             this.btnAgregarTratamiento.Text = "Agregar Tratamiento";
             this.btnAgregarTratamiento.UseVisualStyleBackColor = false;
+            this.btnAgregarTratamiento.Click += new System.EventHandler(this.btnAgregarTratamiento_Click);
             // 
             // label12
             // 
@@ -223,6 +225,7 @@
             this.btnListarTratamientos.TabIndex = 55;
             this.btnListarTratamientos.Text = "Ver Listar Tratamientos";
             this.btnListarTratamientos.UseVisualStyleBackColor = false;
+            this.btnListarTratamientos.Click += new System.EventHandler(this.btnListarTratamientos_Click);
             // 
             // txtIdTratamiento
             // 
@@ -253,24 +256,6 @@
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 54;
             // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NombreTrat";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "PrecioTrat";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtNomTratamiento);
@@ -286,6 +271,24 @@
             this.txtNomTratamiento.Name = "txtNomTratamiento";
             this.txtNomTratamiento.Size = new System.Drawing.Size(249, 20);
             this.txtNomTratamiento.TabIndex = 50;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "Nombre";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "Precio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
             // 
             // frmModificarPaquetes
             // 
@@ -311,7 +314,6 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrecio);
             this.Name = "frmModificarPaquetes";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmPaquetesModificar_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -341,10 +343,10 @@
         private System.Windows.Forms.TextBox txtIdTratamiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgvTratamientos;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtNomTratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
         private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNomTratamiento;
     }
 }

@@ -32,7 +32,12 @@ namespace LogicaNegocio
 
         public BindingList<Paquete> listarPaquetes()
         {
-            return paquetesDA.listarPaquetes();
+            BindingList<Paquete> paquetes =  paquetesDA.listarPaquetes();
+            foreach(Paquete paq in paquetes)
+            {
+                paq.Tratamientos = paquetesDA.listarPaqueteXTratamiento(paq.IdPaquete); 
+            }
+            return paquetes;
         }
 
         public BindingList<Paquete> BuscarPaquete(String busqueda)
@@ -40,9 +45,29 @@ namespace LogicaNegocio
             return paquetesDA.BuscarPaquete(busqueda);
         }
 
-        public int actualizar(Paquete p)
+        public int actualizar(Paquete paqueteAnt,Paquete paqueteMod)
         {
-            return paquetesDA.actualizar(p);
+            paquetesDA.actualizar(paqueteMod);
+            foreach(Tratamiento trat in paqueteAnt.Tratamientos)
+            {
+                if (!paqueteMod.Tratamientos.Contains(trat))
+                {
+                    paquetesDA.actualizarPaquete_X_Tratamiento(paqueteMod.IdPaquete, trat.IdTrat, 0);
+                }
+            }
+            BindingList<Tratamiento> tratamientosInactivos = paquetesDA.listarTratamientosInactivos(paqueteMod.IdPaquete);
+            foreach(Tratamiento trat in paqueteMod.Tratamientos)
+            {
+                if (tratamientosInactivos.Contains(trat))
+                {
+                    paquetesDA.actualizarPaquete_X_Tratamiento(paqueteMod.IdPaquete, trat.IdTrat, 1);
+                }
+                if (!paqueteAnt.Tratamientos.Contains(trat))
+                {
+                    paquetesDA.RegistrarPaqueteXTratamiento(paqueteMod.IdPaquete, trat);
+                }
+            }
+            return 1;
         }
 
         public int eliminar(Paquete p)

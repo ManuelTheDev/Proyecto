@@ -208,15 +208,15 @@ namespace AccesoDatos
                    "SslMode=none;";
 
                 MySqlConnection conexion = new MySqlConnection(cadena);
-                // Se conecta con la BD
                 conexion.Open();
-                //Se prepara el query
-                MySqlCommand comPaquete = new MySqlCommand("call ActualizarPaquete(@id,@Nombre,@Precio,@CantSesion);", conexion);
-                comPaquete.Parameters.AddWithValue("@id", p.IdPaquete);
-                comPaquete.Parameters.AddWithValue("@Nombre", p.NombreServicio);
-                comPaquete.Parameters.AddWithValue("@Precio", p.PrecioServicio);
-                comPaquete.Parameters.AddWithValue("@CantSesion", p.CantSesion);
-                comPaquete.Prepare();
+                MySqlCommand comPaquete = new MySqlCommand();
+                comPaquete.CommandType = System.Data.CommandType.StoredProcedure;
+                comPaquete.CommandText = "MODIFICAR_PAQUETE";
+                comPaquete.Connection = conexion;
+                comPaquete.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = p.IdPaquete;
+                comPaquete.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
+                comPaquete.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
+                comPaquete.Parameters.Add("_CANT_SESIONES", MySqlDbType.Int32).Value = p.CantSesion;
 
                 comPaquete.ExecuteNonQuery();
                 conexion.Close();
@@ -228,7 +228,86 @@ namespace AccesoDatos
             }
         }
 
+        public BindingList<Tratamiento> listarPaqueteXTratamiento(int idPaquete)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
 
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_PAQUETE_X_TRATAMIENTO";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = idPaquete;
+            MySqlDataReader reader = comando.ExecuteReader();
+            BindingList<Tratamiento> tratamientos = new BindingList<Tratamiento>();
+            while (reader.Read())
+            {
+                Tratamiento trat = new Tratamiento();
+                trat.NombreServicio = reader.GetString(0);
+                trat.PrecioServicio = reader.GetDouble(1);
+                trat.DuracionTrat = reader.GetInt32(2);
+                trat.TipoTrat = reader.GetInt32(3);
+                trat.IdTrat = reader.GetInt32(4);
+                tratamientos.Add(trat);
+            }
+            conexion.Close();
+            return tratamientos;
+        }
 
+        public void actualizarPaquete_X_Tratamiento(int id_paquete,int id_tratamiento,int estado)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
+
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "MODIFICAR_TRATAMIENTO_X_PAQUETE";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = id_paquete;
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = id_tratamiento;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = estado;
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        } 
+
+        public BindingList<Tratamiento> listarTratamientosInactivos(int id_paquete)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
+
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_TRATAMIENTOS_INACTIVOS";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = id_paquete;
+            MySqlDataReader reader = comando.ExecuteReader();
+            BindingList<Tratamiento> tratamientos = new BindingList<Tratamiento>();
+            while (reader.Read())
+            {
+                Tratamiento trat = new Tratamiento();
+                trat.IdTrat = reader.GetInt32(0);
+                tratamientos.Add(trat);
+            }
+            conexion.Close();
+            return tratamientos;
+        }
     }
 }
