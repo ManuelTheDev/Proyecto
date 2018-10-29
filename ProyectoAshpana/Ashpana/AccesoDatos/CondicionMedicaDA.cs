@@ -153,6 +153,29 @@ namespace AccesoDatos
             return condicionesMedicas;
         }
 
+        public void desactivarCondMedica_X_Tratamiento(int idTrat)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                    "user=inf282g4;" +
+                    "password=GvZf6p;" +
+                    "database=inf282g4;" +
+                     "port=3306;" +
+                     "SslMode=none;";
+
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "DESACTIVAR_CONDICIONES_MEDICAS_X_TRATAMIENTO";
+            comando.Connection = con;
+
+            comando.Parameters.Add("_ID_TRATAMIENTO", MySqlDbType.Int32).Value = idTrat;
+            
+
+            
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
 
     }
 }

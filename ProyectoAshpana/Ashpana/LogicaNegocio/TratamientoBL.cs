@@ -47,6 +47,15 @@ namespace LogicaNegocio
         public void modificarTratamiento(Tratamiento tratamiento1)
         {
             tratamientoDA.modificarTratamiento(tratamiento1);
+            foreach(CondicionMedica cm in tratamiento1.CondicionesMedicas)
+            {
+                condicionMedicaDA.registrarCondicionMedica_X_Tratamiento(tratamiento1.IdTrat, cm);
+            }
+        }
+
+        public void desacativarCondMedicas_X_Tratamiento(int idTrat)
+        {
+            condicionMedicaDA.desactivarCondMedica_X_Tratamiento(idTrat);
         }
     }
 }

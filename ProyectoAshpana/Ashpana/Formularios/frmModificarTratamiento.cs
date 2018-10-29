@@ -79,6 +79,8 @@ namespace Formularios
                 chlZonas.SetItemChecked(indice, true);
             }
 
+           
+
             
         }
 
@@ -90,9 +92,9 @@ namespace Formularios
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Tratamiento trat1 = new Tratamiento();
-            trat1 = tratamiento1;
+            trat1.IdTrat = tratamiento1.IdTrat;
             trat1.NombreServicio = txtNombreTrat.Text;
-            trat1.DuracionTrat = Int32.Parse(txtDuracion.Text);
+            trat1.DuracionTrat = double.Parse(txtDuracion.Text);
             trat1.PrecioServicio = double.Parse(txtPrecio.Text);
 
             if (rbtnCorporal.Checked == true)
@@ -100,13 +102,15 @@ namespace Formularios
             else
                 trat1.TipoTrat = 1;
 
-            /*for (int i = 0; i < chlCondMedicas.CheckedIndices.Count; i++)
+            tratamientoBL.desacativarCondMedicas_X_Tratamiento(tratamiento1.IdTrat);
+
+            for (int i = 0; i < chlCondMedicas.CheckedIndices.Count; i++)
             {
                 trat1.CondicionesMedicas.Add((CondicionMedica)chlCondMedicas.CheckedItems[i]);
 
             }
 
-            for (int i = 0; i < chlZonas.CheckedIndices.Count; i++)
+            /*for (int i = 0; i < chlZonas.CheckedIndices.Count; i++)
             {
                 trat1.ZonasTratar.Add((Zona)chlZonas.CheckedItems[i]);
 

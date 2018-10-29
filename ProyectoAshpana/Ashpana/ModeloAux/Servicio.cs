@@ -13,7 +13,7 @@ namespace Modelo
         private string _nombreServicio;
         private double _precioServicio;
         private int _estadoServicio;
-        private int estado;
+        //private int estado;
 
         public Servicio()
         {
