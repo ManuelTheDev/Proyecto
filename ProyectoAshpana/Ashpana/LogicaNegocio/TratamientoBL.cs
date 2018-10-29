@@ -51,11 +51,20 @@ namespace LogicaNegocio
             {
                 condicionMedicaDA.registrarCondicionMedica_X_Tratamiento(tratamiento1.IdTrat, cm);
             }
+            foreach(Zona z in tratamiento1.ZonasTratar)
+            {
+                zonasDA.registrarZona_X_Tratamiento(tratamiento1.IdTrat, z);
+            }
         }
 
         public void desacativarCondMedicas_X_Tratamiento(int idTrat)
         {
             condicionMedicaDA.desactivarCondMedica_X_Tratamiento(idTrat);
+        }
+
+        public void desactivarZonas_X_Tratamiento(int idTrat)
+        {
+            zonasDA.desactivarZonas_X_Tratamiento(idTrat);
         }
     }
 }

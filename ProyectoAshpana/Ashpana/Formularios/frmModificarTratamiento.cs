@@ -110,11 +110,13 @@ namespace Formularios
 
             }
 
-            /*for (int i = 0; i < chlZonas.CheckedIndices.Count; i++)
+            tratamientoBL.desactivarZonas_X_Tratamiento(tratamiento1.IdTrat);
+
+            for (int i = 0; i < chlZonas.CheckedIndices.Count; i++)
             {
                 trat1.ZonasTratar.Add((Zona)chlZonas.CheckedItems[i]);
 
-            }*/
+            }
 
             tratamientoBL.modificarTratamiento(trat1);
             this.DialogResult = DialogResult.OK;
