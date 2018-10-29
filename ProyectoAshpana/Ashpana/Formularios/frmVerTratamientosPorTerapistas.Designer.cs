@@ -32,13 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CITAS = new System.Windows.Forms.Panel();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnModificarTratamientos = new System.Windows.Forms.Button();
             this.btnRegistrarTratamientos = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
@@ -83,28 +83,10 @@
             this.NOMBRE,
             this.DURACION,
             this.PRECIO});
-            this.dgvTratamientos.Location = new System.Drawing.Point(385, 184);
+            this.dgvTratamientos.Location = new System.Drawing.Point(328, 184);
             this.dgvTratamientos.Name = "dgvTratamientos";
-            this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
+            this.dgvTratamientos.Size = new System.Drawing.Size(395, 177);
             this.dgvTratamientos.TabIndex = 56;
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NombreTrat";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "PrecioTrat";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
             // 
             // btnModificarTratamientos
             // 
@@ -116,7 +98,7 @@
             this.btnModificarTratamientos.Name = "btnModificarTratamientos";
             this.btnModificarTratamientos.Size = new System.Drawing.Size(205, 44);
             this.btnModificarTratamientos.TabIndex = 55;
-            this.btnModificarTratamientos.Text = "Modicar Tratamientos";
+            this.btnModificarTratamientos.Text = "Modificar Tratamientos";
             this.btnModificarTratamientos.UseVisualStyleBackColor = false;
             this.btnModificarTratamientos.Click += new System.EventHandler(this.btnModificarTratamientos_Click);
             // 
@@ -158,6 +140,25 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "NombreServicio";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.Width = 150;
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "PrecioServicio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            // 
             // frmVerTratamientosPorTerapistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,12 +186,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel CITAS;
         private System.Windows.Forms.DataGridView dgvTratamientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.Button btnModificarTratamientos;
         private System.Windows.Forms.Button btnRegistrarTratamientos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
     }
 }

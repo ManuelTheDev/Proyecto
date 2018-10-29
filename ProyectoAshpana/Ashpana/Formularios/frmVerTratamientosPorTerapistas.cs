@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,8 @@ namespace Formularios
     public partial class frmVerTratamientosPorTerapistas : Form
     {
         private Tratamiento tratamientoSeleccionado;
-        private Terapista terapistaModificar; 
+        private Terapista terapistaModificar;
+        private TerapistaBL terapistaBL;
         public frmVerTratamientosPorTerapistas(Terapista terapistaSeleccionada)
         {
             InitializeComponent();
@@ -23,7 +25,8 @@ namespace Formularios
             terapistaModificar = new Terapista();
             terapistaModificar = terapistaSeleccionada;
             dgvTratamientos.AutoGenerateColumns = false;
-            dgvTratamientos.DataSource = terapistaModificar.Tratamientos;
+            terapistaBL = new TerapistaBL();
+            dgvTratamientos.DataSource = terapistaBL.listarTratamientos_x_Terapista(terapistaModificar.IdTerapista);
 
         }
 

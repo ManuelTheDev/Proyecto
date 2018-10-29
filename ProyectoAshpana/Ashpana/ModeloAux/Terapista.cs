@@ -38,5 +38,7 @@ namespace Modelo
         {
             Tratamientos = new BindingList<Tratamiento>(); 
         }
+
+        
     }
 }

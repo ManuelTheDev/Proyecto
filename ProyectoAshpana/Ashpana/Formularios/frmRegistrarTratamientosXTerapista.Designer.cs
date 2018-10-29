@@ -38,15 +38,15 @@
             this.btnAgregarTratamiento = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.CITAS = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombreTerapista = new System.Windows.Forms.TextBox();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.CITAS.SuspendLayout();
@@ -78,6 +78,7 @@
             this.btnListarTratamientos.TabIndex = 64;
             this.btnListarTratamientos.Text = "Ver Listar Tratamientos";
             this.btnListarTratamientos.UseVisualStyleBackColor = false;
+            this.btnListarTratamientos.Click += new System.EventHandler(this.btnListarTratamientos_Click);
             // 
             // txtIdTratamiento
             // 
@@ -129,6 +130,7 @@
             this.btnEliminar.TabIndex = 70;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregarTratamiento
             // 
@@ -146,6 +148,7 @@
             this.btnAgregarTratamiento.TabIndex = 69;
             this.btnAgregarTratamiento.Text = "Agregar Tratamiento";
             this.btnAgregarTratamiento.UseVisualStyleBackColor = false;
+            this.btnAgregarTratamiento.Click += new System.EventHandler(this.btnAgregarTratamiento_Click);
             // 
             // label11
             // 
@@ -169,24 +172,6 @@
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 73;
             // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NombreTrat";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "PrecioTrat";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -199,6 +184,7 @@
             this.btnRegistrar.TabIndex = 71;
             this.btnRegistrar.Text = "Guardar";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnCancelar
             // 
@@ -212,6 +198,7 @@
             this.btnCancelar.TabIndex = 72;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // CITAS
             // 
@@ -256,6 +243,24 @@
             this.txtNombreTerapista.Size = new System.Drawing.Size(552, 16);
             this.txtNombreTerapista.TabIndex = 75;
             // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "NombreServicio";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "PrecioServicio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            // 
             // frmRegistrarTratamientosXTerapista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,14 +303,14 @@
         private System.Windows.Forms.Button btnAgregarTratamiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView dgvTratamientos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel CITAS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombreTerapista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
     }
 }
