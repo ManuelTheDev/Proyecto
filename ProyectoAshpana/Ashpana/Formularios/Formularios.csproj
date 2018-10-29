@@ -148,6 +148,12 @@
     <Compile Include="frmModificarUsuario.Designer.cs">
       <DependentUpon>frmModificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmModificaTratamientosXTerapista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModificaTratamientosXTerapista.Designer.cs">
+      <DependentUpon>frmModificaTratamientosXTerapista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNuevaCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -195,6 +201,12 @@
     </Compile>
     <Compile Include="frmNuevoTratamientos.Designer.cs">
       <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegistrarTratamientosXTerapista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarTratamientosXTerapista.Designer.cs">
+      <DependentUpon>frmRegistrarTratamientosXTerapista.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVerPadecimientos.cs">
       <SubType>Form</SubType>
@@ -273,6 +285,9 @@
     <EmbeddedResource Include="frmModificarUsuario.resx">
       <DependentUpon>frmModificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmModificaTratamientosXTerapista.resx">
+      <DependentUpon>frmModificaTratamientosXTerapista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNuevaCita.resx">
       <DependentUpon>frmNuevaCita.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +311,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoTratamientos.resx">
       <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarTratamientosXTerapista.resx">
+      <DependentUpon>frmRegistrarTratamientosXTerapista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerPadecimientos.resx">
       <DependentUpon>frmVerPadecimientos.cs</DependentUpon>

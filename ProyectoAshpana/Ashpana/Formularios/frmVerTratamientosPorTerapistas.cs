@@ -27,54 +27,27 @@ namespace Formularios
 
         }
 
-        private void btnListarTratamientos_Click(object sender, EventArgs e)
+        private void btnRegistrarTratamientos_Click(object sender, EventArgs e)
         {
-            frmListarTratamiento frmListarTrat = new frmListarTratamiento();
-            if (frmListarTrat.ShowDialog() == DialogResult.OK)
+            var frmRegistrarTrat = new frmRegistrarTratamientosXTerapista(terapistaModificar);
+            if (frmRegistrarTrat.ShowDialog()== DialogResult.OK)
             {
-                tratamientoSeleccionado = frmListarTrat.Tratamiento;
-                txtIdTratamiento.Text = tratamientoSeleccionado.IdTrat.ToString();
-                txtNomTratamiento.Text = tratamientoSeleccionado.NombreServicio;
+
             }
         }
 
-        private void btnAgregarTratamiento_Click(object sender, EventArgs e)
+        private void btnModificarTratamientos_Click(object sender, EventArgs e)
         {
-            Tratamiento t = new Tratamiento();
-            t = tratamientoSeleccionado;
-
-            int encontrado = 0;
-            int indice = 0;
-            foreach (Tratamiento tAux in terapistaModificar.Tratamientos)
+            var frmModificarTratamientos = new frmModificaTratamientosXTerapista(terapistaModificar);
+            if (frmModificarTratamientos.ShowDialog() == DialogResult.OK)
             {
-                if (tAux.IdTrat == t.IdTrat)
-                {
-                    encontrado = 1;
-                    break;
-                }
-                indice += 1;
+
             }
-
-            if (encontrado == 0)
-            {
-                terapistaModificar.Tratamientos.Add(t);
-            }
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            int indice = dgvTratamientos.CurrentRow.Index;
-            terapistaModificar.Tratamientos.RemoveAt(indice);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Dispose(); 
+            this.Dispose();
         }
     }
 }
