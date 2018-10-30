@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Modelo;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace Formularios
 {
     public partial class frmNuevaCita : Form
     {
+        private Tratamiento tratamientoSeleccionado;
+        private Paquete paqueteSeleccionado;
+        private Cliente pacienteSeleccionado; 
+
         public frmNuevaCita()
         {
             InitializeComponent();
@@ -24,14 +29,22 @@ namespace Formularios
 
         private void btnAgregarTratamiento_Click(object sender, EventArgs e)
         {
-            frmListarTratamiento frmAgTrata = new frmListarTratamiento();
-            frmAgTrata.ShowDialog();
+            frmListarTratamiento frmListarTrat = new frmListarTratamiento();
+            if (frmListarTrat.ShowDialog() == DialogResult.OK)
+            {
+                tratamientoSeleccionado = frmListarTrat.Tratamiento;
+
+            }
         }
 
         private void btnAgregarPaquete_Click(object sender, EventArgs e)
         {
-            frmListarPaquete frmListarPaquetes = new frmListarPaquete();
-            frmListarPaquetes.ShowDialog(); 
+            frmListarPaquete frmListarPaq = new frmListarPaquete();
+            if (frmListarPaq.ShowDialog() == DialogResult.OK)
+            {
+                paqueteSeleccionado = frmListarPaq.Paquete;
+
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -98,6 +111,21 @@ namespace Formularios
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAgregarTratamiento_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnListarPacientes_Click(object sender, EventArgs e)
+        {
+            listarPacientes frmListarPacientes = new listarPacientes();
+            if (frmListarPacientes.ShowDialog() == DialogResult.OK)
+            {
+                pacienteSeleccionado = frmListarPacientes.Cliente;
+
+            }
         }
     }
 }

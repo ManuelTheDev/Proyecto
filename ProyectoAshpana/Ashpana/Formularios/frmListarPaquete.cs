@@ -39,8 +39,9 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            this.Close();
+            Paquete = (Paquete)dgvPaquetes.CurrentRow.DataBoundItem;
+            this.DialogResult = DialogResult.OK;
+            
         }
     }
 }
