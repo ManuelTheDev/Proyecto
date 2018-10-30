@@ -88,6 +88,8 @@
             // 
             // dgvClientes
             // 
+            this.dgvClientes.AllowUserToAddRows = false;
+            this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AutoGenerateColumns = false;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -103,6 +105,7 @@
             this.dgvClientes.DataSource = this.clienteBindingSource;
             this.dgvClientes.Location = new System.Drawing.Point(104, 203);
             this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.ReadOnly = true;
             this.dgvClientes.Size = new System.Drawing.Size(836, 236);
             this.dgvClientes.TabIndex = 4;
             // 
@@ -111,54 +114,63 @@
             this.Column2.DataPropertyName = "Dni";
             this.Column2.HeaderText = "DNI";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // nombresDataGridViewTextBoxColumn
             // 
             this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
             this.nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
             this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apPaternoDataGridViewTextBoxColumn
             // 
             this.apPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApPaterno";
             this.apPaternoDataGridViewTextBoxColumn.HeaderText = "ApPaterno";
             this.apPaternoDataGridViewTextBoxColumn.Name = "apPaternoDataGridViewTextBoxColumn";
+            this.apPaternoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // apMaternoDataGridViewTextBoxColumn
             // 
             this.apMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApMaterno";
             this.apMaternoDataGridViewTextBoxColumn.HeaderText = "ApMaterno";
             this.apMaternoDataGridViewTextBoxColumn.Name = "apMaternoDataGridViewTextBoxColumn";
+            this.apMaternoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // direccionDataGridViewTextBoxColumn
             // 
             this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
             this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
             this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonoDataGridViewTextBoxColumn
             // 
             this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
             this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sexoDataGridViewTextBoxColumn
             // 
             this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
             this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
             this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // correoDataGridViewTextBoxColumn
             // 
             this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
             this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
             this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // fechaNacDataGridViewTextBoxColumn
             // 
             this.fechaNacDataGridViewTextBoxColumn.DataPropertyName = "FechaNac";
             this.fechaNacDataGridViewTextBoxColumn.HeaderText = "FechaNac";
             this.fechaNacDataGridViewTextBoxColumn.Name = "fechaNacDataGridViewTextBoxColumn";
+            this.fechaNacDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // clienteBindingSource
             // 

@@ -65,6 +65,11 @@ namespace Formularios
             }
             t.Contrasena = txtContrasena.Text;
             t.Sueldo = Convert.ToDouble(txtSueldo.Text);
+
+            //AGREGAR HORA
+            //DateTime horaE = Convert.ToDateTime(txtHoraEntrada);
+            //DateTime horaS = Convert.ToDateTime(txtHoraSalida);
+    
             TerapistaBL terapistaBL = new TerapistaBL();
             terapistaBL.registrarTerapista(t);
             this.DialogResult = DialogResult.OK;

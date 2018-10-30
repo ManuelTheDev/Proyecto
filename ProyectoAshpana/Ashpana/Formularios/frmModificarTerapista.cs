@@ -15,6 +15,7 @@ namespace Formularios
     public partial class frmModificarTerapista : Form
     {
         private TerapistaBL terapistaBL;
+        private Terapista terapistaMod;
         public frmModificarTerapista(Terapista t)
         {
             InitializeComponent();
@@ -27,7 +28,12 @@ namespace Formularios
             txtTelefono.Text = t.Telefono;
             txtContrasena.Text = t.Contrasena;
             dtpFechaNac.Value = t.FechaNac;
-            txtSueldo.Text = t.Sueldo.ToString(); 
+            txtSueldo.Text = t.Sueldo.ToString();
+
+            terapistaMod = new Terapista();
+            terapistaMod.IdPersona = t.IdPersona;
+            terapistaMod.IdTerapista = t.IdTerapista;
+            terapistaMod.IdTrabajador = t.IdTrabajador;
             if (t.Sexo == 'M')
             {
                 rbMasculino.Checked = true;
@@ -67,49 +73,51 @@ namespace Formularios
 
         private void btnModifcar_Click(object sender, EventArgs e)
         {
-            Terapista s = new Terapista();
-            s.Dni = txtDni.Text;
-            s.Nombres = txtNombre.Text;
-            s.ApPaterno = txtApPaterno.Text;
-            s.ApMaterno = txtApMaterno.Text;
-            s.Contrasena = txtContrasena.Text;
-            s.Correo = txtCorreo.Text;
-            s.Direccion = txtDireccion.Text;
-            s.Telefono = txtTelefono.Text;
-            s.FechaNac = dtpFechaNac.Value;
+
+            terapistaMod.Dni = txtDni.Text;
+            terapistaMod.Nombres = txtNombre.Text;
+            terapistaMod.ApPaterno = txtApPaterno.Text;
+            terapistaMod.ApMaterno = txtApMaterno.Text;
+            terapistaMod.Contrasena = txtContrasena.Text;
+            terapistaMod.Correo = txtCorreo.Text;
+            terapistaMod.Direccion = txtDireccion.Text;
+            terapistaMod.Telefono = txtTelefono.Text;
+            terapistaMod.FechaNac = dtpFechaNac.Value;
+           
+
             if (rbFemenino.Checked == true)
             {
-                s.Sexo = 'F';
+                terapistaMod.Sexo = 'F';
             }
             if (rbMasculino.Checked == true)
             {
-                s.Sexo = 'M';
+                terapistaMod.Sexo = 'M';
             }
-            s.Sueldo = Double.Parse(txtSueldo.Text);
+            terapistaMod.Sueldo = Double.Parse(txtSueldo.Text);
 
 
             if (cboEstado.Text.Equals("Activo"))
             {
-                s.Estado=1;
+                terapistaMod.Estado=1;
             }
 
             if (cboEstado.Text.Equals("Inactivo"))
             {
-                s.Estado = 0;
+                terapistaMod.Estado = 0;
             }
 
             if (cboTerapista.Text.Equals("Principal"))
             {
-                s.Tipo = 0; 
+                terapistaMod.Tipo = 0; 
             }
 
             if (cboTerapista.Text.Equals("Secundario"))
             {
-                s.Tipo = 1;
+                terapistaMod.Tipo = 1;
             }
 
             terapistaBL = new TerapistaBL();
-            terapistaBL.modificarTerapista(s);
+            terapistaBL.modificarTerapista(terapistaMod);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha modifcado satisfactoriamente el terapista", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }

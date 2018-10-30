@@ -36,7 +36,6 @@
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITAS = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
@@ -84,17 +83,19 @@
             // 
             // dgvTerapistas
             // 
+            this.dgvTerapistas.AllowUserToAddRows = false;
+            this.dgvTerapistas.AllowUserToDeleteRows = false;
             this.dgvTerapistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTerapistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Dni,
             this.Nombres,
             this.ApellidoPaterno,
             this.ApellidoMaterno,
-            this.Sueldo,
-            this.Estado});
-            this.dgvTerapistas.Location = new System.Drawing.Point(270, 229);
+            this.Sueldo});
+            this.dgvTerapistas.Location = new System.Drawing.Point(362, 234);
             this.dgvTerapistas.Name = "dgvTerapistas";
-            this.dgvTerapistas.Size = new System.Drawing.Size(645, 150);
+            this.dgvTerapistas.ReadOnly = true;
+            this.dgvTerapistas.Size = new System.Drawing.Size(544, 150);
             this.dgvTerapistas.TabIndex = 19;
             // 
             // Dni
@@ -102,36 +103,35 @@
             this.Dni.DataPropertyName = "Dni";
             this.Dni.HeaderText = "DNI";
             this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
             // 
             // Nombres
             // 
             this.Nombres.DataPropertyName = "Nombres";
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
             // ApellidoPaterno
             // 
             this.ApellidoPaterno.DataPropertyName = "ApPaterno";
             this.ApellidoPaterno.HeaderText = "Apellido Paterno";
             this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
             // 
             // ApellidoMaterno
             // 
             this.ApellidoMaterno.DataPropertyName = "ApMaterno";
             this.ApellidoMaterno.HeaderText = "Apellido Materno";
             this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
             // 
             // Sueldo
             // 
             this.Sueldo.DataPropertyName = "Sueldo";
             this.Sueldo.HeaderText = "Sueldo";
             this.Sueldo.Name = "Sueldo";
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
+            this.Sueldo.ReadOnly = true;
             // 
             // CITAS
             // 
@@ -139,7 +139,7 @@
             this.CITAS.Controls.Add(this.label1);
             this.CITAS.Location = new System.Drawing.Point(-8, -1);
             this.CITAS.Name = "CITAS";
-            this.CITAS.Size = new System.Drawing.Size(983, 87);
+            this.CITAS.Size = new System.Drawing.Size(1276, 87);
             this.CITAS.TabIndex = 20;
             // 
             // label1
@@ -168,9 +168,9 @@
             this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscar.Location = new System.Drawing.Point(166, 146);
             this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(65, 21);
+            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
             this.lblBuscar.TabIndex = 21;
-            this.lblBuscar.Text = "Buscar:";
+            this.lblBuscar.Text = "BUSCAR:";
             this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
             // 
             // btnVerTratamientosHabilitados
@@ -223,12 +223,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Button btnVerTratamientosHabilitados;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button btnVerTratamientosHabilitados;
     }
 }
