@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtAbBajo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboTipoSomatico = new System.Windows.Forms.ComboBox();
             this.txtEspalda = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtAbAlto = new System.Windows.Forms.TextBox();
@@ -62,13 +62,13 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // txtDNI
+            // txtNombre
             // 
-            this.txtDNI.Location = new System.Drawing.Point(182, 122);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(281, 20);
-            this.txtDNI.TabIndex = 148;
+            this.txtNombre.Location = new System.Drawing.Point(205, 125);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(281, 20);
+            this.txtNombre.TabIndex = 148;
             // 
             // label9
             // 
@@ -246,13 +246,13 @@
             this.label1.TabIndex = 130;
             this.label1.Text = "Abdomen Bajo:";
             // 
-            // comboBox3
+            // cboTipoSomatico
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(182, 204);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(171, 21);
-            this.comboBox3.TabIndex = 129;
+            this.cboTipoSomatico.FormattingEnabled = true;
+            this.cboTipoSomatico.Location = new System.Drawing.Point(182, 204);
+            this.cboTipoSomatico.Name = "cboTipoSomatico";
+            this.cboTipoSomatico.Size = new System.Drawing.Size(171, 21);
+            this.cboTipoSomatico.TabIndex = 129;
             // 
             // txtEspalda
             // 
@@ -264,7 +264,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 166);
+            this.dateTimePicker1.Location = new System.Drawing.Point(205, 166);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(281, 20);
@@ -348,9 +348,9 @@
             this.lblNombres.Location = new System.Drawing.Point(58, 125);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(35, 17);
+            this.lblNombres.Size = new System.Drawing.Size(139, 17);
             this.lblNombres.TabIndex = 119;
-            this.lblNombres.Text = "DNI:";
+            this.lblNombres.Text = "Nombre del Cliente:";
             // 
             // panel1
             // 
@@ -378,7 +378,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(579, 569);
-            this.Controls.Add(this.txtDNI);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -396,7 +396,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAbBajo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cboTipoSomatico);
             this.Controls.Add(this.txtEspalda);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtAbAlto);
@@ -419,7 +419,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
@@ -437,7 +437,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAbBajo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboTipoSomatico;
         private System.Windows.Forms.TextBox txtEspalda;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtAbAlto;

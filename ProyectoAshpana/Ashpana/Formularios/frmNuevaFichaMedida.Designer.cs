@@ -58,7 +58,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -148,9 +148,9 @@
             this.lblNombres.Location = new System.Drawing.Point(58, 129);
             this.lblNombres.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombres.Name = "lblNombres";
-            this.lblNombres.Size = new System.Drawing.Size(35, 17);
+            this.lblNombres.Size = new System.Drawing.Size(136, 17);
             this.lblNombres.TabIndex = 66;
-            this.lblNombres.Text = "DNI:";
+            this.lblNombres.Text = "Nombre del cliente:";
             // 
             // txtEspalda
             // 
@@ -366,20 +366,20 @@
             this.label9.TabIndex = 117;
             this.label9.Text = "Kg";
             // 
-            // txtDNI
+            // txtNombre
             // 
-            this.txtDNI.Location = new System.Drawing.Point(182, 129);
-            this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(281, 20);
-            this.txtDNI.TabIndex = 118;
+            this.txtNombre.Location = new System.Drawing.Point(202, 129);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(281, 20);
+            this.txtNombre.TabIndex = 118;
             // 
             // frmNuevaFichaMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 621);
-            this.Controls.Add(this.txtDNI);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -450,6 +450,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtNombre;
     }
 }

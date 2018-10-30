@@ -71,8 +71,10 @@ namespace Formularios
 
         private void btnVerFichaMedidas_Click(object sender, EventArgs e)
         {
-            frmGestionFichaMedidas frmfichaMedidas = new frmGestionFichaMedidas();
-            if (frmfichaMedidas.ShowDialog() == DialogResult.OK)
+            clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            frmGestionFichaMedidas frmfichaMedidas = new frmGestionFichaMedidas(clienteSeleccionado);
+            frmfichaMedidas.ShowDialog();
+            if (frmfichaMedidas.DialogResult == DialogResult.OK)
             {
 
             }

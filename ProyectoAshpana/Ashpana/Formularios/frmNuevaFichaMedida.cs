@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Modelo;
 
 namespace Formularios
 {
     public partial class frmNuevaFichaMedida : Form
     {
-        public frmNuevaFichaMedida()
+        public frmNuevaFichaMedida(Cliente c)
         {
             InitializeComponent();
         }

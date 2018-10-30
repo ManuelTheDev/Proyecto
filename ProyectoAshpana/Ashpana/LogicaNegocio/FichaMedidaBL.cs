@@ -17,10 +17,10 @@ namespace LogicaNegocio
             FichaMedidaDA fichaMedidaDA;
         }
 
-        public BindingList<FichaMedida> listarFichaMedidas()
+        public BindingList<FichaMedida> listarFichaMedidas(Cliente c)
         {
             FichaMedidaDA fichaMedidaDA = new FichaMedidaDA();
-            return fichaMedidaDA.listarFichaMedidas();
+            return fichaMedidaDA.listarFichaMedidas_X_Cliente(c);
         }
     }
 }
