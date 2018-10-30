@@ -14,6 +14,7 @@ namespace Formularios
 {
     public partial class frmModificarUsuario : Form
     {
+        private Superusuario superUsuarioMod;
         private UsuarioBL usuarioBL; 
         public frmModificarUsuario(Superusuario s)
         {
@@ -28,6 +29,12 @@ namespace Formularios
             dtpFechaNac.Value = s.FechaNac;
             txtContrasenia.Text = s.Contrasena;
             txtSueldo.Text = s.Sueldo.ToString();
+
+            superUsuarioMod = new Superusuario();
+            superUsuarioMod.IdPersona = s.IdPersona;
+            superUsuarioMod.IdTrabajador = s.IdTrabajador;
+            superUsuarioMod.IdSuperusuario = s.IdSuperusuario;
+
             if (s.Sexo == 'M')
             {
                 rbMasculino.Checked = true; 
@@ -57,28 +64,37 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Superusuario s = new Superusuario();
-            s.Dni = txtDni.Text;
-            s.Nombres = txtNombres.Text;
-            s.ApPaterno = txtApellidoPaterno.Text;
-            s.ApMaterno = txtApellidoMaterno.Text;
-            s.Contrasena = txtContrasenia.Text;
-            s.Correo = txtCorreo.Text;
-            s.Direccion = txtDireccion.Text;
-            s.Telefono = txtTelefono.Text;
-            s.FechaNac = dtpFechaNac.Value;
+
+            superUsuarioMod.Dni = txtDni.Text;
+            superUsuarioMod.Nombres = txtNombres.Text;
+            superUsuarioMod.ApPaterno = txtApellidoPaterno.Text;
+            superUsuarioMod.ApMaterno = txtApellidoMaterno.Text;
+            superUsuarioMod.Contrasena = txtContrasenia.Text;
+            superUsuarioMod.Correo = txtCorreo.Text;
+            superUsuarioMod.Direccion = txtDireccion.Text;
+            superUsuarioMod.Telefono = txtTelefono.Text;
+            superUsuarioMod.FechaNac = dtpFechaNac.Value;
             if (rbFemenino.Checked == true)
             {
-                s.Sexo = 'F';
+                superUsuarioMod.Sexo = 'F';
             }
             if (rbMasculino.Checked == true)
             {
-                s.Sexo = 'M';
+                superUsuarioMod.Sexo = 'M';
             }
-            s.Sueldo = Double.Parse(txtSueldo.Text);
+            superUsuarioMod.Sueldo = Double.Parse(txtSueldo.Text);
 
+            if (cboEstado.Text.Equals("Activo"))
+            {
+                superUsuarioMod.Estado = 1;
+            }
+
+            if (cboEstado.Text.Equals("Inactivo"))
+            {
+                superUsuarioMod.Estado = 0;
+            }
             usuarioBL = new UsuarioBL();
-            usuarioBL.modificarSuperusuario(s);
+            usuarioBL.modificarSuperusuario(superUsuarioMod);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha modifcado satisfactoriamente el usuario", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }

@@ -94,17 +94,13 @@ namespace AccesoDatos
 
             MySqlConnection con = new MySqlConnection(cadena);
             con.Open();
-            MySqlCommand comandoAux = new MySqlCommand("SELECT ID_PERSONA FROM PERSONA WHERE DNI = " + s.Dni, con);
-            MySqlDataReader reader = null;
-            reader = comandoAux.ExecuteReader();
-            reader.Read();
-            int id_superusuario = reader.GetInt32(0);
-            reader.Dispose();
             MySqlCommand comando = new MySqlCommand();
             comando.CommandType = System.Data.CommandType.StoredProcedure;
             comando.CommandText = "MODIFICAR_SUPERUSUARIO";
             comando.Connection = con;
-            comando.Parameters.Add("_ID", MySqlDbType.Int32).Value = id_superusuario;
+            comando.Parameters.Add("_ID_SUPERUSUARIO", MySqlDbType.Int32).Value = s.IdSuperusuario;
+            comando.Parameters.Add("_ID_TRABAJADOR", MySqlDbType.Int32).Value = s.IdTrabajador;
+            comando.Parameters.Add("_ID_PERSONA", MySqlDbType.Int32).Value = s.IdPersona;
             comando.Parameters.Add("_NOMBRES", MySqlDbType.VarChar).Value = s.Nombres;
             comando.Parameters.Add("_APELLIDO_PATERNO", MySqlDbType.VarChar).Value = s.ApPaterno;
             comando.Parameters.Add("_APELLIDO_MATERNO", MySqlDbType.VarChar).Value = s.ApMaterno;
