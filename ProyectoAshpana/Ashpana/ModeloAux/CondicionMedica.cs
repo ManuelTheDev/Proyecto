@@ -37,7 +37,7 @@ namespace Modelo
 
             var other = obj as CondicionMedica;
 
-            if (_idCondMed != other.IdCondMed || _nombre != other.Nombre || _descripcion!=other.Descripcion || _estadoCondMed != other.EstadoCondMed)
+            if (_idCondMed != other.IdCondMed)
                 return false;
 
             return true;

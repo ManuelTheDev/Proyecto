@@ -70,7 +70,7 @@ namespace Formularios
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e) //Modificar
         {
             try
             {

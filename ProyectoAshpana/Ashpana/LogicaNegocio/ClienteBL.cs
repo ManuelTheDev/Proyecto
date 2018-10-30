@@ -17,6 +17,7 @@ namespace LogicaNegocio
         public ClienteBL()
         {
             clienteDA = new ClienteDA();
+            condicionMedicaDA = new CondicionMedicaDA();
         }
 
         public void registrarCliente(Cliente c)
@@ -35,9 +36,43 @@ namespace LogicaNegocio
             return clienteDA.listarClientes();
         }
 
-        public void modificarTerapista(Cliente c)
+        public int modificarTerapista(Cliente clienteAnt, Cliente clienteMod)
         {
-            clienteDA.modificarCliente(c);
+            try
+            {
+                clienteDA.modificarCliente(clienteMod);
+                foreach (CondicionMedica cm in clienteAnt.CondicionesMedicas)
+                {
+                    if (!clienteMod.CondicionesMedicas.Contains(cm))
+                    {
+                        clienteDA.modificarCondicionMedica_X_Cliente(clienteMod.IdPersona, clienteMod.IdCliente, cm.IdCondMed, 0);
+                    }
+                }
+
+                BindingList<CondicionMedica> condicionMedicasInactivas = clienteDA.listarCondicionesMedicasInactivas(clienteMod.IdCliente);
+                foreach (CondicionMedica cm in clienteMod.CondicionesMedicas)
+                {
+                    if (condicionMedicasInactivas.Contains(cm))
+                    {
+                        clienteDA.modificarCondicionMedica_X_Cliente(clienteMod.IdPersona, clienteMod.IdCliente, cm.IdCondMed, 1);
+                    }
+
+                    if (!clienteAnt.CondicionesMedicas.Contains(cm))
+                    {
+                        condicionMedicaDA.registrarCondicionMedica_X_Paciente(clienteMod.IdCliente, clienteMod.IdPersona, cm);
+                    }
+                }
+
+                return 1;
+            }
+            catch
+            {
+                return 0;
+            }
         }
+
+
+        
+
     }
 }

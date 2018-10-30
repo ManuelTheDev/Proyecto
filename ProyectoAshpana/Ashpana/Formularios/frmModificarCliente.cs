@@ -15,33 +15,69 @@ namespace Formularios
     public partial class frmModificarCliente : Form
     {
         private ClienteBL clienteBL;
-        private CondicionMedicaBL condicionMedicaBL; 
-        public frmModificarCliente(Cliente t)
+        private Cliente cliente;
+        private Cliente clienteModificado;
+        private CondicionMedicaBL condicionMedicaBL;
+        private Tratamiento tratamientoSeleccionado;
+
+        public frmModificarCliente(Cliente c)
         {
             InitializeComponent();
+            cliente = new Cliente();
+            clienteModificado = new Cliente();
+            clienteBL = new ClienteBL();
+
             condicionMedicaBL = new CondicionMedicaBL();
-            txtNombre.Text = t.Nombres;
-            txtApPaterno.Text = t.ApPaterno;
-            txtApMaterno.Text = t.ApMaterno;
-            txtDni.Text = t.Dni;
-            txtCorreo.Text = t.Correo;
-            txtDireccion.Text = t.Direccion;
-            txtTelefono.Text = t.Telefono;
-            dtpFechaNac.Value = t.FechaNac;
-            if (t.Sexo == 'M')
+
+            cliente.IdPersona = c.IdPersona;
+            cliente.IdCliente = c.IdCliente;
+            cliente.Nombres = c.Nombres;
+            cliente.ApMaterno = c.ApMaterno;
+            cliente.ApPaterno = c.ApPaterno;
+            cliente.Sexo = c.Sexo;
+            cliente.Direccion = c.Direccion;
+            cliente.Correo = c.Correo;
+            cliente.Dni = c.Dni;
+            cliente.Estado = cliente.Estado;
+            cliente.FechaNac = cliente.FechaNac;
+            cliente.Telefono = cliente.Telefono;
+
+            clienteModificado.IdPersona = c.IdPersona;
+            clienteModificado.IdCliente = c.IdCliente;
+            clienteModificado.Nombres = c.Nombres;
+            clienteModificado.ApMaterno = c.ApMaterno;
+            clienteModificado.ApPaterno = c.ApPaterno;
+            clienteModificado.Sexo = c.Sexo;
+            clienteModificado.Direccion = c.Direccion;
+            clienteModificado.Correo = c.Correo;
+            clienteModificado.Dni = c.Dni;
+            clienteModificado.Estado = cliente.Estado;
+            clienteModificado.FechaNac = cliente.FechaNac;
+            clienteModificado.Telefono = cliente.Telefono;
+
+
+            txtNombre.Text = c.Nombres;
+            txtApPaterno.Text = c.ApPaterno;
+            txtApMaterno.Text = c.ApMaterno;
+            txtDni.Text = c.Dni;
+            txtCorreo.Text = c.Correo;
+            txtDireccion.Text = c.Direccion;
+            txtTelefono.Text = c.Telefono;
+            dtpFechaNac.Value = c.FechaNac;
+            if (c.Sexo == 'M')
             {
                 rbMasculino.Checked = true;
             }
-            if (t.Sexo == 'F')
+            if (c.Sexo == 'F')
             {
                 rbFemenino.Checked = true;
             }
 
-            if (t.Estado == 0)
+            if (c.Estado == 0)
             {
                 cboEstado.Text = "Inactivo"; 
             }
-            if (t.Estado == 1)
+            if (c.Estado == 1)
             {
                 cboEstado.Text = "Activo";
             }
@@ -53,15 +89,19 @@ namespace Formularios
             }
 
 
-            BindingList<CondicionMedica> condicionMedicasCliente = condicionMedicaBL.listarCondicionesMedicas_X_Cliente(t.IdCliente);
-            
-            
+            BindingList<CondicionMedica> condicionMedicasCliente = condicionMedicaBL.listarCondicionesMedicas_X_Cliente(c.IdCliente);
 
+           
 
             foreach (CondicionMedica cm in condicionMedicasCliente)
             {
                 int indice = clbCondicionesMedicas.Items.IndexOf(cm);
                 clbCondicionesMedicas.SetItemChecked(indice, true);
+            }
+
+            for (int i = 0; i < clbCondicionesMedicas.CheckedIndices.Count; i++)
+            {
+                cliente.CondicionesMedicas.Add((CondicionMedica)clbCondicionesMedicas.CheckedItems[i]);
             }
         }
 
@@ -96,40 +136,8 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            Cliente s = new Cliente();
-            s.Dni = txtDni.Text;
-            s.Nombres = txtNombre.Text;
-            s.ApPaterno = txtApPaterno.Text;
-            s.ApMaterno = txtApMaterno.Text;
-            s.Correo = txtCorreo.Text;
-            s.Direccion = txtDireccion.Text;
-            s.Telefono = txtTelefono.Text;
-            s.FechaNac = dtpFechaNac.Value;
-            if (rbFemenino.Checked == true)
-            {
-                s.Sexo = 'F';
-            }
-            if (rbMasculino.Checked == true)
-            {
-                s.Sexo = 'M';
-            }
 
-            if (cboEstado.Equals("Activo"))
-            {
-                s.Estado = 0;
-            }
-
-            if (cboEstado.Equals("Inactivo"))
-            {
-                s.Estado = 1;
-            }
-
-
-
-            clienteBL = new ClienteBL();
-            clienteBL.modificarTerapista(s);
-            this.DialogResult = DialogResult.OK;
-            MessageBox.Show("Se ha modifcado satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -142,6 +150,50 @@ namespace Formularios
             
         }
 
-       
+        private void btnGuardar_Click_1(object sender, EventArgs e)
+        {
+            clienteModificado.Dni = txtDni.Text;
+            clienteModificado.Nombres = txtNombre.Text;
+            clienteModificado.ApPaterno = txtApPaterno.Text;
+            clienteModificado.ApMaterno = txtApMaterno.Text;
+            clienteModificado.Correo = txtCorreo.Text;
+            clienteModificado.Direccion = txtDireccion.Text;
+            clienteModificado.Telefono = txtTelefono.Text;
+            clienteModificado.FechaNac = dtpFechaNac.Value;
+            if (rbFemenino.Checked == true)
+            {
+                clienteModificado.Sexo = 'F';
+            }
+            if (rbMasculino.Checked == true)
+            {
+                clienteModificado.Sexo = 'M';
+            }
+
+            if (cboEstado.Text.Equals("Activo"))
+            {
+                clienteModificado.Estado = 1;
+            }
+
+            if (cboEstado.Text.Equals("Inactivo"))
+            {
+                clienteModificado.Estado = 0;
+            }
+
+            for (int i = 0; i < clbCondicionesMedicas.CheckedIndices.Count; i++)
+            {
+                clienteModificado.CondicionesMedicas.Add((CondicionMedica)clbCondicionesMedicas.CheckedItems[i]);
+            }
+
+            if (clienteBL.modificarTerapista(cliente, clienteModificado) == 1)
+            {
+                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("Se ha modificado satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+                MessageBox.Show("No se ha podido modificar satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+        }
     }
 }
