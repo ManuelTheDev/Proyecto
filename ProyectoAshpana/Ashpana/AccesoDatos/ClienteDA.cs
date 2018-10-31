@@ -171,5 +171,38 @@ namespace AccesoDatos
             return condicionMedicas;
         }
 
+        public int registrarFichaMedida_X_Cliente(int idCliente, int idPersona, int idFichaMedida)
+        {
+            try
+            {
+                string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                       "user=inf282g4;" +
+                       "password=GvZf6p;" +
+                       "database=inf282g4;" +
+                       "port=3306;" +
+                       "SslMode=none;";
+
+                MySqlConnection conexion = new MySqlConnection(cadena);
+                conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand();
+                comando.CommandType = System.Data.CommandType.StoredProcedure;
+                comando.CommandText = "REGISTRAR_FICHA_MEDIDAS_X_CLIENTE";
+                comando.Connection = conexion;
+                comando.Parameters.Add("_ID_FICHA_MEDIDAS", MySqlDbType.Int32).Value = idFichaMedida;
+                comando.Parameters.Add("_ID_PERSONA", MySqlDbType.Int32).Value = idPersona;
+                comando.Parameters.Add("_ID_CLIENTE", MySqlDbType.Int32).Value = idCliente;
+
+                comando.ExecuteNonQuery();
+                conexion.Close();
+
+                return 1;
+            }
+            catch(Exception ex)
+            {
+                return 0;
+            }
+        }
+
     }
 }

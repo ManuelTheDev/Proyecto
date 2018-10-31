@@ -8,6 +8,7 @@ namespace Modelo
 {
     public class FichaMedida
     {
+        private int idFichaMedida;
         private int codCorrelativo;
         private static int i = 1; 
         private Cliente cliente;
@@ -24,29 +25,31 @@ namespace Modelo
         private double piernaIzq;
         private double piernaDer;
 
-
         public FichaMedida()
         {
 
         }
         public FichaMedida(Cliente cliente, DateTime fecha, string tipo, double peso, double espalda, double abdomenAlto, double abdomenBajo, double cintura, double brazoDerecho, double brazoIzquierdo, double gluteos, double piernaIzq, double piernaDer)
         {
-            this.codCorrelativo = i++;
-            this.cliente = cliente;
-            this.fecha = fecha;
-            this.tipo = tipo;
-            this.peso = peso;
-            this.espalda = espalda;
-            this.abdomenAlto = abdomenAlto;
-            this.abdomenBajo = abdomenBajo;
-            this.cintura = cintura;
-            this.brazoDerecho = brazoDerecho;
-            this.brazoIzquierdo = brazoIzquierdo;
-            this.gluteos = gluteos;
-            this.piernaIzq = piernaIzq;
-            this.piernaDer = piernaDer;
+            this.CodCorrelativo = I++;
+            this.Cliente = cliente;
+            this.Fecha = fecha;
+            this.Tipo = tipo;
+            this.Peso = peso;
+            this.Espalda = espalda;
+            this.AbdomenAlto = abdomenAlto;
+            this.AbdomenBajo = abdomenBajo;
+            this.Cintura = cintura;
+            this.BrazoDerecho = brazoDerecho;
+            this.BrazoIzquierdo = brazoIzquierdo;
+            this.Gluteos = gluteos;
+            this.PiernaIzq = piernaIzq;
+            this.PiernaDer = piernaDer;
         }
 
+        public int IdFichaMedida { get => idFichaMedida; set => idFichaMedida = value; }
+        public int CodCorrelativo { get => codCorrelativo; set => codCorrelativo = value; }
+        public static int I { get => i; set => i = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public string Tipo { get => tipo; set => tipo = value; }
@@ -60,5 +63,7 @@ namespace Modelo
         public double Gluteos { get => gluteos; set => gluteos = value; }
         public double PiernaIzq { get => piernaIzq; set => piernaIzq = value; }
         public double PiernaDer { get => piernaDer; set => piernaDer = value; }
+
+
     }
 }

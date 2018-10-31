@@ -38,7 +38,7 @@
             this.lblApellidoMaterno = new System.Windows.Forms.Label();
             this.lblNombres = new System.Windows.Forms.Label();
             this.txtEspalda = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboTipoSomatico = new System.Windows.Forms.ComboBox();
             this.txtAbBajo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCintura = new System.Windows.Forms.TextBox();
@@ -58,13 +58,22 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblTxtNombre = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(182, 181);
+            this.dateTimePicker1.Location = new System.Drawing.Point(182, 172);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(281, 20);
@@ -90,7 +99,7 @@
             // 
             this.lblDni.AutoSize = true;
             this.lblDni.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDni.Location = new System.Drawing.Point(61, 338);
+            this.lblDni.Location = new System.Drawing.Point(58, 339);
             this.lblDni.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDni.Name = "lblDni";
             this.lblDni.Size = new System.Drawing.Size(107, 17);
@@ -134,7 +143,7 @@
             // 
             this.lblApellidoMaterno.AutoSize = true;
             this.lblApellidoMaterno.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellidoMaterno.Location = new System.Drawing.Point(61, 185);
+            this.lblApellidoMaterno.Location = new System.Drawing.Point(61, 172);
             this.lblApellidoMaterno.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellidoMaterno.Name = "lblApellidoMaterno";
             this.lblApellidoMaterno.Size = new System.Drawing.Size(55, 17);
@@ -160,13 +169,18 @@
             this.txtEspalda.Size = new System.Drawing.Size(77, 20);
             this.txtEspalda.TabIndex = 95;
             // 
-            // comboBox3
+            // cboTipoSomatico
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(182, 219);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(171, 21);
-            this.comboBox3.TabIndex = 97;
+            this.cboTipoSomatico.FormattingEnabled = true;
+            this.cboTipoSomatico.Items.AddRange(new object[] {
+            "ENDOMORFO",
+            "ECTOMORFO",
+            "MESOMORFO"});
+            this.cboTipoSomatico.Location = new System.Drawing.Point(182, 219);
+            this.cboTipoSomatico.Name = "cboTipoSomatico";
+            this.cboTipoSomatico.Size = new System.Drawing.Size(171, 21);
+            this.cboTipoSomatico.TabIndex = 97;
+            this.cboTipoSomatico.Text = "ENDOMORFO";
             // 
             // txtAbBajo
             // 
@@ -180,7 +194,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(61, 372);
+            this.label1.Location = new System.Drawing.Point(58, 376);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 17);
@@ -208,7 +222,7 @@
             // 
             // txtPierDer
             // 
-            this.txtPierDer.Location = new System.Drawing.Point(464, 375);
+            this.txtPierDer.Location = new System.Drawing.Point(462, 375);
             this.txtPierDer.Margin = new System.Windows.Forms.Padding(4);
             this.txtPierDer.Name = "txtPierDer";
             this.txtPierDer.Size = new System.Drawing.Size(75, 20);
@@ -227,7 +241,7 @@
             // 
             // txtGluteos
             // 
-            this.txtGluteos.Location = new System.Drawing.Point(464, 338);
+            this.txtGluteos.Location = new System.Drawing.Point(462, 337);
             this.txtGluteos.Margin = new System.Windows.Forms.Padding(4);
             this.txtGluteos.Name = "txtGluteos";
             this.txtGluteos.Size = new System.Drawing.Size(75, 20);
@@ -237,7 +251,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(348, 338);
+            this.label4.Location = new System.Drawing.Point(348, 341);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(61, 17);
@@ -317,6 +331,7 @@
             this.btnCancelar.TabIndex = 114;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -366,20 +381,112 @@
             this.label9.TabIndex = 117;
             this.label9.Text = "Kg";
             // 
-            // txtNombre
+            // lblTxtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(202, 129);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(281, 20);
-            this.txtNombre.TabIndex = 118;
+            this.lblTxtNombre.AutoSize = true;
+            this.lblTxtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTxtNombre.Location = new System.Drawing.Point(202, 129);
+            this.lblTxtNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTxtNombre.Name = "lblTxtNombre";
+            this.lblTxtNombre.Size = new System.Drawing.Size(0, 17);
+            this.lblTxtNombre.TabIndex = 118;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(273, 303);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(24, 13);
+            this.label10.TabIndex = 119;
+            this.label10.Text = "cm.";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(273, 340);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(24, 13);
+            this.label11.TabIndex = 120;
+            this.label11.Text = "cm.";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(273, 374);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(24, 13);
+            this.label12.TabIndex = 121;
+            this.label12.Text = "cm.";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(273, 416);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(24, 13);
+            this.label13.TabIndex = 122;
+            this.label13.Text = "cm.";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(546, 270);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 13);
+            this.label14.TabIndex = 123;
+            this.label14.Text = "cm.";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(546, 303);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(24, 13);
+            this.label15.TabIndex = 124;
+            this.label15.Text = "cm.";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(546, 343);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 13);
+            this.label16.TabIndex = 125;
+            this.label16.Text = "cm.";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(546, 378);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(24, 13);
+            this.label17.TabIndex = 126;
+            this.label17.Text = "cm.";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(546, 417);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(24, 13);
+            this.label18.TabIndex = 127;
+            this.label18.Text = "cm.";
             // 
             // frmNuevaFichaMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(608, 621);
-            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.lblTxtNombre);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -397,7 +504,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtAbBajo);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cboTipoSomatico);
             this.Controls.Add(this.txtEspalda);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtAbAlto);
@@ -430,7 +537,7 @@
         private System.Windows.Forms.Label lblApellidoMaterno;
         private System.Windows.Forms.Label lblNombres;
         private System.Windows.Forms.TextBox txtEspalda;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboTipoSomatico;
         private System.Windows.Forms.TextBox txtAbBajo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCintura;
@@ -450,6 +557,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblTxtNombre;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
     }
 }

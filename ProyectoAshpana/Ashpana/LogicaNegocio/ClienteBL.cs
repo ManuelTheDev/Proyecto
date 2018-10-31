@@ -71,6 +71,16 @@ namespace LogicaNegocio
             }
         }
 
+        public int registrarFichaMedida_X_Cliente(FichaMedida fm, Cliente c)
+        {
+            ClienteDA clienteDA = new ClienteDA();
+            FichaMedidaBL fichaMedidaBL = new FichaMedidaBL();
+            int idFichaMedida = fichaMedidaBL.registrarFichaMedida(fm);
+            return clienteDA.registrarFichaMedida_X_Cliente(c.IdCliente, c.IdPersona, idFichaMedida);
+            
+        }
+
+
 
         
 

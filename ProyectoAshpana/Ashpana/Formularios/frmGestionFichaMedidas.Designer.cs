@@ -47,11 +47,11 @@
             this.piernaIzqDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piernaDerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fichaMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fichaMedidaBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fichaMedidaBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblNomCliente = new System.Windows.Forms.Label();
-            this.txtNomCliente = new System.Windows.Forms.TextBox();
+            this.fichaMedidaBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fichaMedidaBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNombreCli = new System.Windows.Forms.Label();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnasCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBindingSource)).BeginInit();
@@ -217,14 +217,6 @@
             // 
             this.fichaMedidaBindingSource.DataSource = typeof(Modelo.FichaMedida);
             // 
-            // fichaMedidaBLBindingSource
-            // 
-            this.fichaMedidaBLBindingSource.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
-            // 
-            // fichaMedidaBLBindingSource1
-            // 
-            this.fichaMedidaBLBindingSource1.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Black;
@@ -241,6 +233,7 @@
             this.btnCancelar.TabIndex = 23;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblNomCliente
             // 
@@ -252,19 +245,29 @@
             this.lblNomCliente.TabIndex = 24;
             this.lblNomCliente.Text = "Nombre del cliente:";
             // 
-            // txtNomCliente
+            // fichaMedidaBLBindingSource
             // 
-            this.txtNomCliente.Location = new System.Drawing.Point(296, 158);
-            this.txtNomCliente.Name = "txtNomCliente";
-            this.txtNomCliente.Size = new System.Drawing.Size(450, 20);
-            this.txtNomCliente.TabIndex = 25;
+            this.fichaMedidaBLBindingSource.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
+            // 
+            // fichaMedidaBLBindingSource1
+            // 
+            this.fichaMedidaBLBindingSource1.DataSource = typeof(LogicaNegocio.FichaMedidaBL);
+            // 
+            // lblNombreCli
+            // 
+            this.lblNombreCli.AutoSize = true;
+            this.lblNombreCli.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCli.Location = new System.Drawing.Point(296, 155);
+            this.lblNombreCli.Name = "lblNombreCli";
+            this.lblNombreCli.Size = new System.Drawing.Size(0, 21);
+            this.lblNombreCli.TabIndex = 25;
             // 
             // frmGestionFichaMedidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1005, 600);
-            this.Controls.Add(this.txtNomCliente);
+            this.Controls.Add(this.lblNombreCli);
             this.Controls.Add(this.lblNomCliente);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnModificar);
@@ -308,6 +311,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn piernaDerDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblNomCliente;
-        private System.Windows.Forms.TextBox txtNomCliente;
+        private System.Windows.Forms.Label lblNombreCli;
     }
 }

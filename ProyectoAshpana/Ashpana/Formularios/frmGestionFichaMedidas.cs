@@ -36,7 +36,7 @@ namespace Formularios
             cliente.Nombres = c.Nombres;
             cliente.Sexo = c.Sexo;
             cliente.Telefono = c.Telefono;
-            txtNomCliente.Text = cliente.Nombres + " " + cliente.ApPaterno + " " + cliente.ApMaterno;
+            lblNombreCli.Text = cliente.Nombres + " " + cliente.ApPaterno + " " + cliente.ApMaterno;
             FichaMedidaBL fichaMedidaBL = new FichaMedidaBL();
             columnasCitas.AutoGenerateColumns = false;
             columnasCitas.DataSource = fichaMedidaBL.listarFichaMedidas(c);
@@ -63,6 +63,11 @@ namespace Formularios
             {
 
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
