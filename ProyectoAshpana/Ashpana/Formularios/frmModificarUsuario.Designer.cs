@@ -152,6 +152,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(260, 20);
             this.txtCorreo.TabIndex = 103;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // txtDni
             // 
@@ -160,6 +161,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(85, 20);
             this.txtDni.TabIndex = 102;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // txtTelefono
             // 
@@ -168,6 +170,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(103, 20);
             this.txtTelefono.TabIndex = 100;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // txtDireccion
             // 
@@ -266,6 +269,7 @@
             this.txtNombres.Name = "txtNombres";
             this.txtNombres.Size = new System.Drawing.Size(278, 20);
             this.txtNombres.TabIndex = 90;
+            this.txtNombres.TextChanged += new System.EventHandler(this.txtNombres_TextChanged);
             // 
             // lblApellidoMaterno
             // 
@@ -351,6 +355,7 @@
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(281, 20);
             this.txtSueldo.TabIndex = 113;
+            this.txtSueldo.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
             // label2
             // 

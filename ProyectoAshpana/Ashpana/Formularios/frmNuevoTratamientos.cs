@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -129,12 +130,16 @@ namespace Formularios
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-
+            Regex rgx = new Regex(@"^[0-9]+\.?[0-9]*$");
+            if (!rgx.IsMatch(txtPrecio.Text)) txtPrecio.ForeColor = Color.Red;
+            else txtPrecio.ForeColor = Color.Black;
         }
 
         private void txtDuracion_TextChanged(object sender, EventArgs e)
         {
-
+            Regex rgx = new Regex(@"^[0-9]+\.?[0-9]*$");
+            if (!rgx.IsMatch(txtDuracion.Text)) txtDuracion.ForeColor = Color.Red;
+            else txtDuracion.ForeColor = Color.Black;
         }
 
         private void txtDescPadecimiento_TextChanged(object sender, EventArgs e)

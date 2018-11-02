@@ -195,6 +195,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(174, 20);
             this.txtPrecio.TabIndex = 36;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // txtDuracion
             // 
@@ -203,6 +204,7 @@
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(164, 20);
             this.txtDuracion.TabIndex = 35;
+            this.txtDuracion.TextChanged += new System.EventHandler(this.txtDuracion_TextChanged);
             // 
             // lblSoles
             // 
