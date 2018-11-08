@@ -160,5 +160,10 @@ namespace Formularios
         {
             AbrirFormInPanel(new frmGestionUsuarios());
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

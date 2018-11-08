@@ -38,6 +38,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MenuVertical = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.PAQUETES = new System.Windows.Forms.Button();
             this.USUARIOS = new System.Windows.Forms.Button();
             this.CITAS = new System.Windows.Forms.Button();
@@ -56,7 +57,7 @@
             this.imagenCerrar = new System.Windows.Forms.PictureBox();
             this.panelContedor = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnReporte = new System.Windows.Forms.Button();
             this.MenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
@@ -72,6 +73,7 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.MenuVertical.Controls.Add(this.btnReporte);
             this.MenuVertical.Controls.Add(this.btnCerrarSesion);
             this.MenuVertical.Controls.Add(this.PAQUETES);
             this.MenuVertical.Controls.Add(this.USUARIOS);
@@ -90,6 +92,23 @@
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 687);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(268, 45);
+            this.btnCerrarSesion.TabIndex = 11;
+            this.btnCerrarSesion.Text = "        CERRAR SESIÓN";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // PAQUETES
             // 
             this.PAQUETES.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -99,7 +118,7 @@
             this.PAQUETES.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PAQUETES.Image = ((System.Drawing.Image)(resources.GetObject("PAQUETES.Image")));
             this.PAQUETES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PAQUETES.Location = new System.Drawing.Point(9, 452);
+            this.PAQUETES.Location = new System.Drawing.Point(9, 407);
             this.PAQUETES.Name = "PAQUETES";
             this.PAQUETES.Size = new System.Drawing.Size(256, 45);
             this.PAQUETES.TabIndex = 10;
@@ -116,7 +135,7 @@
             this.USUARIOS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.USUARIOS.Image = ((System.Drawing.Image)(resources.GetObject("USUARIOS.Image")));
             this.USUARIOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.USUARIOS.Location = new System.Drawing.Point(6, 596);
+            this.USUARIOS.Location = new System.Drawing.Point(9, 542);
             this.USUARIOS.Name = "USUARIOS";
             this.USUARIOS.Size = new System.Drawing.Size(259, 45);
             this.USUARIOS.TabIndex = 9;
@@ -133,7 +152,7 @@
             this.CITAS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CITAS.Image = global::Formularios.Properties.Resources.collection;
             this.CITAS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.CITAS.Location = new System.Drawing.Point(12, 232);
+            this.CITAS.Location = new System.Drawing.Point(9, 193);
             this.CITAS.Name = "CITAS";
             this.CITAS.Size = new System.Drawing.Size(256, 45);
             this.CITAS.TabIndex = 8;
@@ -150,7 +169,7 @@
             this.TERAPISTAS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TERAPISTAS.Image = ((System.Drawing.Image)(resources.GetObject("TERAPISTAS.Image")));
             this.TERAPISTAS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TERAPISTAS.Location = new System.Drawing.Point(6, 528);
+            this.TERAPISTAS.Location = new System.Drawing.Point(6, 476);
             this.TERAPISTAS.Name = "TERAPISTAS";
             this.TERAPISTAS.Size = new System.Drawing.Size(259, 45);
             this.TERAPISTAS.TabIndex = 7;
@@ -167,7 +186,7 @@
             this.PACIENTES.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PACIENTES.Image = ((System.Drawing.Image)(resources.GetObject("PACIENTES.Image")));
             this.PACIENTES.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.PACIENTES.Location = new System.Drawing.Point(12, 303);
+            this.PACIENTES.Location = new System.Drawing.Point(12, 261);
             this.PACIENTES.Name = "PACIENTES";
             this.PACIENTES.Size = new System.Drawing.Size(253, 45);
             this.PACIENTES.TabIndex = 5;
@@ -184,7 +203,7 @@
             this.TRATAMIENTOS.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TRATAMIENTOS.Image = ((System.Drawing.Image)(resources.GetObject("TRATAMIENTOS.Image")));
             this.TRATAMIENTOS.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.TRATAMIENTOS.Location = new System.Drawing.Point(12, 384);
+            this.TRATAMIENTOS.Location = new System.Drawing.Point(9, 334);
             this.TRATAMIENTOS.Name = "TRATAMIENTOS";
             this.TRATAMIENTOS.Size = new System.Drawing.Size(256, 45);
             this.TRATAMIENTOS.TabIndex = 4;
@@ -201,7 +220,7 @@
             this.INICIO.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INICIO.Image = ((System.Drawing.Image)(resources.GetObject("INICIO.Image")));
             this.INICIO.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.INICIO.Location = new System.Drawing.Point(12, 155);
+            this.INICIO.Location = new System.Drawing.Point(9, 123);
             this.INICIO.Name = "INICIO";
             this.INICIO.Size = new System.Drawing.Size(253, 45);
             this.INICIO.TabIndex = 3;
@@ -348,21 +367,21 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // btnCerrarSesion
+            // btnReporte
             // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(3, 661);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(268, 45);
-            this.btnCerrarSesion.TabIndex = 11;
-            this.btnCerrarSesion.Text = "        CERRAR SESIÓN";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
+            this.btnReporte.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporte.Location = new System.Drawing.Point(9, 609);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(259, 45);
+            this.btnReporte.TabIndex = 12;
+            this.btnReporte.Text = "REPORTES";
+            this.btnReporte.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -412,6 +431,7 @@
         private System.Windows.Forms.Button USUARIOS;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnReporte;
     }
 }
 

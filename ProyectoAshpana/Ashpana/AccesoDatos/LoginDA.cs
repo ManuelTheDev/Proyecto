@@ -23,11 +23,15 @@ namespace AccesoDatos
 
                 MySqlConnection conexion = new MySqlConnection(cadena);
                 conexion.Open();
-                MySqlCommand comando = new MySqlCommand();
-                comando.Connection = conexion;
-                comando.CommandText= ("SELECT P.DNI, P.APELLIDO_PATERNO, P.NOMBRES, P.APELLIDO_MATERNO FROM TRABAJADOR T, PERSONA P WHERE P.DNI = '" + usuario + "'AND T.CONTRASENIA = '" + contrasenia +"'AND  T.ID_PERSONA_FK= P.ID_PERSONA");
-                MySqlDataReader leer = comando.ExecuteReader(); 
-                if (leer.Read())
+             
+                MySqlCommand comando = new MySqlCommand("call INICIAR_SESION(@usuario, @contra);", conexion);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+                comando.Parameters.AddWithValue("@contra", contrasenia);
+                comando.Prepare();
+
+                MySqlDataReader lector = comando.ExecuteReader();
+
+                if (lector.Read())
                 {
                     conexion.Close();
                     return 1; 
@@ -37,7 +41,7 @@ namespace AccesoDatos
                     conexion.Close();
                     return 0; 
                 }
-
+                
             }
             catch (Exception e)
             {
