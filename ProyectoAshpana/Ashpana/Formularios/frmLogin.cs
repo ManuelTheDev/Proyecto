@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,31 @@ namespace Formularios
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Form1 frmPrincipal = new Form1();
-            frmPrincipal.ShowDialog();
-            this.Dispose(); 
+            
+
+            LoginBL usuario = new LoginBL();
+
+             if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text))
+            {
+                MessageBox.Show("El usuario y/o la contraseña son incorrectos.",
+                "Iniciar Sesion", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+            } 
+             else
+            {
+                
+                Form1 frmPrincipal = new Form1();
+                frmPrincipal.ShowDialog();
+   
+            }
+            
+        }
+
+        private void txtContrasenia_Enter(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text == "")
+            {
+                txtContrasenia.UseSystemPasswordChar = true; 
+            }
         }
     }
 }

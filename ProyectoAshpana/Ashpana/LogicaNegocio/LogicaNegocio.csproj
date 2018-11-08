@@ -45,6 +45,7 @@
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CondicionMedicaBL.cs" />
     <Compile Include="FichaMedidaBL.cs" />
+    <Compile Include="LoginBL.cs" />
     <Compile Include="PaqueteBL.cs" />
     <Compile Include="TerapistaBL.cs" />
     <Compile Include="TratamientoBL.cs" />

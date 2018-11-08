@@ -180,7 +180,9 @@ namespace AccesoDatos
             }
             conexion.Close();
             return tratamientos;
-        } 
+        }
+
+        
 
     }
 }
