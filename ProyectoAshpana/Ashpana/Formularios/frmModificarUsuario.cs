@@ -102,7 +102,7 @@ namespace Formularios
 
         private void txtNombres_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
             if (!rgx.IsMatch(txtNombres.Text)) txtNombres.ForeColor = Color.Red;
             else txtNombres.ForeColor = Color.Black;
         }
@@ -130,9 +130,29 @@ namespace Formularios
 
         private void txtSueldo_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+\.?[0-9]*$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
             if (!rgx.IsMatch(txtSueldo.Text)) txtSueldo.ForeColor = Color.Red;
             else txtSueldo.ForeColor = Color.Black;
+        }
+
+        private void txtApellidoPaterno_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtApellidoPaterno.Text)) txtApellidoPaterno.ForeColor = Color.Red;
+            else txtApellidoPaterno.ForeColor = Color.Black;
+
+        }
+
+        private void txtApellidoMaterno_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtApellidoMaterno.Text)) txtApellidoMaterno.ForeColor = Color.Red;
+            else txtApellidoMaterno.ForeColor = Color.Black;
+        }
+
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

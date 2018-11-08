@@ -284,6 +284,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(274, 27);
             this.txtTelefono.TabIndex = 87;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // lblTelefono
             // 
@@ -303,6 +304,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(274, 27);
             this.txtEmail.TabIndex = 85;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblEmail
             // 
@@ -311,9 +313,9 @@
             this.lblEmail.Location = new System.Drawing.Point(32, 409);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 17);
+            this.lblEmail.Size = new System.Drawing.Size(57, 17);
             this.lblEmail.TabIndex = 84;
-            this.lblEmail.Text = "E-mail:";
+            this.lblEmail.Text = "Correo:";
             // 
             // txtNombre
             // 
@@ -322,6 +324,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(274, 27);
             this.txtNombre.TabIndex = 83;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombres
             // 
@@ -341,6 +344,7 @@
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.Size = new System.Drawing.Size(274, 27);
             this.txtApMaterno.TabIndex = 81;
+            this.txtApMaterno.TextChanged += new System.EventHandler(this.txtApMaterno_TextChanged);
             // 
             // lblApMaterno
             // 
@@ -360,6 +364,7 @@
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.Size = new System.Drawing.Size(274, 27);
             this.txtApPaterno.TabIndex = 79;
+            this.txtApPaterno.TextChanged += new System.EventHandler(this.txtApPaterno_TextChanged);
             // 
             // lblApPaterno
             // 
@@ -379,6 +384,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(274, 27);
             this.txtDni.TabIndex = 77;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // lblDni
             // 
@@ -422,6 +428,7 @@
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(95, 27);
             this.txtSueldo.TabIndex = 109;
+            this.txtSueldo.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
             // label1
             // 

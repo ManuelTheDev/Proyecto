@@ -123,6 +123,7 @@
             this.txtIzq.Name = "txtIzq";
             this.txtIzq.Size = new System.Drawing.Size(75, 20);
             this.txtIzq.TabIndex = 143;
+            this.txtIzq.TextChanged += new System.EventHandler(this.txtIzq_TextChanged);
             // 
             // label7
             // 
@@ -153,6 +154,7 @@
             this.txtPierDer.Name = "txtPierDer";
             this.txtPierDer.Size = new System.Drawing.Size(75, 20);
             this.txtPierDer.TabIndex = 140;
+            this.txtPierDer.TextChanged += new System.EventHandler(this.txtPierDer_TextChanged);
             // 
             // label3
             // 
@@ -172,6 +174,7 @@
             this.txtGluteos.Name = "txtGluteos";
             this.txtGluteos.Size = new System.Drawing.Size(75, 20);
             this.txtGluteos.TabIndex = 138;
+            this.txtGluteos.TextChanged += new System.EventHandler(this.txtGluteos_TextChanged);
             // 
             // label4
             // 
@@ -191,6 +194,7 @@
             this.txtBrIzq.Name = "txtBrIzq";
             this.txtBrIzq.Size = new System.Drawing.Size(77, 20);
             this.txtBrIzq.TabIndex = 136;
+            this.txtBrIzq.TextChanged += new System.EventHandler(this.txtBrIzq_TextChanged);
             // 
             // txtBrDer
             // 
@@ -199,6 +203,7 @@
             this.txtBrDer.Name = "txtBrDer";
             this.txtBrDer.Size = new System.Drawing.Size(75, 20);
             this.txtBrDer.TabIndex = 135;
+            this.txtBrDer.TextChanged += new System.EventHandler(this.txtBrDer_TextChanged);
             // 
             // label6
             // 
@@ -218,6 +223,7 @@
             this.txtCintura.Name = "txtCintura";
             this.txtCintura.Size = new System.Drawing.Size(75, 20);
             this.txtCintura.TabIndex = 133;
+            this.txtCintura.TextChanged += new System.EventHandler(this.txtCintura_TextChanged);
             // 
             // label2
             // 
@@ -237,6 +243,7 @@
             this.txtAbBajo.Name = "txtAbBajo";
             this.txtAbBajo.Size = new System.Drawing.Size(75, 20);
             this.txtAbBajo.TabIndex = 131;
+            this.txtAbBajo.TextChanged += new System.EventHandler(this.txtAbBajo_TextChanged);
             // 
             // label1
             // 
@@ -269,6 +276,7 @@
             this.txtEspalda.Name = "txtEspalda";
             this.txtEspalda.Size = new System.Drawing.Size(77, 20);
             this.txtEspalda.TabIndex = 128;
+            this.txtEspalda.TextChanged += new System.EventHandler(this.txtEspalda_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -285,6 +293,7 @@
             this.txtAbAlto.Name = "txtAbAlto";
             this.txtAbAlto.Size = new System.Drawing.Size(75, 20);
             this.txtAbAlto.TabIndex = 126;
+            this.txtAbAlto.TextChanged += new System.EventHandler(this.txtAbAlto_TextChanged);
             // 
             // txtPeso
             // 
@@ -293,6 +302,7 @@
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(77, 20);
             this.txtPeso.TabIndex = 125;
+            this.txtPeso.TextChanged += new System.EventHandler(this.txtPeso_TextChanged);
             // 
             // lblDni
             // 

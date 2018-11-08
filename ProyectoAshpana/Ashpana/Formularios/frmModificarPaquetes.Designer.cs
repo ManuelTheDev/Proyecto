@@ -46,11 +46,11 @@
             this.txtIdTratamiento = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtNomTratamiento = new System.Windows.Forms.TextBox();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtNomTratamiento = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -118,6 +118,7 @@
             this.txtNumSes.Name = "txtNumSes";
             this.txtNumSes.Size = new System.Drawing.Size(125, 20);
             this.txtNumSes.TabIndex = 16;
+            this.txtNumSes.TextChanged += new System.EventHandler(this.txtNumSes_TextChanged);
             // 
             // label4
             // 
@@ -135,6 +136,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(125, 20);
             this.txtPrecio.TabIndex = 14;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // label3
             // 
@@ -152,6 +154,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(417, 20);
             this.txtNombre.TabIndex = 23;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // label6
             // 
@@ -233,6 +236,7 @@
             this.txtIdTratamiento.Name = "txtIdTratamiento";
             this.txtIdTratamiento.Size = new System.Drawing.Size(46, 20);
             this.txtIdTratamiento.TabIndex = 58;
+            this.txtIdTratamiento.TextChanged += new System.EventHandler(this.txtIdTratamiento_TextChanged);
             // 
             // label11
             // 
@@ -256,22 +260,6 @@
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 54;
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtNomTratamiento);
-            this.groupBox1.Location = new System.Drawing.Point(28, 193);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(359, 116);
-            this.groupBox1.TabIndex = 59;
-            this.groupBox1.TabStop = false;
-            // 
-            // txtNomTratamiento
-            // 
-            this.txtNomTratamiento.Location = new System.Drawing.Point(95, 79);
-            this.txtNomTratamiento.Name = "txtNomTratamiento";
-            this.txtNomTratamiento.Size = new System.Drawing.Size(249, 20);
-            this.txtNomTratamiento.TabIndex = 50;
-            // 
             // NOMBRE
             // 
             this.NOMBRE.DataPropertyName = "Nombre";
@@ -289,6 +277,22 @@
             this.PRECIO.DataPropertyName = "Precio";
             this.PRECIO.HeaderText = "PRECIO";
             this.PRECIO.Name = "PRECIO";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtNomTratamiento);
+            this.groupBox1.Location = new System.Drawing.Point(28, 193);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(359, 116);
+            this.groupBox1.TabIndex = 59;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtNomTratamiento
+            // 
+            this.txtNomTratamiento.Location = new System.Drawing.Point(95, 79);
+            this.txtNomTratamiento.Name = "txtNomTratamiento";
+            this.txtNomTratamiento.Size = new System.Drawing.Size(249, 20);
+            this.txtNomTratamiento.TabIndex = 50;
             // 
             // frmModificarPaquetes
             // 

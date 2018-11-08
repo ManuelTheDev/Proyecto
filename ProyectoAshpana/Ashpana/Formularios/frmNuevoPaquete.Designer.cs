@@ -39,6 +39,9 @@
             this.txtNombrePaquete = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.btnListarTratamientos = new System.Windows.Forms.Button();
             this.txtNomTratamiento = new System.Windows.Forms.TextBox();
@@ -48,9 +51,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarTratamiento = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,6 +83,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(64, 20);
             this.txtPrecio.TabIndex = 5;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // txtNumSesiones
             // 
@@ -90,6 +91,7 @@
             this.txtNumSesiones.Name = "txtNumSesiones";
             this.txtNumSesiones.Size = new System.Drawing.Size(64, 20);
             this.txtNumSesiones.TabIndex = 7;
+            this.txtNumSesiones.TextChanged += new System.EventHandler(this.txtNumSesiones_TextChanged);
             // 
             // label4
             // 
@@ -144,7 +146,7 @@
             this.txtNombrePaquete.Name = "txtNombrePaquete";
             this.txtNombrePaquete.Size = new System.Drawing.Size(601, 20);
             this.txtNombrePaquete.TabIndex = 13;
-            this.txtNombrePaquete.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombrePaquete.TextChanged += new System.EventHandler(this.txtNombrePaquete_TextChanged);
             // 
             // label6
             // 
@@ -167,6 +169,24 @@
             this.dgvTratamientos.Name = "dgvTratamientos";
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 15;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "Nombre";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "Precio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
             // 
             // label12
             // 
@@ -274,24 +294,6 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "Nombre";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "Precio";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
             // 
             // frmNuevoPaquete
             // 

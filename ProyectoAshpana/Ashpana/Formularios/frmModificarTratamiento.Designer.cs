@@ -145,6 +145,7 @@
             this.txtNombreTrat.Name = "txtNombreTrat";
             this.txtNombreTrat.Size = new System.Drawing.Size(387, 20);
             this.txtNombreTrat.TabIndex = 30;
+            this.txtNombreTrat.TextChanged += new System.EventHandler(this.txtNombreTrat_TextChanged);
             // 
             // rbtnCorporal
             // 

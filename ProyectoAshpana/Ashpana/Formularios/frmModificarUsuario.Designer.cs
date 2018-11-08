@@ -125,6 +125,7 @@
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(281, 20);
             this.txtContrasenia.TabIndex = 106;
+            this.txtContrasenia.TextChanged += new System.EventHandler(this.txtContrasenia_TextChanged);
             // 
             // lblContrasena
             // 
@@ -253,6 +254,7 @@
             this.txtApellidoMaterno.Name = "txtApellidoMaterno";
             this.txtApellidoMaterno.Size = new System.Drawing.Size(278, 20);
             this.txtApellidoMaterno.TabIndex = 92;
+            this.txtApellidoMaterno.TextChanged += new System.EventHandler(this.txtApellidoMaterno_TextChanged);
             // 
             // txtApellidoPaterno
             // 
@@ -261,6 +263,7 @@
             this.txtApellidoPaterno.Name = "txtApellidoPaterno";
             this.txtApellidoPaterno.Size = new System.Drawing.Size(278, 20);
             this.txtApellidoPaterno.TabIndex = 91;
+            this.txtApellidoPaterno.TextChanged += new System.EventHandler(this.txtApellidoPaterno_TextChanged);
             // 
             // txtNombres
             // 

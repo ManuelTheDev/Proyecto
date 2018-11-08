@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -120,6 +121,7 @@ namespace Formularios
         {
             int indice = dgvTratamientos.CurrentRow.Index;
             paqueteMod.Tratamientos.RemoveAt(indice);
+            
         }
 
         private void btnListarTratamientos_Click(object sender, EventArgs e)
@@ -131,6 +133,32 @@ namespace Formularios
                 txtIdTratamiento.Text = tratamientoSeleccionado.IdTrat.ToString();
                 txtNomTratamiento.Text = tratamientoSeleccionado.NombreServicio;
             }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtNombre.Text)) txtNombre.ForeColor = Color.Red;
+            else txtNombre.ForeColor = Color.Black;
+        }
+
+        private void txtIdTratamiento_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            if (!rgx.IsMatch(txtPrecio.Text)) txtPrecio.ForeColor = Color.Red;
+            else txtPrecio.ForeColor = Color.Black;
+        }
+
+        private void txtNumSes_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^\d+$");
+            if (!rgx.IsMatch(txtNumSes.Text)) txtNumSes.ForeColor = Color.Red;
+            else txtNumSes.ForeColor = Color.Black;
         }
     }
 }

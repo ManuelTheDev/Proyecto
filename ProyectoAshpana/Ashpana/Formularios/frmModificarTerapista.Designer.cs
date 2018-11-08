@@ -144,6 +144,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(248, 20);
             this.txtTelefono.TabIndex = 35;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // lblTelefono
             // 
@@ -163,6 +164,7 @@
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(248, 20);
             this.txtCorreo.TabIndex = 33;
+            this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             // 
             // lblEmail
             // 
@@ -182,6 +184,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(248, 20);
             this.txtNombre.TabIndex = 31;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombres
             // 
@@ -201,6 +204,7 @@
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.Size = new System.Drawing.Size(248, 20);
             this.txtApMaterno.TabIndex = 29;
+            this.txtApMaterno.TextChanged += new System.EventHandler(this.txtApMaterno_TextChanged);
             // 
             // lblApMaterno
             // 
@@ -220,6 +224,7 @@
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.Size = new System.Drawing.Size(248, 20);
             this.txtApPaterno.TabIndex = 27;
+            this.txtApPaterno.TextChanged += new System.EventHandler(this.txtApPaterno_TextChanged);
             // 
             // lblApPaterno
             // 
@@ -239,6 +244,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(248, 20);
             this.txtDni.TabIndex = 25;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // lblDni
             // 
@@ -285,6 +291,7 @@
             this.txtHoraEntrada.Name = "txtHoraEntrada";
             this.txtHoraEntrada.Size = new System.Drawing.Size(161, 20);
             this.txtHoraEntrada.TabIndex = 72;
+            this.txtHoraEntrada.TextChanged += new System.EventHandler(this.txtHoraEntrada_TextChanged);
             // 
             // lblHoraSalida
             // 
@@ -409,6 +416,7 @@
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(161, 20);
             this.txtSueldo.TabIndex = 83;
+            this.txtSueldo.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
             // label2
             // 

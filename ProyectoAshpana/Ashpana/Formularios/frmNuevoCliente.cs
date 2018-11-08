@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -84,6 +85,49 @@ namespace Formularios
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha registrado con exito.",
                 "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^\d{8}$");
+            if (!rgx.IsMatch(txtDni.Text)) txtDni.ForeColor = Color.Red;
+            else txtDni.ForeColor = Color.Black;
+        }
+
+        private void txtApPaterno_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtApPaterno.Text)) txtApPaterno.ForeColor = Color.Red;
+            else txtApPaterno.ForeColor = Color.Black;
+        }
+
+        private void txtApMaterno_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtApMaterno.Text)) txtApMaterno.ForeColor = Color.Red;
+            else txtApMaterno.ForeColor = Color.Black;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtNombre.Text)) txtNombre.ForeColor = Color.Red;
+            else txtNombre.ForeColor = Color.Black;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^(\w+)\.?(\w+)\-?(\w+)@(\w+)\.\w+([-.])*$"); //@"^[0-9]+\.?[0-9]*$"
+            if (!rgx.IsMatch(txtEmail.Text)) txtEmail.ForeColor = Color.Red;
+            else txtEmail.ForeColor = Color.Black;
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^\d{9}$");
+            if (!rgx.IsMatch(txtTelefono.Text)) txtTelefono.ForeColor = Color.Red;
+            else txtTelefono.ForeColor = Color.Black;
 
         }
     }

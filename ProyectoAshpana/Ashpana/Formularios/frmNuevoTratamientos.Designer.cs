@@ -151,7 +151,7 @@
             this.txtNombreTrat.Name = "txtNombreTrat";
             this.txtNombreTrat.Size = new System.Drawing.Size(387, 27);
             this.txtNombreTrat.TabIndex = 18;
-            this.txtNombreTrat.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtNombreTrat.TextChanged += new System.EventHandler(this.txtNombreTrat_TextChanged);
             // 
             // lblNombreTrat
             // 

@@ -86,6 +86,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(276, 27);
             this.txtDni.TabIndex = 2;
+            this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // lblApPaterno
             // 
@@ -105,6 +106,7 @@
             this.txtApPaterno.Name = "txtApPaterno";
             this.txtApPaterno.Size = new System.Drawing.Size(276, 27);
             this.txtApPaterno.TabIndex = 4;
+            this.txtApPaterno.TextChanged += new System.EventHandler(this.txtApPaterno_TextChanged);
             // 
             // lblApMaterno
             // 
@@ -124,6 +126,7 @@
             this.txtApMaterno.Name = "txtApMaterno";
             this.txtApMaterno.Size = new System.Drawing.Size(276, 27);
             this.txtApMaterno.TabIndex = 6;
+            this.txtApMaterno.TextChanged += new System.EventHandler(this.txtApMaterno_TextChanged);
             // 
             // lblNombres
             // 
@@ -143,6 +146,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(276, 27);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblEmail
             // 
@@ -151,9 +155,9 @@
             this.lblEmail.Location = new System.Drawing.Point(46, 429);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(51, 17);
+            this.lblEmail.Size = new System.Drawing.Size(57, 17);
             this.lblEmail.TabIndex = 9;
-            this.lblEmail.Text = "E-mail:";
+            this.lblEmail.Text = "Correo:";
             // 
             // txtEmail
             // 
@@ -162,6 +166,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(276, 27);
             this.txtEmail.TabIndex = 10;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // lblTelefono
             // 
@@ -181,6 +186,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(276, 27);
             this.txtTelefono.TabIndex = 12;
+            this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // lblDireccion
             // 

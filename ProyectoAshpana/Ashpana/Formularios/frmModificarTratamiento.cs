@@ -127,16 +127,23 @@ namespace Formularios
 
         private void txtDuracion_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+\.?[0-9]*$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
             if (!rgx.IsMatch(txtDuracion.Text)) txtDuracion.ForeColor = Color.Red;
             else txtDuracion.ForeColor = Color.Black;
         }
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+\.?[0-9]*$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
             if (!rgx.IsMatch(txtPrecio.Text)) txtPrecio.ForeColor = Color.Red;
             else txtPrecio.ForeColor = Color.Black;
+        }
+
+        private void txtNombreTrat_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtNombreTrat.Text)) txtNombreTrat.ForeColor = Color.Red;
+            else txtNombreTrat.ForeColor = Color.Black;
         }
     }
 }

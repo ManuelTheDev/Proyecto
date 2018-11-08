@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -78,10 +79,7 @@ namespace Formularios
 
         }
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnListarTratamientos_Click(object sender, EventArgs e)
         {
@@ -123,6 +121,27 @@ namespace Formularios
         {
             int indice = dgvTratamientos.CurrentRow.Index;
             paquete.Tratamientos.RemoveAt(indice);
+        }
+
+        private void txtNombrePaquete_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            if (!rgx.IsMatch(txtNombrePaquete.Text)) txtNombrePaquete.ForeColor = Color.Red;
+            else txtNombrePaquete.ForeColor = Color.Black;
+        }
+
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            if (!rgx.IsMatch(txtPrecio.Text)) txtPrecio.ForeColor = Color.Red;
+            else txtPrecio.ForeColor = Color.Black;
+        }
+
+        private void txtNumSesiones_TextChanged(object sender, EventArgs e)
+        {
+            Regex rgx = new Regex(@"^\d+$");
+            if (!rgx.IsMatch(txtNumSesiones.Text)) txtNumSesiones.ForeColor = Color.Red;
+            else txtNumSesiones.ForeColor = Color.Black;
         }
     }
 }
