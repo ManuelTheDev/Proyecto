@@ -25,26 +25,91 @@ namespace Formularios
 
             LoginBL usuario = new LoginBL();
 
-             if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text))
+            if (txtUsuario.Text == "INGRESE USUARIO" && txtContrasenia.Text=="INGRESE CONTRASEÑA")
             {
-                MessageBox.Show("El usuario y/o la contraseña son incorrectos.",
-                "Iniciar Sesion", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
-            } 
-             else
-            {
-                
-                Form1 frmPrincipal = new Form1();
-                frmPrincipal.ShowDialog();
-   
+                lblErrorUsuario.Text = "Ingrese su usuario";
+                lblErrorUsuario.Visible = true;
+                lblErrorPass.Text = "Ingrese su contraseña";
+                lblErrorPass.Visible = true;
+
             }
+            else if (txtContrasenia.Text == "INGRESE CONTRASEÑA")
+            {
+                lblErrorPass.Text = "Ingrese su contraseña";
+                lblErrorPass.Visible = true; 
+            }
+            else if (txtUsuario.Text == "INGRESE CONTRASEÑA")
+            {
+                lblErrorUsuario.Text = "Ingrese su usuario";
+                lblErrorUsuario.Visible = true;
+            }
+            if (txtContrasenia.Text!= "INGRESE USUARIO" && txtUsuario.Text != "INGRESE CONTRASEÑA")
+            {
+                if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text))
+                {
+                    MessageBox.Show("El usuario y/o la contraseña son incorrectos.",
+                    "Iniciar Sesion", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
+                }
+                else
+                {
+
+                    Form1 frmPrincipal = new Form1();
+                    frmPrincipal.ShowDialog();
+                    this.Dispose();
+                }
+
+            }
+            
             
         }
 
         private void txtContrasenia_Enter(object sender, EventArgs e)
         {
-            if (txtContrasenia.Text == "")
+            if (txtContrasenia.Text == "INGRESE CONTRASEÑA")
             {
+                txtContrasenia.Text = "";
+                txtContrasenia.ForeColor = Color.OliveDrab;
                 txtContrasenia.UseSystemPasswordChar = true; 
+            }
+        }
+
+        private void txtUsuario_Enter(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "INGRESE USUARIO")
+            {
+                txtUsuario.Text = "";
+                txtUsuario.ForeColor = Color.OliveDrab;
+            }
+        }
+
+        private void txtUsuario_Leave(object sender, EventArgs e)
+        {
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.Text = "INGRESE USUARIO";
+                txtUsuario.ForeColor = Color.Black;
+                lblErrorUsuario.Visible = false;
+            }
+        }
+
+        private void cerrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose(); 
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void txtContrasenia_Leave(object sender, EventArgs e)
+        {
+            if (txtContrasenia.Text=="INGRESE CONTRASEÑA")
+            {
+                txtContrasenia.Text = "";
+                txtContrasenia.ForeColor = Color.Black;
+                txtContrasenia.UseSystemPasswordChar = false;
+                lblErrorPass.Visible = false;
             }
         }
     }

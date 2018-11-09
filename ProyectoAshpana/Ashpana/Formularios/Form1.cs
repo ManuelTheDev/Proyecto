@@ -20,7 +20,7 @@ namespace Formularios
         private static frmGestionPaquetes fgpaquetes;
         private static frmGestionTerapistas frterapista;
         private static frmGestionUsuarios fgu;
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -163,7 +163,8 @@ namespace Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            
+            this.Dispose(); 
+           
         }
     }
 }
