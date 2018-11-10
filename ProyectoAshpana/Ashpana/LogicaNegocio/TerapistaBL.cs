@@ -20,9 +20,9 @@ namespace LogicaNegocio
             terapistaDA = new TerapistaDA();
         }
 
-        public void registrarTerapista(Terapista t)
+        public void registrarTerapista(Terapista t, string a, string b, string c, string d)
         {
-            terapistaDA.registrarTerapista(t);
+            terapistaDA.registrarTerapista(t, a, b, c, d);
         }
 
         public BindingList<Terapista> listarTerapistas()
@@ -30,9 +30,9 @@ namespace LogicaNegocio
             return terapistaDA.listarTerapistas();
         }
 
-        public void modificarTerapista(Terapista t)
+        public void modificarTerapista(Terapista t, string horaE, string horaS, string minutoE, string minutoS)
         {
-            terapistaDA.modificarTerapista(t);
+            terapistaDA.modificarTerapista(t, horaE, horaS, minutoE, minutoS);
         }
 
         public bool registrarTratamiento_X_terapista(Terapista t)

@@ -68,12 +68,16 @@ namespace Formularios
             t.Contrasena = txtContrasena.Text;
             t.Sueldo = Convert.ToDouble(txtSueldo.Text);
 
-            //AGREGAR HORA
-            //DateTime horaE = Convert.ToDateTime(txtHoraEntrada);
-            //DateTime horaS = Convert.ToDateTime(txtHoraSalida);
+            String horaE = cboHoraEntrada.Text;
+            String horaS = cboHoraSalida.Text;
+
+            String minutoE = cboMinutoEntrada.Text;
+            String minutoS = cboMinutoSalida.Text;
+
+
     
             TerapistaBL terapistaBL = new TerapistaBL();
-            terapistaBL.registrarTerapista(t);
+            terapistaBL.registrarTerapista(t, horaE, horaS, minutoE, minutoS);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha registrado correctamente al terapista", "RegistroTerapista", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
@@ -130,6 +134,11 @@ namespace Formularios
             Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
             if (!rgx.IsMatch(txtSueldo.Text)) txtSueldo.ForeColor = Color.Red;
             else txtSueldo.ForeColor = Color.Black;
+        }
+
+        private void frmNuevoTerapista_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

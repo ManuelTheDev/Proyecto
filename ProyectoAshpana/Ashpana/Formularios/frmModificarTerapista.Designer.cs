@@ -48,8 +48,6 @@
             this.lblDni = new System.Windows.Forms.Label();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.lblContrasena = new System.Windows.Forms.Label();
-            this.txtHoraSalida = new System.Windows.Forms.TextBox();
-            this.txtHoraEntrada = new System.Windows.Forms.TextBox();
             this.lblHoraSalida = new System.Windows.Forms.Label();
             this.lblHoraEntrada = new System.Windows.Forms.Label();
             this.cboTerapista = new System.Windows.Forms.ComboBox();
@@ -63,6 +61,14 @@
             this.dtpFechaNac = new System.Windows.Forms.DateTimePicker();
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboMinutoSalida = new System.Windows.Forms.ComboBox();
+            this.cboHoraSalida = new System.Windows.Forms.ComboBox();
+            this.cboMinutoEntrada = new System.Windows.Forms.ComboBox();
+            this.cboHoraEntrada = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -276,23 +282,6 @@
             this.lblContrasena.TabIndex = 74;
             this.lblContrasena.Text = "Contraseña:";
             // 
-            // txtHoraSalida
-            // 
-            this.txtHoraSalida.Location = new System.Drawing.Point(631, 201);
-            this.txtHoraSalida.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHoraSalida.Name = "txtHoraSalida";
-            this.txtHoraSalida.Size = new System.Drawing.Size(161, 20);
-            this.txtHoraSalida.TabIndex = 73;
-            // 
-            // txtHoraEntrada
-            // 
-            this.txtHoraEntrada.Location = new System.Drawing.Point(631, 159);
-            this.txtHoraEntrada.Margin = new System.Windows.Forms.Padding(4);
-            this.txtHoraEntrada.Name = "txtHoraEntrada";
-            this.txtHoraEntrada.Size = new System.Drawing.Size(161, 20);
-            this.txtHoraEntrada.TabIndex = 72;
-            this.txtHoraEntrada.TextChanged += new System.EventHandler(this.txtHoraEntrada_TextChanged);
-            // 
             // lblHoraSalida
             // 
             this.lblHoraSalida.AutoSize = true;
@@ -342,7 +331,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(47, 21);
+            this.label4.Location = new System.Drawing.Point(36, 23);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(321, 36);
             this.label4.TabIndex = 22;
@@ -429,11 +418,113 @@
             this.label2.TabIndex = 82;
             this.label2.Text = "Sueldo:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(783, 201);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 15);
+            this.label5.TabIndex = 127;
+            this.label5.Text = "m";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(783, 155);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(18, 15);
+            this.label3.TabIndex = 126;
+            this.label3.Text = "m";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(692, 201);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 15);
+            this.label6.TabIndex = 125;
+            this.label6.Text = "h";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(692, 155);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(14, 15);
+            this.label7.TabIndex = 124;
+            this.label7.Text = "h";
+            // 
+            // cboMinutoSalida
+            // 
+            this.cboMinutoSalida.FormattingEnabled = true;
+            this.cboMinutoSalida.Items.AddRange(new object[] {
+            "00",
+            "30"});
+            this.cboMinutoSalida.Location = new System.Drawing.Point(721, 198);
+            this.cboMinutoSalida.Name = "cboMinutoSalida";
+            this.cboMinutoSalida.Size = new System.Drawing.Size(56, 21);
+            this.cboMinutoSalida.TabIndex = 123;
+            // 
+            // cboHoraSalida
+            // 
+            this.cboHoraSalida.FormattingEnabled = true;
+            this.cboHoraSalida.Items.AddRange(new object[] {
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"});
+            this.cboHoraSalida.Location = new System.Drawing.Point(631, 198);
+            this.cboHoraSalida.Name = "cboHoraSalida";
+            this.cboHoraSalida.Size = new System.Drawing.Size(56, 21);
+            this.cboHoraSalida.TabIndex = 122;
+            // 
+            // cboMinutoEntrada
+            // 
+            this.cboMinutoEntrada.FormattingEnabled = true;
+            this.cboMinutoEntrada.Items.AddRange(new object[] {
+            "00",
+            "30"});
+            this.cboMinutoEntrada.Location = new System.Drawing.Point(721, 155);
+            this.cboMinutoEntrada.Name = "cboMinutoEntrada";
+            this.cboMinutoEntrada.Size = new System.Drawing.Size(56, 21);
+            this.cboMinutoEntrada.TabIndex = 121;
+            // 
+            // cboHoraEntrada
+            // 
+            this.cboHoraEntrada.FormattingEnabled = true;
+            this.cboHoraEntrada.Items.AddRange(new object[] {
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15"});
+            this.cboHoraEntrada.Location = new System.Drawing.Point(630, 155);
+            this.cboHoraEntrada.Name = "cboHoraEntrada";
+            this.cboHoraEntrada.Size = new System.Drawing.Size(56, 21);
+            this.cboHoraEntrada.TabIndex = 120;
+            // 
             // frmModificarTerapista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 630);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cboMinutoSalida);
+            this.Controls.Add(this.cboHoraSalida);
+            this.Controls.Add(this.cboMinutoEntrada);
+            this.Controls.Add(this.cboHoraEntrada);
             this.Controls.Add(this.txtSueldo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpFechaNac);
@@ -444,8 +535,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.lblContrasena);
-            this.Controls.Add(this.txtHoraSalida);
-            this.Controls.Add(this.txtHoraEntrada);
             this.Controls.Add(this.lblHoraSalida);
             this.Controls.Add(this.lblHoraEntrada);
             this.Controls.Add(this.cboTerapista);
@@ -498,8 +587,6 @@
         private System.Windows.Forms.Label lblDni;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Label lblContrasena;
-        private System.Windows.Forms.TextBox txtHoraSalida;
-        private System.Windows.Forms.TextBox txtHoraEntrada;
         private System.Windows.Forms.Label lblHoraSalida;
         private System.Windows.Forms.Label lblHoraEntrada;
         private System.Windows.Forms.ComboBox cboTerapista;
@@ -513,5 +600,13 @@
         private System.Windows.Forms.DateTimePicker dtpFechaNac;
         private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cboMinutoSalida;
+        private System.Windows.Forms.ComboBox cboHoraSalida;
+        private System.Windows.Forms.ComboBox cboMinutoEntrada;
+        private System.Windows.Forms.ComboBox cboHoraEntrada;
     }
 }

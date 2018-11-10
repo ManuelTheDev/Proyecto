@@ -30,6 +30,8 @@ namespace Formularios
             txtContrasena.Text = t.Contrasena;
             dtpFechaNac.Value = t.FechaNac;
             txtSueldo.Text = t.Sueldo.ToString();
+            
+
 
             terapistaMod = new Terapista();
             terapistaMod.IdPersona = t.IdPersona;
@@ -118,7 +120,14 @@ namespace Formularios
             }
 
             terapistaBL = new TerapistaBL();
-            terapistaBL.modificarTerapista(terapistaMod);
+
+            String horaE = cboHoraEntrada.Text;
+            String horaS = cboHoraSalida.Text;
+
+            String minutoE = cboMinutoEntrada.Text;
+            String minutoS = cboMinutoSalida.Text;
+
+            terapistaBL.modificarTerapista(terapistaMod, horaE, horaS, minutoE, minutoS);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha modifcado satisfactoriamente el terapista", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }

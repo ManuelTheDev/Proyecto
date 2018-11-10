@@ -53,7 +53,7 @@ namespace AccesoDatos
             return terapistas;
         }
 
-        public void registrarTerapista(Terapista t)
+        public void registrarTerapista(Terapista t, string horaE, string horaS, string minutoE, string minutoS)
         {
             string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                     "user=inf282g4;" +
@@ -80,16 +80,18 @@ namespace AccesoDatos
             comando.Parameters.Add("_CONTRASENIA", MySqlDbType.VarChar).Value = t.Contrasena;
             comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 1;
             comando.Parameters.Add("_SUELDO", MySqlDbType.Double).Value = t.Sueldo;
-            TimeSpan hora_E = Convert.ToDateTime("10:00:00").TimeOfDay;
+            String horaEntrada = horaE + ":" + minutoE + ":00";
+            TimeSpan hora_E = Convert.ToDateTime(horaEntrada).TimeOfDay;
             comando.Parameters.Add("_HORA_ENTRADA", MySqlDbType.Time).Value = hora_E;
-            TimeSpan hora_S = Convert.ToDateTime("17:00:00").TimeOfDay;
+            String horaSalida = horaS + ":" + minutoS + ":00";
+            TimeSpan hora_S = Convert.ToDateTime(horaSalida).TimeOfDay;
             comando.Parameters.Add("_HORA_SALIDA", MySqlDbType.Time).Value = hora_S;
             comando.Parameters.Add("_ID3", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
             comando.ExecuteNonQuery();
             con.Close();
         }
 
-        public void modificarTerapista(Terapista s)
+        public void modificarTerapista(Terapista s, string horaE, string horaS, string minutoE, string minutoS)
         {
             string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                     "user=inf282g4;" +
@@ -121,9 +123,11 @@ namespace AccesoDatos
             comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = s.Estado;
             comando.Parameters.Add("_SUELDO", MySqlDbType.Double).Value = s.Sueldo;
             comando.Parameters.Add("_TIPO_TERAPISTA", MySqlDbType.Int32).Value = s.Tipo;
-            TimeSpan hora_E = Convert.ToDateTime("10:00:00").TimeOfDay;
+            String horaEntrada = horaE + ":" + minutoE + ":00";
+            TimeSpan hora_E = Convert.ToDateTime(horaEntrada).TimeOfDay;
             comando.Parameters.Add("_HORA_ENTRADA", MySqlDbType.Time).Value = hora_E;
-            TimeSpan hora_S = Convert.ToDateTime("17:00:00").TimeOfDay;
+            String horaSalida = horaS + ":" + minutoS + ":00";
+            TimeSpan hora_S = Convert.ToDateTime(horaSalida).TimeOfDay;
             comando.Parameters.Add("_HORA_SALIDA", MySqlDbType.Time).Value = hora_S;
             comando.ExecuteNonQuery();
             con.Close();
