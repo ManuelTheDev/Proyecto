@@ -120,7 +120,7 @@ namespace Formularios
 
         private void txtNombreTrat_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'-]+$");
             if (!rgx.IsMatch(txtNombreTrat.Text)) txtNombreTrat.ForeColor = Color.Red;
             else txtNombreTrat.ForeColor = Color.Black;
         }
