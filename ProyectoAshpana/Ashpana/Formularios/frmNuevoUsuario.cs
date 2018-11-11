@@ -59,21 +59,21 @@ namespace Formularios
 
         private void txtNombres_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'-]+$");
             if (!rgx.IsMatch(txtNombres.Text)) txtNombres.ForeColor = Color.Red;
             else txtNombres.ForeColor = Color.Black;
         }
 
         private void txtApellidoPaterno_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'-]+$");
             if (!rgx.IsMatch(txtApellidoPaterno.Text)) txtApellidoPaterno.ForeColor = Color.Red;
             else txtApellidoPaterno.ForeColor = Color.Black;
         }
 
         private void txtApellidoMaterno_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'-]+$");
             if (!rgx.IsMatch(txtApellidoMaterno.Text)) txtApellidoMaterno.ForeColor = Color.Red;
             else txtApellidoMaterno.ForeColor = Color.Black;
         }
@@ -94,7 +94,7 @@ namespace Formularios
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^(\w+)\.?(\w+)\-?(\w+)@(\w+)\.\w+([-.])*$");
+            Regex rgx = new Regex(@"^([\w\.\-]+)@([\w]+)((\.(\w){2,3})+)$");
             if (!rgx.IsMatch(txtCorreo.Text)) txtCorreo.ForeColor = Color.Red;
             else txtCorreo.ForeColor = Color.Black;
         }
