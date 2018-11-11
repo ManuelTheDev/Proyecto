@@ -11,7 +11,7 @@ namespace Modelo
     {
         private int idPaquete;
         private BindingList<Tratamiento> tratamientos;
-        private int cantSesion;
+       // private int cantSesion;
 
         private String strTratamientos;
 
@@ -21,17 +21,18 @@ namespace Modelo
         }
 
 
-        public Paquete(int idPaquete, String nombre, double precio, int cantSesion)
+        public Paquete(int idPaquete, String nombre, double precio)
         {
             this.idPaquete = idPaquete;
             this.NombreServicio = nombre;
             this.PrecioServicio = precio;
-            this.cantSesion = cantSesion;
+           // this.cantSesion = cantSesion;
             Tratamientos = new BindingList<Tratamiento>();
         }
 
         public int IdPaquete { get => idPaquete; set => idPaquete = value; }
-        public int CantSesion { get => cantSesion; set => cantSesion = value; }
+        public int CantSesiones { get => NumSesiones;  }
+        //public int CantSesion { get => cantSesion; set => cantSesion = value; }
         public BindingList<Tratamiento> Tratamientos { get => tratamientos; set => tratamientos = value; }
         public string Nombre { get => NombreServicio; }
         public double Precio { get => PrecioServicio; }

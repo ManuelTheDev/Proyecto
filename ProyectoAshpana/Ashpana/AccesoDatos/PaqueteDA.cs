@@ -37,13 +37,13 @@ namespace AccesoDatos
                 {
                     String nombre = lector.GetString("NOMBRE");
                     double precio = lector.GetDouble("PRECIO");
-                    int cantSesiones = lector.GetInt32("CANTIDAD_SESIONES");
+                    int cantSesiones = lector.GetInt32("NUM_SESIONES");
                     int id = lector.GetInt32("ID_PAQUETE");
                     Paquete paquete = new Paquete();
                     paquete.IdPaquete = id;
                     paquete.NombreServicio = nombre;
                     paquete.PrecioServicio = precio;
-                    paquete.CantSesion = cantSesiones;
+                    paquete.NumSesiones = cantSesiones;
                     paquetes.Add(paquete);
                 }
                 conexion.Close();
@@ -109,13 +109,13 @@ namespace AccesoDatos
                 {
                     String nombre = lector.GetString("NOMBRE");
                     double precio = lector.GetDouble("PRECIO");
-                    int cantSesiones = lector.GetInt32("CANTIDAD_SESIONES");
+                    int cantSesiones = lector.GetInt32("NUM_SESIONES");
                     int id = lector.GetInt32("ID_PAQUETE");
                     Paquete paquete = new Paquete();
                     paquete.IdPaquete = id;
                     paquete.NombreServicio = nombre;
                     paquete.PrecioServicio = precio;
-                    paquete.CantSesion = cantSesiones;
+                    paquete.NumSesiones = cantSesiones;
                     paquetes.Add(paquete);
                 }
                 conexion.Clone();
@@ -148,7 +148,7 @@ namespace AccesoDatos
                 comando.Connection = conexion;
                 comando.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
                 comando.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
-                comando.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.CantSesion;
+                comando.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.NumSesiones;
                 comando.Parameters.Add("_ID_SERVICIO", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
                 comando.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Direction = System.Data.ParameterDirection.Output;
                 comando.ExecuteNonQuery();
@@ -216,7 +216,7 @@ namespace AccesoDatos
                 comPaquete.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = p.IdPaquete;
                 comPaquete.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
                 comPaquete.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
-                comPaquete.Parameters.Add("_CANT_SESIONES", MySqlDbType.Int32).Value = p.CantSesion;
+                comPaquete.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.NumSesiones;
 
                 comPaquete.ExecuteNonQuery();
                 conexion.Close();

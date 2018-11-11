@@ -55,9 +55,9 @@ namespace Formularios
 
                 paquete.NombreServicio = nombre;
                 paquete.PrecioServicio = precio;
-                paquete.CantSesion = numSesiones;
+                paquete.NumSesiones = numSesiones;
 
-                if (paquete.PrecioServicio <= 0 || paquete.CantSesion <= 0)
+                if (paquete.PrecioServicio <= 0 || paquete.NumSesiones <= 0)
                 {
                     MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

@@ -37,11 +37,11 @@ namespace Formularios
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
             this.btnModificar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.SuspendLayout();
@@ -124,27 +124,6 @@ namespace Formularios
             this.dgvPaquetes.Size = new System.Drawing.Size(715, 225);
             this.dgvPaquetes.TabIndex = 6;
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // NumSesiones
-            // 
-            this.NumSesiones.DataPropertyName = "CantSesion";
-            this.NumSesiones.HeaderText = "N°Sesiones";
-            this.NumSesiones.Name = "NumSesiones";
-            this.NumSesiones.ReadOnly = true;
-            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -172,6 +151,27 @@ namespace Formularios
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // NumSesiones
+            // 
+            this.NumSesiones.DataPropertyName = "CantSesiones";
+            this.NumSesiones.HeaderText = "N°Sesiones";
+            this.NumSesiones.Name = "NumSesiones";
+            this.NumSesiones.ReadOnly = true;
             // 
             // frmGestionPaquetes
             // 
@@ -203,11 +203,11 @@ namespace Formularios
         private System.Windows.Forms.TextBox txtboxBuscarPaquetes;
         private System.Windows.Forms.Button btnModificar;
         private DataGridView dgvPaquetes;
+        private Button btnEliminar;
+        private Button btnBuscar;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn NumSesiones;
-        private Button btnEliminar;
-        private Button btnBuscar;
 
         public DataTable DataPaquete { get => dataPaquete; set => dataPaquete = value; }
     }

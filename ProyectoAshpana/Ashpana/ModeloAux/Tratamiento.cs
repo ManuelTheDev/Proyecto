@@ -48,7 +48,7 @@ namespace Modelo
             return !(cm1 == cm2);
         }
 
-        public Tratamiento(int idServicio, string nombreServicio, double precioServicio, int estadoServicio,int idTrat, double duracionTrat, int tipoTrat, BindingList<CondicionMedica> condicionesMedicas, string condicionesMedicasString, BindingList<Zona> zonasTratar, string zonasTratarString, string tipoString): base(idServicio, nombreServicio, precioServicio, estadoServicio)
+        public Tratamiento(int idServicio, string nombreServicio, double precioServicio, int estadoServicio,int idTrat, double duracionTrat, int tipoTrat, BindingList<CondicionMedica> condicionesMedicas, string condicionesMedicasString, BindingList<Zona> zonasTratar, string zonasTratarString, string tipoString, int numSesiones): base(idServicio, nombreServicio, precioServicio, estadoServicio, numSesiones)
         {
             _idTrat = idTrat;
             _duracionTrat = duracionTrat;

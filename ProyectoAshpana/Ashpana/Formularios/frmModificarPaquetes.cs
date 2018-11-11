@@ -42,9 +42,9 @@ namespace Formularios
             paqueteMod.PrecioServicio = p.PrecioServicio;
 
 
-            paquete.CantSesion = p.CantSesion;
+            paquete.NumSesiones = p.NumSesiones;
             paquete.IdPaquete = p.IdPaquete;
-            paqueteMod.CantSesion = p.CantSesion;
+            paqueteMod.NumSesiones = p.NumSesiones;
             paqueteMod.IdPaquete = p.IdPaquete;
 
             foreach(Tratamiento trat in p.Tratamientos)
@@ -54,7 +54,7 @@ namespace Formularios
             }
 
             txtNombre.Text = p.NombreServicio;
-            txtNumSes.Text = p.CantSesion.ToString();
+            txtNumSes.Text = p.NumSesiones.ToString();
             txtPrecio.Text = p.PrecioServicio.ToString();
 
             dgvTratamientos.AutoGenerateColumns = false;
@@ -77,8 +77,8 @@ namespace Formularios
             {
                 paqueteMod.NombreServicio = txtNombre.Text;
                 paqueteMod.PrecioServicio = Double.Parse(txtPrecio.Text);
-                paqueteMod.CantSesion = Int32.Parse(txtNumSes.Text);
-                if (paqueteMod.PrecioServicio <= 0 || paqueteMod.CantSesion <= 0)
+                paqueteMod.NumSesiones = Int32.Parse(txtNumSes.Text);
+                if (paqueteMod.PrecioServicio <= 0 || paqueteMod.NumSesiones <= 0)
                 {
                     MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;

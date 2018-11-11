@@ -13,29 +13,26 @@ namespace Modelo
         private string _nombreServicio;
         private double _precioServicio;
         private int _estadoServicio;
-        //private int estado;
+        private int _numSesiones; 
 
         public Servicio()
         {
 
         }
 
-
-       
-
-
-        public Servicio(int idServicio, string nombreServicio, double precioServicio, int estadoServicio)
+        public Servicio(int idServicio, string nombreServicio, double precioServicio, int estadoServicio, int numSesiones)
         {
-            _idServicio = idServicio;
-            _nombreServicio = nombreServicio;
-            _precioServicio = precioServicio;
-            _estadoServicio = estadoServicio;
+            IdServicio = idServicio;
+            NombreServicio = nombreServicio;
+            PrecioServicio = precioServicio;
+            EstadoServicio = estadoServicio;
+            NumSesiones = numSesiones;
         }
 
         public int IdServicio { get => _idServicio; set => _idServicio = value; }
         public string NombreServicio { get => _nombreServicio; set => _nombreServicio = value; }
         public double PrecioServicio { get => _precioServicio; set => _precioServicio = value; }
         public int EstadoServicio { get => _estadoServicio; set => _estadoServicio = value; }
-
+        public int NumSesiones { get => _numSesiones; set => _numSesiones = value; }
     }
 }
