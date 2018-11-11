@@ -66,5 +66,10 @@ namespace LogicaNegocio
         {
             zonasDA.desactivarZonas_X_Tratamiento(idTrat);
         }
+
+        public BindingList<Tratamiento> BuscarTratamiento(string busqueda)
+        {
+            return tratamientoDA.BuscarTratamiento(busqueda);
+        }
     }
 }

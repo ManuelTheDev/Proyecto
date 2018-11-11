@@ -94,5 +94,10 @@ namespace Formularios
             frmVerZonasATratarPorTratamiento formZonas = new frmVerZonasATratarPorTratamiento(tratamiento.IdTrat);
             formZonas.ShowDialog();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvTratamientos.DataSource = tratamientoBL.BuscarTratamiento(txtboxBuscarPaquetes.Text);
+        }
     }
 }

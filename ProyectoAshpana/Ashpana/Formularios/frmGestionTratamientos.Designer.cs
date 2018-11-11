@@ -32,14 +32,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.btnVerCondMed = new System.Windows.Forms.Button();
-            this.btnVerZonas = new System.Windows.Forms.Button();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerCondMed = new System.Windows.Forms.Button();
+            this.btnVerZonas = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -93,16 +93,6 @@
             this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(410, 27);
             this.txtboxBuscarPaquetes.TabIndex = 8;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(154, 171);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 21);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Buscar:";
-            // 
             // dgvTratamientos
             // 
             this.dgvTratamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -115,6 +105,31 @@
             this.dgvTratamientos.Name = "dgvTratamientos";
             this.dgvTratamientos.Size = new System.Drawing.Size(634, 150);
             this.dgvTratamientos.TabIndex = 9;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "NombreServicio";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.Width = 300;
+            // 
+            // DURACION
+            // 
+            this.DURACION.DataPropertyName = "DuracionTrat";
+            this.DURACION.HeaderText = "DURACION";
+            this.DURACION.Name = "DURACION";
+            // 
+            // PRECIO
+            // 
+            this.PRECIO.DataPropertyName = "PrecioServicio";
+            this.PRECIO.HeaderText = "PRECIO";
+            this.PRECIO.Name = "PRECIO";
+            // 
+            // TIPO
+            // 
+            this.TIPO.DataPropertyName = "TipoString";
+            this.TIPO.HeaderText = "TIPO";
+            this.TIPO.Name = "TIPO";
             // 
             // btnVerCondMed
             // 
@@ -144,41 +159,30 @@
             this.btnVerZonas.UseVisualStyleBackColor = false;
             this.btnVerZonas.Click += new System.EventHandler(this.btnVerZonas_Click);
             // 
-            // NOMBRE
+            // btnBuscar
             // 
-            this.NOMBRE.DataPropertyName = "NombreServicio";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.Width = 300;
-            // 
-            // DURACION
-            // 
-            this.DURACION.DataPropertyName = "DuracionTrat";
-            this.DURACION.HeaderText = "DURACION";
-            this.DURACION.Name = "DURACION";
-            // 
-            // PRECIO
-            // 
-            this.PRECIO.DataPropertyName = "PrecioServicio";
-            this.PRECIO.HeaderText = "PRECIO";
-            this.PRECIO.Name = "PRECIO";
-            // 
-            // TIPO
-            // 
-            this.TIPO.DataPropertyName = "TipoString";
-            this.TIPO.HeaderText = "TIPO";
-            this.TIPO.Name = "TIPO";
+            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnBuscar.Location = new System.Drawing.Point(170, 166);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(83, 35);
+            this.btnBuscar.TabIndex = 12;
+            this.btnBuscar.Text = "BUSCAR";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // frmGestionTratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 587);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnVerZonas);
             this.Controls.Add(this.btnVerCondMed);
             this.Controls.Add(this.dgvTratamientos);
             this.Controls.Add(this.txtboxBuscarPaquetes);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnNuevoTratamiento);
@@ -200,7 +204,6 @@
         private System.Windows.Forms.Button button3;
      
         private System.Windows.Forms.TextBox txtboxBuscarPaquetes;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvTratamientos;
         private System.Windows.Forms.Button btnVerCondMed;
         private System.Windows.Forms.Button btnVerZonas;
@@ -208,5 +211,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

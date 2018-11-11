@@ -132,6 +132,73 @@ namespace AccesoDatos
             return tratamientos;
         }
 
+        public BindingList<Tratamiento> BuscarTratamiento(string busqueda)
+        {
+            CondicionMedicaDA condMedDA = new CondicionMedicaDA();
+            ZonaDA zonaDA = new ZonaDA();
+
+            BindingList<Tratamiento> tratamientos = new BindingList<Tratamiento>();
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g4;" + "password=GvZf6p;" + "database=inf282g4;" + "port=3306;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+
+
+            con.Open();
+
+
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "BUSCAR_TRATAMIENTOS";
+            comando.Parameters.Add("_BUSQUEDA", MySqlDbType.VarChar).Value = busqueda;
+            comando.Connection = con;
+
+            MySqlDataReader lector = comando.ExecuteReader();
+
+            while (lector.Read())
+            {
+                Tratamiento trat = new Tratamiento();
+                trat.IdTrat = lector.GetInt32("ID_TRATAMIENTO");
+                trat.NombreServicio = lector.GetString("NOMBRE");
+                trat.DuracionTrat = lector.GetDouble("DURACION");
+                trat.PrecioServicio = lector.GetDouble("PRECIO");
+                trat.TipoTrat = lector.GetInt32("TIPO_TRATAMIENTO");
+                trat.EstadoServicio = lector.GetInt32("ESTADO");
+                if (trat.TipoTrat == 1)
+                    trat.TipoString = "Facial";
+                else
+                    trat.TipoString = "Corporal";
+
+                trat.CondicionesMedicas = condMedDA.listarCondicionesMedicas_X_Tratamiento(trat.IdTrat);
+
+                String cad = "";
+                foreach (CondicionMedica c in trat.CondicionesMedicas)
+                {
+                    cad = cad + c.Nombre + "/ ";
+
+                }
+
+                trat.CondicionesMedicasString = cad;
+
+                trat.ZonasTratar = zonaDA.listarZonas_X_Tratamiento(trat.IdTrat);
+                String cad2 = "";
+                foreach (Zona z in trat.ZonasTratar)
+                {
+                    cad2 = cad2 + z.NombreZona + "/ ";
+
+                }
+                trat.ZonasTratarString = cad2;
+                
+                tratamientos.Add(trat);
+            }
+
+
+
+            con.Close();
+
+
+
+            return tratamientos;
+        }
+
         public int registrarTratamiento(Tratamiento tratamiento)
         {
             try
