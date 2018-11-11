@@ -101,7 +101,7 @@
             this.btnModificar.TabIndex = 18;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnModificar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label5
             // 

@@ -92,6 +92,7 @@
             this.txtboxBuscarPaquetes.Name = "txtboxBuscarPaquetes";
             this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(410, 27);
             this.txtboxBuscarPaquetes.TabIndex = 8;
+            this.txtboxBuscarPaquetes.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
             // dgvTratamientos
             // 

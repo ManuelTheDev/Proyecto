@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,10 +25,17 @@ namespace Formularios
         public frmGestionPaquetes()
         {
             InitializeComponent();
-            dgvPaquetes.AutoGenerateColumns = false;
-            paqueteBL = new PaqueteBL();
             CargarDGV();
         }
+        
+        private void CargarDGV()
+        {
+            paqueteBL = new PaqueteBL();
+            dgvPaquetes.AutoGenerateColumns = false;
+            paquetes = paqueteBL.listarPaquetes();
+            dgvPaquetes.DataSource = paquetes;
+        }
+
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
 
@@ -59,8 +67,9 @@ namespace Formularios
             frmNuevoPaquete fb = new frmNuevoPaquete();
             if (fb.ShowDialog() == DialogResult.OK)
             {
+                CargarDGV();
             }
-            CargarDGV();
+            
 
         }
 
@@ -68,13 +77,11 @@ namespace Formularios
         {
 
         }
-
-
+        
         private void btnSeleccionar_Click_1(object sender, EventArgs e)
         {
 
         }
-        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
@@ -106,6 +113,25 @@ namespace Formularios
 
             MessageBox.Show("Paquete eliminado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CargarDGV();
+        }
+
+        private void txtboxBuscarPaquetes_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = txtboxBuscarPaquetes.Text;
+            var paqBuscados = new BindingList<Paquete>();
+
+            foreach (Paquete p in paquetes)
+            {
+                //String patron = @"^(\w)+" + busqueda + @"(\w)+$";
+                Regex rgx = new Regex(@"^[\w\s]*" + busqueda + @"[\w\s]*$");
+                if (rgx.IsMatch(p.Nombre))
+                {
+                    paqBuscados.Add(p);
+                }
+
+            }
+
+            dgvPaquetes.DataSource = paqBuscados;
         }
     }
 }

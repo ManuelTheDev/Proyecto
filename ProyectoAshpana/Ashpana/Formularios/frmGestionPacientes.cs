@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,12 +21,20 @@ namespace Formularios
         private ClienteBL clienteBL;
         public Cliente ClienteSeleccionado { get => clienteSeleccionado; set => clienteSeleccionado = value; }
 
+        private BindingList<Cliente> clientes;
+
         public frmGestionPacientes()
         {
             InitializeComponent();
+            CargarDGV();
+        }
+
+        private void CargarDGV()
+        {
             clienteBL = new ClienteBL();
             dgvClientes.AutoGenerateColumns = false;
-            dgvClientes.DataSource = clienteBL.listarClientes();
+            clientes = clienteBL.listarClientes();
+            dgvClientes.DataSource = clientes;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -45,9 +54,7 @@ namespace Formularios
             frmCliente.ShowDialog();
             if (frmCliente.DialogResult == DialogResult.OK)
             {
-                clienteBL = new ClienteBL();
-                dgvClientes.AutoGenerateColumns = false;
-                dgvClientes.DataSource = clienteBL.listarClientes();
+                CargarDGV();
             }
 
         }
@@ -58,9 +65,7 @@ namespace Formularios
             frmNuevoCliente frmCliente = new frmNuevoCliente();
             if (frmCliente.ShowDialog() == DialogResult.OK)
             {
-                clienteBL = new ClienteBL();
-                dgvClientes.AutoGenerateColumns = false;
-                dgvClientes.DataSource = clienteBL.listarClientes();
+                CargarDGV();
             }
         }
 
@@ -83,6 +88,25 @@ namespace Formularios
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             dgvClientes.DataSource = clienteBL.BuscarCliente(txtBuscar.Text);
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = txtBuscar.Text;
+            var clientesBuscados = new BindingList<Cliente>();
+
+            foreach (Cliente c in clientes)
+            {
+                //String patron = @"^(\w)+" + busqueda + @"(\w)+$";
+                Regex rgx = new Regex(@"^[\w\s]*" + busqueda + @"[\w\s]*$");
+                if (rgx.IsMatch(c.Nombres) || rgx.IsMatch(c.ApMaterno) || rgx.IsMatch(c.ApPaterno) || c.Dni==busqueda)
+                {
+                    clientesBuscados.Add(c);
+                }
+
+            }
+
+            dgvClientes.DataSource = clientesBuscados;
         }
     }
 }

@@ -24,6 +24,11 @@ namespace Formularios
         public frmGestionUsuarios()
         {
             InitializeComponent();
+            CargarDGV();
+        }
+
+        private void CargarDGV()
+        {
             usuarioBL = new UsuarioBL();
             dgvUsuarios.AutoGenerateColumns = false;
             superusuarios = usuarioBL.listarSuperusuarios();
@@ -36,10 +41,7 @@ namespace Formularios
             frmNuevoUs.ShowDialog();
             if (frmNuevoUs.DialogResult == DialogResult.OK)
             {
-                usuarioBL = new UsuarioBL();
-                dgvUsuarios.AutoGenerateColumns = false;
-                superusuarios = usuarioBL.listarSuperusuarios();
-                dgvUsuarios.DataSource = superusuarios;
+                CargarDGV();
             }
 
         }
@@ -51,16 +53,13 @@ namespace Formularios
             frmUsuario.ShowDialog();
             if(frmUsuario.DialogResult == DialogResult.OK)
             {
-                usuarioBL = new UsuarioBL();
-                dgvUsuarios.AutoGenerateColumns = false;
-                superusuarios = usuarioBL.listarSuperusuarios();
-                dgvUsuarios.DataSource = superusuarios;
+                CargarDGV();
             }
         }
 
         private void txtboxBuscarPaquetes_TextChanged(object sender, EventArgs e)
         {
-            string busqueda = txtboxBuscarPaquetes.Text;
+            string busqueda = txtboxBuscarUsuarios.Text;
             var suBuscados = new BindingList<Superusuario>();
 
             foreach (Superusuario su in superusuarios)

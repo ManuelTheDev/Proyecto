@@ -22,15 +22,7 @@ namespace Formularios
             }
             base.Dispose(disposing);
         }
-
-        public void CargarDGV()
-        {
-            DataPaquete = new DataTable();
-            PaqueteBL paqueteBL = new PaqueteBL();
-
-            this.dgvPaquetes.DataSource = paqueteBL.listarPaquetes();
-            this.dgvPaquetes.Refresh();
-        }
+        
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -97,6 +89,7 @@ namespace Formularios
             this.txtboxBuscarPaquetes.Name = "txtboxBuscarPaquetes";
             this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(410, 27);
             this.txtboxBuscarPaquetes.TabIndex = 3;
+            this.txtboxBuscarPaquetes.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
             // btnModificar
             // 

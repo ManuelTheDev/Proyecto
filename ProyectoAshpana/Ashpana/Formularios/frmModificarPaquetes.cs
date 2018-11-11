@@ -71,7 +71,7 @@ namespace Formularios
 
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e) //Modificar
+        private void btnGuardar_Click(object sender, EventArgs e) //Modificar
         {
             try
             {
@@ -84,6 +84,7 @@ namespace Formularios
                     return;
                 }
                 paqueteBL.actualizar(paquete,paqueteMod);
+                this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Se ha modificado el elemento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }

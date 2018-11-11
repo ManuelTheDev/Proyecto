@@ -40,7 +40,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevoUsuario = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
+            this.txtboxBuscarUsuarios = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -167,12 +167,12 @@
             // 
             // txtboxBuscarPaquetes
             // 
-            this.txtboxBuscarPaquetes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxBuscarPaquetes.Location = new System.Drawing.Point(329, 194);
-            this.txtboxBuscarPaquetes.Name = "txtboxBuscarPaquetes";
-            this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(410, 27);
-            this.txtboxBuscarPaquetes.TabIndex = 26;
-            this.txtboxBuscarPaquetes.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
+            this.txtboxBuscarUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxBuscarUsuarios.Location = new System.Drawing.Point(329, 194);
+            this.txtboxBuscarUsuarios.Name = "txtboxBuscarPaquetes";
+            this.txtboxBuscarUsuarios.Size = new System.Drawing.Size(410, 27);
+            this.txtboxBuscarUsuarios.TabIndex = 26;
+            this.txtboxBuscarUsuarios.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
             // label2
             // 
@@ -202,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1020, 747);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtboxBuscarPaquetes);
+            this.Controls.Add(this.txtboxBuscarUsuarios);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvUsuarios);
@@ -223,7 +223,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnNuevoUsuario;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox txtboxBuscarPaquetes;
+        private System.Windows.Forms.TextBox txtboxBuscarUsuarios;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
