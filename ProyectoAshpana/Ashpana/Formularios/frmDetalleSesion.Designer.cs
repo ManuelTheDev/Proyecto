@@ -32,20 +32,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblNombreServicio = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.lblNumSesion = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNumSesiones = new System.Windows.Forms.TextBox();
             this.lblNombreTerapista = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreTerapista = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnListarTerapistas = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpSesion = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.cboMinutoEntrada = new System.Windows.Forms.ComboBox();
-            this.cboHoraEntrada = new System.Windows.Forms.ComboBox();
+            this.cboMinuto = new System.Windows.Forms.ComboBox();
+            this.cboHora = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,7 @@
             this.btnRegistrar.TabIndex = 31;
             this.btnRegistrar.Text = "REGISTRAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblNombreServicio
             // 
@@ -96,12 +97,12 @@
             this.lblNombreServicio.TabIndex = 33;
             this.lblNombreServicio.Text = "Nombre del Servicio:";
             // 
-            // textBox1
+            // txtNombreServicio
             // 
-            this.textBox1.Location = new System.Drawing.Point(192, 130);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(231, 20);
-            this.textBox1.TabIndex = 34;
+            this.txtNombreServicio.Location = new System.Drawing.Point(192, 130);
+            this.txtNombreServicio.Name = "txtNombreServicio";
+            this.txtNombreServicio.Size = new System.Drawing.Size(231, 20);
+            this.txtNombreServicio.TabIndex = 34;
             // 
             // lblNumSesion
             // 
@@ -113,12 +114,12 @@
             this.lblNumSesion.TabIndex = 35;
             this.lblNumSesion.Text = "N° de sesión: ";
             // 
-            // textBox2
+            // txtNumSesiones
             // 
-            this.textBox2.Location = new System.Drawing.Point(192, 172);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 20);
-            this.textBox2.TabIndex = 36;
+            this.txtNumSesiones.Location = new System.Drawing.Point(192, 172);
+            this.txtNumSesiones.Name = "txtNumSesiones";
+            this.txtNumSesiones.Size = new System.Drawing.Size(231, 20);
+            this.txtNumSesiones.TabIndex = 36;
             // 
             // lblNombreTerapista
             // 
@@ -180,6 +181,7 @@
             this.btnListarTerapistas.TabIndex = 40;
             this.btnListarTerapistas.Text = "...";
             this.btnListarTerapistas.UseVisualStyleBackColor = false;
+            this.btnListarTerapistas.Click += new System.EventHandler(this.btnListarTerapistas_Click);
             // 
             // label1
             // 
@@ -191,12 +193,12 @@
             this.label1.TabIndex = 41;
             this.label1.Text = "Hora: ";
             // 
-            // dateTimePicker1
+            // dtpSesion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(192, 253);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(231, 20);
-            this.dateTimePicker1.TabIndex = 42;
+            this.dtpSesion.Location = new System.Drawing.Point(192, 253);
+            this.dtpSesion.Name = "dtpSesion";
+            this.dtpSesion.Size = new System.Drawing.Size(231, 20);
+            this.dtpSesion.TabIndex = 42;
             // 
             // label3
             // 
@@ -218,32 +220,37 @@
             this.label7.TabIndex = 129;
             this.label7.Text = "h";
             // 
-            // cboMinutoEntrada
+            // cboMinuto
             // 
-            this.cboMinutoEntrada.FormattingEnabled = true;
-            this.cboMinutoEntrada.Items.AddRange(new object[] {
+            this.cboMinuto.FormattingEnabled = true;
+            this.cboMinuto.Items.AddRange(new object[] {
             "00",
             "30"});
-            this.cboMinutoEntrada.Location = new System.Drawing.Point(279, 295);
-            this.cboMinutoEntrada.Name = "cboMinutoEntrada";
-            this.cboMinutoEntrada.Size = new System.Drawing.Size(56, 21);
-            this.cboMinutoEntrada.TabIndex = 128;
+            this.cboMinuto.Location = new System.Drawing.Point(279, 295);
+            this.cboMinuto.Name = "cboMinuto";
+            this.cboMinuto.Size = new System.Drawing.Size(56, 21);
+            this.cboMinuto.TabIndex = 128;
             // 
-            // cboHoraEntrada
+            // cboHora
             // 
-            this.cboHoraEntrada.FormattingEnabled = true;
-            this.cboHoraEntrada.Items.AddRange(new object[] {
+            this.cboHora.FormattingEnabled = true;
+            this.cboHora.Items.AddRange(new object[] {
             "09",
             "10",
             "11",
             "12",
             "13",
             "14",
-            "15"});
-            this.cboHoraEntrada.Location = new System.Drawing.Point(188, 295);
-            this.cboHoraEntrada.Name = "cboHoraEntrada";
-            this.cboHoraEntrada.Size = new System.Drawing.Size(56, 21);
-            this.cboHoraEntrada.TabIndex = 127;
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20"});
+            this.cboHora.Location = new System.Drawing.Point(188, 295);
+            this.cboHora.Name = "cboHora";
+            this.cboHora.Size = new System.Drawing.Size(56, 21);
+            this.cboHora.TabIndex = 127;
             // 
             // frmDetalleSesion
             // 
@@ -252,17 +259,17 @@
             this.ClientSize = new System.Drawing.Size(521, 436);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cboMinutoEntrada);
-            this.Controls.Add(this.cboHoraEntrada);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.cboMinuto);
+            this.Controls.Add(this.cboHora);
+            this.Controls.Add(this.dtpSesion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnListarTerapistas);
             this.Controls.Add(this.txtNombreTerapista);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblNombreTerapista);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNumSesiones);
             this.Controls.Add(this.lblNumSesion);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNombreServicio);
             this.Controls.Add(this.lblNombreServicio);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancelar);
@@ -282,19 +289,19 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblNombreServicio;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNombreServicio;
         private System.Windows.Forms.Label lblNumSesion;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNumSesiones;
         private System.Windows.Forms.Label lblNombreTerapista;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombreTerapista;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnListarTerapistas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpSesion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox cboMinutoEntrada;
-        private System.Windows.Forms.ComboBox cboHoraEntrada;
+        private System.Windows.Forms.ComboBox cboMinuto;
+        private System.Windows.Forms.ComboBox cboHora;
     }
 }

@@ -78,6 +78,8 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            
             MessageBox.Show("Se ha reservado satisfactoriamente la cita", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             return;
         }
@@ -165,6 +167,16 @@ namespace Formularios
             txtMontoTotal.Text = Convert.ToString(monto);
             cita.DetallesCitas.RemoveAt(indice);
 
+        }
+
+        private void btnVerDetalleServicio_Click(object sender, EventArgs e)
+        {
+            int indice = dgvDetallesCitas.CurrentRow.Index;
+            frmDetalleCita frmVerDetalleCita = new frmDetalleCita(cita.DetallesCitas[indice]); 
+            if (frmVerDetalleCita.ShowDialog() == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

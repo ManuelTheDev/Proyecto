@@ -30,7 +30,7 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetalleServicio = new System.Windows.Forms.DataGridView();
             this.NumSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Terapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,7 +39,7 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleServicio)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -62,21 +62,21 @@
             this.panel1.Size = new System.Drawing.Size(571, 100);
             this.panel1.TabIndex = 24;
             // 
-            // dataGridView1
+            // dgvDetalleServicio
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetalleServicio.AllowUserToAddRows = false;
+            this.dgvDetalleServicio.AllowUserToDeleteRows = false;
+            this.dgvDetalleServicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleServicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NumSesion,
             this.Terapista,
             this.Fecha,
             this.Hora});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 157);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(442, 150);
-            this.dataGridView1.TabIndex = 26;
+            this.dgvDetalleServicio.Location = new System.Drawing.Point(47, 157);
+            this.dgvDetalleServicio.Name = "dgvDetalleServicio";
+            this.dgvDetalleServicio.ReadOnly = true;
+            this.dgvDetalleServicio.Size = new System.Drawing.Size(442, 150);
+            this.dgvDetalleServicio.TabIndex = 26;
             // 
             // NumSesion
             // 
@@ -118,6 +118,7 @@
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnRegistrar
             // 
@@ -152,6 +153,7 @@
             this.btnModificar.TabIndex = 29;
             this.btnModificar.Text = "MODIFICAR";
             this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // frmDetalleCita
             // 
@@ -161,13 +163,13 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDetalleServicio);
             this.Controls.Add(this.panel1);
             this.Name = "frmDetalleCita";
             this.Text = "frmDetalleCita";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleServicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,7 +178,7 @@
 
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetalleServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSesion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Terapista;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

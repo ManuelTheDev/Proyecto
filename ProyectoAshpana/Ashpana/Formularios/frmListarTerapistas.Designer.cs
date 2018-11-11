@@ -28,33 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.dgvTerapistas = new System.Windows.Forms.DataGridView();
+            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_PATERNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.APELLIDO_MATERNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_PATERNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.APELLIDO_MATERNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dgvClientes
+            // dgvTerapistas
             // 
-            this.dgvClientes.AllowUserToAddRows = false;
-            this.dgvClientes.AllowUserToDeleteRows = false;
-            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTerapistas.AllowUserToAddRows = false;
+            this.dgvTerapistas.AllowUserToDeleteRows = false;
+            this.dgvTerapistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTerapistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NOMBRE,
             this.APELLIDO_PATERNO,
             this.APELLIDO_MATERNO});
-            this.dgvClientes.Location = new System.Drawing.Point(86, 161);
-            this.dgvClientes.Name = "dgvClientes";
-            this.dgvClientes.ReadOnly = true;
-            this.dgvClientes.Size = new System.Drawing.Size(341, 195);
-            this.dgvClientes.TabIndex = 34;
+            this.dgvTerapistas.Location = new System.Drawing.Point(86, 161);
+            this.dgvTerapistas.Name = "dgvTerapistas";
+            this.dgvTerapistas.ReadOnly = true;
+            this.dgvTerapistas.Size = new System.Drawing.Size(341, 195);
+            this.dgvTerapistas.TabIndex = 34;
+            // 
+            // NOMBRE
+            // 
+            this.NOMBRE.DataPropertyName = "NOMBRES";
+            this.NOMBRE.HeaderText = "NOMBRE";
+            this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
+            // 
+            // APELLIDO_PATERNO
+            // 
+            this.APELLIDO_PATERNO.DataPropertyName = "AP_PATERNO";
+            this.APELLIDO_PATERNO.HeaderText = "APELLIDO PATERNO";
+            this.APELLIDO_PATERNO.Name = "APELLIDO_PATERNO";
+            this.APELLIDO_PATERNO.ReadOnly = true;
+            // 
+            // APELLIDO_MATERNO
+            // 
+            this.APELLIDO_MATERNO.DataPropertyName = "AP_MATERNO";
+            this.APELLIDO_MATERNO.HeaderText = "APELLIDO MATERNO";
+            this.APELLIDO_MATERNO.Name = "APELLIDO_MATERNO";
+            this.APELLIDO_MATERNO.ReadOnly = true;
             // 
             // label1
             // 
@@ -100,6 +121,7 @@
             this.btnSeleccionar.TabIndex = 30;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // panel1
             // 
@@ -111,40 +133,19 @@
             this.panel1.Size = new System.Drawing.Size(502, 70);
             this.panel1.TabIndex = 31;
             // 
-            // NOMBRE
-            // 
-            this.NOMBRE.DataPropertyName = "NOMBRES";
-            this.NOMBRE.HeaderText = "NOMBRE";
-            this.NOMBRE.Name = "NOMBRE";
-            this.NOMBRE.ReadOnly = true;
-            // 
-            // APELLIDO_PATERNO
-            // 
-            this.APELLIDO_PATERNO.DataPropertyName = "AP_PATERNO";
-            this.APELLIDO_PATERNO.HeaderText = "APELLIDO PATERNO";
-            this.APELLIDO_PATERNO.Name = "APELLIDO_PATERNO";
-            this.APELLIDO_PATERNO.ReadOnly = true;
-            // 
-            // APELLIDO_MATERNO
-            // 
-            this.APELLIDO_MATERNO.DataPropertyName = "AP_MATERNO";
-            this.APELLIDO_MATERNO.HeaderText = "APELLIDO MATERNO";
-            this.APELLIDO_MATERNO.Name = "APELLIDO_MATERNO";
-            this.APELLIDO_MATERNO.ReadOnly = true;
-            // 
             // frmListarTerapistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(502, 450);
-            this.Controls.Add(this.dgvClientes);
+            this.Controls.Add(this.dgvTerapistas);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.txtboxBuscarPaquetes);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.panel1);
             this.Name = "frmListarTerapistas";
             this.Text = "frmListarTerapistas";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -154,7 +155,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridView dgvTerapistas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.TextBox txtboxBuscarPaquetes;

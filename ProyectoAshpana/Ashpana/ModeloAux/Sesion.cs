@@ -13,7 +13,8 @@ namespace Modelo
         private DateTime fechaSesion;
         private Terapista terapista;
         private TimeSpan hora;
-        private Servicio servicio; 
+        private Servicio servicio;
+        private int numDeSesion; 
         
         public Sesion()
         {
@@ -36,5 +37,6 @@ namespace Modelo
         public Terapista Terapista { get => terapista; set => terapista = value; }
         public TimeSpan Hora { get => hora; set => hora = value; }
         public Servicio Servicio { get => servicio; set => servicio = value; }
+        public int NumDeSesion { get => numDeSesion; set => numDeSesion = value; }
     }
 }

@@ -47,6 +47,7 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVerDetalleServicio = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesCitas)).BeginInit();
             this.SuspendLayout();
@@ -197,7 +198,7 @@
             this.btnEliminarServicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarServicio.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnEliminarServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarServicio.Location = new System.Drawing.Point(74, 441);
+            this.btnEliminarServicio.Location = new System.Drawing.Point(74, 475);
             this.btnEliminarServicio.Name = "btnEliminarServicio";
             this.btnEliminarServicio.Size = new System.Drawing.Size(167, 30);
             this.btnEliminarServicio.TabIndex = 46;
@@ -279,11 +280,30 @@
             this.NumSesiones.Name = "NumSesiones";
             this.NumSesiones.ReadOnly = true;
             // 
+            // btnVerDetalleServicio
+            // 
+            this.btnVerDetalleServicio.BackColor = System.Drawing.Color.Black;
+            this.btnVerDetalleServicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerDetalleServicio.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVerDetalleServicio.FlatAppearance.BorderSize = 0;
+            this.btnVerDetalleServicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerDetalleServicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerDetalleServicio.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVerDetalleServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerDetalleServicio.Location = new System.Drawing.Point(74, 438);
+            this.btnVerDetalleServicio.Name = "btnVerDetalleServicio";
+            this.btnVerDetalleServicio.Size = new System.Drawing.Size(167, 30);
+            this.btnVerDetalleServicio.TabIndex = 52;
+            this.btnVerDetalleServicio.Text = "Detalle Servicio";
+            this.btnVerDetalleServicio.UseVisualStyleBackColor = false;
+            this.btnVerDetalleServicio.Click += new System.EventHandler(this.btnVerDetalleServicio_Click);
+            // 
             // frmNuevaCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 562);
+            this.Controls.Add(this.btnVerDetalleServicio);
             this.Controls.Add(this.dgvDetallesCitas);
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.txtPaciente);
@@ -331,5 +351,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;
+        private System.Windows.Forms.Button btnVerDetalleServicio;
     }
 }
