@@ -125,7 +125,7 @@ namespace Formularios
 
         private void txtNombrePaquete_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'.-]+$");
+            Regex rgx = new Regex(@"^[A-Z][\p{L}\s'-]+$");
             if (!rgx.IsMatch(txtNombrePaquete.Text)) txtNombrePaquete.ForeColor = Color.Red;
             else txtNombrePaquete.ForeColor = Color.Black;
         }

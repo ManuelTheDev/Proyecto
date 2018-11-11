@@ -80,9 +80,9 @@ namespace LogicaNegocio
             
         }
 
-
-
-        
-
+        public object BuscarCliente(string busqueda)
+        {
+            return clienteDA.BuscarCliente(busqueda);
+        }
     }
 }

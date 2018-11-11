@@ -79,5 +79,10 @@ namespace Formularios
 
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            dgvClientes.DataSource = clienteBL.BuscarCliente(txtBuscar.Text);
+        }
     }
 }
