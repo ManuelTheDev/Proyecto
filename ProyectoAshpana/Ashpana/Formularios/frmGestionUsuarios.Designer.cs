@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.btnNuevoUsuario = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +37,12 @@
             this.Sexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevoUsuario = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,6 +62,54 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.Size = new System.Drawing.Size(840, 150);
             this.dgvUsuarios.TabIndex = 23;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "Dni";
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
+            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
+            this.ApellidoMaterno.HeaderText = "Apellido Materno";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            // 
+            // DIRECCION
+            // 
+            this.DIRECCION.DataPropertyName = "Direccion";
+            this.DIRECCION.HeaderText = "Direccion";
+            this.DIRECCION.Name = "DIRECCION";
+            // 
+            // Sexo
+            // 
+            this.Sexo.DataPropertyName = "Sexo";
+            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.Name = "Sexo";
+            // 
+            // Correo
+            // 
+            this.Correo.DataPropertyName = "Correo";
+            this.Correo.HeaderText = "Correo";
+            this.Correo.Name = "Correo";
+            // 
+            // Sueldo
+            // 
+            this.Sueldo.DataPropertyName = "Sueldo";
+            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.Name = "Sueldo";
             // 
             // btnModificar
             // 
@@ -124,6 +172,7 @@
             this.txtboxBuscarPaquetes.Name = "txtboxBuscarPaquetes";
             this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(410, 27);
             this.txtboxBuscarPaquetes.TabIndex = 26;
+            this.txtboxBuscarPaquetes.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
             // label2
             // 
@@ -146,54 +195,6 @@
             this.label1.Size = new System.Drawing.Size(153, 36);
             this.label1.TabIndex = 27;
             this.label1.Text = "USUARIOS";
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "Dni";
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
-            this.ApellidoMaterno.HeaderText = "Apellido Materno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            // 
-            // DIRECCION
-            // 
-            this.DIRECCION.DataPropertyName = "Direccion";
-            this.DIRECCION.HeaderText = "Direccion";
-            this.DIRECCION.Name = "DIRECCION";
-            // 
-            // Sexo
-            // 
-            this.Sexo.DataPropertyName = "Sexo";
-            this.Sexo.HeaderText = "Sexo";
-            this.Sexo.Name = "Sexo";
-            // 
-            // Correo
-            // 
-            this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
-            this.Correo.Name = "Correo";
-            // 
-            // Sueldo
-            // 
-            this.Sueldo.DataPropertyName = "Sueldo";
-            this.Sueldo.HeaderText = "Sueldo";
-            this.Sueldo.Name = "Sueldo";
             // 
             // frmGestionUsuarios
             // 
