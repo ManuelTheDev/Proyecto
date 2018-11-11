@@ -64,7 +64,7 @@ namespace Formularios
                 }
 
                 paquetesBL.RegistrarPaquete(paquete);
-
+                this.DialogResult = DialogResult.OK;
                 MessageBox.Show("Se ha registrado el paquete correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception exc)

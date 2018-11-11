@@ -62,19 +62,26 @@ namespace AccesoDatos
             try
             {
                 string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
-                    "user=inf282g4;" +
-                    "password=GvZf6p;" +
-                    "database=inf282g4;" +
-                    "port=3306;" +
-                    "SslMode=none;";
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
 
                 MySqlConnection conexion = new MySqlConnection(cadena);
                 conexion.Open();
-                MySqlCommand comPaquete = new MySqlCommand("call EliminarPaquete(@id);", conexion);
-                comPaquete.Parameters.AddWithValue("@id", p.IdPaquete);
-                comPaquete.Prepare();
+                MySqlCommand comPaquete = new MySqlCommand();
+                comPaquete.CommandType = System.Data.CommandType.StoredProcedure;
+                comPaquete.CommandText = "MODIFICAR_PAQUETE";
+                comPaquete.Connection = conexion;
+                comPaquete.Parameters.Add("_ID_PAQUETE", MySqlDbType.Int32).Value = p.IdPaquete;
+                comPaquete.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
+                comPaquete.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
+                comPaquete.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.NumSesiones;
+                comPaquete.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = 0;
+
                 comPaquete.ExecuteNonQuery();
-                conexion.Clone();
+                conexion.Close();
                 return 1;
             }
             catch (Exception e)
@@ -217,6 +224,7 @@ namespace AccesoDatos
                 comPaquete.Parameters.Add("_NOMBRE", MySqlDbType.VarChar).Value = p.NombreServicio;
                 comPaquete.Parameters.Add("_PRECIO", MySqlDbType.Double).Value = p.PrecioServicio;
                 comPaquete.Parameters.Add("_NUM_SESIONES", MySqlDbType.Int32).Value = p.NumSesiones;
+                comPaquete.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = p.EstadoServicio;
 
                 comPaquete.ExecuteNonQuery();
                 conexion.Close();

@@ -111,8 +111,9 @@ namespace Formularios
 
             paqueteBL.eliminar(paquete);
 
-            MessageBox.Show("Paquete eliminado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             CargarDGV();
+            MessageBox.Show("Paquete eliminado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         private void txtboxBuscarPaquetes_TextChanged(object sender, EventArgs e)
