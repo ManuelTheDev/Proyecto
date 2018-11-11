@@ -36,21 +36,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMontoTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAgregarTratamiento = new System.Windows.Forms.Button();
             this.btnEliminarServicio = new System.Windows.Forms.Button();
             this.btnListarPacientes = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPaciente = new System.Windows.Forms.TextBox();
             this.lblPaciente = new System.Windows.Forms.Label();
-            this.btnAgregarPaquete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDetallesCitas = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNuevaCita
@@ -107,7 +105,7 @@
             this.btnListarPaquete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPaquete.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnListarPaquete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarPaquete.Location = new System.Drawing.Point(71, 240);
+            this.btnListarPaquete.Location = new System.Drawing.Point(319, 186);
             this.btnListarPaquete.Name = "btnListarPaquete";
             this.btnListarPaquete.Size = new System.Drawing.Size(207, 32);
             this.btnListarPaquete.TabIndex = 14;
@@ -119,7 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(70, 574);
+            this.label3.Location = new System.Drawing.Point(267, 448);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 15;
@@ -135,7 +133,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(447, 626);
+            this.btnGuardar.Location = new System.Drawing.Point(347, 511);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(167, 26);
             this.btnGuardar.TabIndex = 16;
@@ -153,20 +151,20 @@
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(74, 626);
+            this.btnCancelar.Location = new System.Drawing.Point(74, 511);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(193, 26);
+            this.btnCancelar.Size = new System.Drawing.Size(167, 26);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // textBox1
+            // txtMontoTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(211, 576);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtMontoTotal.Location = new System.Drawing.Point(388, 448);
+            this.txtMontoTotal.Name = "txtMontoTotal";
+            this.txtMontoTotal.Size = new System.Drawing.Size(126, 20);
+            this.txtMontoTotal.TabIndex = 21;
             // 
             // label4
             // 
@@ -186,26 +184,8 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(692, 100);
+            this.panel1.Size = new System.Drawing.Size(568, 100);
             this.panel1.TabIndex = 23;
-            // 
-            // btnAgregarTratamiento
-            // 
-            this.btnAgregarTratamiento.BackColor = System.Drawing.Color.Black;
-            this.btnAgregarTratamiento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarTratamiento.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAgregarTratamiento.FlatAppearance.BorderSize = 0;
-            this.btnAgregarTratamiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarTratamiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarTratamiento.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAgregarTratamiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarTratamiento.Location = new System.Drawing.Point(421, 186);
-            this.btnAgregarTratamiento.Name = "btnAgregarTratamiento";
-            this.btnAgregarTratamiento.Size = new System.Drawing.Size(193, 30);
-            this.btnAgregarTratamiento.TabIndex = 31;
-            this.btnAgregarTratamiento.Text = "Agregar Tratamiento";
-            this.btnAgregarTratamiento.UseVisualStyleBackColor = false;
-            this.btnAgregarTratamiento.Click += new System.EventHandler(this.btnAgregarTratamiento_Click_1);
             // 
             // btnEliminarServicio
             // 
@@ -217,12 +197,13 @@
             this.btnEliminarServicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarServicio.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnEliminarServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarServicio.Location = new System.Drawing.Point(447, 574);
+            this.btnEliminarServicio.Location = new System.Drawing.Point(74, 441);
             this.btnEliminarServicio.Name = "btnEliminarServicio";
             this.btnEliminarServicio.Size = new System.Drawing.Size(167, 30);
             this.btnEliminarServicio.TabIndex = 46;
             this.btnEliminarServicio.Text = "Eliminar Servicio";
             this.btnEliminarServicio.UseVisualStyleBackColor = false;
+            this.btnEliminarServicio.Click += new System.EventHandler(this.btnEliminarServicio_Click);
             // 
             // btnListarPacientes
             // 
@@ -242,69 +223,58 @@
             this.btnListarPacientes.UseVisualStyleBackColor = false;
             this.btnListarPacientes.Click += new System.EventHandler(this.btnListarPacientes_Click);
             // 
-            // textBox2
+            // txtPaciente
             // 
-            this.textBox2.Location = new System.Drawing.Point(160, 129);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(296, 20);
-            this.textBox2.TabIndex = 48;
+            this.txtPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPaciente.Location = new System.Drawing.Point(159, 136);
+            this.txtPaciente.Name = "txtPaciente";
+            this.txtPaciente.ReadOnly = true;
+            this.txtPaciente.Size = new System.Drawing.Size(296, 13);
+            this.txtPaciente.TabIndex = 48;
             // 
             // lblPaciente
             // 
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaciente.Location = new System.Drawing.Point(69, 129);
+            this.lblPaciente.Location = new System.Drawing.Point(69, 135);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(84, 21);
             this.lblPaciente.TabIndex = 49;
             this.lblPaciente.Text = "Paciente:";
             // 
-            // btnAgregarPaquete
+            // dgvDetallesCitas
             // 
-            this.btnAgregarPaquete.BackColor = System.Drawing.Color.Black;
-            this.btnAgregarPaquete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarPaquete.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnAgregarPaquete.FlatAppearance.BorderSize = 0;
-            this.btnAgregarPaquete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarPaquete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarPaquete.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnAgregarPaquete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarPaquete.Location = new System.Drawing.Point(421, 240);
-            this.btnAgregarPaquete.Name = "btnAgregarPaquete";
-            this.btnAgregarPaquete.Size = new System.Drawing.Size(193, 30);
-            this.btnAgregarPaquete.TabIndex = 50;
-            this.btnAgregarPaquete.Text = "Agregar Paquete";
-            this.btnAgregarPaquete.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetallesCitas.AllowUserToAddRows = false;
+            this.dgvDetallesCitas.AllowUserToDeleteRows = false;
+            this.dgvDetallesCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetallesCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Precio,
             this.NumSesiones});
-            this.dataGridView1.Location = new System.Drawing.Point(74, 333);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(340, 150);
-            this.dataGridView1.TabIndex = 51;
+            this.dgvDetallesCitas.Location = new System.Drawing.Point(74, 261);
+            this.dgvDetallesCitas.Name = "dgvDetallesCitas";
+            this.dgvDetallesCitas.ReadOnly = true;
+            this.dgvDetallesCitas.Size = new System.Drawing.Size(440, 150);
+            this.dgvDetallesCitas.TabIndex = 51;
             // 
             // Nombre
             // 
+            this.Nombre.DataPropertyName = "NombreServicio";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
             // 
             // Precio
             // 
+            this.Precio.DataPropertyName = "Precio";
             this.Precio.HeaderText = "Precio";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
             // NumSesiones
             // 
+            this.NumSesiones.DataPropertyName = "NumSesiones";
             this.NumSesiones.HeaderText = "Número de Sesiones";
             this.NumSesiones.Name = "NumSesiones";
             this.NumSesiones.ReadOnly = true;
@@ -313,15 +283,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 688);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnAgregarPaquete);
+            this.ClientSize = new System.Drawing.Size(568, 562);
+            this.Controls.Add(this.dgvDetallesCitas);
             this.Controls.Add(this.lblPaciente);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtPaciente);
             this.Controls.Add(this.btnListarPacientes);
             this.Controls.Add(this.btnEliminarServicio);
-            this.Controls.Add(this.btnAgregarTratamiento);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMontoTotal);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
@@ -336,7 +304,7 @@
             this.Load += new System.EventHandler(this.frmNuevaCita_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesCitas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,16 +320,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMontoTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAgregarTratamiento;
         private System.Windows.Forms.Button btnEliminarServicio;
         private System.Windows.Forms.Button btnListarPacientes;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPaciente;
         private System.Windows.Forms.Label lblPaciente;
-        private System.Windows.Forms.Button btnAgregarPaquete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDetallesCitas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;

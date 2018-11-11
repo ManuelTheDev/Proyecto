@@ -21,9 +21,13 @@ namespace Modelo
             base(idPersona, dni, nombres, apPaterno, apMaterno,
              direccion, telefono, sexo, correo, fechaNac)
         {
-            this.idCliente = idCliente; 
+            this.idCliente = idCliente;
         }
-        
+        public string NombresCliente { get => Nombres;  }
+        public string ApPat { get => ApPaterno; }
+        public string ApMat { get => ApMaterno; }
+        public string DNICliente { get => Dni;  }
+
         public int IdCliente { get => idCliente; set => idCliente = value; }
         public int Estado { get => estado; set => estado = value; }
         public BindingList<CondicionMedica> CondicionesMedicas { get => condicionesMedicas; set => condicionesMedicas = value; }

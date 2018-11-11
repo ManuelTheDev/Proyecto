@@ -17,6 +17,7 @@ namespace Modelo
 
         public Cita()
         {
+            detallesCitas = new BindingList<DetalleCita>(); 
 
         }
 

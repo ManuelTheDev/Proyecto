@@ -1,6 +1,6 @@
 ﻿namespace Formularios
 {
-    partial class listarPacientes
+    partial class frmListarPacientes
     {
         /// <summary>
         /// Required designer variable.
@@ -116,29 +116,33 @@
             // 
             // DNI
             // 
+            this.DNI.DataPropertyName = "DNICliente";
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
             // 
             // NOMBRE
             // 
+            this.NOMBRE.DataPropertyName = "NombresCliente";
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
             this.NOMBRE.ReadOnly = true;
             // 
             // APELLIDO_PATERNO
             // 
+            this.APELLIDO_PATERNO.DataPropertyName = "ApPat";
             this.APELLIDO_PATERNO.HeaderText = "APELLIDO PATERNO";
             this.APELLIDO_PATERNO.Name = "APELLIDO_PATERNO";
             this.APELLIDO_PATERNO.ReadOnly = true;
             // 
             // APELLIDO_MATERNO
             // 
+            this.APELLIDO_MATERNO.DataPropertyName = "ApMat";
             this.APELLIDO_MATERNO.HeaderText = "APELLIDO MATERNO";
             this.APELLIDO_MATERNO.Name = "APELLIDO_MATERNO";
             this.APELLIDO_MATERNO.ReadOnly = true;
             // 
-            // listarPacientes
+            // frmListarPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -148,7 +152,7 @@
             this.Controls.Add(this.txtboxBuscarPaquetes);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.panel1);
-            this.Name = "listarPacientes";
+            this.Name = "frmListarPacientes";
             this.Text = "listarPacientes";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

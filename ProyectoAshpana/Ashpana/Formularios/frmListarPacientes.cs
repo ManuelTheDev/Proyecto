@@ -12,11 +12,11 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class listarPacientes : Form
+    public partial class frmListarPacientes : Form
     {
         private ClienteBL clienteBL;
         private Cliente cliente; 
-        public listarPacientes()
+        public frmListarPacientes()
         {
             InitializeComponent();
             clienteBL = new ClienteBL();

@@ -15,11 +15,16 @@ namespace Formularios
     {
         private Tratamiento tratamientoSeleccionado;
         private Paquete paqueteSeleccionado;
-        private Cliente pacienteSeleccionado; 
+        private Cliente pacienteSeleccionado;
+        private Cita cita; 
 
         public frmNuevaCita()
         {
             InitializeComponent();
+            cita = new Cita();
+            dgvDetallesCitas.AutoGenerateColumns = false;
+            dgvDetallesCitas.DataSource = cita.DetallesCitas; 
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -33,7 +38,19 @@ namespace Formularios
             if (frmListarTrat.ShowDialog() == DialogResult.OK)
             {
                 tratamientoSeleccionado = frmListarTrat.Tratamiento;
-
+                DetalleCita dt = new DetalleCita();
+                dt.Servicio = tratamientoSeleccionado;
+                dt.Servicio.NumSesiones = 1; 
+                cita.DetallesCitas.Add(dt);
+                if (txtMontoTotal.Text =="")
+                {
+                    txtMontoTotal.Text = dt.Precio.ToString();
+                }
+                else
+                {
+                    double monto = Double.Parse(txtMontoTotal.Text) + tratamientoSeleccionado.PrecioServicio;
+                    txtMontoTotal.Text = Convert.ToString(monto);
+                }
             }
         }
 
@@ -43,7 +60,19 @@ namespace Formularios
             if (frmListarPaq.ShowDialog() == DialogResult.OK)
             {
                 paqueteSeleccionado = frmListarPaq.Paquete;
-
+                DetalleCita dt = new DetalleCita();
+                dt.Servicio = paqueteSeleccionado;
+                dt.Servicio.NumSesiones = paqueteSeleccionado.NumSesiones;
+                cita.DetallesCitas.Add(dt);
+                if (txtMontoTotal.Text == "")
+                {
+                    txtMontoTotal.Text = dt.Precio.ToString();
+                }
+                else
+                {
+                    double monto = Double.Parse(txtMontoTotal.Text) + paqueteSeleccionado.PrecioServicio;
+                    txtMontoTotal.Text = Convert.ToString(monto);
+                }
             }
         }
 
@@ -120,12 +149,22 @@ namespace Formularios
 
         private void btnListarPacientes_Click(object sender, EventArgs e)
         {
-            listarPacientes frmListarPacientes = new listarPacientes();
+            frmListarPacientes frmListarPacientes = new frmListarPacientes();
             if (frmListarPacientes.ShowDialog() == DialogResult.OK)
             {
                 pacienteSeleccionado = frmListarPacientes.Cliente;
-
+                txtPaciente.Text = pacienteSeleccionado.Nombres + " " + pacienteSeleccionado.ApPaterno + " " + pacienteSeleccionado.ApMaterno;
+                cita.Cliente = pacienteSeleccionado; 
             }
+        }
+
+        private void btnEliminarServicio_Click(object sender, EventArgs e)
+        {
+            int indice = dgvDetallesCitas.CurrentRow.Index;
+            double monto = Double.Parse(txtMontoTotal.Text) - cita.DetallesCitas[indice].Precio;
+            txtMontoTotal.Text = Convert.ToString(monto);
+            cita.DetallesCitas.RemoveAt(indice);
+
         }
     }
 }
