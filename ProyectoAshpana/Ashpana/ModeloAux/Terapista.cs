@@ -15,7 +15,10 @@ namespace Modelo
         private int tipo;
         private BindingList<Tratamiento> tratamientos;
 
-        
+        public TimeSpan horaEntry { get => Convert.ToDateTime(horaEntrada).TimeOfDay; }
+        public TimeSpan horaOut { get => Convert.ToDateTime(horaSalida).TimeOfDay;  }
+
+
         public int Tipo { get => tipo; set => tipo = value; }
         public BindingList<Tratamiento> Tratamientos { get => tratamientos; set => tratamientos = value; }
         public DateTime HoraEntrada { get => horaEntrada; set => horaEntrada = value; }
@@ -38,6 +41,7 @@ namespace Modelo
         {
             Tratamientos = new BindingList<Tratamiento>(); 
         }
+
 
         
     }

@@ -9,30 +9,28 @@ namespace Modelo
 {
     public class Cita
     {
-        private BindingList<Tratamiento> listaTratamientos;
-        private BindingList<Paquete> listaPaquetes;
-        private DateTime fechaRegistro;
-        private BindingList<BindingList<Sesion>> sesiones;
+        private int idCita; 
+        private TimeSpan fechaRegistro;
+        private BindingList<DetalleCita> detallesCitas;
         private Cliente cliente;
+
 
         public Cita()
         {
 
         }
 
-        public Cita(BindingList<Tratamiento> listaTratamientos, BindingList<Paquete> listaPaquetes, DateTime fechaRegistro, BindingList<BindingList<Sesion>> sesiones, Cliente cliente)
+        public Cita(int idCita, TimeSpan fechaRegistro, BindingList<DetalleCita> detallesCitas, Cliente cliente)
         {
-            this.ListaTratamientos = listaTratamientos;
-            this.ListaPaquetes = listaPaquetes;
+            this.IdCita = idCita;
             this.FechaRegistro = fechaRegistro;
-            this.Sesiones = sesiones;
+            this.DetallesCitas = detallesCitas;
             this.Cliente = cliente;
         }
 
-        public BindingList<Tratamiento> ListaTratamientos { get => listaTratamientos; set => listaTratamientos = value; }
-        public BindingList<Paquete> ListaPaquetes { get => listaPaquetes; set => listaPaquetes = value; }
-        public DateTime FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
-        public BindingList<BindingList<Sesion>> Sesiones { get => sesiones; set => sesiones = value; }
+        public int IdCita { get => idCita; set => idCita = value; }
+        public TimeSpan FechaRegistro { get => fechaRegistro; set => fechaRegistro = value; }
+        public BindingList<DetalleCita> DetallesCitas { get => detallesCitas; set => detallesCitas = value; }
         public Cliente Cliente { get => cliente; set => cliente = value; }
     }
 }

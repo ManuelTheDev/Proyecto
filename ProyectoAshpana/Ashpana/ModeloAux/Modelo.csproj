@@ -43,8 +43,8 @@
     <Compile Include="Cita.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="CondicionMedica.cs" />
+    <Compile Include="DetalleCita.cs" />
     <Compile Include="FichaMedida.cs" />
-    <Compile Include="Hora.cs" />
     <Compile Include="Padecimiento.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="Persona.cs" />

@@ -31,16 +31,18 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevoTerapista = new System.Windows.Forms.Button();
             this.dgvTerapistas = new System.Windows.Forms.DataGridView();
-            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITAS = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
+            this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ApellidoMaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).BeginInit();
             this.CITAS.SuspendLayout();
             this.SuspendLayout();
@@ -91,47 +93,14 @@
             this.Nombres,
             this.ApellidoPaterno,
             this.ApellidoMaterno,
+            this.HoraEntrada,
+            this.HoraSalida,
             this.Sueldo});
-            this.dgvTerapistas.Location = new System.Drawing.Point(362, 234);
+            this.dgvTerapistas.Location = new System.Drawing.Point(170, 234);
             this.dgvTerapistas.Name = "dgvTerapistas";
             this.dgvTerapistas.ReadOnly = true;
-            this.dgvTerapistas.Size = new System.Drawing.Size(544, 150);
+            this.dgvTerapistas.Size = new System.Drawing.Size(736, 150);
             this.dgvTerapistas.TabIndex = 19;
-            // 
-            // Dni
-            // 
-            this.Dni.DataPropertyName = "Dni";
-            this.Dni.HeaderText = "DNI";
-            this.Dni.Name = "Dni";
-            this.Dni.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            this.ApellidoPaterno.ReadOnly = true;
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
-            this.ApellidoMaterno.HeaderText = "Apellido Materno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            this.ApellidoMaterno.ReadOnly = true;
-            // 
-            // Sueldo
-            // 
-            this.Sueldo.DataPropertyName = "Sueldo";
-            this.Sueldo.HeaderText = "Sueldo";
-            this.Sueldo.Name = "Sueldo";
-            this.Sueldo.ReadOnly = true;
             // 
             // CITAS
             // 
@@ -191,6 +160,55 @@
             this.btnVerTratamientosHabilitados.UseVisualStyleBackColor = false;
             this.btnVerTratamientosHabilitados.Click += new System.EventHandler(this.btnVerTratamientosHabilitados_Click);
             // 
+            // Dni
+            // 
+            this.Dni.DataPropertyName = "Dni";
+            this.Dni.HeaderText = "DNI";
+            this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "Nombres";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
+            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
+            this.ApellidoMaterno.HeaderText = "Apellido Materno";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
+            // 
+            // HoraEntrada
+            // 
+            this.HoraEntrada.DataPropertyName = "horaEntry";
+            this.HoraEntrada.HeaderText = "Hora Entrada";
+            this.HoraEntrada.Name = "HoraEntrada";
+            this.HoraEntrada.ReadOnly = true;
+            // 
+            // HoraSalida
+            // 
+            this.HoraSalida.DataPropertyName = "horaOut";
+            this.HoraSalida.HeaderText = "Hora Salida";
+            this.HoraSalida.Name = "HoraSalida";
+            this.HoraSalida.ReadOnly = true;
+            // 
+            // Sueldo
+            // 
+            this.Sueldo.DataPropertyName = "Sueldo";
+            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.Name = "Sueldo";
+            this.Sueldo.ReadOnly = true;
+            // 
             // frmGestionTerapistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +246,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoPaterno;
         private System.Windows.Forms.DataGridViewTextBoxColumn ApellidoMaterno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraEntrada;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoraSalida;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
     }
 }
