@@ -30,8 +30,43 @@ namespace Formularios
             txtContrasena.Text = t.Contrasena;
             dtpFechaNac.Value = t.FechaNac;
             txtSueldo.Text = t.Sueldo.ToString();
-            
 
+            DateTime horaEntrada = t.HoraEntrada;
+            DateTime horaSalida = t.HoraSalida;
+
+            String hEntrada = horaEntrada.Hour.ToString();
+            String hSalida = horaSalida.Hour.ToString();
+
+            String mEntrada = horaEntrada.Minute.ToString();
+            String mSalida = horaSalida.Minute.ToString();
+
+           
+
+            if (Int32.Parse(hEntrada) < 10)
+            {
+                hEntrada = "0"+ hEntrada;
+            } 
+
+            if (Int32.Parse(mEntrada) < 10)
+            {
+                mEntrada = "0" + mEntrada; 
+            }
+
+            if (Int32.Parse(hSalida) < 10)
+            {
+                hSalida = "0" + hSalida;
+            }
+
+            if (Int32.Parse(mSalida) < 10)
+            {
+                mSalida = "0" + mSalida;
+            }
+
+           cboHoraEntrada.Text = hEntrada;
+           cboHoraSalida.Text = hSalida;
+
+           cboMinutoEntrada.Text = mEntrada;
+           cboMinutoSalida.Text = mSalida;
 
             terapistaMod = new Terapista();
             terapistaMod.IdPersona = t.IdPersona;

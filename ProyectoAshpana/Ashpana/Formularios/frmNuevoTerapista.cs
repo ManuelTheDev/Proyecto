@@ -73,8 +73,6 @@ namespace Formularios
 
             String minutoE = cboMinutoEntrada.Text;
             String minutoS = cboMinutoSalida.Text;
-
-
     
             TerapistaBL terapistaBL = new TerapistaBL();
             terapistaBL.registrarTerapista(t, horaE, horaS, minutoE, minutoS);

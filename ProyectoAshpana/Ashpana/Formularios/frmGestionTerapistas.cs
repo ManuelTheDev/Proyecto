@@ -44,6 +44,7 @@ namespace Formularios
         private void button3_Click(object sender, EventArgs e)
         {
             terapistaSeleccionada = (Terapista)dgvTerapistas.CurrentRow.DataBoundItem;
+            
             frmModificarTerapista frmTerapista = new frmModificarTerapista(terapistaSeleccionada);
             frmTerapista.ShowDialog();
             if (frmTerapista.DialogResult == DialogResult.OK)

@@ -19,7 +19,8 @@ namespace AccesoDatos
                       "password=GvZf6p;" +
                       "database=inf282g4;" +
                       "port=3306;" +
-                      "SslMode=none;";
+                      "SslMode=none;" +
+                      "Convert Zero Datetime=True;";
 
             BindingList<Terapista> terapistas = new BindingList<Terapista>();
             MySqlConnection conexion = new MySqlConnection(cadena);
@@ -45,6 +46,11 @@ namespace AccesoDatos
                 t.Sueldo = reader.GetDouble("SUELDO");
                 t.Estado = reader.GetInt32("ESTADO");
                 t.Sexo = reader.GetChar("SEXO");
+                TimeSpan horaEntradaAux = reader.GetTimeSpan("HORA_ENTRADA");
+                DateTime dt = new DateTime(2012, 01, 01);
+                t.HoraEntrada = dt + horaEntradaAux;
+                TimeSpan horaSalidaAux = reader.GetTimeSpan("HORA_SALIDA");
+                t.HoraSalida = dt + horaSalidaAux; 
                 t.FechaNac = reader.GetDateTime("FECHA_NACIMIENTO");
                 t.Contrasena = reader.GetString("CONTRASENIA");
                 terapistas.Add(t);
