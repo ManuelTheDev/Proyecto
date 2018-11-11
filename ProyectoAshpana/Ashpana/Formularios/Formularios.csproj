@@ -64,11 +64,29 @@
     <Compile Include="frmCita_AgregarTratamiento.Designer.cs">
       <DependentUpon>frmCita_AgregarTratamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDetalleCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleCita.Designer.cs">
+      <DependentUpon>frmDetalleCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleSesion.Designer.cs">
+      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListarPaquete.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmListarPaquete.Designer.cs">
       <DependentUpon>frmListarPaquete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmListarTerapistas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListarTerapistas.Designer.cs">
+      <DependentUpon>frmListarTerapistas.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListarTratamiento.cs">
       <SubType>Form</SubType>
@@ -261,6 +279,12 @@
     <EmbeddedResource Include="frmCita_AgregarTratamiento.resx">
       <DependentUpon>frmCita_AgregarTratamiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleCita.resx">
+      <DependentUpon>frmDetalleCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleSesion.resx">
+      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListarPaquete.resx">
       <DependentUpon>frmListarPaquete.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionUsuarios.resx">
       <DependentUpon>frmGestionUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListarTerapistas.resx">
+      <DependentUpon>frmListarTerapistas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarTratamiento.resx">
       <DependentUpon>frmListarTratamiento.cs</DependentUpon>

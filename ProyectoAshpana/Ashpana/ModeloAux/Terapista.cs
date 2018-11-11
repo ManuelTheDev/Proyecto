@@ -17,7 +17,9 @@ namespace Modelo
 
         public TimeSpan horaEntry { get => Convert.ToDateTime(horaEntrada).TimeOfDay; }
         public TimeSpan horaOut { get => Convert.ToDateTime(horaSalida).TimeOfDay;  }
-
+        public String NOMBRES { get => Nombres; }
+        public String AP_PATERNO { get => ApPaterno;  }
+        public String AP_MATERNO { get => ApMaterno;  }
 
         public int Tipo { get => tipo; set => tipo = value; }
         public BindingList<Tratamiento> Tratamientos { get => tratamientos; set => tratamientos = value; }

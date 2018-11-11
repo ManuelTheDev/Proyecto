@@ -8,8 +8,7 @@ namespace Modelo
 {
     public class Sesion
     {
-        private int idCita;
-        private int idDetalleCita; 
+        
         private int idSesion;
         private DateTime fechaSesion;
         private Terapista terapista;
@@ -21,10 +20,9 @@ namespace Modelo
 
         }
 
-        public Sesion(int idCita, int idDetalleCita, int idSesion, DateTime fechaSesion, Terapista terapista, TimeSpan hora, Servicio servicio)
+        public Sesion( int idSesion, DateTime fechaSesion, Terapista terapista, TimeSpan hora, Servicio servicio)
         {
-            this.IdCita = idCita;
-            this.IdDetalleCita = idDetalleCita;
+           
             this.IdSesion = idSesion;
             this.FechaSesion = fechaSesion;
             this.Terapista = terapista;
@@ -32,8 +30,7 @@ namespace Modelo
             this.Servicio = servicio;
         }
 
-        public int IdCita { get => idCita; set => idCita = value; }
-        public int IdDetalleCita { get => idDetalleCita; set => idDetalleCita = value; }
+      
         public int IdSesion { get => idSesion; set => idSesion = value; }
         public DateTime FechaSesion { get => fechaSesion; set => fechaSesion = value; }
         public Terapista Terapista { get => terapista; set => terapista = value; }

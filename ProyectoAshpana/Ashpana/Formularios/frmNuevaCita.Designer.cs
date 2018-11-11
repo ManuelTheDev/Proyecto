@@ -36,12 +36,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTerapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -51,8 +45,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.lblPaciente = new System.Windows.Forms.Label();
             this.btnAgregarPaquete = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblNuevaCita
@@ -91,7 +89,7 @@
             this.btnListarTratamientos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarTratamientos.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnListarTratamientos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarTratamientos.Location = new System.Drawing.Point(74, 202);
+            this.btnListarTratamientos.Location = new System.Drawing.Point(73, 186);
             this.btnListarTratamientos.Name = "btnListarTratamientos";
             this.btnListarTratamientos.Size = new System.Drawing.Size(205, 32);
             this.btnListarTratamientos.TabIndex = 13;
@@ -109,7 +107,7 @@
             this.btnListarPaquete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPaquete.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnListarPaquete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarPaquete.Location = new System.Drawing.Point(73, 252);
+            this.btnListarPaquete.Location = new System.Drawing.Point(71, 240);
             this.btnListarPaquete.Name = "btnListarPaquete";
             this.btnListarPaquete.Size = new System.Drawing.Size(207, 32);
             this.btnListarPaquete.TabIndex = 14;
@@ -121,7 +119,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(367, 574);
+            this.label3.Location = new System.Drawing.Point(70, 574);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(115, 20);
             this.label3.TabIndex = 15;
@@ -163,48 +161,9 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNombre,
-            this.colPrecio,
-            this.colTerapista,
-            this.colFecha,
-            this.colHora});
-            this.dataGridView1.Location = new System.Drawing.Point(74, 306);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(540, 228);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            // 
-            // colTerapista
-            // 
-            this.colTerapista.HeaderText = "Terapista";
-            this.colTerapista.Name = "colTerapista";
-            // 
-            // colFecha
-            // 
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            // 
-            // colHora
-            // 
-            this.colHora.HeaderText = "Hora";
-            this.colHora.Name = "colHora";
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(488, 574);
+            this.textBox1.Location = new System.Drawing.Point(211, 576);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(126, 20);
             this.textBox1.TabIndex = 21;
@@ -240,7 +199,7 @@
             this.btnAgregarTratamiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarTratamiento.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAgregarTratamiento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarTratamiento.Location = new System.Drawing.Point(421, 202);
+            this.btnAgregarTratamiento.Location = new System.Drawing.Point(421, 186);
             this.btnAgregarTratamiento.Name = "btnAgregarTratamiento";
             this.btnAgregarTratamiento.Size = new System.Drawing.Size(193, 30);
             this.btnAgregarTratamiento.TabIndex = 31;
@@ -258,9 +217,9 @@
             this.btnEliminarServicio.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarServicio.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnEliminarServicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarServicio.Location = new System.Drawing.Point(74, 569);
+            this.btnEliminarServicio.Location = new System.Drawing.Point(447, 574);
             this.btnEliminarServicio.Name = "btnEliminarServicio";
-            this.btnEliminarServicio.Size = new System.Drawing.Size(193, 30);
+            this.btnEliminarServicio.Size = new System.Drawing.Size(167, 30);
             this.btnEliminarServicio.TabIndex = 46;
             this.btnEliminarServicio.Text = "Eliminar Servicio";
             this.btnEliminarServicio.UseVisualStyleBackColor = false;
@@ -275,17 +234,17 @@
             this.btnListarPacientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPacientes.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnListarPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarPacientes.Location = new System.Drawing.Point(463, 119);
+            this.btnListarPacientes.Location = new System.Drawing.Point(463, 129);
             this.btnListarPacientes.Name = "btnListarPacientes";
-            this.btnListarPacientes.Size = new System.Drawing.Size(151, 52);
+            this.btnListarPacientes.Size = new System.Drawing.Size(63, 24);
             this.btnListarPacientes.TabIndex = 47;
-            this.btnListarPacientes.Text = "Ver Listar Pacientes";
+            this.btnListarPacientes.Text = "...";
             this.btnListarPacientes.UseVisualStyleBackColor = false;
             this.btnListarPacientes.Click += new System.EventHandler(this.btnListarPacientes_Click);
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(160, 135);
+            this.textBox2.Location = new System.Drawing.Point(160, 129);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(296, 20);
             this.textBox2.TabIndex = 48;
@@ -294,7 +253,7 @@
             // 
             this.lblPaciente.AutoSize = true;
             this.lblPaciente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPaciente.Location = new System.Drawing.Point(70, 134);
+            this.lblPaciente.Location = new System.Drawing.Point(69, 129);
             this.lblPaciente.Name = "lblPaciente";
             this.lblPaciente.Size = new System.Drawing.Size(84, 21);
             this.lblPaciente.TabIndex = 49;
@@ -310,18 +269,52 @@
             this.btnAgregarPaquete.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarPaquete.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnAgregarPaquete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarPaquete.Location = new System.Drawing.Point(421, 254);
+            this.btnAgregarPaquete.Location = new System.Drawing.Point(421, 240);
             this.btnAgregarPaquete.Name = "btnAgregarPaquete";
             this.btnAgregarPaquete.Size = new System.Drawing.Size(193, 30);
             this.btnAgregarPaquete.TabIndex = 50;
             this.btnAgregarPaquete.Text = "Agregar Paquete";
             this.btnAgregarPaquete.UseVisualStyleBackColor = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Precio,
+            this.NumSesiones});
+            this.dataGridView1.Location = new System.Drawing.Point(74, 333);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(340, 150);
+            this.dataGridView1.TabIndex = 51;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // NumSesiones
+            // 
+            this.NumSesiones.HeaderText = "Número de Sesiones";
+            this.NumSesiones.Name = "NumSesiones";
+            this.NumSesiones.ReadOnly = true;
+            // 
             // frmNuevaCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 688);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAgregarPaquete);
             this.Controls.Add(this.lblPaciente);
             this.Controls.Add(this.textBox2);
@@ -329,7 +322,6 @@
             this.Controls.Add(this.btnEliminarServicio);
             this.Controls.Add(this.btnAgregarTratamiento);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label3);
@@ -342,9 +334,9 @@
             this.Name = "frmNuevaCita";
             this.Text = "formularioNuevaCita";
             this.Load += new System.EventHandler(this.frmNuevaCita_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,12 +352,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTerapista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
@@ -375,5 +361,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label lblPaciente;
         private System.Windows.Forms.Button btnAgregarPaquete;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;
     }
 }
