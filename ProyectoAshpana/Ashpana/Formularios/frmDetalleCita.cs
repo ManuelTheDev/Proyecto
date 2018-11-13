@@ -13,39 +13,32 @@ namespace Formularios
 {
     public partial class frmDetalleCita : Form
     {
-        private DetalleCita dtModificado; 
+        private DetalleCita detalleServicioModificado;
+        private Terapista terapistaSeleccionado;
+        private int numSesionesTotal = 0; 
 
         public frmDetalleCita(DetalleCita dt)
         {
             InitializeComponent();
-            dtModificado = new DetalleCita();
-            dtModificado.Servicio = dt.Servicio;
-            dt.Servicio = dt.Servicio;
-            dt = dtModificado;
-            dtModificado.Sesiones = new BindingList<Sesion>();
-            dt.Sesiones = new BindingList<Sesion>(); 
-
-            //MODIFICAMOS EL DT MODIFICADO
-            if (dt.Servicio.NumSesiones == 1) //si es tratamiento
+            detalleServicioModificado = new DetalleCita();
+            detalleServicioModificado.Servicio = dt.Servicio;
+            
+            foreach (Sesion s in dt.Sesiones)
             {
-                Sesion sesion = new Sesion();
-                sesion.NumDeSesion = 1;
-             
-                dtModificado.Sesiones.Add(sesion);
-               
-
-                this.dgvDetalleServicio.Rows.Insert(0, 1, "", "", "");
-            } 
-            else // si es paquete
-            {
-                for (int i=0; i<dt.Servicio.NumSesiones; i++)
-                {
-                    Sesion sesion = new Sesion();
-                    sesion.NumDeSesion = i+1; 
-                    dtModificado.Sesiones.Add(sesion);
-                    this.dgvDetalleServicio.Rows.Insert(i, i + 1, "", "", "", ""); 
-                }
+                detalleServicioModificado.Sesiones.Add(s);
             }
+            dgvDetalleServicio.AutoGenerateColumns = false; 
+            dgvDetalleServicio.DataSource = detalleServicioModificado.Sesiones;
+
+
+            dt.Sesiones.Clear(); 
+            foreach(Sesion s in detalleServicioModificado.Sesiones)
+            {
+               
+                dt.Sesiones.Add(s); 
+            }
+           
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -53,14 +46,45 @@ namespace Formularios
             this.Dispose();
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnListarTerapistas_Click(object sender, EventArgs e)
+        {
+            frmListarTerapistas frmTerapistas = new frmListarTerapistas();
+            if (frmTerapistas.ShowDialog() == DialogResult.OK)
+            {
+                terapistaSeleccionado = frmTerapistas.Terapista;
+                txtTerapista.Text= terapistaSeleccionado.Nombres + " " + terapistaSeleccionado.ApPaterno; 
+            }
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnAgregarSesion_Click(object sender, EventArgs e)
+        {
+            if (numSesionesTotal == detalleServicioModificado.Servicio.NumSesiones)
+            {
+                MessageBox.Show("Ya no puede ingresar más sesiones");
+                return; 
+            }
+
+            Sesion s = new Sesion();
+            s.Terapista = terapistaSeleccionado;
+            String horaCita = cboHora.Text + ":" + cboMinuto.Text + ":00";
+            TimeSpan hora_E = Convert.ToDateTime(horaCita).TimeOfDay;
+            s.Hora = hora_E;
+            s.FechaSesion = dtpFecha.Value;
+            s.NumDeSesion = numSesionesTotal + 1; 
+            detalleServicioModificado.Sesiones.Add(s);
+            numSesionesTotal++; 
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = dgvDetalleServicio.CurrentRow.Index;
-            frmDetalleSesion frmVerDetalleCita = new frmDetalleSesion(dtModificado.Sesiones[indice], dtModificado.Servicio);
-            if (frmVerDetalleCita.ShowDialog() == DialogResult.OK)
-            {
-
-            }
+            detalleServicioModificado.Sesiones.RemoveAt(indice);
+            numSesionesTotal--; 
         }
     }
 }

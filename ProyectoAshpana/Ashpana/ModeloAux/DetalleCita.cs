@@ -15,7 +15,7 @@ namespace Modelo
         
         public DetalleCita()
         {
-
+            Sesiones = new BindingList<Sesion>(); 
         }
         public DetalleCita(int idDetalleCita, Servicio servicio, BindingList<Sesion> sesiones)
         {
