@@ -80,7 +80,7 @@ namespace Formularios
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^\d{9}$");
+            Regex rgx = new Regex(@"^(\d{7}|\d{9})$");
             if (!rgx.IsMatch(txtTelefono.Text)) txtTelefono.ForeColor = Color.Red;
             else txtTelefono.ForeColor = Color.Black;
         }

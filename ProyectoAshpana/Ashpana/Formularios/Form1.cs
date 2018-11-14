@@ -20,16 +20,49 @@ namespace Formularios
         private static frmGestionPaquetes fgpaquetes;
         private static frmGestionTerapistas frterapista;
         private static frmGestionUsuarios fgu;
-        
-        public Form1()
+        private int tipo_trabajador;
+
+        public Form1(int tipo)
         {
             InitializeComponent();
+            tipo_trabajador = tipo; 
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            privilegiosUsuarios(); 
+        }
+        private void privilegiosUsuarios()
+        {
+            /*if (tipo_trabajador == 0) //terapista
+            {
+                btnReporte.Enabled = false;
+                TRATAMIENTOS.Enabled = false;
+                PAQUETES.Enabled = false;
+                TERAPISTAS.Enabled = false;
+                USUARIOS.Enabled = false;
+            }*/
+
+            if (tipo_trabajador == 0)
+            {
+                btnReporte.Visible = false;
+                btnReporte.BackColor = Color.DarkGray;
+                TRATAMIENTOS.Visible = false;
+                TRATAMIENTOS.BackColor = Color.DarkGray; 
+                PAQUETES.Visible = false;
+                PAQUETES.BackColor = Color.DarkGray; 
+                TERAPISTAS.Visible = false;
+                TERAPISTAS.BackColor = Color.DarkGray;
+                USUARIOS.Visible = false;
+                USUARIOS.BackColor = Color.DarkGray; 
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -132,7 +165,12 @@ namespace Formularios
 
         private void TRATAMIENTOS_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmGestionTratamientos());
+            if (tipo_trabajador == 0)
+            {
+                MessageBox.Show("Usted no tiene permisos para acceder a esta ventana");
+            }
+            else
+                AbrirFormInPanel(new frmGestionTratamientos());
         }
 
 
@@ -143,7 +181,10 @@ namespace Formularios
 
         private void PAQUETES_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmGestionPaquetes());
+            if (tipo_trabajador == 1)
+                AbrirFormInPanel(new frmGestionPaquetes());
+            else
+                MessageBox.Show("Usted no tiene permisos para acceder a esta ventana");
         }
 
         private void FichaMedidas_Click(object sender, EventArgs e)
@@ -153,12 +194,21 @@ namespace Formularios
 
         private void TERAPISTAS_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmGestionTerapistas());
+            if (tipo_trabajador == 1)
+                AbrirFormInPanel(new frmGestionTerapistas());
+            else
+                MessageBox.Show("Usted no tiene permisos para acceder a esta ventana");
+
         }
 
         private void USUARIOS_Click(object sender, EventArgs e)
         {
-            AbrirFormInPanel(new frmGestionUsuarios());
+            if(tipo_trabajador==1)
+                AbrirFormInPanel(new frmGestionUsuarios());
+            else
+                MessageBox.Show("Usted no tiene permisos para acceder a esta ventana");
+
+
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)

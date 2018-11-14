@@ -43,9 +43,11 @@ namespace Formularios
                 lblErrorUsuario.Text = "Ingrese su usuario";
                 lblErrorUsuario.Visible = true;
             }
+
+            int tipo = -1; 
             if (txtContrasenia.Text!= "INGRESE USUARIO" && txtUsuario.Text != "INGRESE CONTRASEÑA")
             {
-                if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text))
+                if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text, tipo))
                 {
                     MessageBox.Show("El usuario y/o la contraseña son incorrectos.",
                     "Iniciar Sesion", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);
@@ -53,7 +55,7 @@ namespace Formularios
                 else
                 {
 
-                    Form1 frmPrincipal = new Form1();
+                    Form1 frmPrincipal = new Form1(tipo);
                     frmPrincipal.ShowDialog();
                     this.Dispose();
                 }
