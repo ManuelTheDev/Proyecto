@@ -95,10 +95,15 @@ namespace Formularios
             string busqueda = txtBuscar.Text;
             var clientesBuscados = new BindingList<Cliente>();
 
+            string patron = "";
+            for (int i = 0; i < busqueda.Length; i++)
+                if (('A' <= busqueda[i] && busqueda[i] <= 'Z') || ('a' <= busqueda[i] && busqueda[i] <= 'z')) patron += "[" + System.Char.ToLower(busqueda[i]) + System.Char.ToUpper(busqueda[i]) + "]";
+                else patron += busqueda[i];
+
             foreach (Cliente c in clientes)
             {
                 //String patron = @"^(\w)+" + busqueda + @"(\w)+$";
-                Regex rgx = new Regex(@"^[\w\s]*" + busqueda + @"[\w\s]*$");
+                Regex rgx = new Regex(@"" + patron + @"");
                 if (rgx.IsMatch(c.Nombres) || rgx.IsMatch(c.ApMaterno) || rgx.IsMatch(c.ApPaterno) || c.Dni==busqueda)
                 {
                     clientesBuscados.Add(c);
