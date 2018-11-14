@@ -87,7 +87,7 @@ namespace Formularios
             if (txtUsuario.Text == "")
             {
                 txtUsuario.Text = "INGRESE USUARIO";
-                txtUsuario.ForeColor = Color.Black;
+                txtUsuario.ForeColor = Color.LightGray;
                 lblErrorUsuario.Visible = false;
             }
         }
@@ -107,7 +107,7 @@ namespace Formularios
             if (txtContrasenia.Text=="INGRESE CONTRASEÑA")
             {
                 txtContrasenia.Text = "";
-                txtContrasenia.ForeColor = Color.Black;
+                txtContrasenia.ForeColor = Color.LightGray;
                 txtContrasenia.UseSystemPasswordChar = false;
                 lblErrorPass.Visible = false;
             }

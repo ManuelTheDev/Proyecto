@@ -15,7 +15,7 @@ namespace Formularios
     {
         private DetalleCita detalleServicioModificado;
         private Terapista terapistaSeleccionado;
-        private int numSesionesTotal = 0;
+        private int numSesionesTotal;
 
         public DetalleCita DetalleServicioModificado { get => detalleServicioModificado; set => detalleServicioModificado = value; }
 
@@ -39,8 +39,10 @@ namespace Formularios
                
                 dt.Sesiones.Add(s); 
             }
-           
-           
+            numSesionesTotal = detalleServicioModificado.Sesiones.Count;
+
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -67,6 +69,7 @@ namespace Formularios
         private void btnAgregarSesion_Click(object sender, EventArgs e)
         {
             if (numSesionesTotal == DetalleServicioModificado.Servicio.NumSesiones)
+           // if (DetalleServicioModificado.Sesiones.Count==DetalleServicioModificado.Servicio.NumSesiones)
             {
                 MessageBox.Show("Ya no puede ingresar más sesiones");
                 return; 

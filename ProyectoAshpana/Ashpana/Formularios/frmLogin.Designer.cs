@@ -92,6 +92,7 @@
             // 
             this.txtUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtUsuario.Location = new System.Drawing.Point(418, 89);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(269, 23);
@@ -104,6 +105,7 @@
             // 
             this.txtContrasenia.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
             this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtContrasenia.Location = new System.Drawing.Point(418, 195);
             this.txtContrasenia.Name = "txtContrasenia";
             this.txtContrasenia.Size = new System.Drawing.Size(269, 23);
