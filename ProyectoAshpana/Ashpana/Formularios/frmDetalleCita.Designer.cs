@@ -321,7 +321,7 @@
             // 
             // Fecha
             // 
-            this.Fecha.DataPropertyName = "FechaSesion";
+            this.Fecha.DataPropertyName = "fecha";
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;

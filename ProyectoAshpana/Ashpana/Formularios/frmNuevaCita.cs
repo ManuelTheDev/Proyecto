@@ -16,7 +16,7 @@ namespace Formularios
         private Tratamiento tratamientoSeleccionado;
         private Paquete paqueteSeleccionado;
         private Cliente pacienteSeleccionado;
-        private Cita cita; 
+        public Cita cita; 
 
         public frmNuevaCita()
         {
@@ -175,7 +175,7 @@ namespace Formularios
             frmDetalleCita frmVerDetalleCita = new frmDetalleCita(cita.DetallesCitas[indice]); 
             if (frmVerDetalleCita.ShowDialog() == DialogResult.OK)
             {
-
+                cita.DetallesCitas[indice] = frmVerDetalleCita.DetalleServicioModificado; 
             }
         }
     }

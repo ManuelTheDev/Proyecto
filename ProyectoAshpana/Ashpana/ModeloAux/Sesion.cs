@@ -35,6 +35,8 @@ namespace Modelo
       
         public int IdSesion { get => idSesion; set => idSesion = value; }
         public DateTime FechaSesion { get => fechaSesion; set => fechaSesion = value; }
+
+        public DateTime fecha { get => fechaSesion.Date; }
         public Terapista Terapista { get => terapista; set => terapista = value; }
         public TimeSpan Hora { get => hora; set => hora = value; }
         public Servicio Servicio { get => servicio; set => servicio = value; }

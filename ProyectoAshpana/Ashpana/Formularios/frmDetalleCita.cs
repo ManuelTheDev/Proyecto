@@ -15,24 +15,26 @@ namespace Formularios
     {
         private DetalleCita detalleServicioModificado;
         private Terapista terapistaSeleccionado;
-        private int numSesionesTotal = 0; 
+        private int numSesionesTotal = 0;
+
+        public DetalleCita DetalleServicioModificado { get => detalleServicioModificado; set => detalleServicioModificado = value; }
 
         public frmDetalleCita(DetalleCita dt)
         {
             InitializeComponent();
-            detalleServicioModificado = new DetalleCita();
-            detalleServicioModificado.Servicio = dt.Servicio;
+            DetalleServicioModificado = new DetalleCita();
+            DetalleServicioModificado.Servicio = dt.Servicio;
             
             foreach (Sesion s in dt.Sesiones)
             {
-                detalleServicioModificado.Sesiones.Add(s);
+                DetalleServicioModificado.Sesiones.Add(s);
             }
             dgvDetalleServicio.AutoGenerateColumns = false; 
-            dgvDetalleServicio.DataSource = detalleServicioModificado.Sesiones;
+            dgvDetalleServicio.DataSource = DetalleServicioModificado.Sesiones;
 
 
             dt.Sesiones.Clear(); 
-            foreach(Sesion s in detalleServicioModificado.Sesiones)
+            foreach(Sesion s in DetalleServicioModificado.Sesiones)
             {
                
                 dt.Sesiones.Add(s); 
@@ -58,12 +60,13 @@ namespace Formularios
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnAgregarSesion_Click(object sender, EventArgs e)
         {
-            if (numSesionesTotal == detalleServicioModificado.Servicio.NumSesiones)
+            if (numSesionesTotal == DetalleServicioModificado.Servicio.NumSesiones)
             {
                 MessageBox.Show("Ya no puede ingresar más sesiones");
                 return; 
@@ -76,14 +79,14 @@ namespace Formularios
             s.Hora = hora_E;
             s.FechaSesion = dtpFecha.Value;
             s.NumDeSesion = numSesionesTotal + 1; 
-            detalleServicioModificado.Sesiones.Add(s);
+            DetalleServicioModificado.Sesiones.Add(s);
             numSesionesTotal++; 
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             int indice = dgvDetalleServicio.CurrentRow.Index;
-            detalleServicioModificado.Sesiones.RemoveAt(indice);
+            DetalleServicioModificado.Sesiones.RemoveAt(indice);
             numSesionesTotal--; 
         }
     }

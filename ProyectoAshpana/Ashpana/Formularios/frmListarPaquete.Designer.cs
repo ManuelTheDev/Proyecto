@@ -30,13 +30,13 @@
         {
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvPaquetes = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
             this.lblBuscar = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -78,27 +78,6 @@
             this.dgvPaquetes.Size = new System.Drawing.Size(440, 175);
             this.dgvPaquetes.TabIndex = 20;
             // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // NumSesiones
-            // 
-            this.NumSesiones.DataPropertyName = "CantSesion";
-            this.NumSesiones.HeaderText = "N°Sesiones";
-            this.NumSesiones.Name = "NumSesiones";
-            this.NumSesiones.ReadOnly = true;
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.YellowGreen;
@@ -137,7 +116,28 @@
             this.lblBuscar.TabIndex = 23;
             this.lblBuscar.Text = "Buscar:";
             // 
-            // frmAgregarPaquete
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // NumSesiones
+            // 
+            this.NumSesiones.DataPropertyName = "CantSesiones";
+            this.NumSesiones.HeaderText = "N°Sesiones";
+            this.NumSesiones.Name = "NumSesiones";
+            this.NumSesiones.ReadOnly = true;
+            // 
+            // frmListarPaquete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +147,7 @@
             this.Controls.Add(this.dgvPaquetes);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.panel1);
-            this.Name = "frmAgregarPaquete";
+            this.Name = "frmListarPaquete";
             this.Text = "frmAgregarPaquete";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPaquetes)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -160,12 +160,12 @@
         #endregion
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.DataGridView dgvPaquetes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtboxBuscarPaquetes;
         private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;
     }
 }
