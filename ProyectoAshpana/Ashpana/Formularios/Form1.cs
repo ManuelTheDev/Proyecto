@@ -19,6 +19,7 @@ namespace Formularios
         private static frmGestionPacientes fgpacientes;
         private static frmGestionPaquetes fgpaquetes;
         private static frmGestionTerapistas frterapista;
+        private static frmCitasDelDia frCitasDia;
         private static frmGestionUsuarios fgu;
         private int tipo_trabajador;
 
@@ -215,6 +216,12 @@ namespace Formularios
         {
             this.Dispose(); 
            
+        }
+
+        private void btnCitasDelDía_Click(object sender, EventArgs e)
+        {
+            AbrirFormInPanel(new frmCitasDelDia());
+
         }
     }
 }

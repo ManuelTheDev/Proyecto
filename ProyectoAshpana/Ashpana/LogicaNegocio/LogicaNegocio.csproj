@@ -48,6 +48,7 @@
     <Compile Include="FichaMedidaBL.cs" />
     <Compile Include="LoginBL.cs" />
     <Compile Include="PaqueteBL.cs" />
+    <Compile Include="SesionBL.cs" />
     <Compile Include="TerapistaBL.cs" />
     <Compile Include="TratamientoBL.cs" />
     <Compile Include="UsuarioBL.cs" />

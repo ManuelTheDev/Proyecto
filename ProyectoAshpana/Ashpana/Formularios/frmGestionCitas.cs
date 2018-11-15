@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace Formularios
 {
     public partial class frmGestionCitas : Form
     {
+        private SesionBL sesionBL;
         public frmGestionCitas()
         {
             InitializeComponent();
+            sesionBL = new SesionBL();
+            dgvCitas.AutoGenerateColumns = false;
+            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

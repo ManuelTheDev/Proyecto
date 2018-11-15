@@ -60,6 +60,15 @@ namespace Modelo
             _tipoString = tipoString;
         }
 
+        public bool verificarClienteApto(Cliente cli)
+        {
+            foreach(CondicionMedica cm in cli.CondicionesMedicas)
+            {
+                if (this.CondicionesMedicas.Contains(cm)) return false;
+            }
+            return true;
+        }
+
         public int IdTrat { get => _idTrat; set => _idTrat = value; }
         public double DuracionTrat { get => _duracionTrat; set => _duracionTrat = value; }
         public int TipoTrat { get => _tipoTrat; set => _tipoTrat = value; }

@@ -44,6 +44,7 @@ namespace AccesoDatos
                     paquete.NombreServicio = nombre;
                     paquete.PrecioServicio = precio;
                     paquete.NumSesiones = cantSesiones;
+                    paquete.IdServicio = lector.GetInt32("ID_SERVICIO_FK");
                     paquetes.Add(paquete);
                 }
                 conexion.Close();

@@ -12,10 +12,12 @@ namespace LogicaNegocio
     public class PaqueteBL
     {
         private PaqueteDA paquetesDA;
+        private CondicionMedicaDA condicionMedicaDA;
 
         public PaqueteBL()
         {
             paquetesDA = new PaqueteDA();
+            condicionMedicaDA = new CondicionMedicaDA();
         }
 
         public int RegistrarPaquete(Paquete paquete)
@@ -35,7 +37,11 @@ namespace LogicaNegocio
             BindingList<Paquete> paquetes =  paquetesDA.listarPaquetes();
             foreach(Paquete paq in paquetes)
             {
-                paq.Tratamientos = paquetesDA.listarPaqueteXTratamiento(paq.IdPaquete); 
+                paq.Tratamientos = paquetesDA.listarPaqueteXTratamiento(paq.IdPaquete);
+                foreach(Tratamiento trat in paq.Tratamientos)
+                {
+                    trat.CondicionesMedicas = condicionMedicaDA.listarCondicionesMedicas_X_Tratamiento(trat.IdTrat);
+                }
             }
             return paquetes;
         }
