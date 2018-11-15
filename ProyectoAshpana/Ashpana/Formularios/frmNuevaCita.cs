@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,14 @@ namespace Formularios
         private Tratamiento tratamientoSeleccionado;
         private Paquete paqueteSeleccionado;
         private Cliente pacienteSeleccionado;
-        public Cita cita; 
+        public Cita cita;
+        private CitaBL citaBL; 
 
         public frmNuevaCita()
         {
             InitializeComponent();
             cita = new Cita();
+            citaBL = new CitaBL();
             dgvDetallesCitas.AutoGenerateColumns = false;
             dgvDetallesCitas.DataSource = cita.DetallesCitas; 
 
@@ -78,10 +81,21 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            cita.Cliente = pacienteSeleccionado;
+            cita.MontoTotal = Double.Parse(txtMontoTotal.Text);
             
-            MessageBox.Show("Se ha reservado satisfactoriamente la cita", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            return;
+            if (citaBL.registrarCita(cita) == 1)
+            {
+                MessageBox.Show("Se ha reservado satisfactoriamente la cita", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido reservar la cita", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

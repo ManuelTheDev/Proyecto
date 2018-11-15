@@ -15,7 +15,8 @@ namespace Modelo
         private TimeSpan hora;
         private Servicio servicio;
         private int numDeSesion;
-     
+        private Cliente cliente; 
+
         public Sesion()
         {
 

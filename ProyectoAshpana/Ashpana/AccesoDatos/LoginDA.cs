@@ -10,7 +10,7 @@ namespace AccesoDatos
 {
     public class LoginDA
     {
-        public int iniciarSesion(string usuario, string contrasenia, int tipo)
+        public int iniciarSesion(string usuario, string contrasenia, ref int tipo)
         {
             try
             {
@@ -31,24 +31,26 @@ namespace AccesoDatos
 
                 MySqlDataReader lector = comando.ExecuteReader();
 
-                while (lector.Read())
+                lector.Read();
+                try
                 {
                     tipo = lector.GetInt32(1);
 
+                    if (tipo != -1)
+                    {
+                        conexion.Close();
+                        return 1;
+                    }
+                    else
+                    {
+                        conexion.Close();
+                        return 0;
+                    }
                 }
-
-                if (tipo!=-1)
+                catch(Exception ex)
                 {
-                   
-                    conexion.Close();
-                    return 1; 
+                    return 0;
                 }
-               else
-                {
-                    conexion.Close();
-                    return 0; 
-                }
-                
             }
             catch (Exception e)
             {

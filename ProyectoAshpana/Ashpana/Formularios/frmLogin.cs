@@ -47,7 +47,7 @@ namespace Formularios
             int tipo = -1; 
             if (txtContrasenia.Text!= "INGRESE USUARIO" && txtUsuario.Text != "INGRESE CONTRASEÑA")
             {
-                if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text, tipo))
+                if (!usuario.iniciar_sesion(txtUsuario.Text, txtContrasenia.Text, ref tipo))
                 {
                     MessageBox.Show("El usuario y/o la contraseña son incorrectos.",
                     "Iniciar Sesion", MessageBoxButtons.RetryCancel, MessageBoxIcon.Error);

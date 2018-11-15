@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaBL.cs" />
     <Compile Include="ClienteBL.cs" />
     <Compile Include="CondicionMedicaBL.cs" />
     <Compile Include="FichaMedidaBL.cs" />

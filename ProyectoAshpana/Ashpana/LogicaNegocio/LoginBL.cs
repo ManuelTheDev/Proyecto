@@ -17,9 +17,9 @@ namespace LogicaNegocio
             loginDA = new LoginDA(); 
         }
 
-        public Boolean iniciar_sesion(string usuario, string contrasenia, int tipo)
+        public Boolean iniciar_sesion(string usuario, string contrasenia,ref  int tipo)
         {
-            if (loginDA.iniciarSesion(usuario, contrasenia, tipo) == 1) return true;
+            if (loginDA.iniciarSesion(usuario, contrasenia, ref tipo) == 1) return true;
             else return false; 
         }
     }

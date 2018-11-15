@@ -62,11 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CitaDA.cs" />
     <Compile Include="ClienteDA.cs" />
     <Compile Include="CondicionMedicaDA.cs" />
+    <Compile Include="DetalleCitaDA.cs" />
     <Compile Include="FichaMedidaDA.cs" />
     <Compile Include="LoginDA.cs" />
     <Compile Include="PaqueteDA.cs" />
+    <Compile Include="SesionDA.cs" />
     <Compile Include="TerapistaDA.cs" />
     <Compile Include="TratamientoDA.cs" />
     <Compile Include="UsuarioDA.cs" />
