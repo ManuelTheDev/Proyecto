@@ -47,7 +47,7 @@
             this.lblClientes = new System.Windows.Forms.Label();
             this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnVerFichaMedidas = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.CITAS.SuspendLayout();
@@ -221,27 +221,22 @@
             this.btnVerFichaMedidas.UseVisualStyleBackColor = false;
             this.btnVerFichaMedidas.Click += new System.EventHandler(this.btnVerFichaMedidas_Click);
             // 
-            // btnBuscar
+            // lblBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscar.Location = new System.Drawing.Point(61, 137);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(138, 53);
-            this.btnBuscar.TabIndex = 23;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(121, 154);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
+            this.lblBuscar.TabIndex = 23;
+            this.lblBuscar.Text = "BUSCAR:";
             // 
             // frmGestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 758);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVerFichaMedidas);
             this.Controls.Add(this.CITAS);
             this.Controls.Add(this.btnModificar);
@@ -282,6 +277,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnVerFichaMedidas;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }

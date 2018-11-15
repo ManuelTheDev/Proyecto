@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace Formularios
     {
         private Tratamiento tratamiento;
         private TratamientoBL tratamientoBL;
+        private BindingList<Tratamiento> tratamientos;
 
         public Tratamiento Tratamiento { get => tratamiento; set => tratamiento = value; }
 
@@ -24,7 +26,8 @@ namespace Formularios
             InitializeComponent();
             dgvTratamientos.AutoGenerateColumns = false;
             tratamientoBL = new TratamientoBL();
-            dgvTratamientos.DataSource = tratamientoBL.listarTratamientos();
+            tratamientos = tratamientoBL.listarTratamientos();
+            dgvTratamientos.DataSource = tratamientos;
         }
         private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -50,6 +53,29 @@ namespace Formularios
         {
             Tratamiento = (Tratamiento)dgvTratamientos.CurrentRow.DataBoundItem;
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void txtboxBuscarPaquetes_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = txtboxBuscarPaquetes.Text;
+            var tratBuscados = new BindingList<Tratamiento>();
+
+            string patron = "";
+            for (int i = 0; i < busqueda.Length; i++)
+                if (('A' <= busqueda[i] && busqueda[i] <= 'Z') || ('a' <= busqueda[i] && busqueda[i] <= 'z')) patron += "[" + System.Char.ToLower(busqueda[i]) + System.Char.ToUpper(busqueda[i]) + "]";
+                else patron += busqueda[i];
+
+            Regex rgx = new Regex(@"" + patron + @"");
+            foreach (Tratamiento t in tratamientos)
+            {
+                if (rgx.IsMatch(t.Nombre))
+                {
+                    tratBuscados.Add(t);
+                }
+
+            }
+
+            dgvTratamientos.DataSource = tratBuscados;
         }
     }
 }

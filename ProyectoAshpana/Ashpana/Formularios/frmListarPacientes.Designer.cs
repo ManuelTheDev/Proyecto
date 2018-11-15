@@ -59,6 +59,7 @@
             this.txtboxBuscarPaquetes.Name = "txtboxBuscarPaquetes";
             this.txtboxBuscarPaquetes.Size = new System.Drawing.Size(326, 27);
             this.txtboxBuscarPaquetes.TabIndex = 27;
+            this.txtboxBuscarPaquetes.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
             // btnSeleccionar
             // 

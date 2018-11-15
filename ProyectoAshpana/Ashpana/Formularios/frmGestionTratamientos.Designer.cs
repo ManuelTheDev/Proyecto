@@ -39,7 +39,7 @@
             this.TIPO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVerCondMed = new System.Windows.Forms.Button();
             this.btnVerZonas = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,26 +160,22 @@
             this.btnVerZonas.UseVisualStyleBackColor = false;
             this.btnVerZonas.Click += new System.EventHandler(this.btnVerZonas_Click);
             // 
-            // btnBuscar
+            // lblBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.Location = new System.Drawing.Point(170, 166);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(83, 35);
-            this.btnBuscar.TabIndex = 12;
-            this.btnBuscar.Text = "BUSCAR";
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(184, 168);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
+            this.lblBuscar.TabIndex = 22;
+            this.lblBuscar.Text = "BUSCAR:";
             // 
             // frmGestionTratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 587);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVerZonas);
             this.Controls.Add(this.btnVerCondMed);
             this.Controls.Add(this.dgvTratamientos);
@@ -212,6 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
-        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Label lblBuscar;
     }
 }
