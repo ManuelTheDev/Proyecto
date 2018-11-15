@@ -31,11 +31,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevoTerapista = new System.Windows.Forms.Button();
             this.dgvTerapistas = new System.Windows.Forms.DataGridView();
-            this.CITAS = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,6 +38,11 @@
             this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CITAS = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).BeginInit();
             this.CITAS.SuspendLayout();
             this.SuspendLayout();
@@ -102,64 +102,6 @@
             this.dgvTerapistas.Size = new System.Drawing.Size(736, 150);
             this.dgvTerapistas.TabIndex = 19;
             // 
-            // CITAS
-            // 
-            this.CITAS.BackColor = System.Drawing.Color.YellowGreen;
-            this.CITAS.Controls.Add(this.label1);
-            this.CITAS.Location = new System.Drawing.Point(-8, -1);
-            this.CITAS.Name = "CITAS";
-            this.CITAS.Size = new System.Drawing.Size(1276, 87);
-            this.CITAS.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(704, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 44);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "TERAPISTAS";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(260, 147);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(433, 20);
-            this.txtBuscar.TabIndex = 22;
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(166, 146);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
-            this.lblBuscar.TabIndex = 21;
-            this.lblBuscar.Text = "BUSCAR:";
-            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
-            // 
-            // btnVerTratamientosHabilitados
-            // 
-            this.btnVerTratamientosHabilitados.BackColor = System.Drawing.Color.Black;
-            this.btnVerTratamientosHabilitados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerTratamientosHabilitados.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnVerTratamientosHabilitados.FlatAppearance.BorderSize = 0;
-            this.btnVerTratamientosHabilitados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerTratamientosHabilitados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTratamientosHabilitados.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnVerTratamientosHabilitados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVerTratamientosHabilitados.Location = new System.Drawing.Point(380, 459);
-            this.btnVerTratamientosHabilitados.Name = "btnVerTratamientosHabilitados";
-            this.btnVerTratamientosHabilitados.Size = new System.Drawing.Size(300, 45);
-            this.btnVerTratamientosHabilitados.TabIndex = 23;
-            this.btnVerTratamientosHabilitados.Text = "Ver Tratamientos Habilitados";
-            this.btnVerTratamientosHabilitados.UseVisualStyleBackColor = false;
-            this.btnVerTratamientosHabilitados.Click += new System.EventHandler(this.btnVerTratamientosHabilitados_Click);
-            // 
             // Dni
             // 
             this.Dni.DataPropertyName = "Dni";
@@ -208,6 +150,65 @@
             this.Sueldo.HeaderText = "Sueldo";
             this.Sueldo.Name = "Sueldo";
             this.Sueldo.ReadOnly = true;
+            // 
+            // CITAS
+            // 
+            this.CITAS.BackColor = System.Drawing.Color.YellowGreen;
+            this.CITAS.Controls.Add(this.label1);
+            this.CITAS.Location = new System.Drawing.Point(-8, -1);
+            this.CITAS.Name = "CITAS";
+            this.CITAS.Size = new System.Drawing.Size(1276, 87);
+            this.CITAS.TabIndex = 20;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label1.Location = new System.Drawing.Point(704, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(210, 44);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "TERAPISTAS";
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(260, 147);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(433, 20);
+            this.txtBuscar.TabIndex = 22;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(166, 146);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
+            this.lblBuscar.TabIndex = 21;
+            this.lblBuscar.Text = "BUSCAR:";
+            this.lblBuscar.Click += new System.EventHandler(this.lblBuscar_Click);
+            // 
+            // btnVerTratamientosHabilitados
+            // 
+            this.btnVerTratamientosHabilitados.BackColor = System.Drawing.Color.Black;
+            this.btnVerTratamientosHabilitados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerTratamientosHabilitados.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnVerTratamientosHabilitados.FlatAppearance.BorderSize = 0;
+            this.btnVerTratamientosHabilitados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTratamientosHabilitados.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTratamientosHabilitados.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnVerTratamientosHabilitados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVerTratamientosHabilitados.Location = new System.Drawing.Point(380, 459);
+            this.btnVerTratamientosHabilitados.Name = "btnVerTratamientosHabilitados";
+            this.btnVerTratamientosHabilitados.Size = new System.Drawing.Size(300, 45);
+            this.btnVerTratamientosHabilitados.TabIndex = 23;
+            this.btnVerTratamientosHabilitados.Text = "Ver Tratamientos Habilitados";
+            this.btnVerTratamientosHabilitados.UseVisualStyleBackColor = false;
+            this.btnVerTratamientosHabilitados.Click += new System.EventHandler(this.btnVerTratamientosHabilitados_Click);
             // 
             // frmGestionTerapistas
             // 

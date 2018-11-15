@@ -100,10 +100,10 @@ namespace Formularios
                 if (('A' <= busqueda[i] && busqueda[i] <= 'Z') || ('a' <= busqueda[i] && busqueda[i] <= 'z')) patron += "[" + System.Char.ToLower(busqueda[i]) + System.Char.ToUpper(busqueda[i]) + "]";
                 else patron += busqueda[i];
 
+            //"[nN][iI][cC][oO][lL][aA][sS]"
+            Regex rgx = new Regex(@"" + patron + @"");
             foreach (Cliente c in clientes)
             {
-                //String patron = @"^(\w)+" + busqueda + @"(\w)+$";
-                Regex rgx = new Regex(@"" + patron + @"");
                 if (rgx.IsMatch(c.Nombres) || rgx.IsMatch(c.ApMaterno) || rgx.IsMatch(c.ApPaterno) || c.Dni==busqueda)
                 {
                     clientesBuscados.Add(c);

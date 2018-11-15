@@ -121,10 +121,14 @@ namespace Formularios
             string busqueda = txtboxBuscarPaquetes.Text;
             var paqBuscados = new BindingList<Paquete>();
 
+            string patron = "";
+            for (int i = 0; i < busqueda.Length; i++)
+                if (('A' <= busqueda[i] && busqueda[i] <= 'Z') || ('a' <= busqueda[i] && busqueda[i] <= 'z')) patron += "[" + System.Char.ToLower(busqueda[i]) + System.Char.ToUpper(busqueda[i]) + "]";
+                else patron += busqueda[i];
+
+            Regex rgx = new Regex(@"^[\w\s]*" + patron + @"[\w\s]*$");
             foreach (Paquete p in paquetes)
             {
-                //String patron = @"^(\w)+" + busqueda + @"(\w)+$";
-                Regex rgx = new Regex(@"^[\w\s]*" + busqueda + @"[\w\s]*$");
                 if (rgx.IsMatch(p.Nombre))
                 {
                     paqBuscados.Add(p);

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,13 +17,20 @@ namespace Formularios
     {
         private Terapista terapistaSeleccionada;
         private TerapistaBL terapistaBL;
+        private BindingList<Terapista> terapistas;
 
         public frmGestionTerapistas()
         {
             InitializeComponent();
+            CargarDGV();
+        }
+
+        private void CargarDGV()
+        {
             terapistaBL = new TerapistaBL();
             dgvTerapistas.AutoGenerateColumns = false;
-            dgvTerapistas.DataSource = terapistaBL.listarTerapistas();
+            terapistas = terapistaBL.listarTerapistas();
+            dgvTerapistas.DataSource = terapistas;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -35,9 +43,7 @@ namespace Formularios
             frmNuevoTerapista frmTerapista = new frmNuevoTerapista();
             if (frmTerapista.ShowDialog() == DialogResult.OK)
             {
-                terapistaBL = new TerapistaBL();
-                dgvTerapistas.AutoGenerateColumns = false;
-                dgvTerapistas.DataSource = terapistaBL.listarTerapistas();
+                CargarDGV();
             }
         }
 
@@ -49,9 +55,7 @@ namespace Formularios
             frmTerapista.ShowDialog();
             if (frmTerapista.DialogResult == DialogResult.OK)
             {
-                terapistaBL = new TerapistaBL();
-                dgvTerapistas.AutoGenerateColumns = false;
-                dgvTerapistas.DataSource = terapistaBL.listarTerapistas();
+                CargarDGV();
             }
         }
 
@@ -74,6 +78,29 @@ namespace Formularios
             {
                
             }
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = txtBuscar.Text;
+            var tratBuscados = new BindingList<Terapista>();
+
+            string patron = "";
+            for (int i = 0; i < busqueda.Length; i++)
+                if (('A' <= busqueda[i] && busqueda[i] <= 'Z') || ('a' <= busqueda[i] && busqueda[i] <= 'z')) patron += "[" + System.Char.ToLower(busqueda[i]) + System.Char.ToUpper(busqueda[i]) + "]";
+                else patron += busqueda[i];
+
+            Regex rgx = new Regex(@"^[\w\s]*" + patron + @"[\w\s]*$");
+            foreach (Terapista t in terapistas)
+            {
+                if (rgx.IsMatch(t.Nombres) || rgx.IsMatch(t.ApMaterno) || rgx.IsMatch(t.ApPaterno) || t.Dni == busqueda)
+                {
+                    tratBuscados.Add(t);
+                }
+
+            }
+
+            dgvTerapistas.DataSource = tratBuscados;
         }
     }
 }
