@@ -26,8 +26,8 @@ namespace Formularios
             cita = new Cita();
             citaBL = new CitaBL();
             dgvDetallesCitas.AutoGenerateColumns = false;
-            dgvDetallesCitas.DataSource = cita.DetallesCitas; 
-
+            dgvDetallesCitas.DataSource = cita.DetallesCitas;
+            txtMontoTotal.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -116,6 +116,11 @@ namespace Formularios
             if (txtMontoTotal.Text == "")
             {
                 MessageBox.Show("Por favor seleccione algún tratamiento o paquete");
+                return;
+            }
+            if (dgvDetallesCitas.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe haber al menos un tratamiento o paquete en la cita", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             cita.Cliente = pacienteSeleccionado;
@@ -213,6 +218,11 @@ namespace Formularios
 
         private void btnEliminarServicio_Click(object sender, EventArgs e)
         {
+            if (dgvDetallesCitas.Rows.Count == 0)
+            {
+                MessageBox.Show("No hay tratamientos o paquetes disponibles para eliminar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int indice = dgvDetallesCitas.CurrentRow.Index;
             double monto = Double.Parse(txtMontoTotal.Text) - cita.DetallesCitas[indice].Precio;
             txtMontoTotal.Text = Convert.ToString(monto);
@@ -222,6 +232,13 @@ namespace Formularios
 
         private void btnVerDetalleServicio_Click(object sender, EventArgs e)
         {
+
+            if (dgvDetallesCitas.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar un tratamiento o paquete", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int indice = dgvDetallesCitas.CurrentRow.Index;
             frmDetalleCita frmVerDetalleCita = new frmDetalleCita(cita.DetallesCitas[indice]); 
             if (frmVerDetalleCita.ShowDialog() == DialogResult.OK)
