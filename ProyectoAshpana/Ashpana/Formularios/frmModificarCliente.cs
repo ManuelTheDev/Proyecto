@@ -155,7 +155,7 @@ namespace Formularios
         {
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
-                MessageBox.Show("Por favor, ingrese un DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
@@ -163,7 +163,7 @@ namespace Formularios
 
             if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
             {
-                MessageBox.Show("Por favor, ingrese un Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, ingrese correctamente el Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             clienteModificado.Nombres = txtNombre.Text.Trim();

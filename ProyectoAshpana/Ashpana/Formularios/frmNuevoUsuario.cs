@@ -27,15 +27,66 @@ namespace Formularios
         private void button2_Click(object sender, EventArgs e)
         {
             Superusuario s = new Superusuario();
-            s.Dni = txtDni.Text; 
-            s.Nombres = txtNombres.Text;
-            s.ApPaterno = txtApellidoPaterno.Text;
-            s.ApMaterno = txtApellidoMaterno.Text;
-            s.Contrasena = txtContrasenia.Text;
-            s.Correo = txtCorreo.Text;
-            s.Direccion = txtDireccion.Text;
-            s.Telefono = txtTelefono.Text; 
+
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Dni = txtDni.Text.Trim();
+
+            if ((txtNombres.Text.Trim() == "") || (txtNombres.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese lun Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Nombres = txtNombres.Text.Trim();
+
+            if ((txtApellidoPaterno.Text.Trim() == "") || (txtApellidoPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.ApPaterno = txtApellidoPaterno.Text.Trim();
+
+            if ((txtApellidoMaterno.Text.Trim() == "") || (txtApellidoMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.ApMaterno = txtApellidoMaterno.Text.Trim();
+
+            if ((txtContrasenia.Text.Trim() == "") || (txtContrasenia.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Contrasena = txtContrasenia.Text.Trim();
+
+            if ((txtCorreo.Text.Trim() == "") || (txtCorreo.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Correo = txtCorreo.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Direccion = txtDireccion.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            s.Telefono = txtTelefono.Text.Trim();
+            
+            //falta validar fecha nacimiento
             s.FechaNac = dtpFecha_Nac.Value; 
+
             if (rbFemenino.Checked==true)
             {
                 s.Sexo = 'F'; 
@@ -44,7 +95,28 @@ namespace Formularios
             {
                 s.Sexo = 'M'; 
             }
-            s.Sueldo = Double.Parse(txtSueldo.Text);
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                if (txtSueldo.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                s.Sueldo = double.Parse(txtSueldo.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             usuarioBL = new UsuarioBL();
             usuarioBL.registrarSuperusuario(s);

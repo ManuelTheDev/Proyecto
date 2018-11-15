@@ -61,17 +61,68 @@ namespace Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Cliente t = new Cliente();
-            t.Dni = txtDni.Text;
-            t.Nombres = txtNombre.Text;
-            t.ApPaterno = txtApPaterno.Text;
-            t.ApMaterno = txtApMaterno.Text;
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            t.Dni = txtDni.Text.Trim();
+
+            if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Nombres = txtNombre.Text.Trim();
+
+            if ((txtApPaterno.Text.Trim() == "") || (txtApPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.ApPaterno = txtApPaterno.Text.Trim();
+
+            if ((txtApMaterno.Text.Trim() == "") || (txtApMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.ApMaterno = txtApMaterno.Text.Trim();
+
             if (rbMasculino.Checked == true)
                 t.Sexo = 'M';
             else if (rbFemenino.Checked == true)
                 t.Sexo = 'F';
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //falta validar
             t.FechaNac = dtpFechaNac.Value;
-            t.Correo = txtEmail.Text;
-            t.Telefono = txtTelefono.Text;
+
+            if ((txtEmail.Text.Trim() == "") || (txtEmail.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Correo = txtEmail.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Telefono = txtTelefono.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             t.Direccion = txtDireccion.Text;
            
 
@@ -84,7 +135,7 @@ namespace Formularios
             clienteBL.registrarCliente(t);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha registrado con exito.",
-                "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
         }
 

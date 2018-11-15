@@ -45,18 +45,70 @@ namespace Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Terapista t = new Terapista();
-            t.Dni = txtDni.Text;
-            t.Nombres = txtNombre.Text;
-            t.ApPaterno = txtApPaterno.Text;
-            t.ApMaterno = txtApMaterno.Text;
+
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Dni = txtDni.Text.Trim();
+
+            if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Nombres = txtNombre.Text.Trim();
+
+            if ((txtApPaterno.Text.Trim() == "") || (txtApPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.ApPaterno = txtApPaterno.Text.Trim();
+
+            if ((txtApMaterno.Text.Trim() == "") || (txtApMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.ApMaterno = txtApMaterno.Text.Trim();
+
             if (rbMasculino.Checked == true)
                 t.Sexo = 'M';
             else if (rbFemenino.Checked == true)
                 t.Sexo = 'F';
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            //falta validación de fecha de nacimiento
             t.FechaNac = dtpFechaNac.Value;
-            t.Correo = txtEmail.Text;
-            t.Telefono = txtTelefono.Text;
-            t.Direccion = txtDireccion.Text;
+
+            if ((txtEmail.Text.Trim() == "") || (txtEmail.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Correo = txtEmail.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Telefono = txtTelefono.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Direccion = txtDireccion.Text.Trim();
+
             if (cboTerapista.Text.Equals("Principal"))
             {
                 t.Tipo = 1;
@@ -65,9 +117,36 @@ namespace Formularios
             {
                 t.Tipo = 2;
             }
-            t.Contrasena = txtContrasena.Text;
-            t.Sueldo = Convert.ToDouble(txtSueldo.Text);
+            if (cboTerapista.Text == "")
+            {
+                MessageBox.Show("Por favor, elija un tipo de terapista", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
+            if ((txtContrasena.Text.Trim() == "") || (txtContrasena.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            t.Contrasena = txtContrasena.Text.Trim();
+
+            try
+            {
+                if (txtSueldo.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                t.Sueldo = double.Parse(txtSueldo.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            
+            //falta validar para hora de entrada y salida
             String horaE = cboHoraEntrada.Text;
             String horaS = cboHoraSalida.Text;
 
