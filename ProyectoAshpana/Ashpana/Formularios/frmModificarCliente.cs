@@ -153,6 +153,18 @@ namespace Formularios
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
+
+            if (DateTime.Now.Year-dtpFechaNac.Value.Year<15)
+            {
+                MessageBox.Show("El cliente debe ser mayor de 15 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (DateTime.Now.Year - dtpFechaNac.Value.Year > 110)
+            {
+                MessageBox.Show("El cliente no puede ser mayor de 110 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
                 MessageBox.Show("Por favor, ingrese un DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

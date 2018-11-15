@@ -111,6 +111,18 @@ namespace Formularios
 
         private void btnModifcar_Click(object sender, EventArgs e)
         {
+
+            if (DateTime.Now.Year - dtpFechaNac.Value.Year < 15)
+            {
+                MessageBox.Show("El terapista debe ser mayor de 15 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (DateTime.Now.Year - dtpFechaNac.Value.Year > 110)
+            {
+                MessageBox.Show("El terapista no puede ser mayor de 110 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
                 MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

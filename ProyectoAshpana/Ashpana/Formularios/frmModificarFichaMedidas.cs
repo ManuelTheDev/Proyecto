@@ -101,8 +101,18 @@ namespace Formularios
             {
                 fichamedida.Tipo = "MESOMORFO";
             }
+            
+            if (dateTimePicker1.Value.Year <= 1998)
+            {
+                MessageBox.Show("La fecha debe ser mayor a 1998", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (DateTime.Now.Date < dateTimePicker1.Value.Date)
+            {
+                MessageBox.Show("La fecha no puede ser futura", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            //FALTA VALIDAR LA FECHA
             fichamedida.Fecha = dateTimePicker1.Value;
 
             try
