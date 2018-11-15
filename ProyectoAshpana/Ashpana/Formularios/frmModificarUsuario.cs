@@ -77,6 +77,8 @@ namespace Formularios
                 return;
             }
 
+            superUsuarioMod.FechaNac = dtpFechaNac.Value;
+
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
                 MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

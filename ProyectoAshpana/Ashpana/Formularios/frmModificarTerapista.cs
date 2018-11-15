@@ -123,6 +123,8 @@ namespace Formularios
                 return;
             }
 
+            terapistaMod.FechaNac = dtpFechaNac.Value;
+
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
                 MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
