@@ -41,6 +41,7 @@ namespace AccesoDatos
                 trat.PrecioServicio = lector.GetDouble("PRECIO");
                 trat.TipoTrat = lector.GetInt32("TIPO_TRATAMIENTO");
                 trat.EstadoServicio = lector.GetInt32("ESTADO");
+                trat.IdServicio = lector.GetInt32("ID_SERVICIO_FK");
                 if (trat.TipoTrat == 1)
                     trat.TipoString = "Facial";
                 else

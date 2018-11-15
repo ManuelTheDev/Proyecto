@@ -35,7 +35,7 @@ namespace LogicaNegocio
                         {
                             foreach (Sesion s in dt.Sesiones)
                             {
-                                sesionDA.registrarSesion(s, idDetalleCita, idCita);
+                                sesionDA.registrarSesion(s, idDetalleCita, idCita,c.Cliente.IdCliente);
                             }
                         }
                     }

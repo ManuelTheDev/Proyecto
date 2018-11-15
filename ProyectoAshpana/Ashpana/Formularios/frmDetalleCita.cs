@@ -76,6 +76,10 @@ namespace Formularios
             }
 
             Sesion s = new Sesion();
+            Servicio serv = new Servicio();
+            serv.IdServicio = detalleServicioModificado.Servicio.IdServicio;
+
+            s.Servicio = serv;
             s.Terapista = terapistaSeleccionado;
             String horaCita = cboHora.Text + ":" + cboMinuto.Text + ":00";
             TimeSpan hora_E = Convert.ToDateTime(horaCita).TimeOfDay;

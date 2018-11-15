@@ -17,6 +17,9 @@ namespace Modelo
         private int numDeSesion;
         private Cliente cliente; 
 
+        public String NomCliente { get => Cliente.Nombres + " " + Cliente.ApPaterno; }
+        public String NomTerapista { get => Terapista.Nombres + " " + Terapista.ApPaterno; }
+        public String NomServicio { get => Servicio.NombreServicio; }
         public Sesion()
         {
 
@@ -43,5 +46,6 @@ namespace Modelo
         public Servicio Servicio { get => servicio; set => servicio = value; }
         public int NumDeSesion { get => numDeSesion; set => numDeSesion = value; }
         public string NombreTerapista { get => terapista.Nombres + " " + terapista.ApPaterno; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
     }
 }

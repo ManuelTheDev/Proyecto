@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCitasDelDia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCitasDelDia.Designer.cs">
+      <DependentUpon>frmCitasDelDia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCita_AgregarPaquete.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCitasDelDia.resx">
+      <DependentUpon>frmCitasDelDia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCita_AgregarPaquete.resx">
       <DependentUpon>frmCita_AgregarPaquete.cs</DependentUpon>
