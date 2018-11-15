@@ -52,9 +52,9 @@ namespace Formularios
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             Tratamiento trat = new Tratamiento();
-            if (txtNombreTrat.Text.Trim() == "")
+            if ((txtNombreTrat.Text.Trim() == "") || (txtNombreTrat.ForeColor == Color.Red))
             {
-                MessageBox.Show("Por favor ingrese un nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, ingrese un nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             trat.NombreServicio = txtNombreTrat.Text.Trim();
@@ -63,23 +63,37 @@ namespace Formularios
                 trat.TipoTrat = 1;
             else
                 trat.TipoTrat = 0;
-
+            if (rbtnFacial.Checked==false && rbtnCorporal.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un tipo de tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             try
             {
                 trat.DuracionTrat = double.Parse(txtDuracion.Text.Trim());
+                if (txtDuracion.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la duracion en minutos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Por favor ingrese correctamente la duracion en minutos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, ingrese correctamente la duracion en minutos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             try
             {
                 trat.PrecioServicio = double.Parse(txtPrecio.Text.Trim());
+                if (txtPrecio.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el precio en soles", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Por favor ingrese correctamente el precio en soles", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Por favor, ingrese correctamente el precio en soles", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 

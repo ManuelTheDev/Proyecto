@@ -44,17 +44,26 @@ namespace LogicaNegocio
             return idTrat;
         }
 
-        public void modificarTratamiento(Tratamiento tratamiento1)
+        public int modificarTratamiento(Tratamiento tratamiento1)
         {
-            tratamientoDA.modificarTratamiento(tratamiento1);
-            foreach(CondicionMedica cm in tratamiento1.CondicionesMedicas)
+            try
             {
-                condicionMedicaDA.registrarCondicionMedica_X_Tratamiento(tratamiento1.IdTrat, cm);
+                tratamientoDA.modificarTratamiento(tratamiento1);
+                foreach (CondicionMedica cm in tratamiento1.CondicionesMedicas)
+                {
+                    condicionMedicaDA.registrarCondicionMedica_X_Tratamiento(tratamiento1.IdTrat, cm);
+                }
+                foreach (Zona z in tratamiento1.ZonasTratar)
+                {
+                    zonasDA.registrarZona_X_Tratamiento(tratamiento1.IdTrat, z);
+                }
+                return 1;
             }
-            foreach(Zona z in tratamiento1.ZonasTratar)
+            catch (Exception ex)
             {
-                zonasDA.registrarZona_X_Tratamiento(tratamiento1.IdTrat, z);
+                return 0;
             }
+            
         }
 
         public void desacativarCondMedicas_X_Tratamiento(int idTrat)

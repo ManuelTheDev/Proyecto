@@ -94,14 +94,55 @@ namespace Formularios
         {
             Tratamiento trat1 = new Tratamiento();
             trat1.IdTrat = tratamiento1.IdTrat;
-            trat1.NombreServicio = txtNombreTrat.Text;
-            trat1.DuracionTrat = double.Parse(txtDuracion.Text);
-            trat1.PrecioServicio = double.Parse(txtPrecio.Text);
+
+            if ((txtNombreTrat.Text.Trim() == "") || (txtNombreTrat.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            trat1.NombreServicio = txtNombreTrat.Text.Trim();
+
+            try
+            {
+                if (txtDuracion.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la duracion en minutos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                trat1.DuracionTrat = double.Parse(txtDuracion.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la duracion en minutos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                if (txtPrecio.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el precio en soles", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                trat1.PrecioServicio = double.Parse(txtPrecio.Text.Trim());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el precio en soles", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             if (rbtnCorporal.Checked == true)
                 trat1.TipoTrat = 0;
             else
                 trat1.TipoTrat = 1;
+
+            if (rbtnFacial.Checked == false && rbtnCorporal.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un tipo de tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             tratamientoBL.desacativarCondMedicas_X_Tratamiento(tratamiento1.IdTrat);
 
@@ -119,7 +160,15 @@ namespace Formularios
 
             }
 
-            tratamientoBL.modificarTratamiento(trat1);
+            if (tratamientoBL.modificarTratamiento(trat1)==1)
+            {
+                MessageBox.Show("Se ha registrado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
             this.DialogResult = DialogResult.OK;
 
 
