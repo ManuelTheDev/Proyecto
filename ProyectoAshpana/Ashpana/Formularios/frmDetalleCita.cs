@@ -52,7 +52,7 @@ namespace Formularios
 
         private void btnListarTerapistas_Click(object sender, EventArgs e)
         {
-            frmListarTerapistas frmTerapistas = new frmListarTerapistas();
+            frmListarTerapistas frmTerapistas = new frmListarTerapistas(detalleServicioModificado.Servicio.IdServicio, detalleServicioModificado.Servicio.NumSesiones);
             if (frmTerapistas.ShowDialog() == DialogResult.OK)
             {
                 terapistaSeleccionado = frmTerapistas.Terapista;

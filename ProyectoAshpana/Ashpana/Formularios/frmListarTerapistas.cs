@@ -19,12 +19,20 @@ namespace Formularios
         private Terapista terapista;
         private BindingList<Terapista> terapistas;
 
-        public frmListarTerapistas()
+        public frmListarTerapistas(int idServicio, int numSesiones)
         {
             InitializeComponent();
             terapistaBL = new TerapistaBL();
             dgvTerapistas.AutoGenerateColumns = false;
-            terapistas = terapistaBL.listarTerapistas();
+            if (numSesiones == 1)
+                terapistas = terapistaBL.listarTerapistas_X_Tratamiento(idServicio);
+            else
+            {
+
+                terapistas = terapistaBL.listarTerapistas();
+
+            }
+               
             dgvTerapistas.DataSource = terapistas;
         }
 

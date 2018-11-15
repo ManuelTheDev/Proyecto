@@ -192,7 +192,38 @@ namespace AccesoDatos
             return tratamientos;
         }
 
-        
+        public BindingList<Terapista> listarTerapistas_X_Tratamiento(int idTratamiento)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+
+            BindingList<Terapista> terapistas = new BindingList<Terapista>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_TERAPISTAS_X_TRATAMIENTO";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID", MySqlDbType.Int32).Value = idTratamiento;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Terapista t = new Terapista();
+                t.IdTerapista = reader.GetInt32("ID_TERAPISTA");
+                t.Nombres = reader.GetString("NOMBRES");
+                t.ApMaterno = reader.GetString("APELLIDO_MATERNO");
+                t.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                terapistas.Add(t);
+            }
+            conexion.Close();
+            return terapistas;
+        }
+
+
 
     }
 }

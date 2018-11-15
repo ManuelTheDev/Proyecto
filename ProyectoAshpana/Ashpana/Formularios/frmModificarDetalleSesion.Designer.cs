@@ -1,6 +1,6 @@
 ﻿namespace Formularios
 {
-    partial class frmDetalleSesion
+    partial class frmModificarDetalleSesion
     {
         /// <summary>
         /// Required designer variable.

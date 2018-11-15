@@ -32,13 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.CITAS = new System.Windows.Forms.Panel();
             this.dgvTratamientos = new System.Windows.Forms.DataGridView();
-            this.btnModificarTratamientos = new System.Windows.Forms.Button();
-            this.btnRegistrarTratamientos = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegistrarTratamientos = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
@@ -88,58 +87,6 @@
             this.dgvTratamientos.Size = new System.Drawing.Size(395, 177);
             this.dgvTratamientos.TabIndex = 56;
             // 
-            // btnModificarTratamientos
-            // 
-            this.btnModificarTratamientos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificarTratamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarTratamientos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarTratamientos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnModificarTratamientos.Location = new System.Drawing.Point(66, 247);
-            this.btnModificarTratamientos.Name = "btnModificarTratamientos";
-            this.btnModificarTratamientos.Size = new System.Drawing.Size(205, 44);
-            this.btnModificarTratamientos.TabIndex = 55;
-            this.btnModificarTratamientos.Text = "Modificar Tratamientos";
-            this.btnModificarTratamientos.UseVisualStyleBackColor = false;
-            this.btnModificarTratamientos.Click += new System.EventHandler(this.btnModificarTratamientos_Click);
-            // 
-            // btnRegistrarTratamientos
-            // 
-            this.btnRegistrarTratamientos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnRegistrarTratamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrarTratamientos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrarTratamientos.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnRegistrarTratamientos.Location = new System.Drawing.Point(66, 184);
-            this.btnRegistrarTratamientos.Name = "btnRegistrarTratamientos";
-            this.btnRegistrarTratamientos.Size = new System.Drawing.Size(205, 44);
-            this.btnRegistrarTratamientos.TabIndex = 54;
-            this.btnRegistrarTratamientos.Text = "+Registrar Tratamientos";
-            this.btnRegistrarTratamientos.UseVisualStyleBackColor = false;
-            this.btnRegistrarTratamientos.Click += new System.EventHandler(this.btnRegistrarTratamientos_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 21);
-            this.label3.TabIndex = 65;
-            this.label3.Text = "Terapista: ";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Location = new System.Drawing.Point(66, 307);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(205, 44);
-            this.btnCancelar.TabIndex = 66;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
             // NOMBRE
             // 
             this.NOMBRE.DataPropertyName = "NombreServicio";
@@ -159,6 +106,44 @@
             this.PRECIO.HeaderText = "PRECIO";
             this.PRECIO.Name = "PRECIO";
             // 
+            // btnRegistrarTratamientos
+            // 
+            this.btnRegistrarTratamientos.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnRegistrarTratamientos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegistrarTratamientos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarTratamientos.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnRegistrarTratamientos.Location = new System.Drawing.Point(66, 213);
+            this.btnRegistrarTratamientos.Name = "btnRegistrarTratamientos";
+            this.btnRegistrarTratamientos.Size = new System.Drawing.Size(205, 44);
+            this.btnRegistrarTratamientos.TabIndex = 54;
+            this.btnRegistrarTratamientos.Text = "Registrar Tratamientos";
+            this.btnRegistrarTratamientos.UseVisualStyleBackColor = false;
+            this.btnRegistrarTratamientos.Click += new System.EventHandler(this.btnRegistrarTratamientos_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(62, 136);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 21);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Terapista: ";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.Location = new System.Drawing.Point(66, 287);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(205, 44);
+            this.btnCancelar.TabIndex = 66;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmVerTratamientosPorTerapistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -170,7 +155,6 @@
             this.Controls.Add(this.txtNombreTerapista);
             this.Controls.Add(this.dgvTratamientos);
             this.Controls.Add(this.btnRegistrarTratamientos);
-            this.Controls.Add(this.btnModificarTratamientos);
             this.Name = "frmVerTratamientosPorTerapistas";
             this.Text = "frmVerTratamientosPorTerapistascs";
             this.CITAS.ResumeLayout(false);
@@ -186,7 +170,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel CITAS;
         private System.Windows.Forms.DataGridView dgvTratamientos;
-        private System.Windows.Forms.Button btnModificarTratamientos;
         private System.Windows.Forms.Button btnRegistrarTratamientos;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;

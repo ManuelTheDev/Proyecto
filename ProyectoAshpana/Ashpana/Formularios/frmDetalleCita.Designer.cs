@@ -31,6 +31,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvDetalleServicio = new System.Windows.Forms.DataGridView();
+            this.NumSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Terapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblFecha = new System.Windows.Forms.Label();
@@ -47,10 +51,6 @@
             this.cboHora = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregarSesion = new System.Windows.Forms.Button();
-            this.NumSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Terapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleServicio)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -91,6 +91,37 @@
             this.dgvDetalleServicio.ReadOnly = true;
             this.dgvDetalleServicio.Size = new System.Drawing.Size(538, 150);
             this.dgvDetalleServicio.TabIndex = 26;
+            // 
+            // NumSesion
+            // 
+            this.NumSesion.DataPropertyName = "NumDeSesion";
+            this.NumSesion.FillWeight = 80F;
+            this.NumSesion.HeaderText = "N° Sesión";
+            this.NumSesion.Name = "NumSesion";
+            this.NumSesion.ReadOnly = true;
+            // 
+            // Terapista
+            // 
+            this.Terapista.DataPropertyName = "NombreTerapista";
+            this.Terapista.HeaderText = "Terapista";
+            this.Terapista.Name = "Terapista";
+            this.Terapista.ReadOnly = true;
+            this.Terapista.Width = 150;
+            // 
+            // Fecha
+            // 
+            this.Fecha.DataPropertyName = "fecha";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
+            this.Fecha.Width = 150;
+            // 
+            // Hora
+            // 
+            this.Hora.DataPropertyName = "Hora";
+            this.Hora.HeaderText = "Hora";
+            this.Hora.Name = "Hora";
+            this.Hora.ReadOnly = true;
             // 
             // btnCancelar
             // 
@@ -255,6 +286,12 @@
             // 
             this.cboHora.FormattingEnabled = true;
             this.cboHora.Items.AddRange(new object[] {
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
             "15",
             "16",
             "17",
@@ -302,37 +339,6 @@
             this.btnAgregarSesion.Text = "Agregar Sesión";
             this.btnAgregarSesion.UseVisualStyleBackColor = false;
             this.btnAgregarSesion.Click += new System.EventHandler(this.btnAgregarSesion_Click);
-            // 
-            // NumSesion
-            // 
-            this.NumSesion.DataPropertyName = "NumDeSesion";
-            this.NumSesion.FillWeight = 80F;
-            this.NumSesion.HeaderText = "N° Sesión";
-            this.NumSesion.Name = "NumSesion";
-            this.NumSesion.ReadOnly = true;
-            // 
-            // Terapista
-            // 
-            this.Terapista.DataPropertyName = "NombreTerapista";
-            this.Terapista.HeaderText = "Terapista";
-            this.Terapista.Name = "Terapista";
-            this.Terapista.ReadOnly = true;
-            this.Terapista.Width = 150;
-            // 
-            // Fecha
-            // 
-            this.Fecha.DataPropertyName = "fecha";
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
-            this.Fecha.ReadOnly = true;
-            this.Fecha.Width = 150;
-            // 
-            // Hora
-            // 
-            this.Hora.DataPropertyName = "Hora";
-            this.Hora.HeaderText = "Hora";
-            this.Hora.Name = "Hora";
-            this.Hora.ReadOnly = true;
             // 
             // frmDetalleCita
             // 

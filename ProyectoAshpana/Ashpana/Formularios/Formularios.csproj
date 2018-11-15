@@ -76,11 +76,11 @@
     <Compile Include="frmDetalleCita.Designer.cs">
       <DependentUpon>frmDetalleCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDetalleSesion.cs">
+    <Compile Include="frmModificarDetalleSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDetalleSesion.Designer.cs">
-      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
+    <Compile Include="frmModificarDetalleSesion.Designer.cs">
+      <DependentUpon>frmModificarDetalleSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListarPaquete.cs">
       <SubType>Form</SubType>
@@ -291,8 +291,8 @@
     <EmbeddedResource Include="frmDetalleCita.resx">
       <DependentUpon>frmDetalleCita.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDetalleSesion.resx">
-      <DependentUpon>frmDetalleSesion.cs</DependentUpon>
+    <EmbeddedResource Include="frmModificarDetalleSesion.resx">
+      <DependentUpon>frmModificarDetalleSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListarPaquete.resx">
       <DependentUpon>frmListarPaquete.cs</DependentUpon>

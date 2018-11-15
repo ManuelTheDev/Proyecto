@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace Formularios
 {
-    public partial class frmDetalleSesion : Form
+    public partial class frmModificarDetalleSesion : Form
     {
         private Terapista terapistaSeleccionado;
         private int clickGuardar=0; 
 
         private Sesion sesionModificada; 
-        public frmDetalleSesion(Sesion s, Servicio servicio)
+        public frmModificarDetalleSesion(Sesion s, Servicio servicio)
         {
             InitializeComponent();
             txtNombreServicio.Text = servicio.NombreServicio;
@@ -35,13 +35,13 @@ namespace Formularios
 
         private void btnListarTerapistas_Click(object sender, EventArgs e)
         {
-            frmListarTerapistas frmTerapistas = new frmListarTerapistas();
+            /*frmListarTerapistas frmTerapistas = new frmListarTerapistas();
             if (frmTerapistas.ShowDialog() == DialogResult.OK)
             {
                 terapistaSeleccionado = frmTerapistas.Terapista;
                 txtNombreTerapista.Text = terapistaSeleccionado.Nombres + " " + terapistaSeleccionado.ApPaterno + " " + terapistaSeleccionado.ApMaterno;
                 
-            }
+            }*/
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
