@@ -37,6 +37,11 @@ namespace Formularios
 
         private void btnAgregarTratamiento_Click(object sender, EventArgs e)
         {
+            if (txtPaciente.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese un cliente de la lista");
+                return;
+            }
             frmListarTratamiento frmListarTrat = new frmListarTratamiento();
             if (frmListarTrat.ShowDialog() == DialogResult.OK)
             {
@@ -67,6 +72,11 @@ namespace Formularios
 
         private void btnAgregarPaquete_Click(object sender, EventArgs e)
         {
+            if (txtPaciente.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese un cliente de la lista");
+                return; 
+            }
             frmListarPaquete frmListarPaq = new frmListarPaquete();
             if (frmListarPaq.ShowDialog() == DialogResult.OK)
             {
@@ -97,6 +107,17 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (txtPaciente.Text == "")
+            {
+                MessageBox.Show("Por favor ingrese un cliente de la lista");
+                return;
+            }
+
+            if (txtMontoTotal.Text == "")
+            {
+                MessageBox.Show("Por favor seleccione algún tratamiento o paquete");
+                return;
+            }
             cita.Cliente = pacienteSeleccionado;
             cita.MontoTotal = Double.Parse(txtMontoTotal.Text);
             
