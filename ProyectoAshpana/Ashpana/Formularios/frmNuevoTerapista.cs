@@ -158,6 +158,8 @@ namespace Formularios
                 MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+
             
             //falta validar para hora de entrada y salida
             String horaE = cboHoraEntrada.Text;
@@ -165,6 +167,12 @@ namespace Formularios
 
             String minutoE = cboMinutoEntrada.Text;
             String minutoS = cboMinutoSalida.Text;
+
+            if (cboHoraEntrada.Text == "" || cboMinutoEntrada.Text=="" || cboHoraSalida.Text=="" || cboMinutoSalida.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese correctamente las horas de entrada y salida", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
     
             TerapistaBL terapistaBL = new TerapistaBL();
             terapistaBL.registrarTerapista(t, horaE, horaS, minutoE, minutoS);
