@@ -65,15 +65,64 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Dni = txtDni.Text.Trim();
 
-            superUsuarioMod.Dni = txtDni.Text;
-            superUsuarioMod.Nombres = txtNombres.Text;
-            superUsuarioMod.ApPaterno = txtApellidoPaterno.Text;
-            superUsuarioMod.ApMaterno = txtApellidoMaterno.Text;
-            superUsuarioMod.Contrasena = txtContrasenia.Text;
-            superUsuarioMod.Correo = txtCorreo.Text;
-            superUsuarioMod.Direccion = txtDireccion.Text;
-            superUsuarioMod.Telefono = txtTelefono.Text;
+            if ((txtNombres.Text.Trim() == "") || (txtNombres.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese lun Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Nombres = txtNombres.Text.Trim();
+
+
+            if ((txtApellidoPaterno.Text.Trim() == "") || (txtApellidoPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.ApPaterno = txtApellidoPaterno.Text.Trim();
+
+            if ((txtApellidoMaterno.Text.Trim() == "") || (txtApellidoMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.ApMaterno = txtApellidoMaterno.Text.Trim();
+
+            if ((txtContrasenia.Text.Trim() == "") || (txtContrasenia.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Contrasena = txtContrasenia.Text.Trim();
+
+            if ((txtCorreo.Text.Trim() == "") || (txtCorreo.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Correo = txtCorreo.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Direccion = txtDireccion.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            superUsuarioMod.Telefono = txtTelefono.Text.Trim();
+
+            //falta validar
             superUsuarioMod.FechaNac = dtpFechaNac.Value;
             if (rbFemenino.Checked == true)
             {
@@ -83,7 +132,28 @@ namespace Formularios
             {
                 superUsuarioMod.Sexo = 'M';
             }
-            superUsuarioMod.Sueldo = Double.Parse(txtSueldo.Text);
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                if (txtSueldo.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                superUsuarioMod.Sueldo = double.Parse(txtSueldo.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
             if (cboEstado.Text.Equals("Activo"))
             {
@@ -97,7 +167,7 @@ namespace Formularios
             usuarioBL = new UsuarioBL();
             usuarioBL.modificarSuperusuario(superUsuarioMod);
             this.DialogResult = DialogResult.OK;
-            MessageBox.Show("Se ha modifcado satisfactoriamente el usuario", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Se ha modifcado satisfactoriamente el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtNombres_TextChanged(object sender, EventArgs e)

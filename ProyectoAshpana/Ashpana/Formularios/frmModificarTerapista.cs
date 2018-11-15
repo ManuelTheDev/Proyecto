@@ -111,15 +111,63 @@ namespace Formularios
 
         private void btnModifcar_Click(object sender, EventArgs e)
         {
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.Dni = txtDni.Text.Trim();
 
-            terapistaMod.Dni = txtDni.Text;
-            terapistaMod.Nombres = txtNombre.Text;
-            terapistaMod.ApPaterno = txtApPaterno.Text;
-            terapistaMod.ApMaterno = txtApMaterno.Text;
-            terapistaMod.Contrasena = txtContrasena.Text;
-            terapistaMod.Correo = txtCorreo.Text;
-            terapistaMod.Direccion = txtDireccion.Text;
-            terapistaMod.Telefono = txtTelefono.Text;
+            if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.Nombres = txtNombre.Text.Trim();
+
+            if ((txtApPaterno.Text.Trim() == "") || (txtApPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.ApPaterno = txtApPaterno.Text.Trim();
+
+            if ((txtApMaterno.Text.Trim() == "") || (txtApMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.ApMaterno = txtApMaterno.Text.Trim();
+
+            if ((txtContrasena.Text.Trim() == "") || (txtContrasena.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese una contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            terapistaMod.Contrasena = txtContrasena.Text.Trim();
+
+            if ((txtCorreo.Text.Trim() == "") || (txtCorreo.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.Correo = txtCorreo.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.Direccion = txtDireccion.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            terapistaMod.Telefono = txtTelefono.Text.Trim();
+
             terapistaMod.FechaNac = dtpFechaNac.Value;
            
 
@@ -131,7 +179,31 @@ namespace Formularios
             {
                 terapistaMod.Sexo = 'M';
             }
-            terapistaMod.Sueldo = Double.Parse(txtSueldo.Text);
+
+            if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+
+
+
+            try
+            {
+                if (txtSueldo.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                terapistaMod.Sueldo = double.Parse(txtSueldo.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el sueldo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
 
 
             if (cboEstado.Text.Equals("Activo"))
@@ -164,7 +236,7 @@ namespace Formularios
 
             terapistaBL.modificarTerapista(terapistaMod, horaE, horaS, minutoE, minutoS);
             this.DialogResult = DialogResult.OK;
-            MessageBox.Show("Se ha modifcado satisfactoriamente el terapista", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("Se ha modifcado satisfactoriamente el terapista", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)

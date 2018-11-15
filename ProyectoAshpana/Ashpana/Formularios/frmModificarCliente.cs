@@ -153,14 +153,59 @@ namespace Formularios
 
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            clienteModificado.Dni = txtDni.Text;
-            clienteModificado.Nombres = txtNombre.Text;
-            clienteModificado.ApPaterno = txtApPaterno.Text;
-            clienteModificado.ApMaterno = txtApMaterno.Text;
-            clienteModificado.Correo = txtCorreo.Text;
-            clienteModificado.Direccion = txtDireccion.Text;
-            clienteModificado.Telefono = txtTelefono.Text;
+            if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            clienteModificado.Dni = txtDni.Text.Trim();
+
+            if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.Nombres = txtNombre.Text.Trim();
+
+            if ((txtApPaterno.Text.Trim() == "") || (txtApPaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Paterno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.ApPaterno = txtApPaterno.Text.Trim();
+
+            if ((txtApMaterno.Text.Trim() == "") || (txtApMaterno.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el Apellido Materno", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.ApMaterno = txtApMaterno.Text.Trim();
+
+            if ((txtCorreo.Text.Trim() == "") || (txtCorreo.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el correo electrónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.Correo = txtCorreo.Text.Trim();
+
+            if ((txtDireccion.Text.Trim() == "") || (txtDireccion.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la Dirección", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.Direccion = txtDireccion.Text.Trim();
+
+            if ((txtTelefono.Text.Trim() == "") || (txtTelefono.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número telefónico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            clienteModificado.Telefono = txtTelefono.Text.Trim();
+
+
             clienteModificado.FechaNac = dtpFechaNac.Value;
+
             if (rbFemenino.Checked == true)
             {
                 clienteModificado.Sexo = 'F';
@@ -168,6 +213,12 @@ namespace Formularios
             if (rbMasculino.Checked == true)
             {
                 clienteModificado.Sexo = 'M';
+            }
+
+            if(rbFemenino.Checked==false && rbMasculino.Checked == false)
+            {
+                MessageBox.Show("Por favor, seleccione un género", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
 
             if (cboEstado.Text.Equals("Activo"))
@@ -188,12 +239,12 @@ namespace Formularios
             if (clienteBL.modificarTerapista(cliente, clienteModificado) == 1)
             {
                 this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Se ha modificado satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Se ha modificado satisfactoriamente el cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
                 this.DialogResult = DialogResult.OK;
-                MessageBox.Show("No se ha podido modificar satisfactoriamente el cliente", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se ha podido modificar satisfactoriamente el cliente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

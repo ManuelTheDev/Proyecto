@@ -66,6 +66,7 @@ namespace Formularios
             {
                 cboTipoSomatico.Text = "MESOMORFO";
             }
+
             txtPeso.Text = Convert.ToString(fm.Peso);
             txtEspalda.Text = Convert.ToString(fm.Espalda);
             txtAbAlto.Text = Convert.ToString(fm.AbdomenAlto);
@@ -100,25 +101,267 @@ namespace Formularios
             {
                 fichamedida.Tipo = "MESOMORFO";
             }
+
+            //FALTA VALIDAR LA FECHA
             fichamedida.Fecha = dateTimePicker1.Value;
-            fichamedida.Peso = Convert.ToDouble(txtPeso.Text);
-            fichamedida.Espalda = Convert.ToDouble(txtEspalda.Text);
-            fichamedida.AbdomenAlto = Convert.ToDouble(txtAbAlto.Text);
-            fichamedida.AbdomenBajo = Convert.ToDouble(txtAbBajo.Text);
-            fichamedida.Cintura = Convert.ToDouble(txtCintura.Text);
-            fichamedida.BrazoDerecho = Convert.ToDouble(txtBrDer.Text);
-            fichamedida.BrazoIzquierdo = Convert.ToDouble(txtBrIzq.Text);
-            fichamedida.Gluteos = Convert.ToDouble(txtGluteos.Text);
-            fichamedida.PiernaDer = Convert.ToDouble(txtPierDer.Text);
-            fichamedida.PiernaIzq = Convert.ToDouble(txtIzq.Text);
+
+            try
+            {
+                if (txtPeso.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida del peso en kg", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                fichamedida.Peso = double.Parse(txtPeso.Text.Trim());
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la medida del peso en kg", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            try
+            {
+                if (txtEspalda.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de la espalda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                fichamedida.Espalda = double.Parse(txtEspalda.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente la medida de la espalda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            if (txtAbAlto.Text == "")
+            {
+                fichamedida.AbdomenAlto = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtAbAlto.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida del abdomen alto en  cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.AbdomenAlto = double.Parse(txtAbAlto.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida del abdomen alto en  en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtAbBajo.Text == "")
+            {
+                fichamedida.AbdomenBajo = 0;
+
+            }
+            else {
+                try
+                {
+                    if (txtAbBajo.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida del abdomen bajo en  cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.AbdomenBajo = double.Parse(txtAbBajo.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida del abdomen bajo en  en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+
+            if (txtCintura.Text == "")
+            {
+                fichamedida.Cintura = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtCintura.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de la cintura en  cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.Cintura = double.Parse(txtCintura.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de la cintura en  en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtBrDer.Text == "")
+            {
+                fichamedida.BrazoDerecho = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtBrDer.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida del brazo derecho en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.BrazoDerecho = double.Parse(txtBrDer.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida del brazo derecho en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtCintura.Text == "")
+            {
+                fichamedida.Cintura = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtCintura.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de la cintura en  cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.Cintura = double.Parse(txtCintura.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de la cintura en  en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtBrIzq.Text == "")
+            {
+                fichamedida.BrazoIzquierdo = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtBrIzq.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida del brazo izquierdo en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.BrazoIzquierdo = double.Parse(txtBrIzq.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida del brazo izquierdo en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtGluteos.Text == "")
+            {
+                fichamedida.Gluteos = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtGluteos.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de los glúteos en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.Gluteos = double.Parse(txtGluteos.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de los glúteos en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+
+            if (txtPierDer.Text == "")
+            {
+                fichamedida.PiernaDer = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtPierDer.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de la pierna derecha en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.PiernaDer = double.Parse(txtPierDer.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de la pierna derecha en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+            if (txtIzq.Text == "")
+            {
+                fichamedida.PiernaIzq = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtIzq.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de la pierna izquierda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.PiernaIzq = double.Parse(txtIzq.Text.Trim());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente la medida de la pierna izquierda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
             FichaMedidaBL fichaMedidaBL = new FichaMedidaBL();
             int res = fichaMedidaBL.modificarFichaMedida(fichamedida);
             if (res == 1)
-                MessageBox.Show("Se modifico correctamente", "Exito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Se modifico correctamente", "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-                MessageBox.Show("No se modifico correctamente", "Error",
-                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("No se modifico correctamente", "Mensaje",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void label12_Click(object sender, EventArgs e)
