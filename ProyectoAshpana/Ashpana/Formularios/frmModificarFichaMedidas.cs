@@ -121,21 +121,30 @@ namespace Formularios
                 return;
             }
 
-            try
+            if (txtEspalda.Text == "")
             {
-                if (txtEspalda.ForeColor == Color.Red)
+                fichamedida.Espalda = 0;
+
+            }
+            else
+            {
+                try
+                {
+                    if (txtEspalda.ForeColor == Color.Red)
+                    {
+                        MessageBox.Show("Por favor, ingrese correctamente la medida de la espalda en  cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                    fichamedida.Espalda = double.Parse(txtEspalda.Text.Trim());
+
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Por favor, ingrese correctamente la medida de la espalda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                fichamedida.Espalda = double.Parse(txtEspalda.Text.Trim());
-
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Por favor, ingrese correctamente la medida de la espalda en cm", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
+            
 
             if (txtAbAlto.Text == "")
             {
