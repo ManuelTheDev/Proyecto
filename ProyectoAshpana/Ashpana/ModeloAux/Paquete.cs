@@ -30,6 +30,18 @@ namespace Modelo
             Tratamientos = new BindingList<Tratamiento>();
         }
 
+        public bool verificarClienteApto(Cliente cli)
+        {
+            foreach(CondicionMedica cm in cli.CondicionesMedicas)
+            {
+                foreach(Tratamiento trat in this.tratamientos)
+                {
+                    if (trat.CondicionesMedicas.Contains(cm)) return false;
+                }
+            }
+            return true;
+        }
+
         public int IdPaquete { get => idPaquete; set => idPaquete = value; }
         public int CantSesiones { get => NumSesiones;  }
         //public int CantSesion { get => cantSesion; set => cantSesion = value; }

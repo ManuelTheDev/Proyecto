@@ -33,7 +33,12 @@ namespace LogicaNegocio
 
         public BindingList<Cliente> listarClientes()
         {
-            return clienteDA.listarClientes();
+            BindingList<Cliente> clientes = clienteDA.listarClientes();
+            foreach(Cliente cli in clientes)
+            {
+                cli.CondicionesMedicas = condicionMedicaDA.listarCondicionesMedicas_X_Cliente(cli.IdCliente);
+            }
+            return clientes;
         }
 
         public int modificarTerapista(Cliente clienteAnt, Cliente clienteMod)

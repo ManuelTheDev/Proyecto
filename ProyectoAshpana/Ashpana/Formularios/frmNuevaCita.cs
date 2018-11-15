@@ -40,19 +40,27 @@ namespace Formularios
             frmListarTratamiento frmListarTrat = new frmListarTratamiento();
             if (frmListarTrat.ShowDialog() == DialogResult.OK)
             {
-                tratamientoSeleccionado = frmListarTrat.Tratamiento;
-                DetalleCita dt = new DetalleCita();
-                dt.Servicio = tratamientoSeleccionado;
-                dt.Servicio.NumSesiones = 1; 
-                cita.DetallesCitas.Add(dt);
-                if (txtMontoTotal.Text =="")
+                if (frmListarTrat.Tratamiento.verificarClienteApto(pacienteSeleccionado))
                 {
-                    txtMontoTotal.Text = dt.Precio.ToString();
+                    tratamientoSeleccionado = frmListarTrat.Tratamiento;
+                    DetalleCita dt = new DetalleCita();
+                    dt.Servicio = tratamientoSeleccionado;
+                    dt.Servicio.NumSesiones = 1;
+                    cita.DetallesCitas.Add(dt);
+                    if (txtMontoTotal.Text == "")
+                    {
+                        txtMontoTotal.Text = dt.Precio.ToString();
+                    }
+                    else
+                    {
+                        double monto = Double.Parse(txtMontoTotal.Text) + tratamientoSeleccionado.PrecioServicio;
+                        txtMontoTotal.Text = Convert.ToString(monto);
+                    }
                 }
                 else
                 {
-                    double monto = Double.Parse(txtMontoTotal.Text) + tratamientoSeleccionado.PrecioServicio;
-                    txtMontoTotal.Text = Convert.ToString(monto);
+                    MessageBox.Show("El paciente no está apto para el tratamiento", "ErrorTratamiento", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
@@ -62,19 +70,27 @@ namespace Formularios
             frmListarPaquete frmListarPaq = new frmListarPaquete();
             if (frmListarPaq.ShowDialog() == DialogResult.OK)
             {
-                paqueteSeleccionado = frmListarPaq.Paquete;
-                DetalleCita dt = new DetalleCita();
-                dt.Servicio = paqueteSeleccionado;
-                dt.Servicio.NumSesiones = paqueteSeleccionado.NumSesiones;
-                cita.DetallesCitas.Add(dt);
-                if (txtMontoTotal.Text == "")
+                if (frmListarPaq.Paquete.verificarClienteApto(pacienteSeleccionado))
                 {
-                    txtMontoTotal.Text = dt.Precio.ToString();
+                    paqueteSeleccionado = frmListarPaq.Paquete;
+                    DetalleCita dt = new DetalleCita();
+                    dt.Servicio = paqueteSeleccionado;
+                    dt.Servicio.NumSesiones = paqueteSeleccionado.NumSesiones;
+                    cita.DetallesCitas.Add(dt);
+                    if (txtMontoTotal.Text == "")
+                    {
+                        txtMontoTotal.Text = dt.Precio.ToString();
+                    }
+                    else
+                    {
+                        double monto = Double.Parse(txtMontoTotal.Text) + paqueteSeleccionado.PrecioServicio;
+                        txtMontoTotal.Text = Convert.ToString(monto);
+                    }
                 }
                 else
                 {
-                    double monto = Double.Parse(txtMontoTotal.Text) + paqueteSeleccionado.PrecioServicio;
-                    txtMontoTotal.Text = Convert.ToString(monto);
+                    MessageBox.Show("El cliente no está apto para el paquete", "ErrorPaquete", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
             }
         }
