@@ -28,6 +28,19 @@ namespace Formularios
         {
             Superusuario s = new Superusuario();
 
+            if (DateTime.Now.Year - dtpFecha_Nac.Value.Year < 15)
+            {
+                MessageBox.Show("El usuario debe ser mayor de 15 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (DateTime.Now.Year - dtpFecha_Nac.Value.Year > 110)
+            {
+                MessageBox.Show("El usuario no puede ser mayor de 110 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            s.FechaNac = dtpFecha_Nac.Value;
+
             if ((txtDni.Text.Trim() == "") || (txtDni.ForeColor == Color.Red))
             {
                 MessageBox.Show("Por favor, ingrese correctamente el DNI", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
