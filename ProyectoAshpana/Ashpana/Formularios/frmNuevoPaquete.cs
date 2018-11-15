@@ -47,30 +47,48 @@ namespace Formularios
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if ((txtNombrePaquete.Text.Trim() == "") || (txtNombrePaquete.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            paquete.NombreServicio = txtNombrePaquete.Text.Trim();
+
             try
             {
-                String nombre = txtNombrePaquete.Text;
-                double precio = Double.Parse(txtPrecio.Text);
-                int numSesiones = Int32.Parse(txtNumSesiones.Text);
-
-                paquete.NombreServicio = nombre;
-                paquete.PrecioServicio = precio;
-                paquete.NumSesiones = numSesiones;
-
-                if (paquete.PrecioServicio <= 0 || paquete.NumSesiones <= 0)
+                if (txtPrecio.ForeColor == Color.Red)
                 {
-                    MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor, ingrese correctamente el precio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
+                paquete.PrecioServicio = double.Parse(txtPrecio.Text.Trim());
 
-                paquetesBL.RegistrarPaquete(paquete);
-                this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Se ha registrado el paquete correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception exc)
+            catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error en la base de datos", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Por favor, ingrese correctamente el precio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
             }
+
+            try
+            {
+                if (txtNumSesiones.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el número de sesiones", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                paquete.NumSesiones = int.Parse(txtNumSesiones.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número de sesiones", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            
+            paquetesBL.RegistrarPaquete(paquete);
+            this.DialogResult = DialogResult.OK;
+            MessageBox.Show("Se ha registrado el paquete correctamente", "Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

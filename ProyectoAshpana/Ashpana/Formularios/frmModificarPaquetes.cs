@@ -40,6 +40,7 @@ namespace Formularios
             paqueteMod.IdServicio = p.IdServicio;
             paqueteMod.NombreServicio = p.NombreServicio;
             paqueteMod.PrecioServicio = p.PrecioServicio;
+            paqueteMod.EstadoServicio = 1;
 
 
             paquete.NumSesiones = p.NumSesiones;
@@ -73,26 +74,49 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e) //Modificar
         {
+            if ((txtNombre.Text.Trim() == "") || (txtNombre.ForeColor == Color.Red))
+            {
+                MessageBox.Show("Por favor, ingrese un Nombre correcto", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            paqueteMod.NombreServicio = txtNombre.Text.Trim();
+
             try
             {
-                paqueteMod.NombreServicio = txtNombre.Text;
-                paqueteMod.PrecioServicio = Double.Parse(txtPrecio.Text);
-                paqueteMod.NumSesiones = Int32.Parse(txtNumSes.Text);
-                if (paqueteMod.PrecioServicio <= 0 || paqueteMod.NumSesiones <= 0)
+                if (txtPrecio.ForeColor == Color.Red)
                 {
-                    MessageBox.Show("Ingrese Numeros válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor, ingrese correctamente el precio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
-                paqueteBL.actualizar(paquete,paqueteMod);
-                this.DialogResult = DialogResult.OK;
-                MessageBox.Show("Se ha modificado el elemento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
+                paqueteMod.PrecioServicio = double.Parse(txtPrecio.Text.Trim());
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ingrese Datos válidos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Por favor, ingrese correctamente el precio", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
+
+            try
+            {
+                if (txtNumSes.ForeColor == Color.Red)
+                {
+                    MessageBox.Show("Por favor, ingrese correctamente el número de sesiones", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+                paqueteMod.NumSesiones = int.Parse(txtNumSes.Text.Trim());
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Por favor, ingrese correctamente el número de sesiones", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
+            paqueteBL.actualizar(paquete, paqueteMod);
+            this.DialogResult = DialogResult.OK;
+            MessageBox.Show("Se ha modificado el elemento", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            this.Close();
         }
 
         private void btnAgregarTratamiento_Click(object sender, EventArgs e)
