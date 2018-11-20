@@ -29,9 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.CITAS = new System.Windows.Forms.Panel();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.btnVerFichaMedidas = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.btnVerCondicionMed = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,15 +50,10 @@
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.CITAS = new System.Windows.Forms.Panel();
-            this.lblClientes = new System.Windows.Forms.Label();
             this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnVerFichaMedidas = new System.Windows.Forms.Button();
-            this.lblBuscar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.CITAS.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +85,17 @@
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
             this.dgvClientes.AutoGenerateColumns = false;
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -94,78 +108,21 @@
             this.correoDataGridViewTextBoxColumn,
             this.fechaNacDataGridViewTextBoxColumn});
             this.dgvClientes.DataSource = this.clienteBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvClientes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvClientes.EnableHeadersVisualStyles = false;
             this.dgvClientes.Location = new System.Drawing.Point(104, 203);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;
+            this.dgvClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes.Size = new System.Drawing.Size(836, 236);
             this.dgvClientes.TabIndex = 4;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Dni";
-            this.Column2.HeaderText = "DNI";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // nombresDataGridViewTextBoxColumn
-            // 
-            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
-            this.nombresDataGridViewTextBoxColumn.HeaderText = "Nombres";
-            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
-            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apPaternoDataGridViewTextBoxColumn
-            // 
-            this.apPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApPaterno";
-            this.apPaternoDataGridViewTextBoxColumn.HeaderText = "ApPaterno";
-            this.apPaternoDataGridViewTextBoxColumn.Name = "apPaternoDataGridViewTextBoxColumn";
-            this.apPaternoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // apMaternoDataGridViewTextBoxColumn
-            // 
-            this.apMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApMaterno";
-            this.apMaternoDataGridViewTextBoxColumn.HeaderText = "ApMaterno";
-            this.apMaternoDataGridViewTextBoxColumn.Name = "apMaternoDataGridViewTextBoxColumn";
-            this.apMaternoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // direccionDataGridViewTextBoxColumn
-            // 
-            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.HeaderText = "Direccion";
-            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
-            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Telefono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sexoDataGridViewTextBoxColumn
-            // 
-            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.HeaderText = "Sexo";
-            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
-            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // correoDataGridViewTextBoxColumn
-            // 
-            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
-            this.correoDataGridViewTextBoxColumn.HeaderText = "Correo";
-            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
-            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaNacDataGridViewTextBoxColumn
-            // 
-            this.fechaNacDataGridViewTextBoxColumn.DataPropertyName = "FechaNac";
-            this.fechaNacDataGridViewTextBoxColumn.HeaderText = "FechaNac";
-            this.fechaNacDataGridViewTextBoxColumn.Name = "fechaNacDataGridViewTextBoxColumn";
-            this.fechaNacDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(Modelo.Cliente);
             // 
             // btnModificar
             // 
@@ -174,7 +131,7 @@
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnModificar.Location = new System.Drawing.Point(719, 499);
+            this.btnModificar.Location = new System.Drawing.Point(719, 508);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(221, 41);
             this.btnModificar.TabIndex = 5;
@@ -202,10 +159,6 @@
             this.lblClientes.TabIndex = 9;
             this.lblClientes.Text = "PACIENTES";
             // 
-            // personaBindingSource
-            // 
-            this.personaBindingSource.DataSource = typeof(Modelo.Persona);
-            // 
             // btnVerFichaMedidas
             // 
             this.btnVerFichaMedidas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -213,9 +166,9 @@
             this.btnVerFichaMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerFichaMedidas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerFichaMedidas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerFichaMedidas.Location = new System.Drawing.Point(104, 499);
+            this.btnVerFichaMedidas.Location = new System.Drawing.Point(104, 508);
             this.btnVerFichaMedidas.Name = "btnVerFichaMedidas";
-            this.btnVerFichaMedidas.Size = new System.Drawing.Size(316, 41);
+            this.btnVerFichaMedidas.Size = new System.Drawing.Size(294, 41);
             this.btnVerFichaMedidas.TabIndex = 22;
             this.btnVerFichaMedidas.Text = "VER FICHAS MEDIDAS";
             this.btnVerFichaMedidas.UseVisualStyleBackColor = false;
@@ -231,11 +184,98 @@
             this.lblBuscar.TabIndex = 23;
             this.lblBuscar.Text = "BUSCAR:";
             // 
+            // btnVerCondicionMed
+            // 
+            this.btnVerCondicionMed.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerCondicionMed.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnVerCondicionMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCondicionMed.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCondicionMed.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerCondicionMed.Location = new System.Drawing.Point(425, 499);
+            this.btnVerCondicionMed.Name = "btnVerCondicionMed";
+            this.btnVerCondicionMed.Size = new System.Drawing.Size(272, 58);
+            this.btnVerCondicionMed.TabIndex = 24;
+            this.btnVerCondicionMed.Text = "VER CONDICIONES MÉDICAS";
+            this.btnVerCondicionMed.UseVisualStyleBackColor = false;
+            this.btnVerCondicionMed.Click += new System.EventHandler(this.btnVerCondicionMed_Click);
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Dni";
+            this.Column2.HeaderText = "DNI";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // nombresDataGridViewTextBoxColumn
+            // 
+            this.nombresDataGridViewTextBoxColumn.DataPropertyName = "Nombres";
+            this.nombresDataGridViewTextBoxColumn.HeaderText = "NOMBRES";
+            this.nombresDataGridViewTextBoxColumn.Name = "nombresDataGridViewTextBoxColumn";
+            this.nombresDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apPaternoDataGridViewTextBoxColumn
+            // 
+            this.apPaternoDataGridViewTextBoxColumn.DataPropertyName = "ApPaterno";
+            this.apPaternoDataGridViewTextBoxColumn.HeaderText = "APELLIDO PATERNO";
+            this.apPaternoDataGridViewTextBoxColumn.Name = "apPaternoDataGridViewTextBoxColumn";
+            this.apPaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // apMaternoDataGridViewTextBoxColumn
+            // 
+            this.apMaternoDataGridViewTextBoxColumn.DataPropertyName = "ApMaterno";
+            this.apMaternoDataGridViewTextBoxColumn.HeaderText = "APELLIDO MATERNO";
+            this.apMaternoDataGridViewTextBoxColumn.Name = "apMaternoDataGridViewTextBoxColumn";
+            this.apMaternoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // direccionDataGridViewTextBoxColumn
+            // 
+            this.direccionDataGridViewTextBoxColumn.DataPropertyName = "Direccion";
+            this.direccionDataGridViewTextBoxColumn.HeaderText = "DIRECCIÓN";
+            this.direccionDataGridViewTextBoxColumn.Name = "direccionDataGridViewTextBoxColumn";
+            this.direccionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "Telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "TELÉFONO";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sexoDataGridViewTextBoxColumn
+            // 
+            this.sexoDataGridViewTextBoxColumn.DataPropertyName = "Sexo";
+            this.sexoDataGridViewTextBoxColumn.HeaderText = "SEXO";
+            this.sexoDataGridViewTextBoxColumn.Name = "sexoDataGridViewTextBoxColumn";
+            this.sexoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // correoDataGridViewTextBoxColumn
+            // 
+            this.correoDataGridViewTextBoxColumn.DataPropertyName = "Correo";
+            this.correoDataGridViewTextBoxColumn.HeaderText = "CORREO";
+            this.correoDataGridViewTextBoxColumn.Name = "correoDataGridViewTextBoxColumn";
+            this.correoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaNacDataGridViewTextBoxColumn
+            // 
+            this.fechaNacDataGridViewTextBoxColumn.DataPropertyName = "FechaNac";
+            this.fechaNacDataGridViewTextBoxColumn.HeaderText = "FECHA NACIMIENTO";
+            this.fechaNacDataGridViewTextBoxColumn.Name = "fechaNacDataGridViewTextBoxColumn";
+            this.fechaNacDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(Modelo.Cliente);
+            // 
+            // personaBindingSource
+            // 
+            this.personaBindingSource.DataSource = typeof(Modelo.Persona);
+            // 
             // frmGestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 758);
+            this.Controls.Add(this.btnVerCondicionMed);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVerFichaMedidas);
             this.Controls.Add(this.CITAS);
@@ -249,9 +289,9 @@
             this.Text = "frmGestionPacientes";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.CITAS.ResumeLayout(false);
             this.CITAS.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -267,6 +307,8 @@
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.Panel CITAS;
         private System.Windows.Forms.Label lblClientes;
+        private System.Windows.Forms.Button btnVerFichaMedidas;
+        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombresDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apPaternoDataGridViewTextBoxColumn;
@@ -276,7 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sexoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnVerFichaMedidas;
-        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Button btnVerCondicionMed;
     }
 }

@@ -32,12 +32,16 @@ namespace Formularios
         {
             frmNuevaCita frmNuevaCita = new frmNuevaCita();
             frmNuevaCita.ShowDialog();
+            dgvCitas.AutoGenerateColumns = false;
+            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             frmModificarCita frmCita = new frmModificarCita();
             frmCita.ShowDialog();
+            dgvCitas.AutoGenerateColumns = false;
+            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

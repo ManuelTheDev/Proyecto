@@ -45,6 +45,11 @@
             this.cboTerapista = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTratamiento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cboMinuto = new System.Windows.Forms.ComboBox();
+            this.cboHora = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,13 +59,14 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnCancelar.Location = new System.Drawing.Point(380, 330);
+            this.btnCancelar.Location = new System.Drawing.Point(379, 367);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(125, 36);
             this.btnCancelar.TabIndex = 71;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -68,13 +74,14 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGuardar.Location = new System.Drawing.Point(128, 330);
+            this.btnGuardar.Location = new System.Drawing.Point(132, 367);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(125, 36);
             this.btnGuardar.TabIndex = 70;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // textBox1
             // 
@@ -90,9 +97,9 @@
             this.label4.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(47, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(248, 36);
+            this.label4.Size = new System.Drawing.Size(282, 36);
             this.label4.TabIndex = 22;
-            this.label4.Text = "MODIFICAR CITA";
+            this.label4.Text = "MODIFICAR SESIÓN";
             // 
             // panel1
             // 
@@ -153,9 +160,9 @@
             this.lblTelefono.Location = new System.Drawing.Point(63, 265);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(115, 21);
+            this.lblTelefono.Size = new System.Drawing.Size(63, 21);
             this.lblTelefono.TabIndex = 56;
-            this.lblTelefono.Text = "Fecha y hora:";
+            this.lblTelefono.Text = "Fecha:";
             // 
             // lblEmail
             // 
@@ -221,11 +228,80 @@
             this.txtTratamiento.Size = new System.Drawing.Size(361, 20);
             this.txtTratamiento.TabIndex = 75;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(63, 320);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 21);
+            this.label2.TabIndex = 76;
+            this.label2.Text = "Hora:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(407, 323);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 15);
+            this.label5.TabIndex = 135;
+            this.label5.Text = "m";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(316, 323);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 15);
+            this.label6.TabIndex = 134;
+            this.label6.Text = "h";
+            // 
+            // cboMinuto
+            // 
+            this.cboMinuto.FormattingEnabled = true;
+            this.cboMinuto.Items.AddRange(new object[] {
+            "00",
+            "30"});
+            this.cboMinuto.Location = new System.Drawing.Point(345, 320);
+            this.cboMinuto.Name = "cboMinuto";
+            this.cboMinuto.Size = new System.Drawing.Size(56, 21);
+            this.cboMinuto.TabIndex = 133;
+            // 
+            // cboHora
+            // 
+            this.cboHora.FormattingEnabled = true;
+            this.cboHora.Items.AddRange(new object[] {
+            "09",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21"});
+            this.cboHora.Location = new System.Drawing.Point(255, 320);
+            this.cboHora.Name = "cboHora";
+            this.cboHora.Size = new System.Drawing.Size(56, 21);
+            this.cboHora.TabIndex = 132;
+            // 
             // frmModificarCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 431);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.cboMinuto);
+            this.Controls.Add(this.cboHora);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTratamiento);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboTerapista);
@@ -244,6 +320,7 @@
             this.Controls.Add(this.lblNombres);
             this.Name = "frmModificarCita";
             this.Text = "frmModificarCita";
+            this.Load += new System.EventHandler(this.frmModificarCita_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -270,5 +347,10 @@
         private System.Windows.Forms.ComboBox cboTerapista;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTratamiento;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cboMinuto;
+        private System.Windows.Forms.ComboBox cboHora;
     }
 }

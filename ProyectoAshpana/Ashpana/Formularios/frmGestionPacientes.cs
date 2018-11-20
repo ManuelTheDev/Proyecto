@@ -113,5 +113,16 @@ namespace Formularios
 
             dgvClientes.DataSource = clientesBuscados;
         }
+
+        private void btnVerCondicionMed_Click(object sender, EventArgs e)
+        {
+            clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            frmVerCondicionesMedicas_X_Paciente frmConMed = new frmVerCondicionesMedicas_X_Paciente(clienteSeleccionado.IdCliente);
+            frmConMed.ShowDialog();
+            if (frmConMed.DialogResult == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

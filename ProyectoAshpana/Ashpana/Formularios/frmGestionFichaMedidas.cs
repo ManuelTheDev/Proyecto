@@ -18,6 +18,17 @@ namespace Formularios
         public frmGestionFichaMedidas() { }
         private Cliente cliente;
         public FichaMedida FichaMedida { get; private set; }
+        private FichaMedidaBL fichaMedidaBL;
+
+        private BindingList<FichaMedida> fichas;
+
+        private void CargarDGV()
+        {
+            fichaMedidaBL = new FichaMedidaBL();
+            columnasCitas.AutoGenerateColumns = false;
+            fichas = fichaMedidaBL.listarFichaMedidas(cliente);
+            columnasCitas.DataSource = fichas;
+        }
 
         public frmGestionFichaMedidas(Cliente c)
         {
@@ -37,9 +48,7 @@ namespace Formularios
             cliente.Sexo = c.Sexo;
             cliente.Telefono = c.Telefono;
             lblNombreCli.Text = cliente.Nombres + " " + cliente.ApPaterno + " " + cliente.ApMaterno;
-            FichaMedidaBL fichaMedidaBL = new FichaMedidaBL();
-            columnasCitas.AutoGenerateColumns = false;
-            columnasCitas.DataSource = fichaMedidaBL.listarFichaMedidas(c);
+            CargarDGV();
 
         }
 
@@ -51,7 +60,11 @@ namespace Formularios
         private void btnNuevaFicha_Click(object sender, EventArgs e)
         {
             frmNuevaFichaMedida frmFicha = new frmNuevaFichaMedida(cliente);
-            frmFicha.Show();
+            frmFicha.ShowDialog();
+            if (frmFicha.DialogResult == DialogResult.OK)
+            {
+                CargarDGV();
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -61,7 +74,7 @@ namespace Formularios
             fmfm.ShowDialog();
             if(fmfm.DialogResult == DialogResult.OK)
             {
-
+                CargarDGV();
             }
         }
 

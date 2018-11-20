@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevoTerapista = new System.Windows.Forms.Button();
             this.dgvTerapistas = new System.Windows.Forms.DataGridView();
+            this.CITAS = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ApellidoPaterno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,11 +46,6 @@
             this.HoraEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoraSalida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CITAS = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.btnVerTratamientosHabilitados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTerapistas)).BeginInit();
             this.CITAS.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,7 @@
             this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(748, 459);
+            this.btnModificar.Location = new System.Drawing.Point(739, 459);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(167, 45);
             this.btnModificar.TabIndex = 18;
@@ -75,7 +78,7 @@
             this.btnNuevoTerapista.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoTerapista.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnNuevoTerapista.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoTerapista.Location = new System.Drawing.Point(718, 131);
+            this.btnNuevoTerapista.Location = new System.Drawing.Point(709, 131);
             this.btnNuevoTerapista.Name = "btnNuevoTerapista";
             this.btnNuevoTerapista.Size = new System.Drawing.Size(197, 45);
             this.btnNuevoTerapista.TabIndex = 15;
@@ -87,6 +90,17 @@
             // 
             this.dgvTerapistas.AllowUserToAddRows = false;
             this.dgvTerapistas.AllowUserToDeleteRows = false;
+            this.dgvTerapistas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvTerapistas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTerapistas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTerapistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTerapistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTerapistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Dni,
@@ -96,60 +110,28 @@
             this.HoraEntrada,
             this.HoraSalida,
             this.Sueldo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTerapistas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvTerapistas.EnableHeadersVisualStyles = false;
             this.dgvTerapistas.Location = new System.Drawing.Point(170, 234);
             this.dgvTerapistas.Name = "dgvTerapistas";
             this.dgvTerapistas.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTerapistas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTerapistas.Size = new System.Drawing.Size(736, 150);
             this.dgvTerapistas.TabIndex = 19;
-            // 
-            // Dni
-            // 
-            this.Dni.DataPropertyName = "Dni";
-            this.Dni.HeaderText = "DNI";
-            this.Dni.Name = "Dni";
-            this.Dni.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.DataPropertyName = "Nombres";
-            this.Nombres.HeaderText = "Nombres";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            // 
-            // ApellidoPaterno
-            // 
-            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
-            this.ApellidoPaterno.Name = "ApellidoPaterno";
-            this.ApellidoPaterno.ReadOnly = true;
-            // 
-            // ApellidoMaterno
-            // 
-            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
-            this.ApellidoMaterno.HeaderText = "Apellido Materno";
-            this.ApellidoMaterno.Name = "ApellidoMaterno";
-            this.ApellidoMaterno.ReadOnly = true;
-            // 
-            // HoraEntrada
-            // 
-            this.HoraEntrada.DataPropertyName = "horaEntry";
-            this.HoraEntrada.HeaderText = "Hora Entrada";
-            this.HoraEntrada.Name = "HoraEntrada";
-            this.HoraEntrada.ReadOnly = true;
-            // 
-            // HoraSalida
-            // 
-            this.HoraSalida.DataPropertyName = "horaOut";
-            this.HoraSalida.HeaderText = "Hora Salida";
-            this.HoraSalida.Name = "HoraSalida";
-            this.HoraSalida.ReadOnly = true;
-            // 
-            // Sueldo
-            // 
-            this.Sueldo.DataPropertyName = "Sueldo";
-            this.Sueldo.HeaderText = "Sueldo";
-            this.Sueldo.Name = "Sueldo";
-            this.Sueldo.ReadOnly = true;
             // 
             // CITAS
             // 
@@ -209,6 +191,55 @@
             this.btnVerTratamientosHabilitados.Text = "Ver Tratamientos Habilitados";
             this.btnVerTratamientosHabilitados.UseVisualStyleBackColor = false;
             this.btnVerTratamientosHabilitados.Click += new System.EventHandler(this.btnVerTratamientosHabilitados_Click);
+            // 
+            // Dni
+            // 
+            this.Dni.DataPropertyName = "Dni";
+            this.Dni.HeaderText = "DNI";
+            this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.HeaderText = "NOMBRES";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            // 
+            // ApellidoPaterno
+            // 
+            this.ApellidoPaterno.DataPropertyName = "ApPaterno";
+            this.ApellidoPaterno.HeaderText = "APELLIDO PATERNO";
+            this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
+            // 
+            // ApellidoMaterno
+            // 
+            this.ApellidoMaterno.DataPropertyName = "ApMaterno";
+            this.ApellidoMaterno.HeaderText = "APELLIDO MATERNO";
+            this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
+            // 
+            // HoraEntrada
+            // 
+            this.HoraEntrada.DataPropertyName = "horaEntry";
+            this.HoraEntrada.HeaderText = "HORA ENTRADA";
+            this.HoraEntrada.Name = "HoraEntrada";
+            this.HoraEntrada.ReadOnly = true;
+            // 
+            // HoraSalida
+            // 
+            this.HoraSalida.DataPropertyName = "horaOut";
+            this.HoraSalida.HeaderText = "HORA SALIDA";
+            this.HoraSalida.Name = "HoraSalida";
+            this.HoraSalida.ReadOnly = true;
+            // 
+            // Sueldo
+            // 
+            this.Sueldo.DataPropertyName = "Sueldo";
+            this.Sueldo.HeaderText = "SUELDO";
+            this.Sueldo.Name = "Sueldo";
+            this.Sueldo.ReadOnly = true;
             // 
             // frmGestionTerapistas
             // 

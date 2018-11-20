@@ -136,7 +136,7 @@ namespace Formularios
                 MessageBox.Show("No se ha podido reservar la cita", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
-
+            this.Dispose();
 
         }
 

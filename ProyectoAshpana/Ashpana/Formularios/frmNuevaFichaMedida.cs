@@ -315,6 +315,9 @@ namespace Formularios
             else
                 MessageBox.Show("Se ha producido un error", "Mensaje",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            this.Dispose();
+
         }
 
         private void label8_Click(object sender, EventArgs e)

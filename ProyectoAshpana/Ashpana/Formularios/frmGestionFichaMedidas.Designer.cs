@@ -29,11 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnNuevaFicha = new System.Windows.Forms.Button();
             this.lblFicha = new System.Windows.Forms.Label();
             this.CITAS = new System.Windows.Forms.Panel();
             this.columnasCitas = new System.Windows.Forms.DataGridView();
+            this.fichaMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblNomCliente = new System.Windows.Forms.Label();
+            this.fichaMedidaBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fichaMedidaBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.lblNombreCli = new System.Windows.Forms.Label();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,12 +55,6 @@
             this.gluteosDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piernaIzqDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.piernaDerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fichaMedidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.lblNomCliente = new System.Windows.Forms.Label();
-            this.fichaMedidaBLBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fichaMedidaBLBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.lblNombreCli = new System.Windows.Forms.Label();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnasCitas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fichaMedidaBindingSource)).BeginInit();
@@ -119,7 +122,24 @@
             // 
             // columnasCitas
             // 
+            this.columnasCitas.AllowUserToAddRows = false;
+            this.columnasCitas.AllowUserToDeleteRows = false;
+            this.columnasCitas.AllowUserToResizeColumns = false;
+            this.columnasCitas.AllowUserToResizeRows = false;
             this.columnasCitas.AutoGenerateColumns = false;
+            this.columnasCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.columnasCitas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.columnasCitas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.columnasCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.columnasCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnasCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.columnasCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.columnasCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fechaDataGridViewTextBoxColumn,
@@ -135,83 +155,31 @@
             this.piernaIzqDataGridViewTextBoxColumn,
             this.piernaDerDataGridViewTextBoxColumn});
             this.columnasCitas.DataSource = this.fichaMedidaBindingSource;
-            this.columnasCitas.Location = new System.Drawing.Point(129, 227);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.columnasCitas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.columnasCitas.EnableHeadersVisualStyles = false;
+            this.columnasCitas.GridColor = System.Drawing.SystemColors.ButtonFace;
+            this.columnasCitas.Location = new System.Drawing.Point(42, 231);
             this.columnasCitas.Name = "columnasCitas";
-            this.columnasCitas.Size = new System.Drawing.Size(811, 251);
+            this.columnasCitas.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnasCitas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.columnasCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.columnasCitas.Size = new System.Drawing.Size(898, 251);
             this.columnasCitas.TabIndex = 17;
             this.columnasCitas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.columnasCitas_CellContentClick);
-            // 
-            // fechaDataGridViewTextBoxColumn
-            // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            // 
-            // pesoDataGridViewTextBoxColumn
-            // 
-            this.pesoDataGridViewTextBoxColumn.DataPropertyName = "Peso";
-            this.pesoDataGridViewTextBoxColumn.HeaderText = "Peso";
-            this.pesoDataGridViewTextBoxColumn.Name = "pesoDataGridViewTextBoxColumn";
-            // 
-            // espaldaDataGridViewTextBoxColumn
-            // 
-            this.espaldaDataGridViewTextBoxColumn.DataPropertyName = "Espalda";
-            this.espaldaDataGridViewTextBoxColumn.HeaderText = "Espalda";
-            this.espaldaDataGridViewTextBoxColumn.Name = "espaldaDataGridViewTextBoxColumn";
-            // 
-            // abdomenAltoDataGridViewTextBoxColumn
-            // 
-            this.abdomenAltoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenAlto";
-            this.abdomenAltoDataGridViewTextBoxColumn.HeaderText = "AbdomenAlto";
-            this.abdomenAltoDataGridViewTextBoxColumn.Name = "abdomenAltoDataGridViewTextBoxColumn";
-            // 
-            // abdomenBajoDataGridViewTextBoxColumn
-            // 
-            this.abdomenBajoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenBajo";
-            this.abdomenBajoDataGridViewTextBoxColumn.HeaderText = "AbdomenBajo";
-            this.abdomenBajoDataGridViewTextBoxColumn.Name = "abdomenBajoDataGridViewTextBoxColumn";
-            // 
-            // cinturaDataGridViewTextBoxColumn
-            // 
-            this.cinturaDataGridViewTextBoxColumn.DataPropertyName = "Cintura";
-            this.cinturaDataGridViewTextBoxColumn.HeaderText = "Cintura";
-            this.cinturaDataGridViewTextBoxColumn.Name = "cinturaDataGridViewTextBoxColumn";
-            // 
-            // brazoDerechoDataGridViewTextBoxColumn
-            // 
-            this.brazoDerechoDataGridViewTextBoxColumn.DataPropertyName = "BrazoDerecho";
-            this.brazoDerechoDataGridViewTextBoxColumn.HeaderText = "BrazoDerecho";
-            this.brazoDerechoDataGridViewTextBoxColumn.Name = "brazoDerechoDataGridViewTextBoxColumn";
-            // 
-            // brazoIzquierdoDataGridViewTextBoxColumn
-            // 
-            this.brazoIzquierdoDataGridViewTextBoxColumn.DataPropertyName = "BrazoIzquierdo";
-            this.brazoIzquierdoDataGridViewTextBoxColumn.HeaderText = "BrazoIzquierdo";
-            this.brazoIzquierdoDataGridViewTextBoxColumn.Name = "brazoIzquierdoDataGridViewTextBoxColumn";
-            // 
-            // gluteosDataGridViewTextBoxColumn
-            // 
-            this.gluteosDataGridViewTextBoxColumn.DataPropertyName = "Gluteos";
-            this.gluteosDataGridViewTextBoxColumn.HeaderText = "Gluteos";
-            this.gluteosDataGridViewTextBoxColumn.Name = "gluteosDataGridViewTextBoxColumn";
-            // 
-            // piernaIzqDataGridViewTextBoxColumn
-            // 
-            this.piernaIzqDataGridViewTextBoxColumn.DataPropertyName = "PiernaIzq";
-            this.piernaIzqDataGridViewTextBoxColumn.HeaderText = "PiernaIzq";
-            this.piernaIzqDataGridViewTextBoxColumn.Name = "piernaIzqDataGridViewTextBoxColumn";
-            // 
-            // piernaDerDataGridViewTextBoxColumn
-            // 
-            this.piernaDerDataGridViewTextBoxColumn.DataPropertyName = "PiernaDer";
-            this.piernaDerDataGridViewTextBoxColumn.HeaderText = "PiernaDer";
-            this.piernaDerDataGridViewTextBoxColumn.Name = "piernaDerDataGridViewTextBoxColumn";
             // 
             // fichaMedidaBindingSource
             // 
@@ -262,6 +230,102 @@
             this.lblNombreCli.Size = new System.Drawing.Size(0, 21);
             this.lblNombreCli.TabIndex = 25;
             // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "FechaFicha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 69;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Width = 57;
+            // 
+            // pesoDataGridViewTextBoxColumn
+            // 
+            this.pesoDataGridViewTextBoxColumn.DataPropertyName = "Peso";
+            this.pesoDataGridViewTextBoxColumn.HeaderText = "Peso";
+            this.pesoDataGridViewTextBoxColumn.Name = "pesoDataGridViewTextBoxColumn";
+            this.pesoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.pesoDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // espaldaDataGridViewTextBoxColumn
+            // 
+            this.espaldaDataGridViewTextBoxColumn.DataPropertyName = "Espalda";
+            this.espaldaDataGridViewTextBoxColumn.HeaderText = "Espalda";
+            this.espaldaDataGridViewTextBoxColumn.Name = "espaldaDataGridViewTextBoxColumn";
+            this.espaldaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.espaldaDataGridViewTextBoxColumn.Width = 78;
+            // 
+            // abdomenAltoDataGridViewTextBoxColumn
+            // 
+            this.abdomenAltoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenAlto";
+            this.abdomenAltoDataGridViewTextBoxColumn.HeaderText = "Abdomen Alto";
+            this.abdomenAltoDataGridViewTextBoxColumn.Name = "abdomenAltoDataGridViewTextBoxColumn";
+            this.abdomenAltoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.abdomenAltoDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // abdomenBajoDataGridViewTextBoxColumn
+            // 
+            this.abdomenBajoDataGridViewTextBoxColumn.DataPropertyName = "AbdomenBajo";
+            this.abdomenBajoDataGridViewTextBoxColumn.HeaderText = "Abdomen Bajo";
+            this.abdomenBajoDataGridViewTextBoxColumn.Name = "abdomenBajoDataGridViewTextBoxColumn";
+            this.abdomenBajoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.abdomenBajoDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // cinturaDataGridViewTextBoxColumn
+            // 
+            this.cinturaDataGridViewTextBoxColumn.DataPropertyName = "Cintura";
+            this.cinturaDataGridViewTextBoxColumn.HeaderText = "Cintura";
+            this.cinturaDataGridViewTextBoxColumn.Name = "cinturaDataGridViewTextBoxColumn";
+            this.cinturaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cinturaDataGridViewTextBoxColumn.Width = 73;
+            // 
+            // brazoDerechoDataGridViewTextBoxColumn
+            // 
+            this.brazoDerechoDataGridViewTextBoxColumn.DataPropertyName = "BrazoDerecho";
+            this.brazoDerechoDataGridViewTextBoxColumn.HeaderText = "Brazo Derecho";
+            this.brazoDerechoDataGridViewTextBoxColumn.Name = "brazoDerechoDataGridViewTextBoxColumn";
+            this.brazoDerechoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brazoDerechoDataGridViewTextBoxColumn.Width = 109;
+            // 
+            // brazoIzquierdoDataGridViewTextBoxColumn
+            // 
+            this.brazoIzquierdoDataGridViewTextBoxColumn.DataPropertyName = "BrazoIzquierdo";
+            this.brazoIzquierdoDataGridViewTextBoxColumn.HeaderText = "Brazo Izquierdo";
+            this.brazoIzquierdoDataGridViewTextBoxColumn.Name = "brazoIzquierdoDataGridViewTextBoxColumn";
+            this.brazoIzquierdoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brazoIzquierdoDataGridViewTextBoxColumn.Width = 113;
+            // 
+            // gluteosDataGridViewTextBoxColumn
+            // 
+            this.gluteosDataGridViewTextBoxColumn.DataPropertyName = "Gluteos";
+            this.gluteosDataGridViewTextBoxColumn.HeaderText = "Glúteos";
+            this.gluteosDataGridViewTextBoxColumn.Name = "gluteosDataGridViewTextBoxColumn";
+            this.gluteosDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gluteosDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // piernaIzqDataGridViewTextBoxColumn
+            // 
+            this.piernaIzqDataGridViewTextBoxColumn.DataPropertyName = "PiernaIzq";
+            this.piernaIzqDataGridViewTextBoxColumn.HeaderText = "Pierna Izquierda";
+            this.piernaIzqDataGridViewTextBoxColumn.Name = "piernaIzqDataGridViewTextBoxColumn";
+            this.piernaIzqDataGridViewTextBoxColumn.ReadOnly = true;
+            this.piernaIzqDataGridViewTextBoxColumn.Width = 117;
+            // 
+            // piernaDerDataGridViewTextBoxColumn
+            // 
+            this.piernaDerDataGridViewTextBoxColumn.DataPropertyName = "PiernaDer";
+            this.piernaDerDataGridViewTextBoxColumn.HeaderText = "Pierna Derecha";
+            this.piernaDerDataGridViewTextBoxColumn.Name = "piernaDerDataGridViewTextBoxColumn";
+            this.piernaDerDataGridViewTextBoxColumn.ReadOnly = true;
+            this.piernaDerDataGridViewTextBoxColumn.Width = 113;
+            // 
             // frmGestionFichaMedidas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -297,6 +361,9 @@
         private System.Windows.Forms.BindingSource fichaMedidaBLBindingSource;
         private System.Windows.Forms.BindingSource fichaMedidaBLBindingSource1;
         private System.Windows.Forms.BindingSource fichaMedidaBindingSource;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblNomCliente;
+        private System.Windows.Forms.Label lblNombreCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesoDataGridViewTextBoxColumn;
@@ -309,8 +376,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gluteosDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn piernaIzqDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn piernaDerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Label lblNomCliente;
-        private System.Windows.Forms.Label lblNombreCli;
     }
 }

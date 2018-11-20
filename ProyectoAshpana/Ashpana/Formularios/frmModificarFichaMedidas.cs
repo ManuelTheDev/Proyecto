@@ -381,6 +381,9 @@ namespace Formularios
             else
                 MessageBox.Show("No se modifico correctamente", "Mensaje",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+            this.DialogResult = DialogResult.OK;
+
+            this.Dispose();
         }
 
         private void label12_Click(object sender, EventArgs e)

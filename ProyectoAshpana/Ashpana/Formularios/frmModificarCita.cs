@@ -16,5 +16,20 @@ namespace Formularios
         {
             InitializeComponent();
         }
+
+        private void frmModificarCita_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

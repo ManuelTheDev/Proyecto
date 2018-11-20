@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CITAS = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblBuscar = new System.Windows.Forms.Label();
             this.colPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTerapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
-            this.lblBuscar = new System.Windows.Forms.Label();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -69,6 +71,19 @@
             // dgvCitas
             // 
             this.dgvCitas.AllowUserToAddRows = false;
+            this.dgvCitas.AllowUserToDeleteRows = false;
+            this.dgvCitas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCitas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPaciente,
@@ -77,51 +92,21 @@
             this.colHora,
             this.colTerapista,
             this.colSesion});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCitas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCitas.EnableHeadersVisualStyles = false;
             this.dgvCitas.Location = new System.Drawing.Point(168, 187);
             this.dgvCitas.Name = "dgvCitas";
+            this.dgvCitas.ReadOnly = true;
+            this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCitas.Size = new System.Drawing.Size(768, 181);
             this.dgvCitas.TabIndex = 17;
-            // 
-            // colPaciente
-            // 
-            this.colPaciente.DataPropertyName = "NomCliente";
-            this.colPaciente.HeaderText = "Paciente";
-            this.colPaciente.Name = "colPaciente";
-            this.colPaciente.Width = 150;
-            // 
-            // colServicio
-            // 
-            this.colServicio.DataPropertyName = "NomServicio";
-            this.colServicio.HeaderText = "Servicio";
-            this.colServicio.Name = "colServicio";
-            this.colServicio.Width = 150;
-            // 
-            // colFecha
-            // 
-            this.colFecha.DataPropertyName = "fecha";
-            this.colFecha.HeaderText = "Fecha";
-            this.colFecha.Name = "colFecha";
-            // 
-            // colHora
-            // 
-            this.colHora.DataPropertyName = "Hora";
-            this.colHora.HeaderText = "Hora";
-            this.colHora.Name = "colHora";
-            // 
-            // colTerapista
-            // 
-            this.colTerapista.DataPropertyName = "NomTerapista";
-            this.colTerapista.HeaderText = "Terapista";
-            this.colTerapista.Name = "colTerapista";
-            this.colTerapista.Width = 150;
-            // 
-            // colSesion
-            // 
-            this.colSesion.DataPropertyName = "NumDeSesion";
-            this.colSesion.HeaderText = "Sesion";
-            this.colSesion.Name = "colSesion";
-            this.colSesion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.colSesion.Width = 80;
             // 
             // txtBuscar
             // 
@@ -139,6 +124,53 @@
             this.lblBuscar.Size = new System.Drawing.Size(78, 21);
             this.lblBuscar.TabIndex = 18;
             this.lblBuscar.Text = "BUSCAR:";
+            // 
+            // colPaciente
+            // 
+            this.colPaciente.DataPropertyName = "NomCliente";
+            this.colPaciente.HeaderText = "PACIENTE";
+            this.colPaciente.Name = "colPaciente";
+            this.colPaciente.ReadOnly = true;
+            this.colPaciente.Width = 150;
+            // 
+            // colServicio
+            // 
+            this.colServicio.DataPropertyName = "NomServicio";
+            this.colServicio.HeaderText = "SERVICIO";
+            this.colServicio.Name = "colServicio";
+            this.colServicio.ReadOnly = true;
+            this.colServicio.Width = 150;
+            // 
+            // colFecha
+            // 
+            this.colFecha.DataPropertyName = "fecha";
+            this.colFecha.HeaderText = "FECHA";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.ReadOnly = true;
+            // 
+            // colHora
+            // 
+            this.colHora.DataPropertyName = "Hora";
+            this.colHora.HeaderText = "HORA";
+            this.colHora.Name = "colHora";
+            this.colHora.ReadOnly = true;
+            // 
+            // colTerapista
+            // 
+            this.colTerapista.DataPropertyName = "NomTerapista";
+            this.colTerapista.HeaderText = "TERAPISTA";
+            this.colTerapista.Name = "colTerapista";
+            this.colTerapista.ReadOnly = true;
+            this.colTerapista.Width = 150;
+            // 
+            // colSesion
+            // 
+            this.colSesion.DataPropertyName = "NumDeSesion";
+            this.colSesion.HeaderText = "SESION";
+            this.colSesion.Name = "colSesion";
+            this.colSesion.ReadOnly = true;
+            this.colSesion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.colSesion.Width = 80;
             // 
             // frmCitasDelDia
             // 
@@ -165,13 +197,13 @@
         private System.Windows.Forms.Panel CITAS;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvCitas;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn colServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTerapista;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSesion;
-        private System.Windows.Forms.TextBox txtBuscar;
-        private System.Windows.Forms.Label lblBuscar;
     }
 }

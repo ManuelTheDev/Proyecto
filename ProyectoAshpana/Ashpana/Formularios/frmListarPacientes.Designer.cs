@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.txtboxBuscarPaquetes = new System.Windows.Forms.TextBox();
             this.btnSeleccionar = new System.Windows.Forms.Button();
@@ -103,12 +104,25 @@
             // 
             this.dgvClientes.AllowUserToAddRows = false;
             this.dgvClientes.AllowUserToDeleteRows = false;
+            this.dgvClientes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvClientes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvClientes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNI,
             this.NOMBRE,
             this.APELLIDO_PATERNO,
             this.APELLIDO_MATERNO});
+            this.dgvClientes.EnableHeadersVisualStyles = false;
+            this.dgvClientes.GridColor = System.Drawing.SystemColors.Control;
             this.dgvClientes.Location = new System.Drawing.Point(35, 151);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.ReadOnly = true;

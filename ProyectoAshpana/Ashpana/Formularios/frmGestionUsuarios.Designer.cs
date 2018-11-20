@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +51,19 @@
             // 
             // dgvUsuarios
             // 
+            this.dgvUsuarios.AllowUserToAddRows = false;
+            this.dgvUsuarios.AllowUserToDeleteRows = false;
+            this.dgvUsuarios.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DNI,
@@ -58,8 +74,29 @@
             this.Sexo,
             this.Correo,
             this.Sueldo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Info;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvUsuarios.EnableHeadersVisualStyles = false;
+            this.dgvUsuarios.GridColor = System.Drawing.SystemColors.Control;
             this.dgvUsuarios.Location = new System.Drawing.Point(103, 264);
             this.dgvUsuarios.Name = "dgvUsuarios";
+            this.dgvUsuarios.ReadOnly = true;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvUsuarios.RowTemplate.Height = 25;
+            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(840, 150);
             this.dgvUsuarios.TabIndex = 23;
             // 
@@ -68,48 +105,57 @@
             this.DNI.DataPropertyName = "Dni";
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
             // 
             // Nombres
             // 
-            this.Nombres.DataPropertyName = "Nombres";
+            this.Nombres.DataPropertyName = "NOMBRES";
             this.Nombres.HeaderText = "Nombres";
             this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
             // 
             // ApellidoPaterno
             // 
             this.ApellidoPaterno.DataPropertyName = "ApPaterno";
-            this.ApellidoPaterno.HeaderText = "Apellido Paterno";
+            this.ApellidoPaterno.HeaderText = "APELLIDO PATERNO";
             this.ApellidoPaterno.Name = "ApellidoPaterno";
+            this.ApellidoPaterno.ReadOnly = true;
             // 
             // ApellidoMaterno
             // 
             this.ApellidoMaterno.DataPropertyName = "ApMaterno";
-            this.ApellidoMaterno.HeaderText = "Apellido Materno";
+            this.ApellidoMaterno.HeaderText = "APELLIDO MATERNO";
             this.ApellidoMaterno.Name = "ApellidoMaterno";
+            this.ApellidoMaterno.ReadOnly = true;
             // 
             // DIRECCION
             // 
             this.DIRECCION.DataPropertyName = "Direccion";
-            this.DIRECCION.HeaderText = "Direccion";
+            this.DIRECCION.HeaderText = "DIRECCIÓN";
             this.DIRECCION.Name = "DIRECCION";
+            this.DIRECCION.ReadOnly = true;
             // 
             // Sexo
             // 
             this.Sexo.DataPropertyName = "Sexo";
-            this.Sexo.HeaderText = "Sexo";
+            this.Sexo.FillWeight = 50F;
+            this.Sexo.HeaderText = "SEXO";
             this.Sexo.Name = "Sexo";
+            this.Sexo.ReadOnly = true;
             // 
             // Correo
             // 
             this.Correo.DataPropertyName = "Correo";
-            this.Correo.HeaderText = "Correo";
+            this.Correo.HeaderText = "CORREO";
             this.Correo.Name = "Correo";
+            this.Correo.ReadOnly = true;
             // 
             // Sueldo
             // 
             this.Sueldo.DataPropertyName = "Sueldo";
-            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.HeaderText = "SUELDO";
             this.Sueldo.Name = "Sueldo";
+            this.Sueldo.ReadOnly = true;
             // 
             // btnModificar
             // 
@@ -139,7 +185,7 @@
             this.btnNuevoUsuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoUsuario.ForeColor = System.Drawing.SystemColors.Control;
             this.btnNuevoUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoUsuario.Location = new System.Drawing.Point(754, 183);
+            this.btnNuevoUsuario.Location = new System.Drawing.Point(754, 172);
             this.btnNuevoUsuario.Name = "btnNuevoUsuario";
             this.btnNuevoUsuario.Size = new System.Drawing.Size(189, 46);
             this.btnNuevoUsuario.TabIndex = 20;
@@ -160,17 +206,17 @@
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(-296, -2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(1319, 105);
+            this.button1.Size = new System.Drawing.Size(1469, 105);
             this.button1.TabIndex = 24;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // txtboxBuscarPaquetes
+            // txtboxBuscarUsuarios
             // 
             this.txtboxBuscarUsuarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtboxBuscarUsuarios.Location = new System.Drawing.Point(329, 194);
-            this.txtboxBuscarUsuarios.Name = "txtboxBuscarPaquetes";
-            this.txtboxBuscarUsuarios.Size = new System.Drawing.Size(410, 27);
+            this.txtboxBuscarUsuarios.Location = new System.Drawing.Point(185, 183);
+            this.txtboxBuscarUsuarios.Name = "txtboxBuscarUsuarios";
+            this.txtboxBuscarUsuarios.Size = new System.Drawing.Size(554, 27);
             this.txtboxBuscarUsuarios.TabIndex = 26;
             this.txtboxBuscarUsuarios.TextChanged += new System.EventHandler(this.txtboxBuscarPaquetes_TextChanged);
             // 
@@ -178,7 +224,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(227, 197);
+            this.label2.Location = new System.Drawing.Point(114, 186);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 21);
             this.label2.TabIndex = 25;
@@ -188,11 +234,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.YellowGreen;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(761, 44);
+            this.label1.Location = new System.Drawing.Point(763, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 36);
+            this.label1.Size = new System.Drawing.Size(180, 42);
             this.label1.TabIndex = 27;
             this.label1.Text = "USUARIOS";
             // 
@@ -200,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1020, 747);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtboxBuscarUsuarios);

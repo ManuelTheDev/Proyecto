@@ -31,6 +31,7 @@ namespace Formularios
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
@@ -111,12 +112,25 @@ namespace Formularios
             this.dgvPaquetes.AllowUserToDeleteRows = false;
             this.dgvPaquetes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPaquetes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPaquetes.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvPaquetes.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPaquetes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPaquetes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPaquetes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPaquetes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Precio,
             this.NumSesiones});
+            this.dgvPaquetes.EnableHeadersVisualStyles = false;
             this.dgvPaquetes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPaquetes.GridColor = System.Drawing.SystemColors.Control;
             this.dgvPaquetes.Location = new System.Drawing.Point(239, 239);
             this.dgvPaquetes.Name = "dgvPaquetes";
             this.dgvPaquetes.ReadOnly = true;
@@ -127,21 +141,21 @@ namespace Formularios
             // Nombre
             // 
             this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.HeaderText = "NOMBRE";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
             // Precio
             // 
             this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
+            this.Precio.HeaderText = "PRECIO (S/.)";
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             // 
             // NumSesiones
             // 
             this.NumSesiones.DataPropertyName = "CantSesiones";
-            this.NumSesiones.HeaderText = "N°Sesiones";
+            this.NumSesiones.HeaderText = "N°SESIONES";
             this.NumSesiones.Name = "NumSesiones";
             this.NumSesiones.ReadOnly = true;
             // 
@@ -200,10 +214,10 @@ namespace Formularios
         private System.Windows.Forms.Button btnModificar;
         private DataGridView dgvPaquetes;
         private Button btnEliminar;
+        private Label lblBuscar;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn NumSesiones;
-        private Label lblBuscar;
 
         public DataTable DataPaquete { get => dataPaquete; set => dataPaquete = value; }
     }

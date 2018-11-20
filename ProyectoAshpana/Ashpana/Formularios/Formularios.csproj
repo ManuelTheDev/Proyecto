@@ -70,6 +70,12 @@
     <Compile Include="frmCita_AgregarTratamiento.Designer.cs">
       <DependentUpon>frmCita_AgregarTratamiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerCondicionesMedicas_X_Paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerCondicionesMedicas_X_Paciente.Designer.cs">
+      <DependentUpon>frmVerCondicionesMedicas_X_Paciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDetalleCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -374,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRegistrarTratamientosXTerapista.resx">
       <DependentUpon>frmRegistrarTratamientosXTerapista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerCondicionesMedicas_X_Paciente.resx">
+      <DependentUpon>frmVerCondicionesMedicas_X_Paciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerPadecimientos.resx">
       <DependentUpon>frmVerPadecimientos.cs</DependentUpon>

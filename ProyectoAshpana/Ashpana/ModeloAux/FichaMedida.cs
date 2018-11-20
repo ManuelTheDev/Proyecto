@@ -64,6 +64,6 @@ namespace Modelo
         public double PiernaIzq { get => piernaIzq; set => piernaIzq = value; }
         public double PiernaDer { get => piernaDer; set => piernaDer = value; }
 
-
+        public  DateTime FechaFicha { get => fecha.Date; }
     }
 }

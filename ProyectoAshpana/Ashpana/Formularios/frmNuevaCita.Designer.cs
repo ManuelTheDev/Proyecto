@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNuevaCita));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblNuevaCita = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -134,7 +137,7 @@
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(347, 511);
+            this.btnGuardar.Location = new System.Drawing.Point(347, 514);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(167, 26);
             this.btnGuardar.TabIndex = 16;
@@ -215,22 +218,22 @@
             this.btnListarPacientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarPacientes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarPacientes.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnListarPacientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListarPacientes.Location = new System.Drawing.Point(463, 129);
+            this.btnListarPacientes.Image = ((System.Drawing.Image)(resources.GetObject("btnListarPacientes.Image")));
+            this.btnListarPacientes.Location = new System.Drawing.Point(487, 129);
             this.btnListarPacientes.Name = "btnListarPacientes";
-            this.btnListarPacientes.Size = new System.Drawing.Size(63, 24);
+            this.btnListarPacientes.Size = new System.Drawing.Size(39, 24);
             this.btnListarPacientes.TabIndex = 47;
-            this.btnListarPacientes.Text = "...";
             this.btnListarPacientes.UseVisualStyleBackColor = false;
             this.btnListarPacientes.Click += new System.EventHandler(this.btnListarPacientes_Click);
             // 
             // txtPaciente
             // 
             this.txtPaciente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPaciente.Location = new System.Drawing.Point(159, 136);
+            this.txtPaciente.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaciente.Location = new System.Drawing.Point(164, 139);
             this.txtPaciente.Name = "txtPaciente";
             this.txtPaciente.ReadOnly = true;
-            this.txtPaciente.Size = new System.Drawing.Size(296, 13);
+            this.txtPaciente.Size = new System.Drawing.Size(296, 14);
             this.txtPaciente.TabIndex = 48;
             // 
             // lblPaciente
@@ -247,11 +250,31 @@
             // 
             this.dgvDetallesCitas.AllowUserToAddRows = false;
             this.dgvDetallesCitas.AllowUserToDeleteRows = false;
+            this.dgvDetallesCitas.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDetallesCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDetallesCitas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetallesCitas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDetallesCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetallesCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Precio,
             this.NumSesiones});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDetallesCitas.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDetallesCitas.EnableHeadersVisualStyles = false;
             this.dgvDetallesCitas.Location = new System.Drawing.Point(74, 261);
             this.dgvDetallesCitas.Name = "dgvDetallesCitas";
             this.dgvDetallesCitas.ReadOnly = true;
