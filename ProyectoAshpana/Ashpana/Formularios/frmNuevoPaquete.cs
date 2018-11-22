@@ -150,14 +150,14 @@ namespace Formularios
 
         private void txtPrecio_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[1-9][0-9]*(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtPrecio.Text)) txtPrecio.ForeColor = Color.Red;
             else txtPrecio.ForeColor = Color.Black;
         }
 
         private void txtNumSesiones_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^\d+$");
+            Regex rgx = new Regex(@"^[1-9]\d*$");
             if (!rgx.IsMatch(txtNumSesiones.Text)) txtNumSesiones.ForeColor = Color.Red;
             else txtNumSesiones.ForeColor = Color.Black;
         }

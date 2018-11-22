@@ -186,7 +186,7 @@ namespace Formularios
 
         private void txtSueldo_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[1-9][0-9]*(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtSueldo.Text)) txtSueldo.ForeColor = Color.Red;
             else txtSueldo.ForeColor = Color.Black;
         }

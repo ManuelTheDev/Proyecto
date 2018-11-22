@@ -339,21 +339,21 @@ namespace Formularios
 
         private void txtEspalda_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtEspalda.Text)) txtEspalda.ForeColor = Color.Red;
             else txtEspalda.ForeColor = Color.Black;
         }
 
         private void txtPeso_TextChanged_1(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[1-9][0-9]*(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtPeso.Text)) txtPeso.ForeColor = Color.Red;
             else txtPeso.ForeColor = Color.Black;
         }
 
         private void txtAbAlto_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtAbAlto.Text)) txtAbAlto.ForeColor = Color.Red;
             else txtAbAlto.ForeColor = Color.Black;
 
@@ -361,14 +361,14 @@ namespace Formularios
 
         private void txtAbBajo_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtAbBajo.Text)) txtAbBajo.ForeColor = Color.Red;
             else txtAbBajo.ForeColor = Color.Black;
         }
 
         private void txtCintura_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtCintura.Text)) txtCintura.ForeColor = Color.Red;
             else txtCintura.ForeColor = Color.Black;
 
@@ -376,35 +376,35 @@ namespace Formularios
 
         private void txtBrDer_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtBrDer.Text)) txtBrDer.ForeColor = Color.Red;
             else txtBrDer.ForeColor = Color.Black;
         }
 
         private void txtBrIzq_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtBrIzq.Text)) txtBrIzq.ForeColor = Color.Red;
             else txtBrIzq.ForeColor = Color.Black;
         }
 
         private void txtGluteos_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtGluteos.Text)) txtGluteos.ForeColor = Color.Red;
             else txtGluteos.ForeColor = Color.Black;
         }
 
         private void txtPierDer_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtPierDer.Text)) txtPierDer.ForeColor = Color.Red;
             else txtPierDer.ForeColor = Color.Black;
         }
 
         private void txtIzq_TextChanged(object sender, EventArgs e)
         {
-            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]+)?$");
+            Regex rgx = new Regex(@"^[0-9]+(\.[0-9]{1,2})?$");
             if (!rgx.IsMatch(txtIzq.Text)) txtIzq.ForeColor = Color.Red;
             else txtIzq.ForeColor = Color.Black;
         }
