@@ -250,6 +250,8 @@
             // 
             // dgvTratamientos
             // 
+            this.dgvTratamientos.AllowUserToAddRows = false;
+            this.dgvTratamientos.AllowUserToDeleteRows = false;
             this.dgvTratamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTratamientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NOMBRE,
@@ -257,6 +259,7 @@
             this.PRECIO});
             this.dgvTratamientos.Location = new System.Drawing.Point(393, 201);
             this.dgvTratamientos.Name = "dgvTratamientos";
+            this.dgvTratamientos.ReadOnly = true;
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 54;
             // 
@@ -265,18 +268,21 @@
             this.NOMBRE.DataPropertyName = "Nombre";
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
             // 
             // DURACION
             // 
             this.DURACION.DataPropertyName = "DuracionTrat";
             this.DURACION.HeaderText = "DURACION";
             this.DURACION.Name = "DURACION";
+            this.DURACION.ReadOnly = true;
             // 
             // PRECIO
             // 
             this.PRECIO.DataPropertyName = "Precio";
             this.PRECIO.HeaderText = "PRECIO";
             this.PRECIO.Name = "PRECIO";
+            this.PRECIO.ReadOnly = true;
             // 
             // groupBox1
             // 

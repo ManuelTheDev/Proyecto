@@ -160,6 +160,8 @@
             // 
             // dgvTratamientos
             // 
+            this.dgvTratamientos.AllowUserToAddRows = false;
+            this.dgvTratamientos.AllowUserToDeleteRows = false;
             this.dgvTratamientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTratamientos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NOMBRE,
@@ -167,6 +169,7 @@
             this.PRECIO});
             this.dgvTratamientos.Location = new System.Drawing.Point(396, 214);
             this.dgvTratamientos.Name = "dgvTratamientos";
+            this.dgvTratamientos.ReadOnly = true;
             this.dgvTratamientos.Size = new System.Drawing.Size(342, 177);
             this.dgvTratamientos.TabIndex = 15;
             // 

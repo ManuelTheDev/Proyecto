@@ -81,6 +81,12 @@ namespace Formularios
             }
             paqueteMod.NombreServicio = txtNombre.Text.Trim();
 
+            if (dgvTratamientos.RowCount == 0)
+            {
+                MessageBox.Show("Por favor, ingrese al menos un Tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             try
             {
                 if (txtPrecio.ForeColor == Color.Red)
