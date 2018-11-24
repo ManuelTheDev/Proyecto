@@ -226,6 +226,7 @@
             this.rbtnCorporal.TabStop = true;
             this.rbtnCorporal.Text = "Corporal";
             this.rbtnCorporal.UseVisualStyleBackColor = true;
+            this.rbtnCorporal.CheckedChanged += new System.EventHandler(this.rbtnCorporal_CheckedChanged);
             // 
             // rbtnFacial
             // 
@@ -237,6 +238,7 @@
             this.rbtnFacial.TabStop = true;
             this.rbtnFacial.Text = "Facial";
             this.rbtnFacial.UseVisualStyleBackColor = true;
+            this.rbtnFacial.CheckedChanged += new System.EventHandler(this.rbtnFacial_CheckedChanged);
             // 
             // label2
             // 

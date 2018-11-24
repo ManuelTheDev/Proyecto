@@ -194,5 +194,20 @@ namespace Formularios
             if (!rgx.IsMatch(txtNombreTrat.Text)) txtNombreTrat.ForeColor = Color.Red;
             else txtNombreTrat.ForeColor = Color.Black;
         }
+
+        private void rbtnFacial_CheckedChanged(object sender, EventArgs e)
+        {
+            this.lblZonaTratar.Visible = false;
+            this.chlZonas.Visible = false;
+
+        }
+
+        private void rbtnCorporal_CheckedChanged(object sender, EventArgs e)
+        {
+           
+            this.lblZonaTratar.Visible = true;
+            this.chlZonas.Visible = true;
+           
+        }
     }
 }

@@ -208,5 +208,17 @@ namespace Formularios
         {
 
         }
+
+        private void rbtnFacial_CheckedChanged(object sender, EventArgs e)
+        {
+            this.label1.Visible = false;
+            this.clblZonas.Visible = false;
+        }
+
+        private void rbtnCorporal_CheckedChanged(object sender, EventArgs e)
+        {
+            this.label1.Visible = true;
+            this.clblZonas.Visible = true;
+        }
     }
 }
