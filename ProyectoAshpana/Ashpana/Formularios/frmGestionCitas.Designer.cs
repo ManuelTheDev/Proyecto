@@ -38,11 +38,9 @@
             this.lblBuscar = new System.Windows.Forms.Label();
             this.dgvCitas = new System.Windows.Forms.DataGridView();
             this.colPaciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colServicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTerapista = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSesion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ESTADO_PAGO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MONTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCitas)).BeginInit();
             this.SuspendLayout();
@@ -143,11 +141,9 @@
             this.dgvCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPaciente,
-            this.colServicio,
             this.colFecha,
-            this.colHora,
-            this.colTerapista,
-            this.colSesion});
+            this.ESTADO_PAGO,
+            this.MONTO});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,59 +153,44 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCitas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCitas.EnableHeadersVisualStyles = false;
-            this.dgvCitas.Location = new System.Drawing.Point(164, 222);
+            this.dgvCitas.Location = new System.Drawing.Point(243, 228);
             this.dgvCitas.Name = "dgvCitas";
             this.dgvCitas.ReadOnly = true;
             this.dgvCitas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCitas.Size = new System.Drawing.Size(772, 181);
+            this.dgvCitas.Size = new System.Drawing.Size(693, 181);
             this.dgvCitas.TabIndex = 18;
             // 
             // colPaciente
             // 
-            this.colPaciente.DataPropertyName = "NomCliente";
+            this.colPaciente.DataPropertyName = "NombPersona";
             this.colPaciente.HeaderText = "PACIENTE";
             this.colPaciente.Name = "colPaciente";
             this.colPaciente.ReadOnly = true;
-            this.colPaciente.Width = 150;
-            // 
-            // colServicio
-            // 
-            this.colServicio.DataPropertyName = "NomServicio";
-            this.colServicio.HeaderText = "SERVICIO";
-            this.colServicio.Name = "colServicio";
-            this.colServicio.ReadOnly = true;
-            this.colServicio.Width = 150;
+            this.colPaciente.Width = 220;
             // 
             // colFecha
             // 
-            this.colFecha.DataPropertyName = "fecha";
-            this.colFecha.HeaderText = "FECHA";
+            this.colFecha.DataPropertyName = "FechaUnica";
+            this.colFecha.HeaderText = "FECHA DE REGISTRO";
             this.colFecha.Name = "colFecha";
             this.colFecha.ReadOnly = true;
+            this.colFecha.Width = 150;
             // 
-            // colHora
+            // ESTADO_PAGO
             // 
-            this.colHora.DataPropertyName = "Hora";
-            this.colHora.HeaderText = "HORA";
-            this.colHora.Name = "colHora";
-            this.colHora.ReadOnly = true;
+            this.ESTADO_PAGO.DataPropertyName = "TipoEstado_pago";
+            this.ESTADO_PAGO.HeaderText = "ESTADO PAGO";
+            this.ESTADO_PAGO.Name = "ESTADO_PAGO";
+            this.ESTADO_PAGO.ReadOnly = true;
+            this.ESTADO_PAGO.Width = 130;
             // 
-            // colTerapista
+            // MONTO
             // 
-            this.colTerapista.DataPropertyName = "NomTerapista";
-            this.colTerapista.HeaderText = "TERAPISTA";
-            this.colTerapista.Name = "colTerapista";
-            this.colTerapista.ReadOnly = true;
-            this.colTerapista.Width = 150;
-            // 
-            // colSesion
-            // 
-            this.colSesion.DataPropertyName = "NumDeSesion";
-            this.colSesion.HeaderText = "SESION";
-            this.colSesion.Name = "colSesion";
-            this.colSesion.ReadOnly = true;
-            this.colSesion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.colSesion.Width = 80;
+            this.MONTO.DataPropertyName = "MontoTotal";
+            this.MONTO.HeaderText = "MONTO";
+            this.MONTO.Name = "MONTO";
+            this.MONTO.ReadOnly = true;
+            this.MONTO.Width = 120;
             // 
             // frmGestionCitas
             // 
@@ -243,10 +224,8 @@
         private System.Windows.Forms.Label lblBuscar;
         private System.Windows.Forms.DataGridView dgvCitas;
         private System.Windows.Forms.DataGridViewTextBoxColumn colPaciente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colServicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn colFecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHora;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTerapista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSesion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ESTADO_PAGO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MONTO;
     }
 }

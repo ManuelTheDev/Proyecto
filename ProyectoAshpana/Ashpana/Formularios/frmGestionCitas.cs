@@ -13,13 +13,13 @@ namespace Formularios
 {
     public partial class frmGestionCitas : Form
     {
-        private SesionBL sesionBL;
+        private CitaBL citaBL;
         public frmGestionCitas()
         {
             InitializeComponent();
-            sesionBL = new SesionBL();
+            citaBL = new CitaBL();
             dgvCitas.AutoGenerateColumns = false;
-            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
+            dgvCitas.DataSource = citaBL.listarCitas();
             
         }
 
@@ -33,7 +33,7 @@ namespace Formularios
             frmNuevaCita frmNuevaCita = new frmNuevaCita();
             frmNuevaCita.ShowDialog();
             dgvCitas.AutoGenerateColumns = false;
-            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
+            dgvCitas.DataSource = citaBL.listarCitas();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Formularios
             frmModificarCita frmCita = new frmModificarCita();
             frmCita.ShowDialog();
             dgvCitas.AutoGenerateColumns = false;
-            dgvCitas.DataSource = sesionBL.listarSesionesDelDia();
+            dgvCitas.DataSource = citaBL.listarCitas();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
