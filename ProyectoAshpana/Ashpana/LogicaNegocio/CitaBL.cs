@@ -53,5 +53,10 @@ namespace LogicaNegocio
         {
             return citaDA.listarCitas();
         }
+
+        public BindingList<DetalleCita> listarDetallesCitas_X_Cita(int id)
+        {
+            return citaDA.listarDetalleCitas_Cita(id);
+        }
     }
 }

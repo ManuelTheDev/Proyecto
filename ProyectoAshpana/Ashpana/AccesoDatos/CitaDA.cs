@@ -92,5 +92,43 @@ namespace AccesoDatos
             conexion.Close();
             return citas;
         }
+
+        public BindingList<DetalleCita> listarDetalleCitas_Cita(int idcita)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+
+            BindingList <DetalleCita> detallesCitas = new BindingList<DetalleCita>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_DETALLES_CITAS_X_CITA";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_CITA", MySqlDbType.Double).Value = idcita;
+            MySqlDataReader reader = comando.ExecuteReader();
+           
+
+            while (reader.Read())
+            {
+                DetalleCita dc = new DetalleCita();
+                dc.IdDetalleCita = reader.GetInt32("ID_DETALLE_CITA");
+                Servicio s = new Servicio();
+                s.IdServicio = reader.GetInt32("ID_SERVICIO");
+                s.NombreServicio = reader.GetString("NOMBRE");
+                s.PrecioServicio = reader.GetDouble("PRECIO");
+                s.NumSesiones= reader.GetInt32("NUM_SESIONES");
+
+                dc.Servicio = s; 
+           
+                detallesCitas.Add(dc);
+            }
+            conexion.Close();
+            return detallesCitas;
+        }
     }
 }

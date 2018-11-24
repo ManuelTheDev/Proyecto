@@ -1,4 +1,5 @@
 ﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,10 +39,17 @@ namespace Formularios
 
         private void button3_Click(object sender, EventArgs e)
         {
-            frmModificarCita frmCita = new frmModificarCita();
-            frmCita.ShowDialog();
-            dgvCitas.AutoGenerateColumns = false;
-            dgvCitas.DataSource = citaBL.listarCitas();
+            Cita cita = new Cita();
+            cita = (Cita)dgvCitas.CurrentRow.DataBoundItem;
+            frmModificarCita fmc = new frmModificarCita(cita);
+            fmc.ShowDialog();
+
+            if (fmc.DialogResult == DialogResult.OK)
+            {
+                dgvCitas.AutoGenerateColumns = false;
+                dgvCitas.DataSource = citaBL.listarCitas();
+
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

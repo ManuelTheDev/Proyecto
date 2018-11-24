@@ -28,6 +28,7 @@ namespace Formularios
             dgvDetallesCitas.AutoGenerateColumns = false;
             dgvDetallesCitas.DataSource = cita.DetallesCitas;
             txtMontoTotal.Enabled = false;
+            cboEstadoPago.Text = "PENDIENTE";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -125,6 +126,14 @@ namespace Formularios
             }
             cita.Cliente = pacienteSeleccionado;
             cita.MontoTotal = Double.Parse(txtMontoTotal.Text);
+            if (cboEstadoPago.Text.Equals("PENDIENTE"))
+            {
+                cita.Estado_pago = 0;
+            }
+            else if (cboEstadoPago.Text.Equals("PAGADO"))
+            {
+                cita.Estado_pago = 1;
+            }
             
             if (citaBL.registrarCita(cita) == 1)
             {

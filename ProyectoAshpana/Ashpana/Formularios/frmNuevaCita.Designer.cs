@@ -47,12 +47,12 @@
             this.txtPaciente = new System.Windows.Forms.TextBox();
             this.lblPaciente = new System.Windows.Forms.Label();
             this.dgvDetallesCitas = new System.Windows.Forms.DataGridView();
-            this.btnVerDetalleServicio = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NumSesiones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnVerDetalleServicio = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboEstadoPago = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetallesCitas)).BeginInit();
             this.SuspendLayout();
@@ -283,6 +283,29 @@
             this.dgvDetallesCitas.Size = new System.Drawing.Size(466, 150);
             this.dgvDetallesCitas.TabIndex = 51;
             // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "NombreServicio";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 200;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // NumSesiones
+            // 
+            this.NumSesiones.DataPropertyName = "NumSesiones";
+            this.NumSesiones.HeaderText = "Número de Sesiones";
+            this.NumSesiones.Name = "NumSesiones";
+            this.NumSesiones.ReadOnly = true;
+            this.NumSesiones.Width = 120;
+            // 
             // btnVerDetalleServicio
             // 
             this.btnVerDetalleServicio.BackColor = System.Drawing.Color.Black;
@@ -311,46 +334,24 @@
             this.label5.TabIndex = 53;
             this.label5.Text = "ESTADO DE PAGO:";
             // 
-            // Nombre
+            // cboEstadoPago
             // 
-            this.Nombre.DataPropertyName = "NombreServicio";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 200;
-            // 
-            // Precio
-            // 
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            // 
-            // NumSesiones
-            // 
-            this.NumSesiones.DataPropertyName = "NumSesiones";
-            this.NumSesiones.HeaderText = "Número de Sesiones";
-            this.NumSesiones.Name = "NumSesiones";
-            this.NumSesiones.ReadOnly = true;
-            this.NumSesiones.Width = 120;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PAGAGO",
+            this.cboEstadoPago.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEstadoPago.FormattingEnabled = true;
+            this.cboEstadoPago.Items.AddRange(new object[] {
+            "PAGADO",
             "PENDIENTE"});
-            this.comboBox1.Location = new System.Drawing.Point(388, 472);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 54;
+            this.cboEstadoPago.Location = new System.Drawing.Point(388, 472);
+            this.cboEstadoPago.Name = "cboEstadoPago";
+            this.cboEstadoPago.Size = new System.Drawing.Size(126, 25);
+            this.cboEstadoPago.TabIndex = 54;
             // 
             // frmNuevaCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(568, 562);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboEstadoPago);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnVerDetalleServicio);
             this.Controls.Add(this.dgvDetallesCitas);
@@ -402,6 +403,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn NumSesiones;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboEstadoPago;
     }
 }
