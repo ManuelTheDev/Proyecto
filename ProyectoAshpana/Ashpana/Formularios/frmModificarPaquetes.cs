@@ -127,6 +127,12 @@ namespace Formularios
 
         private void btnAgregarTratamiento_Click(object sender, EventArgs e)
         {
+            if (txtNomTratamiento.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese un tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             Tratamiento t = new Tratamiento();
             t = tratamientoSeleccionado;
 
@@ -150,8 +156,12 @@ namespace Formularios
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            int indice = dgvTratamientos.CurrentRow.Index;
-            paqueteMod.Tratamientos.RemoveAt(indice);
+            if (dgvTratamientos.RowCount != 0)
+            {
+                int indice = dgvTratamientos.CurrentRow.Index;
+                paqueteMod.Tratamientos.RemoveAt(indice);
+            }
+            
             
         }
 
@@ -161,7 +171,6 @@ namespace Formularios
             if (frmListarTrat.ShowDialog() == DialogResult.OK)
             {
                 tratamientoSeleccionado = frmListarTrat.Tratamiento;
-                txtIdTratamiento.Text = tratamientoSeleccionado.IdTrat.ToString();
                 txtNomTratamiento.Text = tratamientoSeleccionado.NombreServicio;
             }
         }

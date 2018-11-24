@@ -42,11 +42,9 @@
             this.NOMBRE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DURACION = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnListarTratamientos = new System.Windows.Forms.Button();
             this.txtNomTratamiento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.txtIdTratamiento = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAgregarTratamiento = new System.Windows.Forms.Button();
@@ -178,28 +176,21 @@
             this.NOMBRE.DataPropertyName = "Nombre";
             this.NOMBRE.HeaderText = "NOMBRE";
             this.NOMBRE.Name = "NOMBRE";
+            this.NOMBRE.ReadOnly = true;
             // 
             // DURACION
             // 
             this.DURACION.DataPropertyName = "DuracionTrat";
             this.DURACION.HeaderText = "DURACION";
             this.DURACION.Name = "DURACION";
+            this.DURACION.ReadOnly = true;
             // 
             // PRECIO
             // 
             this.PRECIO.DataPropertyName = "Precio";
             this.PRECIO.HeaderText = "PRECIO";
             this.PRECIO.Name = "PRECIO";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(55, 255);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(102, 17);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "IdTratamiento:";
+            this.PRECIO.ReadOnly = true;
             // 
             // btnListarTratamientos
             // 
@@ -221,7 +212,7 @@
             // 
             // txtNomTratamiento
             // 
-            this.txtNomTratamiento.Location = new System.Drawing.Point(95, 79);
+            this.txtNomTratamiento.Location = new System.Drawing.Point(95, 57);
             this.txtNomTratamiento.Name = "txtNomTratamiento";
             this.txtNomTratamiento.Size = new System.Drawing.Size(249, 20);
             this.txtNomTratamiento.TabIndex = 50;
@@ -236,18 +227,11 @@
             this.label13.TabIndex = 49;
             this.label13.Text = "Precio:";
             // 
-            // txtIdTratamiento
-            // 
-            this.txtIdTratamiento.Location = new System.Drawing.Point(180, 252);
-            this.txtIdTratamiento.Name = "txtIdTratamiento";
-            this.txtIdTratamiento.Size = new System.Drawing.Size(46, 20);
-            this.txtIdTratamiento.TabIndex = 48;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(55, 286);
+            this.label11.Location = new System.Drawing.Point(55, 264);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(65, 17);
             this.label11.TabIndex = 47;
@@ -305,10 +289,8 @@
             this.ClientSize = new System.Drawing.Size(760, 557);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregarTratamiento);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnListarTratamientos);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.txtIdTratamiento);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dgvTratamientos);
             this.Controls.Add(this.label6);
@@ -343,11 +325,9 @@
         private System.Windows.Forms.TextBox txtNombrePaquete;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dgvTratamientos;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnListarTratamientos;
         private System.Windows.Forms.TextBox txtNomTratamiento;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtIdTratamiento;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnAgregarTratamiento;
