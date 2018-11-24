@@ -42,26 +42,22 @@ namespace Formularios
             }
 
         }
-
-        private void btnListarTratamientos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnListarPaquete_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnVerDetalleServicio_Click(object sender, EventArgs e)
         {
+            DetalleCita dt = new DetalleCita();
+            dt = (DetalleCita)dgvDetallesCitas.CurrentRow.DataBoundItem;
+            frmModificarDetalleSesion fmc = new frmModificarDetalleSesion(dt);
+            fmc.ShowDialog();
 
+            if (fmc.DialogResult == DialogResult.OK)
+            {
+                dgvDetallesCitas.AutoGenerateColumns = false;
+                dgvDetallesCitas.DataSource = citaBL.listarDetallesCitas_X_Cita(citaMod.IdCita);
+
+            }
         }
 
-        private void btnEliminarServicio_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

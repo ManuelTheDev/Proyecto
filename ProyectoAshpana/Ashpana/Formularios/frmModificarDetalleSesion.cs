@@ -1,4 +1,5 @@
-﻿using Modelo;
+﻿using LogicaNegocio;
+using Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,48 +15,28 @@ namespace Formularios
     public partial class frmModificarDetalleSesion : Form
     {
         private Terapista terapistaSeleccionado;
+        private CitaBL citaBL; 
         private int clickGuardar=0; 
 
         private Sesion sesionModificada; 
-        public frmModificarDetalleSesion(Sesion s, Servicio servicio)
+        public frmModificarDetalleSesion(DetalleCita dt)
         {
             InitializeComponent();
-            txtNombreServicio.Text = servicio.NombreServicio;
-            txtNumSesiones.Text = s.NumDeSesion.ToString();
-            sesionModificada = new Sesion();
-           
-            if (clickGuardar == 1)
-            {
-                s.Hora = sesionModificada.Hora;
-                s.Terapista = sesionModificada.Terapista;
-                s.FechaSesion = sesionModificada.FechaSesion; 
-            }
+            citaBL = new CitaBL(); 
+
+            dgvDetalleServicio.AutoGenerateColumns = false;
+            dgvDetalleServicio.DataSource = citaBL.listarSesiones_X_Detalle_Cita(dt.IdDetalleCita);
            
         }
 
         private void btnListarTerapistas_Click(object sender, EventArgs e)
         {
-            /*frmListarTerapistas frmTerapistas = new frmListarTerapistas();
-            if (frmTerapistas.ShowDialog() == DialogResult.OK)
-            {
-                terapistaSeleccionado = frmTerapistas.Terapista;
-                txtNombreTerapista.Text = terapistaSeleccionado.Nombres + " " + terapistaSeleccionado.ApPaterno + " " + terapistaSeleccionado.ApMaterno;
-                
-            }*/
+            
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            sesionModificada.FechaSesion = dtpSesion.Value;
-
-            String horaE = cboHora.Text;
-            String minutoE = cboMinuto.Text;
-
-            String horaEntrada = horaE + ":" + minutoE + ":00";
-            sesionModificada.Hora = Convert.ToDateTime(horaEntrada).TimeOfDay;
-
-            sesionModificada.Terapista = terapistaSeleccionado;
-            clickGuardar = 1; 
+           
         }
     }
 }
