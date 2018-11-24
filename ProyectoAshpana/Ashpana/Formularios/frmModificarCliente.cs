@@ -154,6 +154,17 @@ namespace Formularios
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
 
+            BindingList<Cliente> clientes = new BindingList<Cliente>();
+            clientes = clienteBL.listarClientes();
+            foreach (Cliente c in clientes)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
             if (DateTime.Now.Year-dtpFechaNac.Value.Year<15)
             {
                 MessageBox.Show("El cliente debe ser mayor de 15 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

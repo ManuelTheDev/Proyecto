@@ -17,13 +17,15 @@ namespace Formularios
     public partial class frmNuevoCliente : Form
     {
         private Cliente clienteNuevo;
-        private CondicionMedicaBL condicionMedicaBL; 
+        private CondicionMedicaBL condicionMedicaBL;
+        private ClienteBL clienteBL;
         public Cliente ClienteNuevo { get => clienteNuevo; set => clienteNuevo = value; }
 
         public frmNuevoCliente()
         {
             InitializeComponent();
             clienteNuevo = new Cliente();
+            clienteBL = new ClienteBL();
             condicionMedicaBL = new CondicionMedicaBL(); 
             BindingList<CondicionMedica> condicionesMedicas = condicionMedicaBL.listarCondicionesMedicas(); 
 
@@ -61,6 +63,17 @@ namespace Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Cliente t = new Cliente();
+
+            BindingList<Cliente> clientes = new BindingList<Cliente>();
+            clientes = clienteBL.listarClientes();
+            foreach(Cliente c in clientes)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
 
             if (DateTime.Now.Year - dtpFechaNac.Value.Year < 15)
             {
@@ -145,7 +158,7 @@ namespace Formularios
                 t.CondicionesMedicas.Add((CondicionMedica)clbCondicionesMedicas.CheckedItems[i]); 
             }
 
-            ClienteBL clienteBL = new ClienteBL();
+            //ClienteBL clienteBL = new ClienteBL();
             clienteBL.registrarCliente(t);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha registrado con exito.",
