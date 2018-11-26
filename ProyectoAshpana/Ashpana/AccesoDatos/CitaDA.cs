@@ -173,5 +173,27 @@ namespace AccesoDatos
             conexion.Close();
             return sesiones;
         }
+
+        public void actualizarCita(int idCita,int estado_pago)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "ACTUALIZAR_CITA";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_CITA", MySqlDbType.Int32).Value = idCita;
+            comando.Parameters.Add("_ESTADO_PAGO", MySqlDbType.Int32).Value = estado_pago;
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+
     }
 }

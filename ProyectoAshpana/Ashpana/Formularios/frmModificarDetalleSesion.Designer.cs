@@ -94,6 +94,7 @@
             this.btnEliminar.TabIndex = 143;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregarSesion
             // 
@@ -111,6 +112,7 @@
             this.btnAgregarSesion.TabIndex = 142;
             this.btnAgregarSesion.Text = "Agregar Sesión";
             this.btnAgregarSesion.UseVisualStyleBackColor = false;
+            this.btnAgregarSesion.Click += new System.EventHandler(this.btnAgregarSesion_Click);
             // 
             // button1
             // 
@@ -225,8 +227,9 @@
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(136, 26);
             this.btnRegistrar.TabIndex = 153;
-            this.btnRegistrar.Text = "REGISTRAR";
+            this.btnRegistrar.Text = "MODIFICAR";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click_1);
             // 
             // groupBox1
             // 
@@ -263,6 +266,7 @@
             this.btnListarTerapistas.TabIndex = 60;
             this.btnListarTerapistas.Text = "...";
             this.btnListarTerapistas.UseVisualStyleBackColor = false;
+            this.btnListarTerapistas.Click += new System.EventHandler(this.btnListarTerapistas_Click_1);
             // 
             // txtTerapista
             // 

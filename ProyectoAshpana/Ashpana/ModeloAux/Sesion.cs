@@ -35,8 +35,30 @@ namespace Modelo
             this.Servicio = servicio;
         }
 
-      
-      
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Sesion))
+                return false;
+
+            var other = obj as Sesion;
+
+            if (this.idSesion != other.idSesion)
+                return false;
+
+            return true;
+        }
+
+        public static bool operator ==(Sesion cm1, Sesion cm2)
+        {
+            return cm1.Equals(cm2);
+        }
+
+        public static bool operator !=(Sesion cm1, Sesion cm2)
+        {
+            return !(cm1 == cm2);
+        }
+
+
         public int IdSesion { get => idSesion; set => idSesion = value; }
         public DateTime FechaSesion { get => fechaSesion; set => fechaSesion = value; }
 

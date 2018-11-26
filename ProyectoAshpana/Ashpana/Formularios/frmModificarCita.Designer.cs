@@ -170,6 +170,7 @@
             // 
             // txtMontoTotal
             // 
+            this.txtMontoTotal.Enabled = false;
             this.txtMontoTotal.Location = new System.Drawing.Point(388, 399);
             this.txtMontoTotal.Name = "txtMontoTotal";
             this.txtMontoTotal.Size = new System.Drawing.Size(126, 20);
@@ -209,6 +210,7 @@
             this.btnGuardar.TabIndex = 60;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // label3
             // 
