@@ -25,6 +25,7 @@ namespace Formularios
             InitializeComponent();
             DetalleServicioModificado = new DetalleCita();
             DetalleServicioModificado.Servicio = dt.Servicio;
+            cboMinuto.SelectedIndex = 0;
             
             foreach (Sesion s in dt.Sesiones)
             {
@@ -73,7 +74,16 @@ namespace Formularios
                 MessageBox.Show("Ya no puede ingresar más sesiones");
                 return; 
             }
-
+            if(cboHora.Text== "")
+            {
+                MessageBox.Show("Debe seleccionar una hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTerapista.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar una terapista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Sesion s = new Sesion();
             Servicio serv = new Servicio();
             serv.IdServicio = detalleServicioModificado.Servicio.IdServicio;
@@ -113,9 +123,26 @@ namespace Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int indice = dgvDetalleServicio.CurrentRow.Index;
+            int indice;
+            try
+            {
+                indice = dgvDetalleServicio.CurrentRow.Index;
+            }
+            catch (Exception ex) { 
+                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            
             DetalleServicioModificado.Sesiones.RemoveAt(indice);
             numSesionesTotal--; 
+            if(DetalleServicioModificado.Sesiones.Count > 0)
+            {
+                foreach(Sesion s in DetalleServicioModificado.Sesiones)
+                {
+                    if (indice + 1 < s.NumDeSesion)
+                        s.NumDeSesion--;
+                }
+            }
         }
     }
 }

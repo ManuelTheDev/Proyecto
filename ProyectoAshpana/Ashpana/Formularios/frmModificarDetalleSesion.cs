@@ -30,7 +30,7 @@ namespace Formularios
             citaBL = new CitaBL();
             DetalleCita1 = new DetalleCita();
             DetalleCita1 = dt;
-
+            cboMinuto.SelectedIndex = 0;
             dgvDetalleServicio.AutoGenerateColumns = false;
 
 
@@ -63,7 +63,16 @@ namespace Formularios
                 MessageBox.Show("Ya no puede ingresar más sesiones");
                 return;
             }
-
+            if (cboHora.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar una hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (txtTerapista.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar una terapista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Sesion s = new Sesion();
             
             Servicio serv = new Servicio();
@@ -112,8 +121,33 @@ namespace Formularios
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int indice = dgvDetalleServicio.CurrentRow.Index;
+            int indice;
+            try
+            {
+                indice = dgvDetalleServicio.CurrentRow.Index;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Sesion s = DetalleCita1.Sesiones[indice];
+            if(s.FechaSesion < DateTime.Now.Date)
+            {
+                MessageBox.Show("No puede eliminar una sesión que ya se dio", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             DetalleCita1.Sesiones.RemoveAt(indice);
+            if (DetalleCita.Sesiones.Count > 0)
+            {
+                foreach (Sesion ses in DetalleCita.Sesiones)
+                {
+                    if (indice + 1 < ses.NumDeSesion)
+                        ses.NumDeSesion--;
+                }
+            }
         }
 
         private void btnRegistrar_Click_1(object sender, EventArgs e)

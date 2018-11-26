@@ -166,5 +166,25 @@ namespace AccesoDatos
             comando.ExecuteNonQuery();
             conexion.Close();
         }
+
+        public void actualizarNumeroSesion(int id_sesion,int numero_sesion)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "ACTUALIZAR_NUMERO_SESION";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_SESION", MySqlDbType.Int32).Value = id_sesion;
+            comando.Parameters.Add("_NUMERO_SESION", MySqlDbType.Int32).Value = numero_sesion;
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
     }
 }

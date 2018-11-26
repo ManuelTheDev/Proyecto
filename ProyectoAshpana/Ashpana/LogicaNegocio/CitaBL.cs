@@ -95,6 +95,14 @@ namespace LogicaNegocio
                     {
                         sesionDA.registrarSesion(s, dc.IdDetalleCita, citaMod.IdCita, citaAnt.Cliente.IdCliente);
                     }
+                    else if (citaAnt.DetallesCitas[cont2].Sesiones.Contains(s))
+                    {
+                        int indice = citaAnt.DetallesCitas[cont2].Sesiones.IndexOf(s);
+                        if (s.NumDeSesion != citaAnt.DetallesCitas[cont2].Sesiones[indice].NumDeSesion)
+                        {
+                            sesionDA.actualizarNumeroSesion(s.IdSesion, s.NumDeSesion);
+                        }
+                    }
                 }
                 cont2++;
             }
