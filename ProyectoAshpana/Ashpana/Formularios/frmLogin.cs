@@ -64,7 +64,6 @@ namespace Formularios
                         txtUsuario.Clear();
                         txtContrasenia.Clear();
                     }
-                    //this.Dispose();
                 }
 
             }

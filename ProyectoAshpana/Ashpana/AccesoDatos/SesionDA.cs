@@ -128,19 +128,39 @@ namespace AccesoDatos
 
                 //terapista
                 Terapista terapista = new Terapista();
-                terapista.Nombres = reader.GetString("NOMBRES");
-                terapista.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                Cliente cliente = new Cliente();
+                if (reader.GetString("TIPO") == "TERAPISTA")
+                {
+                    terapista.Nombres = reader.GetString("NOMBRES");
+                    terapista.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                }
+                else
+                {
+                    
+                    cliente.Nombres = reader.GetString("NOMBRES");
+                    cliente.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+
+                }
+
+                reader.Read();
+                if (reader.GetString("TIPO") == "TERAPISTA")
+                {
+                    terapista.Nombres = reader.GetString("NOMBRES");
+                    terapista.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                }
+                else
+                {
+
+                    cliente.Nombres = reader.GetString("NOMBRES");
+                    cliente.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+
+                }
+
 
                 //cliente
-                reader.Read();
-                Cliente cliente = new Cliente();
-                cliente.Nombres = reader.GetString("NOMBRES");
-                cliente.ApPaterno = reader.GetString("APELLIDO_PATERNO");
 
                 s.Cliente = cliente;
-
                 s.Terapista = terapista;
-
                 sesiones.Add(s);
             }
             conexion.Close();
