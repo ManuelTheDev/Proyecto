@@ -245,5 +245,45 @@ namespace AccesoDatos
             }
         }
 
+        public BindingList<Cliente> listarClientesVerificaciones()
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+
+            BindingList<Cliente> clientes = new BindingList<Cliente>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_CLIENTES2";
+            comando.Connection = conexion;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Cliente c = new Cliente();
+                c.IdPersona = reader.GetInt32("ID_PERSONA");
+                c.IdCliente = reader.GetInt32("ID_CLIENTE");
+                c.Dni = reader.GetString("DNI");
+                c.Nombres = reader.GetString("NOMBRES");
+                c.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                c.ApMaterno = reader.GetString("APELLIDO_MATERNO");
+                c.Correo = reader.GetString("CORREO");
+                c.Direccion = reader.GetString("DIRECCION");
+                c.Telefono = reader.GetString("TELEFONO");
+                c.Estado = reader.GetInt32("ESTADO");
+                c.Sexo = reader.GetChar("SEXO");
+                c.FechaNac = reader.GetDateTime("FECHA_NACIMIENTO");
+
+
+                clientes.Add(c);
+            }
+            conexion.Close();
+            return clientes;
+        }
+
     }
 }

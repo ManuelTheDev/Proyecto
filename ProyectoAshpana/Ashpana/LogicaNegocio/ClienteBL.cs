@@ -89,5 +89,10 @@ namespace LogicaNegocio
         {
             return clienteDA.BuscarCliente(busqueda);
         }
+
+        public BindingList<Cliente> listarClientesVerificaciones()
+        {
+            return clienteDA.listarClientesVerificaciones();
+        }
     }
 }

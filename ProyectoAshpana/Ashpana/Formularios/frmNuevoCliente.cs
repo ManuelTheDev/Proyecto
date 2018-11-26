@@ -65,7 +65,7 @@ namespace Formularios
             Cliente t = new Cliente();
 
             BindingList<Cliente> clientes = new BindingList<Cliente>();
-            clientes = clienteBL.listarClientes();
+            clientes = clienteBL.listarClientesVerificaciones();
             foreach(Cliente c in clientes)
             {
                 if (c.Dni == txtDni.Text)

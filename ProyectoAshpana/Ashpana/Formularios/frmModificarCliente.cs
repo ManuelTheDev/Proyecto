@@ -155,7 +155,7 @@ namespace Formularios
         {
 
             BindingList<Cliente> clientes = new BindingList<Cliente>();
-            clientes = clienteBL.listarClientes();
+            clientes = clienteBL.listarClientesVerificaciones();
             /*foreach (Cliente c in clientes)
             {
                 if (c.Dni == txtDni.Text)
@@ -164,6 +164,19 @@ namespace Formularios
                     return;
                 }
             }*/
+            foreach (Cliente c in clientes)
+            {
+                if(c.Dni == txtDni.Text)
+                {
+                    if (txtDni.Text == clienteModificado.Dni)
+                        break;
+                    else
+                    {
+                        MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
 
             if (DateTime.Now.Year-dtpFechaNac.Value.Year<15)
             {
