@@ -43,6 +43,7 @@
             this.btnVerZonas = new System.Windows.Forms.Button();
             this.lblBuscar = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTratamientos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,7 +185,7 @@
             this.btnVerZonas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVerZonas.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerZonas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerZonas.Location = new System.Drawing.Point(467, 431);
+            this.btnVerZonas.Location = new System.Drawing.Point(393, 430);
             this.btnVerZonas.Name = "btnVerZonas";
             this.btnVerZonas.Size = new System.Drawing.Size(148, 36);
             this.btnVerZonas.TabIndex = 11;
@@ -214,11 +215,26 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "TRATAMIENTOS";
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnEliminar.Location = new System.Drawing.Point(638, 427);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(148, 36);
+            this.btnEliminar.TabIndex = 29;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // frmGestionTratamientos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1010, 587);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVerZonas);
@@ -255,5 +271,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DURACION;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn TIPO;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

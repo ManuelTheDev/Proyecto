@@ -282,5 +282,22 @@ namespace AccesoDatos
 
 
         }
+
+        public void desactivarTratamiento(int idServicio)
+        {
+            String cadena = "server=quilla.lab.inf.pucp.edu.pe;" + "user=inf282g4;" + "password=GvZf6p;" + "database=inf282g4;" + "port=3306;" + "SslMode=none;";
+            MySqlConnection con = new MySqlConnection(cadena);
+            con.Open();
+
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "DESACTIVAR_TRATAMIENTO";
+            comando.Connection = con;
+
+            comando.Parameters.Add("_ID_SERVICIO", MySqlDbType.Int32).Value = idServicio;
+
+            comando.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

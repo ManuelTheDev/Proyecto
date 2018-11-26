@@ -124,5 +124,24 @@ namespace Formularios
 
             dgvTratamientos.DataSource = tratBuscados;
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvTratamientos.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Por favor, seleccione un Tratamiento", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Tratamiento tratEliminar = new Tratamiento();
+            tratEliminar = (Tratamiento)dgvTratamientos.CurrentRow.DataBoundItem;
+
+            tratamientoBL.desactivarTratamiento(tratEliminar.IdServicio);
+
+            CargarDGV();
+            MessageBox.Show("Tratamiento eliminado", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+        }
     }
 }

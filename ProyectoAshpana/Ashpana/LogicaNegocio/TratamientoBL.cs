@@ -80,5 +80,10 @@ namespace LogicaNegocio
         {
             return tratamientoDA.BuscarTratamiento(busqueda);
         }
+
+        public void desactivarTratamiento(int idServicio)
+        {
+            tratamientoDA.desactivarTratamiento(idServicio);
+        }
     }
 }
