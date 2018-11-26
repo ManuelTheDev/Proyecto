@@ -56,8 +56,15 @@ namespace Formularios
                 {
 
                     Form1 frmPrincipal = new Form1(tipo);
+                    this.Visible = false;
                     frmPrincipal.ShowDialog();
-                    this.Dispose();
+                    if(frmPrincipal.DialogResult == DialogResult.OK)
+                    {
+                        this.Visible = true;
+                        txtUsuario.Clear();
+                        txtContrasenia.Clear();
+                    }
+                    //this.Dispose();
                 }
 
             }

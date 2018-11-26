@@ -214,7 +214,7 @@ namespace Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            this.Dispose(); 
+            this.DialogResult = DialogResult.OK; 
            
         }
 
