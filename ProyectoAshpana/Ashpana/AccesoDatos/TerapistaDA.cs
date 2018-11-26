@@ -183,6 +183,7 @@ namespace AccesoDatos
             while (reader.Read())
             {
                 Tratamiento t = new Tratamiento();
+                t.IdTrat = reader.GetInt32("ID_TRATAMIENTO");
                 t.NombreServicio = reader.GetString("NOMBRE");
                 t.PrecioServicio = reader.GetDouble("PRECIO");
                 t.DuracionTrat = reader.GetDouble("DURACION");
@@ -192,7 +193,7 @@ namespace AccesoDatos
             return tratamientos;
         }
 
-        public BindingList<Terapista> listarTerapistas_X_Tratamiento(int idTratamiento)
+       public BindingList<Terapista> listarTerapistas_X_Tratamiento(int idTratamiento)
         {
             string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
                       "user=inf282g4;" +
@@ -223,7 +224,57 @@ namespace AccesoDatos
             return terapistas;
         }
 
+        public void modificarTerapista_X_Tratamiento(int id_tratamiento, int id_terapista, int id_trab, int id_per,int estado)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
 
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "MODIFICAR_TRATAMIENTO_X_TERAPISTA";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_PERSONA_FK", MySqlDbType.Int32).Value = id_per;
+            comando.Parameters.Add("_ID_TRABAJADOR_FK", MySqlDbType.Int32).Value = id_trab;
+            comando.Parameters.Add("_ID_TERAPISTA_FK", MySqlDbType.Int32).Value = id_terapista;
+            comando.Parameters.Add("_ID_TRATAMIENTO_FK", MySqlDbType.Int32).Value = id_tratamiento;
+            comando.Parameters.Add("_ESTADO", MySqlDbType.Int32).Value = estado;
+            comando.ExecuteNonQuery();
+            conexion.Close();
+        }
+
+        public BindingList<Tratamiento> listarTratamientosInactivos(int id_terapista)
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
+
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_TRATAMIENTOS_INACTIVOS_TERAPISTA";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_TERAPISTA_FK", MySqlDbType.Int32).Value = id_terapista;
+            MySqlDataReader reader = comando.ExecuteReader();
+            BindingList<Tratamiento> tratamientos = new BindingList<Tratamiento>();
+            while (reader.Read())
+            {
+                Tratamiento trat = new Tratamiento();
+                trat.IdTrat = reader.GetInt32("ID_TRATAMIENTO_FK");
+                tratamientos.Add(trat);
+            }
+            conexion.Close();
+            return tratamientos;
+        }
 
     }
 }

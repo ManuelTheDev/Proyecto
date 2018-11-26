@@ -245,12 +245,6 @@
     <Compile Include="frmNuevoTratamientos.Designer.cs">
       <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRegistrarTratamientosXTerapista.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRegistrarTratamientosXTerapista.Designer.cs">
-      <DependentUpon>frmRegistrarTratamientosXTerapista.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmVerPadecimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -378,9 +372,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNuevoTratamientos.resx">
       <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRegistrarTratamientosXTerapista.resx">
-      <DependentUpon>frmRegistrarTratamientosXTerapista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerCondicionesMedicas_X_Paciente.resx">
       <DependentUpon>frmVerCondicionesMedicas_X_Paciente.cs</DependentUpon>
