@@ -56,12 +56,48 @@ namespace LogicaNegocio
 
         public BindingList<DetalleCita> listarDetallesCitas_X_Cita(int id)
         {
-            return citaDA.listarDetalleCitas_Cita(id);
+            BindingList<DetalleCita> detallesCita =  citaDA.listarDetalleCitas_Cita(id);
+            foreach(DetalleCita dc in detallesCita)
+            {
+                dc.Sesiones = citaDA.listarSesiones_DetalleCita(dc.IdDetalleCita);
+            }
+            return detallesCita;
         }
 
         public BindingList<Sesion> listarSesiones_X_Detalle_Cita(int id)
         {
             return citaDA.listarSesiones_DetalleCita(id);
+        }
+
+        public void actualizarCita(Cita citaAnt,Cita citaMod)
+        {
+            if (citaMod.Estado_pago==1 && citaAnt.Estado_pago==0)
+            {
+                citaDA.actualizarCita(citaAnt.IdCita, 1);
+            }
+            int cont = 0;
+            foreach(DetalleCita dc in citaAnt.DetallesCitas)
+            {
+                foreach(Sesion s in dc.Sesiones)
+                {
+                    if (!citaMod.DetallesCitas[cont].Sesiones.Contains(s)){
+                        sesionDA.eliminarSesion(s.IdSesion);
+                    }
+                }
+                cont++;
+            }
+            int cont2 = 0;
+            foreach(DetalleCita dc in citaMod.DetallesCitas)
+            {
+                foreach(Sesion s in dc.Sesiones)
+                {
+                    if (!citaAnt.DetallesCitas[cont2].Sesiones.Contains(s))
+                    {
+                        sesionDA.registrarSesion(s, dc.IdDetalleCita, citaMod.IdCita, citaAnt.Cliente.IdCliente);
+                    }
+                }
+                cont2++;
+            }
         }
     }
 }

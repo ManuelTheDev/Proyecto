@@ -37,7 +37,6 @@ namespace Formularios
             dt.Sesiones.Clear(); 
             foreach(Sesion s in DetalleServicioModificado.Sesiones)
             {
-               
                 dt.Sesiones.Add(s); 
             }
             numSesionesTotal = detalleServicioModificado.Sesiones.Count;
@@ -69,8 +68,7 @@ namespace Formularios
 
         private void btnAgregarSesion_Click(object sender, EventArgs e)
         {
-            if (numSesionesTotal == DetalleServicioModificado.Servicio.NumSesiones)
-           // if (DetalleServicioModificado.Sesiones.Count==DetalleServicioModificado.Servicio.NumSesiones)
+            if (numSesionesTotal == DetalleServicioModificado.Servicio.NumSesiones)         
             {
                 MessageBox.Show("Ya no puede ingresar más sesiones");
                 return; 
