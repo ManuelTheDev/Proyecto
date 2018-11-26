@@ -16,6 +16,7 @@ namespace Formularios
         private DetalleCita detalleServicioModificado;
         private Terapista terapistaSeleccionado;
         private int numSesionesTotal;
+        private BindingList<DateTime> fechasSesiones= new BindingList<DateTime>(); 
 
         public DetalleCita DetalleServicioModificado { get => detalleServicioModificado; set => detalleServicioModificado = value; }
 
@@ -83,8 +84,30 @@ namespace Formularios
             s.Terapista = terapistaSeleccionado;
             String horaCita = cboHora.Text + ":" + cboMinuto.Text + ":00";
             TimeSpan hora_E = Convert.ToDateTime(horaCita).TimeOfDay;
+            
+           
+            foreach (DateTime dt in fechasSesiones)
+            {
+                if (dt.Date == dtpFecha.Value.Date)
+                {
+                    MessageBox.Show("Seleccione una fecha diferente a las ingresadas anteriormente");
+                    return; 
+                }
+            }
+            if(dtpFecha.Value.Date<DateTime.Now.Date)
+            {
+                MessageBox.Show("Seleccione una fecha posterior a la del día de hoy");
+                return;
+            }
+            if (dtpFecha.Value.Date==DateTime.Now.Date && hora_E < DateTime.Now.TimeOfDay)
+            {
+                MessageBox.Show("Seleccione una hora posterior a la hora actual");
+                return;
+            }
             s.Hora = hora_E;
             s.FechaSesion = dtpFecha.Value;
+            fechasSesiones.Add(s.FechaSesion);   
+
             s.NumDeSesion = numSesionesTotal + 1; 
             DetalleServicioModificado.Sesiones.Add(s);
             numSesionesTotal++; 
