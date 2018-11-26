@@ -15,42 +15,98 @@ namespace Formularios
     public partial class frmVerTratamientosPorTerapistas : Form
     {
         private Tratamiento tratamientoSeleccionado;
+        private Terapista terapista;
         private Terapista terapistaModificar;
         private TerapistaBL terapistaBL;
+
         public frmVerTratamientosPorTerapistas(Terapista terapistaSeleccionada)
         {
             InitializeComponent();
+            terapistaModificar = new Terapista();
+            terapistaBL = new TerapistaBL();
+            terapista = new Terapista();
+
+            terapista.IdPersona = terapistaSeleccionada.IdPersona;
+            terapista.IdTrabajador = terapistaSeleccionada.IdTrabajador;
+            terapista.IdTerapista = terapistaSeleccionada.IdTerapista;
+            
+            terapistaModificar.IdPersona = terapistaSeleccionada.IdPersona;
+            terapistaModificar.IdTrabajador = terapistaSeleccionada.IdTrabajador;
+            terapistaModificar.IdTerapista = terapistaSeleccionada.IdTerapista;
+            terapistaModificar.Tratamientos = terapistaSeleccionada.Tratamientos;
+
+
             txtNombreTerapista.Text = terapistaSeleccionada.Nombres + " " + terapistaSeleccionada.ApPaterno + " " + terapistaSeleccionada.ApMaterno;
             dgvTratamientos.AutoGenerateColumns = false;
-            terapistaModificar = new Terapista();
-            terapistaModificar = terapistaSeleccionada;
-            dgvTratamientos.AutoGenerateColumns = false;
-            terapistaBL = new TerapistaBL();
-            dgvTratamientos.DataSource = terapistaBL.listarTratamientos_x_Terapista(terapistaModificar.IdTerapista);
-
+            terapistaModificar.Tratamientos= terapistaBL.listarTratamientos_X_Terapista(terapistaModificar.IdTerapista);
+            terapista.Tratamientos= terapistaBL.listarTratamientos_X_Terapista(terapistaModificar.IdTerapista);
+            dgvTratamientos.DataSource = terapistaModificar.Tratamientos;
         }
 
         private void btnRegistrarTratamientos_Click(object sender, EventArgs e)
         {
-            var frmRegistrarTrat = new frmRegistrarTratamientosXTerapista(terapistaModificar);
-            if (frmRegistrarTrat.ShowDialog()== DialogResult.OK)
-            {
+            terapistaBL = new TerapistaBL();
+            bool registrado = terapistaBL.registrarTratamiento_X_terapista(terapista, terapistaModificar);
 
+            if (registrado)
+            {
+                MessageBox.Show("Se ha registrado correctamente");
+                this.Dispose();
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido registrar correctamente");
             }
         }
 
-        private void btnModificarTratamientos_Click(object sender, EventArgs e)
-        {
-            var frmModificarTratamientos = new frmModificaTratamientosXTerapista(terapistaModificar);
-            if (frmModificarTratamientos.ShowDialog() == DialogResult.OK)
-            {
-
-            }
-        }
+        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void btnListarTratamientos_Click(object sender, EventArgs e)
+        {
+            var frmListarTrat = new frmListarTratamiento();
+            if (frmListarTrat.ShowDialog() == DialogResult.OK)
+            {
+                tratamientoSeleccionado = frmListarTrat.Tratamiento;   
+                txtNomTratamiento.Text = tratamientoSeleccionado.NombreServicio;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvTratamientos.RowCount != 0)
+            {
+                int indice = dgvTratamientos.CurrentRow.Index;
+                terapistaModificar.Tratamientos.RemoveAt(indice);
+            }
+           
+        }
+
+        private void btnAgregarTratamiento_Click(object sender, EventArgs e)
+        {
+            Tratamiento t = new Tratamiento();
+            t = tratamientoSeleccionado;
+
+            int encontrado = 0;
+            int indice = 0;
+            foreach (Tratamiento tAux in terapistaModificar.Tratamientos)
+            {
+                if (tAux.IdTrat == t.IdTrat)
+                {
+                    encontrado = 1;
+                    break;
+                }
+                indice += 1;
+            }
+
+            if (encontrado == 0)
+            {
+                terapistaModificar.Tratamientos.Add(t);
+            }
         }
     }
 }

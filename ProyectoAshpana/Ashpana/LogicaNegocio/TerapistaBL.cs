@@ -35,24 +35,41 @@ namespace LogicaNegocio
             terapistaDA.modificarTerapista(t, horaE, horaS, minutoE, minutoS);
         }
 
-        public bool registrarTratamiento_X_terapista(Terapista t)
+        public bool registrarTratamiento_X_terapista(Terapista terapistaAnt, Terapista terapistaMod)
         {
             try
             {
-                foreach (Tratamiento trat in t.Tratamientos)
+                foreach (Tratamiento trat in terapistaAnt.Tratamientos)
                 {
-                    terapistaDA.registrarTratamiento_X_terapista(t, trat);
+                    if (!terapistaMod.Tratamientos.Contains(trat))
+                    {
+                        terapistaDA.modificarTerapista_X_Tratamiento(trat.IdTrat, terapistaMod.IdTerapista, terapistaMod.IdTrabajador, terapistaMod.IdPersona, 0);
+                    }
                 }
-                return true;
-            }
-            catch
+                BindingList<Tratamiento> tratamientosInactivos = terapistaDA.listarTratamientosInactivos(terapistaMod.IdTerapista);
+                foreach (Tratamiento trat in terapistaMod.Tratamientos)
+                {
+                    if (tratamientosInactivos.Contains(trat))
+                    {
+                        terapistaDA.modificarTerapista_X_Tratamiento(trat.IdTrat, terapistaMod.IdTerapista, terapistaMod.IdTrabajador, terapistaMod.IdPersona, 1);
+
+                    }
+
+                    if (!terapistaAnt.Tratamientos.Contains(trat))
+                    {
+                        terapistaDA.registrarTratamiento_X_terapista(terapistaAnt, trat);
+                    }
+                }
+                return true; 
+            }catch (Exception ex)
             {
-                MessageBox.Show("No se ha registrar con exito.", "Registro", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
+           
+
         }
 
-        public BindingList<Tratamiento> listarTratamientos_x_Terapista(int IdTerapista)
+        public BindingList<Tratamiento> listarTratamientos_X_Terapista(int IdTerapista)
         {
             return terapistaDA.listarTratamientos_X_Terapista(IdTerapista);
         }
