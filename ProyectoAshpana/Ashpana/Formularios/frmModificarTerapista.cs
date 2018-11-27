@@ -236,7 +236,7 @@ namespace Formularios
                     return;
                 }
                 terapistaMod.Estado = 0;
-            }else
+            }
 
             if (cboTerapista.Text.Equals("Principal"))
             {
