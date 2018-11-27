@@ -60,5 +60,35 @@ namespace AccesoDatos
            
         }
 
+        public int cerrarSesion(string usuario)
+        {
+            try
+            {
+                string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                    "user=inf282g4;" +
+                    "password=GvZf6p;" +
+                    "database=inf282g4;" +
+                    "port=3306;" +
+                    "SslMode=none;";
+
+                MySqlConnection conexion = new MySqlConnection(cadena);
+                conexion.Open();
+
+                MySqlCommand comando = new MySqlCommand("call CERRAR_SESION(@usuario);", conexion);
+                comando.Parameters.AddWithValue("@usuario", usuario);
+                comando.Prepare();
+
+                comando.ExecuteNonQuery();
+                conexion.Close();
+                return 1; 
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
+
+
+        }
+
     }
 }

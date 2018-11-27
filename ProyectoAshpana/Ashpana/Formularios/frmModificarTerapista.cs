@@ -72,6 +72,9 @@ namespace Formularios
             terapistaMod.IdPersona = t.IdPersona;
             terapistaMod.IdTerapista = t.IdTerapista;
             terapistaMod.IdTrabajador = t.IdTrabajador;
+            terapistaMod.Logueado = t.Logueado;
+
+            
             if (t.Sexo == 'M')
             {
                 rbMasculino.Checked = true;
@@ -227,8 +230,13 @@ namespace Formularios
 
             if (cboEstado.Text.Equals("Inactivo"))
             {
+                if (terapistaMod.Logueado == 1)
+                {
+                    MessageBox.Show("No puede elimarse, pues el trabajador está logueado ", "Advertencia",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 terapistaMod.Estado = 0;
-            }
+            }else
 
             if (cboTerapista.Text.Equals("Principal"))
             {

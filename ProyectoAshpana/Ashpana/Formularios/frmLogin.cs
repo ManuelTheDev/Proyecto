@@ -55,7 +55,7 @@ namespace Formularios
                 else
                 {
 
-                    Form1 frmPrincipal = new Form1(tipo);
+                    Form1 frmPrincipal = new Form1(tipo, txtUsuario.Text);
                     this.Visible = false;
                     frmPrincipal.ShowDialog();
                     if(frmPrincipal.DialogResult == DialogResult.OK)

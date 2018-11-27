@@ -43,6 +43,7 @@ namespace AccesoDatos
                 s.Telefono = reader.GetString("TELEFONO");
                 s.Sueldo = reader.GetDouble("SUELDO");
                 s.Estado = reader.GetInt32("ESTADO");
+                s.Logueado = reader.GetInt32("LOGUEADO");
                 s.Sexo = reader.GetChar("SEXO");
                 s.FechaNac = reader.GetDateTime("FECHA_NACIMIENTO");
                 s.Contrasena = reader.GetString("CONTRASENIA");

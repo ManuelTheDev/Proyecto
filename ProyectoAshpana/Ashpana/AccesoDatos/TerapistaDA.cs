@@ -46,6 +46,7 @@ namespace AccesoDatos
                 t.Sueldo = reader.GetDouble("SUELDO");
                 t.Estado = reader.GetInt32("ESTADO");
                 t.Sexo = reader.GetChar("SEXO");
+                t.Logueado = reader.GetInt32("LOGUEADO");
                 TimeSpan horaEntradaAux = reader.GetTimeSpan("HORA_ENTRADA");
                 DateTime dt = new DateTime(2012, 01, 01);
                 t.HoraEntrada = dt + horaEntradaAux;

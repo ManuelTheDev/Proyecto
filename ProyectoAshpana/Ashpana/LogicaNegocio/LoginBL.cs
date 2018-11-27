@@ -22,5 +22,10 @@ namespace LogicaNegocio
             if (loginDA.iniciarSesion(usuario, contrasenia, ref tipo) == 1) return true;
             else return false; 
         }
+
+        public int cerrarSesion(string usuario)
+        {
+            return loginDA.cerrarSesion(usuario);
+        }
     }
 }

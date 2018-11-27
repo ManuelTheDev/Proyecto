@@ -35,7 +35,7 @@ namespace Formularios
             superUsuarioMod.IdPersona = s.IdPersona;
             superUsuarioMod.IdTrabajador = s.IdTrabajador;
             superUsuarioMod.IdSuperusuario = s.IdSuperusuario;
-
+            superUsuarioMod.Logueado = s.Logueado;
             if (s.Sexo == 'M')
             {
                 rbMasculino.Checked = true; 
@@ -171,11 +171,17 @@ namespace Formularios
 
             if (cboEstado.Text.Equals("Activo"))
             {
+
                 superUsuarioMod.Estado = 1;
             }
 
             if (cboEstado.Text.Equals("Inactivo"))
             {
+                if (superUsuarioMod.Logueado == 1)
+                {
+                    MessageBox.Show("No puede elimarse, pues el superusuario está logueado ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 superUsuarioMod.Estado = 0;
             }
             usuarioBL = new UsuarioBL();

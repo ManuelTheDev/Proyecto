@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using LogicaNegocio;
 
 namespace Formularios
 {
@@ -22,12 +23,16 @@ namespace Formularios
         private static frmCitasDelDia frCitasDia;
         private static frmGestionUsuarios fgu;
         private int tipo_trabajador;
+        private string dni_usuario;
+        private LoginBL loginBL;
 
-        public Form1(int tipo)
+        public Form1(int tipo, String dni)
         {
             InitializeComponent();
             tipo_trabajador = tipo;
+            dni_usuario = dni; 
             privilegiosUsuarios();
+            loginBL = new LoginBL();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -150,7 +155,15 @@ namespace Formularios
 
         private void INICIO_Click(object sender, EventArgs e)
         {
-            foreach(Form f in panelContedor.Controls)
+            this.Dispose();
+            Form1 frm = new Form1(tipo_trabajador, dni_usuario);
+            frm.ShowDialog();
+            if (frm.DialogResult == DialogResult.OK)
+            {
+                this.Visible = true;
+               
+            }
+            foreach (Form f in panelContedor.Controls)
             {
                 f.Dispose();
 
@@ -217,6 +230,7 @@ namespace Formularios
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            int a = loginBL.cerrarSesion(dni_usuario);
             this.DialogResult = DialogResult.OK; 
            
         }
