@@ -26,7 +26,8 @@ namespace Formularios
         public Form1(int tipo)
         {
             InitializeComponent();
-            tipo_trabajador = tipo; 
+            tipo_trabajador = tipo;
+            privilegiosUsuarios();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -51,16 +52,18 @@ namespace Formularios
 
             if (tipo_trabajador == 0)
             {
+                btnReporte.Enabled = false;
                 btnReporte.Visible = false;
-                btnReporte.BackColor = Color.DarkGray;
-                TRATAMIENTOS.Visible = false;
-                TRATAMIENTOS.BackColor = Color.DarkGray; 
+                
+                TRATAMIENTOS.Enabled = false;
+                TRATAMIENTOS.Visible = false; 
+                PAQUETES.Enabled = false;
                 PAQUETES.Visible = false;
-                PAQUETES.BackColor = Color.DarkGray; 
+                TERAPISTAS.Enabled = false;
                 TERAPISTAS.Visible = false;
-                TERAPISTAS.BackColor = Color.DarkGray;
+                USUARIOS.Enabled = false;
                 USUARIOS.Visible = false;
-                USUARIOS.BackColor = Color.DarkGray; 
+                
             }
         }
 

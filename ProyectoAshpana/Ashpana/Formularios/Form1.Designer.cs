@@ -38,16 +38,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MenuVertical = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.BarraTitulo = new System.Windows.Forms.Panel();
-            this.panelContedor = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.slideMenu = new System.Windows.Forms.PictureBox();
-            this.imagenRestaurar = new System.Windows.Forms.PictureBox();
-            this.imagenMinimizar = new System.Windows.Forms.PictureBox();
-            this.imagenMaximizar = new System.Windows.Forms.PictureBox();
-            this.imagenCerrar = new System.Windows.Forms.PictureBox();
             this.btnCitasDelDía = new System.Windows.Forms.Button();
             this.btnReporte = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -58,17 +48,27 @@
             this.PACIENTES = new System.Windows.Forms.Button();
             this.TRATAMIENTOS = new System.Windows.Forms.Button();
             this.INICIO = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.BarraTitulo = new System.Windows.Forms.Panel();
+            this.slideMenu = new System.Windows.Forms.PictureBox();
+            this.imagenRestaurar = new System.Windows.Forms.PictureBox();
+            this.imagenMinimizar = new System.Windows.Forms.PictureBox();
+            this.imagenMaximizar = new System.Windows.Forms.PictureBox();
+            this.imagenCerrar = new System.Windows.Forms.PictureBox();
+            this.panelContedor = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MenuVertical.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.BarraTitulo.SuspendLayout();
-            this.panelContedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.slideMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuVertical
@@ -93,134 +93,6 @@
             this.MenuVertical.Size = new System.Drawing.Size(271, 788);
             this.MenuVertical.TabIndex = 0;
             this.MenuVertical.Paint += new System.Windows.Forms.PaintEventHandler(this.MenuVertical_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(72, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "INTERNACIONAL";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(94, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "ASHPANA";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // BarraTitulo
-            // 
-            this.BarraTitulo.BackColor = System.Drawing.Color.YellowGreen;
-            this.BarraTitulo.Controls.Add(this.slideMenu);
-            this.BarraTitulo.Controls.Add(this.imagenRestaurar);
-            this.BarraTitulo.Controls.Add(this.imagenMinimizar);
-            this.BarraTitulo.Controls.Add(this.imagenMaximizar);
-            this.BarraTitulo.Controls.Add(this.imagenCerrar);
-            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BarraTitulo.Location = new System.Drawing.Point(271, 0);
-            this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1009, 75);
-            this.BarraTitulo.TabIndex = 1;
-            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
-            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
-            // 
-            // panelContedor
-            // 
-            this.panelContedor.Controls.Add(this.pictureBox2);
-            this.panelContedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContedor.Location = new System.Drawing.Point(271, 75);
-            this.panelContedor.Name = "panelContedor";
-            this.panelContedor.Size = new System.Drawing.Size(1009, 713);
-            this.panelContedor.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, -24);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1271, 750);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
-            // slideMenu
-            // 
-            this.slideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slideMenu.ErrorImage = ((System.Drawing.Image)(resources.GetObject("slideMenu.ErrorImage")));
-            this.slideMenu.Image = ((System.Drawing.Image)(resources.GetObject("slideMenu.Image")));
-            this.slideMenu.InitialImage = ((System.Drawing.Image)(resources.GetObject("slideMenu.InitialImage")));
-            this.slideMenu.Location = new System.Drawing.Point(17, 20);
-            this.slideMenu.Name = "slideMenu";
-            this.slideMenu.Size = new System.Drawing.Size(43, 41);
-            this.slideMenu.TabIndex = 0;
-            this.slideMenu.TabStop = false;
-            this.slideMenu.Click += new System.EventHandler(this.slideMenu_Click);
-            // 
-            // imagenRestaurar
-            // 
-            this.imagenRestaurar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imagenRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.imagenRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imagenRestaurar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.ErrorImage")));
-            this.imagenRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.Image")));
-            this.imagenRestaurar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.InitialImage")));
-            this.imagenRestaurar.Location = new System.Drawing.Point(949, 3);
-            this.imagenRestaurar.Name = "imagenRestaurar";
-            this.imagenRestaurar.Size = new System.Drawing.Size(24, 24);
-            this.imagenRestaurar.TabIndex = 4;
-            this.imagenRestaurar.TabStop = false;
-            this.imagenRestaurar.Visible = false;
-            this.imagenRestaurar.Click += new System.EventHandler(this.imagenRestaurar_Click);
-            // 
-            // imagenMinimizar
-            // 
-            this.imagenMinimizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imagenMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.BackgroundImage")));
-            this.imagenMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imagenMinimizar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.ErrorImage")));
-            this.imagenMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.InitialImage")));
-            this.imagenMinimizar.Location = new System.Drawing.Point(913, 3);
-            this.imagenMinimizar.Name = "imagenMinimizar";
-            this.imagenMinimizar.Size = new System.Drawing.Size(27, 23);
-            this.imagenMinimizar.TabIndex = 3;
-            this.imagenMinimizar.TabStop = false;
-            this.imagenMinimizar.Click += new System.EventHandler(this.imagenMinimizar_Click);
-            // 
-            // imagenMaximizar
-            // 
-            this.imagenMaximizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.BackgroundImage")));
-            this.imagenMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imagenMaximizar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.ErrorImage")));
-            this.imagenMaximizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.InitialImage")));
-            this.imagenMaximizar.Location = new System.Drawing.Point(946, 2);
-            this.imagenMaximizar.Name = "imagenMaximizar";
-            this.imagenMaximizar.Size = new System.Drawing.Size(27, 23);
-            this.imagenMaximizar.TabIndex = 2;
-            this.imagenMaximizar.TabStop = false;
-            this.imagenMaximizar.Click += new System.EventHandler(this.imagenMaximizar_Click);
-            // 
-            // imagenCerrar
-            // 
-            this.imagenCerrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.imagenCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.BackgroundImage")));
-            this.imagenCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imagenCerrar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.ErrorImage")));
-            this.imagenCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.InitialImage")));
-            this.imagenCerrar.Location = new System.Drawing.Point(981, 3);
-            this.imagenCerrar.Name = "imagenCerrar";
-            this.imagenCerrar.Size = new System.Drawing.Size(25, 23);
-            this.imagenCerrar.TabIndex = 1;
-            this.imagenCerrar.TabStop = false;
-            this.imagenCerrar.Click += new System.EventHandler(this.imagenCerrar_Click);
             // 
             // btnCitasDelDía
             // 
@@ -391,6 +263,30 @@
             this.INICIO.UseVisualStyleBackColor = true;
             this.INICIO.Click += new System.EventHandler(this.INICIO_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(72, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 24);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "INTERNACIONAL";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(94, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "ASHPANA";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
@@ -401,6 +297,110 @@
             this.pictureBox1.Size = new System.Drawing.Size(61, 55);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // BarraTitulo
+            // 
+            this.BarraTitulo.BackColor = System.Drawing.Color.YellowGreen;
+            this.BarraTitulo.Controls.Add(this.slideMenu);
+            this.BarraTitulo.Controls.Add(this.imagenRestaurar);
+            this.BarraTitulo.Controls.Add(this.imagenMinimizar);
+            this.BarraTitulo.Controls.Add(this.imagenMaximizar);
+            this.BarraTitulo.Controls.Add(this.imagenCerrar);
+            this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BarraTitulo.Location = new System.Drawing.Point(271, 0);
+            this.BarraTitulo.Name = "BarraTitulo";
+            this.BarraTitulo.Size = new System.Drawing.Size(1009, 75);
+            this.BarraTitulo.TabIndex = 1;
+            this.BarraTitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.BarraTitulo_Paint);
+            this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
+            // 
+            // slideMenu
+            // 
+            this.slideMenu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.slideMenu.ErrorImage = ((System.Drawing.Image)(resources.GetObject("slideMenu.ErrorImage")));
+            this.slideMenu.Image = ((System.Drawing.Image)(resources.GetObject("slideMenu.Image")));
+            this.slideMenu.InitialImage = ((System.Drawing.Image)(resources.GetObject("slideMenu.InitialImage")));
+            this.slideMenu.Location = new System.Drawing.Point(17, 20);
+            this.slideMenu.Name = "slideMenu";
+            this.slideMenu.Size = new System.Drawing.Size(43, 41);
+            this.slideMenu.TabIndex = 0;
+            this.slideMenu.TabStop = false;
+            this.slideMenu.Click += new System.EventHandler(this.slideMenu_Click);
+            // 
+            // imagenRestaurar
+            // 
+            this.imagenRestaurar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imagenRestaurar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.imagenRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imagenRestaurar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.ErrorImage")));
+            this.imagenRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.Image")));
+            this.imagenRestaurar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenRestaurar.InitialImage")));
+            this.imagenRestaurar.Location = new System.Drawing.Point(949, 3);
+            this.imagenRestaurar.Name = "imagenRestaurar";
+            this.imagenRestaurar.Size = new System.Drawing.Size(24, 24);
+            this.imagenRestaurar.TabIndex = 4;
+            this.imagenRestaurar.TabStop = false;
+            this.imagenRestaurar.Visible = false;
+            this.imagenRestaurar.Click += new System.EventHandler(this.imagenRestaurar_Click);
+            // 
+            // imagenMinimizar
+            // 
+            this.imagenMinimizar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imagenMinimizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.BackgroundImage")));
+            this.imagenMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imagenMinimizar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.ErrorImage")));
+            this.imagenMinimizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenMinimizar.InitialImage")));
+            this.imagenMinimizar.Location = new System.Drawing.Point(913, 4);
+            this.imagenMinimizar.Name = "imagenMinimizar";
+            this.imagenMinimizar.Size = new System.Drawing.Size(27, 23);
+            this.imagenMinimizar.TabIndex = 3;
+            this.imagenMinimizar.TabStop = false;
+            this.imagenMinimizar.Click += new System.EventHandler(this.imagenMinimizar_Click);
+            // 
+            // imagenMaximizar
+            // 
+            this.imagenMaximizar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.BackgroundImage")));
+            this.imagenMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imagenMaximizar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.ErrorImage")));
+            this.imagenMaximizar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenMaximizar.InitialImage")));
+            this.imagenMaximizar.Location = new System.Drawing.Point(946, 3);
+            this.imagenMaximizar.Name = "imagenMaximizar";
+            this.imagenMaximizar.Size = new System.Drawing.Size(27, 23);
+            this.imagenMaximizar.TabIndex = 2;
+            this.imagenMaximizar.TabStop = false;
+            this.imagenMaximizar.Click += new System.EventHandler(this.imagenMaximizar_Click);
+            // 
+            // imagenCerrar
+            // 
+            this.imagenCerrar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.imagenCerrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.BackgroundImage")));
+            this.imagenCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imagenCerrar.ErrorImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.ErrorImage")));
+            this.imagenCerrar.InitialImage = ((System.Drawing.Image)(resources.GetObject("imagenCerrar.InitialImage")));
+            this.imagenCerrar.Location = new System.Drawing.Point(981, 3);
+            this.imagenCerrar.Name = "imagenCerrar";
+            this.imagenCerrar.Size = new System.Drawing.Size(25, 23);
+            this.imagenCerrar.TabIndex = 1;
+            this.imagenCerrar.TabStop = false;
+            this.imagenCerrar.Click += new System.EventHandler(this.imagenCerrar_Click);
+            // 
+            // panelContedor
+            // 
+            this.panelContedor.Controls.Add(this.pictureBox2);
+            this.panelContedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContedor.Location = new System.Drawing.Point(271, 75);
+            this.panelContedor.Name = "panelContedor";
+            this.panelContedor.Size = new System.Drawing.Size(1009, 713);
+            this.panelContedor.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(-90, -8);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(1271, 750);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // Form1
             // 
@@ -415,15 +415,15 @@
             this.Text = "Form1";
             this.MenuVertical.ResumeLayout(false);
             this.MenuVertical.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.BarraTitulo.ResumeLayout(false);
-            this.panelContedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.slideMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imagenCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelContedor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
