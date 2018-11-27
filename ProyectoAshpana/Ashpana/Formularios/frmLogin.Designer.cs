@@ -62,20 +62,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(43, 224);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(179, 25);
+            this.label3.Size = new System.Drawing.Size(193, 25);
             this.label3.TabIndex = 7;
             this.label3.Text = "INTERNACIONAL";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(78, 181);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 25);
+            this.label2.Size = new System.Drawing.Size(119, 25);
             this.label2.TabIndex = 6;
             this.label2.Text = "ASHPANA";
             // 
@@ -91,11 +91,11 @@
             // txtUsuario
             // 
             this.txtUsuario.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
-            this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtUsuario.Location = new System.Drawing.Point(418, 89);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(269, 23);
+            this.txtUsuario.Size = new System.Drawing.Size(269, 22);
             this.txtUsuario.TabIndex = 3;
             this.txtUsuario.Text = "INGRESE USUARIO";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -104,11 +104,11 @@
             // txtContrasenia
             // 
             this.txtContrasenia.AccessibleRole = System.Windows.Forms.AccessibleRole.Cursor;
-            this.txtContrasenia.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasenia.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.txtContrasenia.Location = new System.Drawing.Point(418, 195);
             this.txtContrasenia.Name = "txtContrasenia";
-            this.txtContrasenia.Size = new System.Drawing.Size(269, 23);
+            this.txtContrasenia.Size = new System.Drawing.Size(269, 22);
             this.txtContrasenia.TabIndex = 4;
             this.txtContrasenia.Text = "INGRESE CONTRASEÑA";
             this.txtContrasenia.Enter += new System.EventHandler(this.txtContrasenia_Enter);
@@ -118,7 +118,7 @@
             // 
             this.btnIngresar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.Font = new System.Drawing.Font("Century Gothic", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnIngresar.Location = new System.Drawing.Point(403, 291);
             this.btnIngresar.Name = "btnIngresar";
@@ -131,11 +131,11 @@
             // lblErrorUsuario
             // 
             this.lblErrorUsuario.AutoSize = true;
-            this.lblErrorUsuario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorUsuario.ForeColor = System.Drawing.Color.OliveDrab;
             this.lblErrorUsuario.Location = new System.Drawing.Point(415, 124);
             this.lblErrorUsuario.Name = "lblErrorUsuario";
-            this.lblErrorUsuario.Size = new System.Drawing.Size(54, 17);
+            this.lblErrorUsuario.Size = new System.Drawing.Size(55, 16);
             this.lblErrorUsuario.TabIndex = 6;
             this.lblErrorUsuario.Text = "Usuario";
             this.lblErrorUsuario.Visible = false;
@@ -143,11 +143,11 @@
             // lblErrorPass
             // 
             this.lblErrorPass.AutoSize = true;
-            this.lblErrorPass.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorPass.ForeColor = System.Drawing.Color.OliveDrab;
             this.lblErrorPass.Location = new System.Drawing.Point(417, 229);
             this.lblErrorPass.Name = "lblErrorPass";
-            this.lblErrorPass.Size = new System.Drawing.Size(84, 17);
+            this.lblErrorPass.Size = new System.Drawing.Size(77, 16);
             this.lblErrorPass.TabIndex = 7;
             this.lblErrorPass.Text = "Contraseña";
             this.lblErrorPass.Visible = false;
@@ -175,20 +175,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(327, 92);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.Size = new System.Drawing.Size(70, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "Usuario: ";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(327, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 16);
+            this.label4.Size = new System.Drawing.Size(95, 16);
             this.label4.TabIndex = 11;
             this.label4.Text = "Contraseña: ";
             // 
