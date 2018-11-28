@@ -330,6 +330,7 @@
             // 
             this.txtSueldo.Location = new System.Drawing.Point(260, 487);
             this.txtSueldo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSueldo.MaxLength = 9;
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(136, 20);
             this.txtSueldo.TabIndex = 87;

@@ -113,6 +113,7 @@
             // txtNumSes
             // 
             this.txtNumSes.Location = new System.Drawing.Point(237, 428);
+            this.txtNumSes.MaxLength = 3;
             this.txtNumSes.Name = "txtNumSes";
             this.txtNumSes.Size = new System.Drawing.Size(125, 20);
             this.txtNumSes.TabIndex = 16;
@@ -131,6 +132,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(237, 383);
+            this.txtPrecio.MaxLength = 7;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(125, 20);
             this.txtPrecio.TabIndex = 14;

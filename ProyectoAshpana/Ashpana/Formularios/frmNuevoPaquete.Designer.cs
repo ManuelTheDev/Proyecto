@@ -78,6 +78,7 @@
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(180, 386);
+            this.txtPrecio.MaxLength = 7;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(64, 20);
             this.txtPrecio.TabIndex = 5;
@@ -86,6 +87,7 @@
             // txtNumSesiones
             // 
             this.txtNumSesiones.Location = new System.Drawing.Point(180, 426);
+            this.txtNumSesiones.MaxLength = 3;
             this.txtNumSesiones.Name = "txtNumSesiones";
             this.txtNumSesiones.Size = new System.Drawing.Size(64, 20);
             this.txtNumSesiones.TabIndex = 7;

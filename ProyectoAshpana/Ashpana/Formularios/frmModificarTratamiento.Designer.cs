@@ -205,7 +205,7 @@
             // 
             this.txtDuracion.Location = new System.Drawing.Point(273, 460);
             this.txtDuracion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtDuracion.MaxLength = 4;
+            this.txtDuracion.MaxLength = 6;
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(164, 20);
             this.txtDuracion.TabIndex = 35;

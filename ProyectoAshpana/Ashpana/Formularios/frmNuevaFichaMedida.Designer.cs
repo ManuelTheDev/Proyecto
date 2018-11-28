@@ -83,6 +83,7 @@
             // 
             this.txtAbAlto.Location = new System.Drawing.Point(184, 338);
             this.txtAbAlto.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAbAlto.MaxLength = 6;
             this.txtAbAlto.Name = "txtAbAlto";
             this.txtAbAlto.Size = new System.Drawing.Size(75, 20);
             this.txtAbAlto.TabIndex = 82;
@@ -92,6 +93,7 @@
             // 
             this.txtPeso.Location = new System.Drawing.Point(184, 263);
             this.txtPeso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPeso.MaxLength = 6;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(77, 20);
             this.txtPeso.TabIndex = 80;
@@ -167,6 +169,7 @@
             // 
             this.txtEspalda.Location = new System.Drawing.Point(184, 303);
             this.txtEspalda.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEspalda.MaxLength = 6;
             this.txtEspalda.Name = "txtEspalda";
             this.txtEspalda.Size = new System.Drawing.Size(77, 20);
             this.txtEspalda.TabIndex = 95;
@@ -189,6 +192,7 @@
             // 
             this.txtAbBajo.Location = new System.Drawing.Point(184, 372);
             this.txtAbBajo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAbBajo.MaxLength = 6;
             this.txtAbBajo.Name = "txtAbBajo";
             this.txtAbBajo.Size = new System.Drawing.Size(75, 20);
             this.txtAbBajo.TabIndex = 99;
@@ -209,6 +213,7 @@
             // 
             this.txtCintura.Location = new System.Drawing.Point(184, 415);
             this.txtCintura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCintura.MaxLength = 6;
             this.txtCintura.Name = "txtCintura";
             this.txtCintura.Size = new System.Drawing.Size(75, 20);
             this.txtCintura.TabIndex = 101;
@@ -229,6 +234,7 @@
             // 
             this.txtPierDer.Location = new System.Drawing.Point(462, 375);
             this.txtPierDer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPierDer.MaxLength = 6;
             this.txtPierDer.Name = "txtPierDer";
             this.txtPierDer.Size = new System.Drawing.Size(75, 20);
             this.txtPierDer.TabIndex = 109;
@@ -249,6 +255,7 @@
             // 
             this.txtGluteos.Location = new System.Drawing.Point(462, 337);
             this.txtGluteos.Margin = new System.Windows.Forms.Padding(4);
+            this.txtGluteos.MaxLength = 6;
             this.txtGluteos.Name = "txtGluteos";
             this.txtGluteos.Size = new System.Drawing.Size(75, 20);
             this.txtGluteos.TabIndex = 107;
@@ -269,6 +276,7 @@
             // 
             this.txtBrIzq.Location = new System.Drawing.Point(462, 298);
             this.txtBrIzq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBrIzq.MaxLength = 6;
             this.txtBrIzq.Name = "txtBrIzq";
             this.txtBrIzq.Size = new System.Drawing.Size(77, 20);
             this.txtBrIzq.TabIndex = 105;
@@ -278,6 +286,7 @@
             // 
             this.txtBrDer.Location = new System.Drawing.Point(462, 267);
             this.txtBrDer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBrDer.MaxLength = 6;
             this.txtBrDer.Name = "txtBrDer";
             this.txtBrDer.Size = new System.Drawing.Size(75, 20);
             this.txtBrDer.TabIndex = 104;
@@ -309,6 +318,7 @@
             // 
             this.txtIzq.Location = new System.Drawing.Point(464, 414);
             this.txtIzq.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIzq.MaxLength = 6;
             this.txtIzq.Name = "txtIzq";
             this.txtIzq.Size = new System.Drawing.Size(75, 20);
             this.txtIzq.TabIndex = 112;

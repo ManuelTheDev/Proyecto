@@ -78,6 +78,7 @@
             // 
             this.txtDuracion.Location = new System.Drawing.Point(286, 474);
             this.txtDuracion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDuracion.MaxLength = 6;
             this.txtDuracion.Name = "txtDuracion";
             this.txtDuracion.Size = new System.Drawing.Size(164, 27);
             this.txtDuracion.TabIndex = 11;
@@ -87,6 +88,7 @@
             // 
             this.txtPrecio.Location = new System.Drawing.Point(337, 529);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPrecio.MaxLength = 7;
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(174, 27);
             this.txtPrecio.TabIndex = 12;
