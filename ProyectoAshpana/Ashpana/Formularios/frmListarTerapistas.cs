@@ -31,7 +31,7 @@ namespace Formularios
                 terapistas = terapistaBL.listarTerapistas();
             }
                
-            dgvTerapistas.DataSource = terapistas;
+            dgvTerapistas.DataSource = terapistaBL.listarTerapistas_X_Paquete(idServicio);
         }
 
         public Terapista Terapista { get => terapista; set => terapista = value; }

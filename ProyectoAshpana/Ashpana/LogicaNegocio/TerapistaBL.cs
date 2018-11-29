@@ -78,5 +78,10 @@ namespace LogicaNegocio
         {
             return terapistaDA.listarTerapistas_X_Tratamiento(idTratamiento);
         }
+
+        public BindingList<Terapista> listarTerapistas_X_Paquete(int id_servicio)
+        {
+            return terapistaDA.listarTerapistasXPaquetes(id_servicio);
+        }
     }
 }
