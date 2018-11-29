@@ -245,6 +245,12 @@
     <Compile Include="frmNuevoTratamientos.Designer.cs">
       <DependentUpon>frmNuevoTratamientos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVerHistorialServicios_X_Paciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerHistorialServicios_X_Paciente.Designer.cs">
+      <DependentUpon>frmVerHistorialServicios_X_Paciente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVerPadecimientos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -375,6 +381,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerCondicionesMedicas_X_Paciente.resx">
       <DependentUpon>frmVerCondicionesMedicas_X_Paciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerHistorialServicios_X_Paciente.resx">
+      <DependentUpon>frmVerHistorialServicios_X_Paciente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVerPadecimientos.resx">
       <DependentUpon>frmVerPadecimientos.cs</DependentUpon>

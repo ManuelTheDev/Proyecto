@@ -51,6 +51,39 @@ namespace AccesoDatos
             return clientes;
         }
 
+        public BindingList<Servicio> listarServiciosXCliente(int IdCliente)
+        {
+            BindingList<Servicio> servicios = new BindingList<Servicio>();
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                   "user=inf282g4;" +
+                   "password=GvZf6p;" +
+                   "database=inf282g4;" +
+                   "port=3306;" +
+                   "SslMode=none;";
+
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_SERVICIOXCLIENTE";
+            comando.Connection = conexion;
+            comando.Parameters.Add("_ID_CLIENTE", MySqlDbType.Int32).Value = IdCliente;
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Servicio cm = new Servicio();
+                cm.IdServicio = reader.GetInt32(0);
+                cm.NombreServicio = reader.GetString(1);
+                cm.PrecioServicio = reader.GetDouble(2);
+                cm.EstadoServicio = reader.GetInt32(3);
+                cm.Fecha = reader.GetDateTime(4);
+                servicios.Add(cm);
+            }
+            conexion.Close();
+            return servicios;
+        }
+
         public void registrarCliente(Cliente s, ref int idCliente, ref int idPersona)
         {
             string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
