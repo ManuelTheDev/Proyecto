@@ -138,5 +138,10 @@ namespace Formularios
 
             dgvPaquetes.DataSource = paqBuscados;
         }
+
+        private void lblBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

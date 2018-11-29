@@ -36,6 +36,8 @@
             this.NombreCondMedTrat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FECHA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.txtboxBuscarServicio = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).BeginInit();
             this.SuspendLayout();
@@ -89,10 +91,10 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvServicios.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvServicios.EnableHeadersVisualStyles = false;
-            this.dgvServicios.Location = new System.Drawing.Point(75, 131);
+            this.dgvServicios.Location = new System.Drawing.Point(75, 152);
             this.dgvServicios.Name = "dgvServicios";
             this.dgvServicios.ReadOnly = true;
-            this.dgvServicios.Size = new System.Drawing.Size(693, 247);
+            this.dgvServicios.Size = new System.Drawing.Size(693, 226);
             this.dgvServicios.TabIndex = 31;
             // 
             // NombreCondMedTrat
@@ -118,11 +120,32 @@
             this.FECHA.ReadOnly = true;
             this.FECHA.Width = 200;
             // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(71, 102);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(157, 21);
+            this.lblBuscar.TabIndex = 33;
+            this.lblBuscar.Text = "BUSCAR SERVICIO:";
+            // 
+            // txtboxBuscarServicio
+            // 
+            this.txtboxBuscarServicio.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtboxBuscarServicio.Location = new System.Drawing.Point(234, 96);
+            this.txtboxBuscarServicio.Name = "txtboxBuscarServicio";
+            this.txtboxBuscarServicio.Size = new System.Drawing.Size(482, 27);
+            this.txtboxBuscarServicio.TabIndex = 32;
+            this.txtboxBuscarServicio.TextChanged += new System.EventHandler(this.txtboxBuscarServicio_TextChanged);
+            // 
             // frmVerHistorialServicios_X_Paciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 450);
+            this.Controls.Add(this.lblBuscar);
+            this.Controls.Add(this.txtboxBuscarServicio);
             this.Controls.Add(this.dgvServicios);
             this.Controls.Add(this.panel1);
             this.Name = "frmVerHistorialServicios_X_Paciente";
@@ -131,6 +154,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServicios)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -142,5 +166,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCondMedTrat;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FECHA;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.TextBox txtboxBuscarServicio;
     }
 }
