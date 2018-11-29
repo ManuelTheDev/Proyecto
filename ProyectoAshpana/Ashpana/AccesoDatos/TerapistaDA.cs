@@ -217,6 +217,11 @@ namespace AccesoDatos
                 Terapista t = new Terapista();
                 t.IdTerapista = reader.GetInt32("ID_TERAPISTA");
                 t.Nombres = reader.GetString("NOMBRES");
+                TimeSpan t1 = reader.GetTimeSpan("HORA_ENTRADA");
+                DateTime dt = new DateTime(2012, 01, 01);
+                t.HoraEntrada = dt + t1;
+                TimeSpan t2 = reader.GetTimeSpan("HORA_SALIDA");
+                t.HoraSalida = dt + t2;
                 t.ApMaterno = reader.GetString("APELLIDO_MATERNO");
                 t.ApPaterno = reader.GetString("APELLIDO_PATERNO");
                 terapistas.Add(t);
@@ -302,6 +307,11 @@ namespace AccesoDatos
                 ter.Nombres = reader.GetString(2);
                 ter.ApPaterno = reader.GetString(3);
                 ter.ApMaterno = reader.GetString(4);
+                TimeSpan t1 = reader.GetTimeSpan("HORA_ENTRADA");
+                DateTime dt = new DateTime(2012, 01, 01);
+                ter.HoraEntrada = dt + t1;
+                TimeSpan t2 = reader.GetTimeSpan("HORA_SALIDA");
+                ter.HoraSalida = dt + t2;
                 terapistas.Add(ter);
             }
             conexion.Close();

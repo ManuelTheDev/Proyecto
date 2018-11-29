@@ -83,7 +83,7 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(-265, -2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(1275, 103);
+            this.button3.Size = new System.Drawing.Size(1360, 103);
             this.button3.TabIndex = 6;
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = false;

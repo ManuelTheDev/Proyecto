@@ -25,13 +25,13 @@ namespace Formularios
             terapistaBL = new TerapistaBL();
             dgvTerapistas.AutoGenerateColumns = false;
             if (numSesiones == 1)
-                terapistas = terapistaBL.listarTerapistas_X_Tratamiento(idServicio);
+                dgvTerapistas.DataSource = terapistaBL.listarTerapistas_X_Tratamiento(idServicio);
             else
-            {           
-                terapistas = terapistaBL.listarTerapistas();
+            {
+                dgvTerapistas.DataSource = terapistaBL.listarTerapistas_X_Paquete(idServicio);
             }
                
-            dgvTerapistas.DataSource = terapistaBL.listarTerapistas_X_Paquete(idServicio);
+           
         }
 
         public Terapista Terapista { get => terapista; set => terapista = value; }
