@@ -27,10 +27,8 @@ namespace Formularios
             if (numSesiones == 1)
                 terapistas = terapistaBL.listarTerapistas_X_Tratamiento(idServicio);
             else
-            {
-
+            {           
                 terapistas = terapistaBL.listarTerapistas();
-
             }
                
             dgvTerapistas.DataSource = terapistas;

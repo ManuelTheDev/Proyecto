@@ -129,4 +129,17 @@
   <metadata name="Hora.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnListarTerapistas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGOfPtRkwAAAAlwSFlzAAAX
+        EgAAFxIBZ5/SUgAAABl0RVh0U29mdHdhcmUATWljcm9zb2Z0IE9mZmljZX/tNXEAAAFRSURBVDhPfZO/
+        qoJgGMYVRxdpaHS1IbqMvILoCrwEEWpoqCFoCBHEpgiFbiEIoj9DEElDc11BUFAuYjzH77PT0XPezgO/
+        5fu9z/vxgQppwNB1HcvlEs/nE/f7HZPJBJVKhbt/EDAcDsEShiG63S5s28blcuFnjUaDKmXU63U+1Gq1
+        CkKWZczncyRJAlVVC+7N4XDAbrcjZalU4uV+v096gd1qmiYtU/b7PdbrNel4udPp0DLleDxisViQTpjN
+        Zjifz6TUNI3thmVZpBdqtRofmE6nUBTlLarVKk6nE67XK0RRLJZ+EGAYBl8QxzE2mw1/J0sURXg8HnAc
+        B81mky4z2E1saLvdYrVaod1uo1wuYzwe80UsruvS5U+wjySf0WiU98Xh30iSBN/3X9Usnud9+78FiiAI
+        XtUs7FnpOT1MwX6WfNIzevATvV4Pt9sNg8EAX6pal0QTAs9jAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

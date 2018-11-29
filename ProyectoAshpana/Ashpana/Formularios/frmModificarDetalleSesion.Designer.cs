@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmModificarDetalleSesion));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -259,12 +260,11 @@
             this.btnListarTerapistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListarTerapistas.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListarTerapistas.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnListarTerapistas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnListarTerapistas.Image = ((System.Drawing.Image)(resources.GetObject("btnListarTerapistas.Image")));
             this.btnListarTerapistas.Location = new System.Drawing.Point(289, 132);
             this.btnListarTerapistas.Name = "btnListarTerapistas";
             this.btnListarTerapistas.Size = new System.Drawing.Size(52, 20);
             this.btnListarTerapistas.TabIndex = 60;
-            this.btnListarTerapistas.Text = "...";
             this.btnListarTerapistas.UseVisualStyleBackColor = false;
             this.btnListarTerapistas.Click += new System.EventHandler(this.btnListarTerapistas_Click_1);
             // 

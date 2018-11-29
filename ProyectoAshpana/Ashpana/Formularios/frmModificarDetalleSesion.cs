@@ -73,6 +73,15 @@ namespace Formularios
                 MessageBox.Show("Debe seleccionar una terapista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            String hora = cboHora.Text + ":" + cboMinuto.Text + ":00";
+            TimeSpan horaCita = Convert.ToDateTime(hora).TimeOfDay;
+
+            if (!(horaCita > terapistaSeleccionado.HoraEntrada.TimeOfDay && terapistaSeleccionado.HoraSalida.TimeOfDay > horaCita))
+            {
+                MessageBox.Show("La terapista seleccionada no se encuentra a esa hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Sesion s = new Sesion();
             
             Servicio serv = new Servicio();
@@ -81,15 +90,13 @@ namespace Formularios
             s.Servicio = serv;
             s.Terapista = TerapistaSeleccionado;
 
-            String horaCita = cboHora.Text + ":" + cboMinuto.Text + ":00";
-            TimeSpan hora_E = Convert.ToDateTime(horaCita).TimeOfDay;
 
             if (dtpFecha.Value.Date < DateTime.Now.Date)
             {
                 MessageBox.Show("Seleccione una fecha posterior a la del día de hoy");
                 return;
             }
-            if (dtpFecha.Value.Date == DateTime.Now.Date && hora_E < DateTime.Now.TimeOfDay)
+            if (dtpFecha.Value.Date == DateTime.Now.Date && horaCita < DateTime.Now.TimeOfDay)
             {
                 MessageBox.Show("Seleccione una hora posterior a la hora actual");
                 return;
@@ -102,7 +109,7 @@ namespace Formularios
                     return;
                 }
             }
-            s.Hora = hora_E;
+            s.Hora = horaCita;
             s.FechaSesion = dtpFecha.Value;
 
             s.NumDeSesion = DetalleCita1.Sesiones.Count + 1;
@@ -138,7 +145,7 @@ namespace Formularios
                 MessageBox.Show("No puede eliminar una sesión que ya se dio", "Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            fechasSesiones.Remove(DetalleCita1.Sesiones[indice].FechaSesion);
             DetalleCita1.Sesiones.RemoveAt(indice);
             if (DetalleCita.Sesiones.Count > 0)
             {

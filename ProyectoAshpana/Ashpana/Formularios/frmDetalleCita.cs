@@ -69,6 +69,14 @@ namespace Formularios
 
         private void btnAgregarSesion_Click(object sender, EventArgs e)
         {
+            String hora = cboHora.Text + ":" + cboMinuto.Text + ":00";
+            TimeSpan horaCita = Convert.ToDateTime(hora).TimeOfDay;
+            
+            if (!(horaCita > terapistaSeleccionado.HoraEntrada.TimeOfDay && terapistaSeleccionado.HoraSalida.TimeOfDay > horaCita))
+            {
+                MessageBox.Show("La terapista seleccionada no se encuentra a esa hora", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             if (numSesionesTotal == DetalleServicioModificado.Servicio.NumSesiones)         
             {
                 MessageBox.Show("Ya no puede ingresar más sesiones");
@@ -89,10 +97,7 @@ namespace Formularios
             serv.IdServicio = detalleServicioModificado.Servicio.IdServicio;
 
             s.Servicio = serv;
-            s.Terapista = terapistaSeleccionado;
-            String horaCita = cboHora.Text + ":" + cboMinuto.Text + ":00";
-            TimeSpan hora_E = Convert.ToDateTime(horaCita).TimeOfDay;
-            
+            s.Terapista = terapistaSeleccionado;            
            
             foreach (DateTime dt in fechasSesiones)
             {
@@ -107,12 +112,12 @@ namespace Formularios
                 MessageBox.Show("Seleccione una fecha posterior a la del día de hoy");
                 return;
             }
-            if (dtpFecha.Value.Date==DateTime.Now.Date && hora_E < DateTime.Now.TimeOfDay)
+            if (dtpFecha.Value.Date==DateTime.Now.Date && horaCita < DateTime.Now.TimeOfDay)
             {
                 MessageBox.Show("Seleccione una hora posterior a la hora actual");
                 return;
             }
-            s.Hora = hora_E;
+            s.Hora = horaCita;
             s.FechaSesion = dtpFecha.Value;
             fechasSesiones.Add(s.FechaSesion);   
 
@@ -132,9 +137,10 @@ namespace Formularios
                 MessageBox.Show("Debe seleccionar una fila", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            
+            fechasSesiones.Remove(DetalleServicioModificado.Sesiones[indice].FechaSesion);
             DetalleServicioModificado.Sesiones.RemoveAt(indice);
             numSesionesTotal--; 
+
             if(DetalleServicioModificado.Sesiones.Count > 0)
             {
                 foreach(Sesion s in DetalleServicioModificado.Sesiones)
