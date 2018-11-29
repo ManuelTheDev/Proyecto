@@ -307,5 +307,53 @@ namespace AccesoDatos
             conexion.Close();
             return terapistas;
         }
+
+        public BindingList<Terapista> listarTerapistasVerificaciones()
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;" +
+                      "Convert Zero Datetime=True;";
+
+            BindingList<Terapista> terapistas = new BindingList<Terapista>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_TERAPISTAS2";
+            comando.Connection = conexion;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Terapista t = new Terapista();
+                t.IdPersona = reader.GetInt32("ID_PERSONA");
+                t.IdTrabajador = reader.GetInt32("ID_TRABAJADOR");
+                t.IdTerapista = reader.GetInt32("ID_TERAPISTA");
+                t.Dni = reader.GetString("DNI");
+                t.Nombres = reader.GetString("NOMBRES");
+                t.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                t.ApMaterno = reader.GetString("APELLIDO_MATERNO");
+                t.Correo = reader.GetString("CORREO");
+                t.Direccion = reader.GetString("DIRECCION");
+                t.Telefono = reader.GetString("TELEFONO");
+                t.Sueldo = reader.GetDouble("SUELDO");
+                t.Estado = reader.GetInt32("ESTADO");
+                t.Sexo = reader.GetChar("SEXO");
+                t.Logueado = reader.GetInt32("LOGUEADO");
+                TimeSpan horaEntradaAux = reader.GetTimeSpan("HORA_ENTRADA");
+                DateTime dt = new DateTime(2012, 01, 01);
+                t.HoraEntrada = dt + horaEntradaAux;
+                TimeSpan horaSalidaAux = reader.GetTimeSpan("HORA_SALIDA");
+                t.HoraSalida = dt + horaSalidaAux;
+                t.FechaNac = reader.GetDateTime("FECHA_NACIMIENTO");
+                t.Contrasena = reader.GetString("CONTRASENIA");
+                terapistas.Add(t);
+            }
+            conexion.Close();
+            return terapistas;
+        }
     }
 }

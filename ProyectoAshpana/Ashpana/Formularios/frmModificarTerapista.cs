@@ -20,6 +20,7 @@ namespace Formularios
         public frmModificarTerapista(Terapista t)
         {
             InitializeComponent();
+            terapistaBL = new TerapistaBL();
             txtNombre.Text = t.Nombres;
             txtApPaterno.Text = t.ApPaterno;
             txtApMaterno.Text = t.ApMaterno;
@@ -73,6 +74,7 @@ namespace Formularios
             terapistaMod.IdTerapista = t.IdTerapista;
             terapistaMod.IdTrabajador = t.IdTrabajador;
             terapistaMod.Logueado = t.Logueado;
+            terapistaMod.Dni = t.Dni;
 
             
             if (t.Sexo == 'M')
@@ -114,6 +116,30 @@ namespace Formularios
 
         private void btnModifcar_Click(object sender, EventArgs e)
         {
+            BindingList<Terapista> terapistas;
+            terapistas = terapistaBL.listarTerapistaVerificaciones();
+
+            /*foreach (Cliente c in clientes)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }*/
+            foreach (Terapista c in terapistas)
+            {
+                if ((c.Dni).Equals( txtDni.Text))
+                {
+                    if ((txtDni.Text).Equals(terapistaMod.Dni))
+                        break;
+                    else
+                    {
+                        MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
 
             if (DateTime.Now.Year - dtpFechaNac.Value.Year < 15)
             {
@@ -248,7 +274,7 @@ namespace Formularios
                 terapistaMod.Tipo = 1;
             }
 
-            terapistaBL = new TerapistaBL();
+            //terapistaBL = new TerapistaBL();
 
             String horaE = cboHoraEntrada.Text;
             String horaS = cboHoraSalida.Text;

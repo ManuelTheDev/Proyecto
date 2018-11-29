@@ -20,6 +20,7 @@ namespace Formularios
         public frmModificarUsuario(Superusuario s)
         {
             InitializeComponent();
+            usuarioBL = new UsuarioBL();
             txtNombres.Text = s.Nombres;
             txtApellidoPaterno.Text = s.ApPaterno;
             txtApellidoMaterno.Text = s.ApMaterno;
@@ -36,6 +37,7 @@ namespace Formularios
             superUsuarioMod.IdTrabajador = s.IdTrabajador;
             superUsuarioMod.IdSuperusuario = s.IdSuperusuario;
             superUsuarioMod.Logueado = s.Logueado;
+            superUsuarioMod.Dni = s.Dni;
             if (s.Sexo == 'M')
             {
                 rbMasculino.Checked = true; 
@@ -65,6 +67,22 @@ namespace Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            BindingList<Superusuario> superusuarios = new BindingList<Superusuario>();
+            superusuarios = usuarioBL.listarSuperusuariosVerificaciones();
+           
+            foreach (Superusuario c in superusuarios)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    if (txtDni.Text == superUsuarioMod.Dni)
+                        break;
+                    else
+                    {
+                        MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        return;
+                    }
+                }
+            }
 
             if (DateTime.Now.Year - dtpFechaNac.Value.Year < 15)
             {
@@ -136,7 +154,6 @@ namespace Formularios
             }
             superUsuarioMod.Telefono = txtTelefono.Text.Trim();
 
-            //falta validar
             superUsuarioMod.FechaNac = dtpFechaNac.Value;
             if (rbFemenino.Checked == true)
             {
@@ -184,7 +201,7 @@ namespace Formularios
                 }
                 superUsuarioMod.Estado = 0;
             }
-            usuarioBL = new UsuarioBL();
+            //usuarioBL = new UsuarioBL();
             usuarioBL.modificarSuperusuario(superUsuarioMod);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha modifcado satisfactoriamente el usuario", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);

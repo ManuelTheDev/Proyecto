@@ -46,6 +46,12 @@ namespace Formularios
         private void btnRegistrarTratamientos_Click(object sender, EventArgs e)
         {
             terapistaBL = new TerapistaBL();
+
+            if (dgvTratamientos.RowCount == 0)
+            {
+                MessageBox.Show("Por favor, ingrese al menos un Tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             bool registrado = terapistaBL.registrarTratamiento_X_terapista(terapista, terapistaModificar);
 
             if (registrado)
@@ -88,6 +94,11 @@ namespace Formularios
 
         private void btnAgregarTratamiento_Click(object sender, EventArgs e)
         {
+            if (txtNomTratamiento.Text == "")
+            {
+                MessageBox.Show("Por favor, ingrese un tratamiento", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             Tratamiento t = new Tratamiento();
             t = tratamientoSeleccionado;
 

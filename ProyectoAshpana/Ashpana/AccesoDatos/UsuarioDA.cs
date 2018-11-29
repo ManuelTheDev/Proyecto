@@ -118,5 +118,47 @@ namespace AccesoDatos
             con.Close();
         }
 
+        public BindingList<Superusuario> listarSuperusuariosVerificaciones()
+        {
+            string cadena = "server=quilla.lab.inf.pucp.edu.pe;" +
+                      "user=inf282g4;" +
+                      "password=GvZf6p;" +
+                      "database=inf282g4;" +
+                      "port=3306;" +
+                      "SslMode=none;";
+
+            BindingList<Superusuario> usuarios = new BindingList<Superusuario>();
+            MySqlConnection conexion = new MySqlConnection(cadena);
+            conexion.Open();
+            MySqlCommand comando = new MySqlCommand();
+            comando.CommandType = System.Data.CommandType.StoredProcedure;
+            comando.CommandText = "LISTAR_SUPERUSUARIOS2";
+            comando.Connection = conexion;
+            MySqlDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Superusuario s = new Superusuario();
+                s.IdPersona = reader.GetInt32("ID_PERSONA");
+                s.IdTrabajador = reader.GetInt32("ID_TRABAJADOR");
+                s.IdSuperusuario = reader.GetInt32("ID_SUPERUSUARIO");
+                s.Dni = reader.GetString("DNI");
+                s.Nombres = reader.GetString("NOMBRES");
+                s.ApPaterno = reader.GetString("APELLIDO_PATERNO");
+                s.ApMaterno = reader.GetString("APELLIDO_MATERNO");
+                s.Correo = reader.GetString("CORREO");
+                s.Direccion = reader.GetString("DIRECCION");
+                s.Telefono = reader.GetString("TELEFONO");
+                s.Sueldo = reader.GetDouble("SUELDO");
+                s.Estado = reader.GetInt32("ESTADO");
+                s.Logueado = reader.GetInt32("LOGUEADO");
+                s.Sexo = reader.GetChar("SEXO");
+                s.FechaNac = reader.GetDateTime("FECHA_NACIMIENTO");
+                s.Contrasena = reader.GetString("CONTRASENIA");
+                usuarios.Add(s);
+            }
+            conexion.Close();
+            return usuarios;
+        }
+
     }
 }

@@ -17,12 +17,14 @@ namespace Formularios
     {
         private Terapista t1;
         private TratamientoBL tratamientoBL;
+        private TerapistaBL terapistaBL;
         public Terapista T1 { get => t1; set => t1 = value; }
 
         public frmNuevoTerapista()
         {
             InitializeComponent();
             T1 = new Terapista();
+            terapistaBL = new TerapistaBL();
            
         }
 
@@ -45,6 +47,17 @@ namespace Formularios
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Terapista t = new Terapista();
+
+            BindingList<Terapista> terapistas = new BindingList<Terapista>();
+            terapistas = terapistaBL.listarTerapistaVerificaciones();
+            foreach (Terapista c in terapistas)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
 
             if (DateTime.Now.Year - dtpFechaNac.Value.Year < 15)
             {
@@ -174,7 +187,7 @@ namespace Formularios
                 return;
             }
     
-            TerapistaBL terapistaBL = new TerapistaBL();
+            
             terapistaBL.registrarTerapista(t, horaE, horaS, minutoE, minutoS);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha registrado correctamente al terapista", "RegistroTerapista", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

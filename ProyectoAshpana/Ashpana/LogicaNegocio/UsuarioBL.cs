@@ -32,5 +32,10 @@ namespace LogicaNegocio
         {
             usuarioDA.modificarUsuario(s);
         }
+
+        public BindingList<Superusuario> listarSuperusuariosVerificaciones()
+        {
+            return usuarioDA.listarSuperusuariosVerificaciones();
+        }
     }
 }

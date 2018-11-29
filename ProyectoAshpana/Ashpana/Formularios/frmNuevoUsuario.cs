@@ -28,6 +28,18 @@ namespace Formularios
         {
             Superusuario s = new Superusuario();
 
+            BindingList<Superusuario> superususarios = new BindingList<Superusuario>();
+            superususarios = usuarioBL.listarSuperusuariosVerificaciones();
+            foreach (Superusuario c in superususarios)
+            {
+                if (c.Dni == txtDni.Text)
+                {
+                    MessageBox.Show("El DNI ingresado ya existe", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+            }
+
+
             if (DateTime.Now.Year - dtpFecha_Nac.Value.Year < 15)
             {
                 MessageBox.Show("El usuario debe ser mayor de 15 años", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -131,7 +143,7 @@ namespace Formularios
                 return;
             }
 
-            usuarioBL = new UsuarioBL();
+            //usuarioBL = new UsuarioBL();
             usuarioBL.registrarSuperusuario(s);
             this.DialogResult = DialogResult.OK;
             MessageBox.Show("Se ha creado satisfactoriamente el usuario", "Guardar", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
