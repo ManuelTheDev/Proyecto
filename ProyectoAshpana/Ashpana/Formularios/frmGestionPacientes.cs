@@ -124,5 +124,16 @@ namespace Formularios
 
             }
         }
+
+        private void btnVerServicios_Click(object sender, EventArgs e)
+        {
+            clienteSeleccionado = (Cliente)dgvClientes.CurrentRow.DataBoundItem;
+            var frmConMed = new frmVerHistorialServicios_X_Paciente(clienteSeleccionado.IdCliente);
+            frmConMed.ShowDialog();
+            if (frmConMed.DialogResult == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

@@ -31,6 +31,12 @@ namespace LogicaNegocio
             }
         }
 
+        public BindingList<Servicio> listarServiciosXCliente(int IdCliente)
+        {
+            BindingList<Servicio> servicios = clienteDA.listarServiciosXCliente(IdCliente);
+            return servicios;
+        }
+
         public BindingList<Cliente> listarClientes()
         {
             BindingList<Cliente> clientes = clienteDA.listarClientes();

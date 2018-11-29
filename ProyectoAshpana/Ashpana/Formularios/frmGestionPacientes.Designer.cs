@@ -34,12 +34,6 @@
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvClientes = new System.Windows.Forms.DataGridView();
-            this.btnModificar = new System.Windows.Forms.Button();
-            this.CITAS = new System.Windows.Forms.Panel();
-            this.lblClientes = new System.Windows.Forms.Label();
-            this.btnVerFichaMedidas = new System.Windows.Forms.Button();
-            this.lblBuscar = new System.Windows.Forms.Label();
-            this.btnVerCondicionMed = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apPaternoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +44,17 @@
             this.correoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaNacDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.CITAS = new System.Windows.Forms.Panel();
+            this.lblClientes = new System.Windows.Forms.Label();
+            this.btnVerFichaMedidas = new System.Windows.Forms.Button();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.btnVerCondicionMed = new System.Windows.Forms.Button();
             this.personaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnVerServicios = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
-            this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            this.CITAS.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,81 +125,6 @@
             this.dgvClientes.Size = new System.Drawing.Size(836, 236);
             this.dgvClientes.TabIndex = 4;
             // 
-            // btnModificar
-            // 
-            this.btnModificar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnModificar.Location = new System.Drawing.Point(719, 508);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(221, 41);
-            this.btnModificar.TabIndex = 5;
-            this.btnModificar.Text = "MODIFICAR";
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // CITAS
-            // 
-            this.CITAS.BackColor = System.Drawing.Color.YellowGreen;
-            this.CITAS.Controls.Add(this.lblClientes);
-            this.CITAS.Location = new System.Drawing.Point(0, 0);
-            this.CITAS.Name = "CITAS";
-            this.CITAS.Size = new System.Drawing.Size(1271, 102);
-            this.CITAS.TabIndex = 21;
-            // 
-            // lblClientes
-            // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblClientes.Location = new System.Drawing.Point(745, 33);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(207, 44);
-            this.lblClientes.TabIndex = 9;
-            this.lblClientes.Text = "PACIENTES";
-            // 
-            // btnVerFichaMedidas
-            // 
-            this.btnVerFichaMedidas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVerFichaMedidas.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnVerFichaMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerFichaMedidas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerFichaMedidas.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerFichaMedidas.Location = new System.Drawing.Point(104, 508);
-            this.btnVerFichaMedidas.Name = "btnVerFichaMedidas";
-            this.btnVerFichaMedidas.Size = new System.Drawing.Size(294, 41);
-            this.btnVerFichaMedidas.TabIndex = 22;
-            this.btnVerFichaMedidas.Text = "VER FICHAS MEDIDAS";
-            this.btnVerFichaMedidas.UseVisualStyleBackColor = false;
-            this.btnVerFichaMedidas.Click += new System.EventHandler(this.btnVerFichaMedidas_Click);
-            // 
-            // lblBuscar
-            // 
-            this.lblBuscar.AutoSize = true;
-            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscar.Location = new System.Drawing.Point(121, 154);
-            this.lblBuscar.Name = "lblBuscar";
-            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
-            this.lblBuscar.TabIndex = 23;
-            this.lblBuscar.Text = "BUSCAR:";
-            // 
-            // btnVerCondicionMed
-            // 
-            this.btnVerCondicionMed.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnVerCondicionMed.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnVerCondicionMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerCondicionMed.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerCondicionMed.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnVerCondicionMed.Location = new System.Drawing.Point(425, 499);
-            this.btnVerCondicionMed.Name = "btnVerCondicionMed";
-            this.btnVerCondicionMed.Size = new System.Drawing.Size(272, 58);
-            this.btnVerCondicionMed.TabIndex = 24;
-            this.btnVerCondicionMed.Text = "VER CONDICIONES MÉDICAS";
-            this.btnVerCondicionMed.UseVisualStyleBackColor = false;
-            this.btnVerCondicionMed.Click += new System.EventHandler(this.btnVerCondicionMed_Click);
-            // 
             // Column2
             // 
             this.Column2.DataPropertyName = "Dni";
@@ -266,15 +192,106 @@
             // 
             this.clienteBindingSource.DataSource = typeof(Modelo.Cliente);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnModificar.Location = new System.Drawing.Point(783, 499);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(157, 58);
+            this.btnModificar.TabIndex = 5;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = false;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // CITAS
+            // 
+            this.CITAS.BackColor = System.Drawing.Color.YellowGreen;
+            this.CITAS.Controls.Add(this.lblClientes);
+            this.CITAS.Location = new System.Drawing.Point(0, 0);
+            this.CITAS.Name = "CITAS";
+            this.CITAS.Size = new System.Drawing.Size(1271, 102);
+            this.CITAS.TabIndex = 21;
+            // 
+            // lblClientes
+            // 
+            this.lblClientes.AutoSize = true;
+            this.lblClientes.Font = new System.Drawing.Font("Century Gothic", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClientes.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblClientes.Location = new System.Drawing.Point(745, 33);
+            this.lblClientes.Name = "lblClientes";
+            this.lblClientes.Size = new System.Drawing.Size(207, 44);
+            this.lblClientes.TabIndex = 9;
+            this.lblClientes.Text = "PACIENTES";
+            // 
+            // btnVerFichaMedidas
+            // 
+            this.btnVerFichaMedidas.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerFichaMedidas.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnVerFichaMedidas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerFichaMedidas.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerFichaMedidas.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerFichaMedidas.Location = new System.Drawing.Point(567, 499);
+            this.btnVerFichaMedidas.Name = "btnVerFichaMedidas";
+            this.btnVerFichaMedidas.Size = new System.Drawing.Size(196, 58);
+            this.btnVerFichaMedidas.TabIndex = 22;
+            this.btnVerFichaMedidas.Text = "VER FICHAS MEDIDAS";
+            this.btnVerFichaMedidas.UseVisualStyleBackColor = false;
+            this.btnVerFichaMedidas.Click += new System.EventHandler(this.btnVerFichaMedidas_Click);
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuscar.Location = new System.Drawing.Point(121, 154);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(78, 21);
+            this.lblBuscar.TabIndex = 23;
+            this.lblBuscar.Text = "BUSCAR:";
+            // 
+            // btnVerCondicionMed
+            // 
+            this.btnVerCondicionMed.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerCondicionMed.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnVerCondicionMed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerCondicionMed.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerCondicionMed.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerCondicionMed.Location = new System.Drawing.Point(312, 499);
+            this.btnVerCondicionMed.Name = "btnVerCondicionMed";
+            this.btnVerCondicionMed.Size = new System.Drawing.Size(231, 58);
+            this.btnVerCondicionMed.TabIndex = 24;
+            this.btnVerCondicionMed.Text = "VER CONDICIONES MÉDICAS";
+            this.btnVerCondicionMed.UseVisualStyleBackColor = false;
+            this.btnVerCondicionMed.Click += new System.EventHandler(this.btnVerCondicionMed_Click);
+            // 
             // personaBindingSource
             // 
             this.personaBindingSource.DataSource = typeof(Modelo.Persona);
+            // 
+            // btnVerServicios
+            // 
+            this.btnVerServicios.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVerServicios.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnVerServicios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerServicios.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerServicios.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnVerServicios.Location = new System.Drawing.Point(104, 499);
+            this.btnVerServicios.Name = "btnVerServicios";
+            this.btnVerServicios.Size = new System.Drawing.Size(180, 58);
+            this.btnVerServicios.TabIndex = 25;
+            this.btnVerServicios.Text = "VER SERVICIOS";
+            this.btnVerServicios.UseVisualStyleBackColor = false;
+            this.btnVerServicios.Click += new System.EventHandler(this.btnVerServicios_Click);
             // 
             // frmGestionPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 758);
+            this.Controls.Add(this.btnVerServicios);
             this.Controls.Add(this.btnVerCondicionMed);
             this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.btnVerFichaMedidas);
@@ -289,9 +306,9 @@
             this.Text = "frmGestionPacientes";
             this.Load += new System.EventHandler(this.frmClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.CITAS.ResumeLayout(false);
             this.CITAS.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -319,5 +336,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn correoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaNacDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button btnVerCondicionMed;
+        private System.Windows.Forms.Button btnVerServicios;
     }
 }

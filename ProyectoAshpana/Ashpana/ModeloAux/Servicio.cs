@@ -13,7 +13,8 @@ namespace Modelo
         private string _nombreServicio;
         private double _precioServicio;
         private int _estadoServicio;
-        private int _numSesiones; 
+        private int _numSesiones;
+        private DateTime _fecha;
 
         public Servicio()
         {
@@ -34,5 +35,6 @@ namespace Modelo
         public double PrecioServicio { get => _precioServicio; set => _precioServicio = value; }
         public int EstadoServicio { get => _estadoServicio; set => _estadoServicio = value; }
         public int NumSesiones { get => _numSesiones; set => _numSesiones = value; }
+        public DateTime Fecha { get => _fecha; set => _fecha = value; }
     }
 }
